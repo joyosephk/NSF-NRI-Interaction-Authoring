@@ -50,7 +50,6 @@ var app = (function(){
 	}
 	var placeCopy = function(event){
 		makeDiv(event, 2);
-		selected_object.lock = false;
 		selected_object = null;
 	}
 	var makeDiv = function(event, stepNum){
