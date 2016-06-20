@@ -1,4 +1,5 @@
 var app = (function(){
+	var zeroVec = new THREE.Vector3(0,0,0);
 	var scene = new THREE.Scene();
 	var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 	var renderer = new THREE.WebGLRenderer();
@@ -7,31 +8,43 @@ var app = (function(){
 	var geometry = new THREE.BoxGeometry( 1, 1, 1 );
 	var material = new THREE.MeshBasicMaterial( { color: 0x00ff00, wireframe: true } );
 	var cube = new THREE.Mesh( geometry, material );
+	//cube.translate(1,1,1);
+	cube.boundingSphere = 1;
+	var axisHelper = new THREE.AxisHelper(20);
+	var tableGeom = new THREE.BoxGeometry(2,1,20);
+	var tableMat = new THREE.MeshStandardMaterial({color:0xFFFFFF});
+	var table = new THREE.Mesh(tableGeom, tableMat);
+	table.isSurface = true;
+	table.position.z = 15;
+	scene.add(table);
+	//scene.add(axisHelper);
 	scene.add(cube);
 	camera.position.z = 15;
-	camera.position.y = 5;
-	cube.rotation.x = .3;
-	cube.rotation.y = .4;
-	var light = new THREE.PointLight( 0xff0000, 1, 100 );
+	camera.position.y = 15;
+	camera.lookAt(zeroVec);
+	var light = new THREE.HemisphereLight( 0xffffbb, 0x333333, 1 );
 	light.position.set( 50, 50, 50 );
 	scene.add( light );
 	var raycaster = new THREE.Raycaster();
-	var moveCopy = function(vec2){
-		var vector = new THREE.Vector3();
-		vector.set(mouse.x, mouse.y, 1);
-		vector.unproject(camera);
-		var direction = vector.sub(camera.position).normalize();
-		var distance = camera.position.z/ direction.z;
-		var pos = camera.position.clone().add(direction.multiplyScalar(distance));
-		selected_object.position.x = - pos.x;
-		selected_object.position.y = - pos.y +10;
+	
+	var moveCopy = function(pos){
+		console.log(selected_object);
+		
+		selected_object.position.x = pos.x;
+		selected_object.position.y = pos.y+(selected_object.scale.y *.5);
+		selected_object.position.z = pos.z;
 	}
+
 	var mouse = new THREE.Vector2(0,0);
 	var mouseEvent = function(event){
 		mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
 		mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;		
 		if(selected_object){
-			moveCopy(mouse);
+			var intersection = findSelection();
+			if(intersection){
+				var pos = intersection.point
+				moveCopy(pos);
+			}
 		}
 		
 	}
@@ -49,7 +62,7 @@ var app = (function(){
 		selected_object = copy;
 	}
 	var placeCopy = function(event){
-		makeDiv(event, 2);
+		//makeDiv(event, 2);
 		selected_object = null;
 	}
 	var makeDiv = function(event, stepNum){
@@ -95,6 +108,44 @@ var app = (function(){
 		}	
 			
 	}
+	var findSelection = function(){
+		raycaster.setFromCamera(mouse,camera);
+		var intersects = raycaster.intersectObjects(scene.children);
+		if(intersects.length > 0){
+			console.log(intersects);
+			return intersects[intersects.length -1];
+		}else{
+			return null;
+		}
+	}
+
+
+	var cameraTheta = 0;
+ 	var cameraRadius = 15;
+	var keyDownHandler = function(event){
+		key = event.code;
+		console.log(event.code)
+		switch(key){
+			case 'ArrowLeft':
+				cameraTheta += .14;
+				break;
+			case 'ArrowRight':
+				cameraTheta += -.14;
+				break;
+
+			case 'ArrowUp':
+				cameraPhi += .14;
+				break;
+			case 'ArrowDown':
+				cameraPhi += -.14;
+				break;
+		}
+		camera.position.x = Math.cos(cameraTheta)*cameraRadius*Math.cos(0);
+		camera.position.z = Math.sin(cameraTheta)*cameraRadius*Math.sin(Math.PI/2);
+	//	camera.position.z = Math.cos(cameraTheta)*cameraRadius;	
+		camera.lookAt(zeroVec);
+	}
+	document.addEventListener('keydown',keyDownHandler,false);
 	//render loop
 	function render() {
 		if(!cube.lock){
@@ -102,7 +153,7 @@ var app = (function(){
 		}
 		//call all relevant animation code here
 		findIntersect(function(object){
-			object.material.color = new THREE.Color(1,0,1);
+			object.material.color.set(0xff00ff);
 		});
 		requestAnimationFrame( render );
 		renderer.render( scene, camera );
