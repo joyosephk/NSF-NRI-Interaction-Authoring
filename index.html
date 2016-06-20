@@ -13,12 +13,49 @@
 			text-transform: uppercase;
 			color: #FFF;
 			margin-top: 30px;				
+			display:inline;
+		}
+		.topbar *{
+			display: inline;
+		}
+
+		.btn{
+			background: #333;
+			color: #b70101;
+			padding: 1px 10px;
+			border-radius: 2px;
+		}
+		.btn:hover{
+			background: #FFF;
+		}
+		.btn-option{
+			padding: 10px;
+			background: #E7D9C1;
+			margin: 5px;
+		}
+		.object-menu{
+			background: #333;
+			position: absolute;
+			left: 0;
+			width: 10%;
+			display: block;
+			color: #fff;
 		}
 	</style>
 </head>
 
 <body>
-	<div class="topbar">Click on the cube to move it into position</div>
+	<div class="topbar">
+		
+		<div>Camera Controls</div>
+		<div class="btn" id="camera-left">L</div>
+		<div class="btn" id="camera-right">R</div>
+		<h4>Click on the wireframe box to put it on the block</h4>
+	</div>
+	<div class="object-menu" id="menu">
+		<p>Click on an object to populate object options</p>
+	
+	</div>
 </body>
 <script src="bower_components/three.js/build/three.min.js"></script>
 <script src="app.js"></script>
