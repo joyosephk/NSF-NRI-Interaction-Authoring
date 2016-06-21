@@ -1,4 +1,5 @@
 var app = (function(){
+	var move_mode = false;
 	var zeroVec = new THREE.Vector3(0,0,0);
 	var scene = new THREE.Scene();
 	var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
@@ -8,6 +9,7 @@ var app = (function(){
 	var geometry = new THREE.BoxGeometry( 1, 1, 1 );
 	var material = new THREE.MeshBasicMaterial( { color: 0x00ff00, wireframe: true } );
 	var cube = new THREE.Mesh( geometry, material );
+	cube.options = ['grab','pickup','action_1','smelt','throw', 'action_2','define new action'];
 	cube.boundingSphere = 1;
 	var axisHelper = new THREE.AxisHelper(20);
 	var tableGeom = new THREE.BoxGeometry(2,1,20);
@@ -16,9 +18,10 @@ var app = (function(){
 	table.isSurface = true;
 	table.position.z = 15;
 	scene.add(table);
-	//scene.add(axisHelper);
+	//cene.add(axisHelper);
 	scene.add(cube);
-	camera.position.z = 15;
+	camera.position.x = 0;
+	camera.position.z = 0;
 	camera.position.y = 15;
 	camera.lookAt(zeroVec);
 	var light = new THREE.HemisphereLight( 0xffffbb, 0x333333, 1 );
@@ -27,8 +30,6 @@ var app = (function(){
 	var raycaster = new THREE.Raycaster();
 	
 	var moveCopy = function(pos){
-		console.log(selected_object);
-		
 		selected_object.position.x = pos.x;
 		selected_object.position.y = pos.y+(selected_object.scale.y *.5);
 		selected_object.position.z = pos.z;
@@ -61,37 +62,47 @@ var app = (function(){
 		selected_object = copy;
 	}
 	var placeCopy = function(event){
-		//makeDiv(event, 2);
 		selected_object = null;
+		move_mode = false;
+		displayed_object.lock = false;
+		displayed_object = null;
 	}
-	var makeDiv = function(event, stepNum){
-		var div = document.createElement('div');
-		div.style.position = 'absolute';
-		div.style.color = '#FFF';
-		div.innerHTML = stepNum + '';
-		div.style.top = event.clientY + 'px';
-		div.style.left = event.clientX +'px';
-		document.body.appendChild(div);
-
-	}
+	
 	var display = function(options){
 		menu = document.getElementById('menu');
 		while (menu.firstChild) {
 			    menu.removeChild(menu.firstChild);
 		}
+
 		for(i in options){
 			text = options[i];
 			var div = document.createElement('div');
+			div.addEventListener('click', function(event){
+				move_mode = true;
+				selected_object = displayed_object;
+				makeCopy(event);
+
+
+			},false);
 			div.innerHTML = text;
 			div.className = "btn btn-option";
 			menu.appendChild(div);
 		}	
+				
 	}
+	var displayed_object = null;
 	var rightClickHandler = function(event){
+		event.preventDefault();
 		findIntersect(function(object){
+			if(displayed_object){
+				displayed_object.lock = false;
+			}
 			if(object.options){
 				display(object.options);
 			}
+			object.material.color.set(0xffffff);
+			object.lock = true;
+			displayed_object = object;
 		});	
 	}
 	var selected_object = null;
@@ -100,7 +111,7 @@ var app = (function(){
 		mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
 		mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;		
 
-		if(event.ctrlKey || event.which == 3){
+		if(!event.ctrlKey && !move_mode){
 			rightClickHandler(event);
 			return;
 		}
@@ -115,7 +126,6 @@ var app = (function(){
 			}
 			object.material.color = new THREE.Color(1,1,1);
 			object.lock = true;
-			makeDiv(event, 1);
 			selected_object = object;
 			makeCopy(event);
 		});
@@ -147,31 +157,40 @@ var app = (function(){
 	}
 
 
-	var cameraTheta = 0;
- 	var cameraRadius = 15;
+ 	var cameraRadius = 30;
+	var rotationY = new THREE.Matrix4();
+	var rotationX = new THREE.Matrix4();
+	var translation = new THREE.Matrix4();
+	var matrix = new THREE.Matrix4();
+	var latitude = 0;
+	var longitude = 0;
 	var cameraChange = function(){
-		camera.position.x = Math.cos(cameraTheta)*cameraRadius*Math.cos(0);
-		camera.position.z = Math.sin(cameraTheta)*cameraRadius*Math.sin(Math.PI/2);
-	//	camera.position.z = Math.cos(cameraTheta)*cameraRadius;	
+		rotationY.makeRotationY(longitude);
+		rotationX.makeRotationX(-latitude);
+		translation.makeTranslation(0, 0, cameraRadius);
+		matrix.multiplyMatrices(rotationY, rotationX).multiply(translation);
+		camera.matrix.identity();
+		camera.applyMatrix(matrix);
 		camera.lookAt(zeroVec);
 
 	}
+	cameraChange();
 	var keyDownHandler = function(event){
 		key = event.code;
 		console.log(event.code)
 		switch(key){
 			case 'ArrowLeft':
-				cameraTheta += .14;
+				longitude += .14;
 				break;
 			case 'ArrowRight':
-				cameraTheta += -.14;
+				longitude += -.14;
 				break;
 
 			case 'ArrowUp':
-		//		cameraPhi += .14;
+				latitude += .14;
 				break;
 			case 'ArrowDown':
-		//		cameraPhi += -.14;
+				latitude += -.14;
 				break;
 		}
 		cameraChange();
@@ -188,12 +207,23 @@ var app = (function(){
 	},false)
 	document.addEventListener('keydown',keyDownHandler,false);
 	var objectCreator = function(){
-		var matcher = {
-			'box': THREE.BoxGeometry,
-			'spehere': THREE.SphereGeometry
+		var getGeometry = function(type) {
+			switch(type){
+				case 'sphere':
+					return new THREE.SphereGeometry(1,8,8);
+					break;
+				case 'cube':
+					return new THREE.BoxGeometry(1,1,1);
+					break;
+				case 'torus':
+					return new THREE.TorusGeometry(3,1, 7,70, MATH.PI * 2);
+					break;
+				case 'torusKnot':
+					return new THREE.TorusKnotGeometry( 3, 1, 100, 16 );	
+			}
 		}
 		var createObject = function(choice,options){
-			var geom = new THREE.SphereGeometry(1,8,8);
+			var geom = getGeometry(choice);
 			var material = new THREE.MeshBasicMaterial({wireframe:true});
 			var shape = new THREE.Mesh(geom, material);
 			if(options.isSurface){
@@ -211,7 +241,23 @@ var app = (function(){
 	}
 	var creator = new objectCreator();
 	creator.createObject('sphere',{isSurface: false, pos:{x:3,y:1,z:1}, options:['grab','pickup','action_1', 'action_2','define new action']})
-	
+	var form = document.getElementById('objectForm');
+	form.addEventListener('submit',function(event){
+		event.preventDefault();
+		var data = new FormData(form);
+		console.log(data.get("objectType"));
+		console.log(data.get("x"));
+		console.log(data.get("y"));
+		console.log(data.get("z"));
+		creator.createObject(data.get("objectType"),{
+			pos:{
+				x: data.get("x"),
+				y: data.get("y"),
+				z: data.get("z")
+			},
+			 options:['grab','pickup','action_1', 'action_2','define new action']
+		});
+	},false)
 	//render loop
 	function render() {
 		
@@ -223,10 +269,6 @@ var app = (function(){
 				scene.children[i].material.color.set(0x0000ff);
 			}
 		}
-		//if(.lock){
-		//	cube.material.color = new THREE.Color(0,0,1);
-		//}
-		//call all relevant animation code here
 		findIntersect(function(object){
 			object.material.color.set(0xff00ff);
 		});

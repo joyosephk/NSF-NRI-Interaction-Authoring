@@ -1,6 +1,9 @@
 <head>
 	<Title>ROS 3D</Title>
 	<style>
+		.hidden{
+			display: none;
+		}
 		body{
 			margin: 0;
 		}
@@ -44,7 +47,7 @@
 	</style>
 </head>
 
-<body>
+<body contextmenu="cMenu">
 	<div class="topbar">
 		
 		<div>Camera Controls</div>
@@ -52,10 +55,30 @@
 		<div class="btn" id="camera-right">R</div>
 		<h4>Click on the wireframe box to put it on the block</h4>
 	</div>
-	<div class="object-menu" id="menu">
-		<p>Click on an object to populate object options</p>
+	<div class="object-menu" id="">
+		<div id="menu">
+			<p>Select an object by right clicking on it</p>
+		</div>
+		<div class="form">
+			<h4>Create a new object</h4>
+			<form id="objectForm">
+				<label for="objectType">Object type</label>
+				<select name="objectType">
+					<option value="cube">Cube</option>
+					<option value="sphere">Sphere</option>
+					<option value="torus">Torus</option>
+					<option value="torusKnot">Torus Knot</option>		
+				</select>
+				<input type="number" id="x" name="x" placeholder="x"/>
+				<input type="number" id="y"  name="y" placeholder="y"/>
+				<input type="number" id="z" name="z" placeholder="z"/>
+				<input type="submit" value="create"> 
+			</form>
+		</div>
+
 	
 	</div>
+	<div id="hidden" class="hidden"></div>	
 </body>
 <script src="bower_components/three.js/build/three.min.js"></script>
 <script src="app.js"></script>
