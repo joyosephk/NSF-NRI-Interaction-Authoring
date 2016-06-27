@@ -92,7 +92,6 @@ var app = (function(){
 	}
 	var displayed_object = null;
 	var rightClickHandler = function(event){
-		event.preventDefault();
 		findIntersect(function(object){
 			if(displayed_object){
 				displayed_object.lock = false;
@@ -216,7 +215,7 @@ var app = (function(){
 					return new THREE.BoxGeometry(1,1,1);
 					break;
 				case 'torus':
-					return new THREE.TorusGeometry(3,1, 7,70, MATH.PI * 2);
+					return new THREE.TorusGeometry(3,1, 7,70, Math.PI * 2);
 					break;
 				case 'torusKnot':
 					return new THREE.TorusKnotGeometry( 3, 1, 100, 16 );	
