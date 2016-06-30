@@ -1,0 +1,3 @@
+[submodule "therblig-motion-library"]
+	path = therblig-motion-library
+	url = https://github.com/Wisc-HCI/therblig-motion-library.git
