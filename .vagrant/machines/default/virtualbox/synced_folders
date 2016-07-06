@@ -1,1 +1,1 @@
-{"virtualbox":{"/home/vagrant":{"guestpath":"/home/vagrant","hostpath":"/Users/joshmcgrath/git/nri/3d-test","disabled":false,"__vagrantfile":true}}}
+{"virtualbox":{"/home/vagrant":{"guestpath":"/home/vagrant","hostpath":"/Users/joshmcgrath/git/nri/3d-test/src","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/joshmcgrath/git/nri/3d-test","disabled":false,"__vagrantfile":true}}}

@@ -1,0 +1,50 @@
+
+
+1467815506.498657051  Node Startup
+1467815507.147353887 INFO [rosapi_node:175(<module>) [topics: /rosout] Rosapi started
+1467815507.088946104 INFO [rosbridge_websocket:141(<module>) [topics: /rosout] Rosbridge WebSocket server started on port 9090
+1467815514.092796087 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467815514.612411975 ERROR [protocol.py:363(log) [topics: /rosout] [Client 0] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+1467815537.086301088 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467815537.590620994 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467815538.100677013 ERROR [protocol.py:363(log) [topics: /rosout] [Client 1] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+1467815554.695323944 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467815560.672091007 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467815561.402149915 ERROR [protocol.py:363(log) [topics: /rosout] [Client 2] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+1467815816.025085926 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467815816.469443082 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467815816.977336883 ERROR [protocol.py:363(log) [topics: /rosout] [Client 3] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+1467816206.424473047 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467816206.935554027 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467816207.421551942 ERROR [protocol.py:363(log) [topics: /rosout] [Client 4] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+1467816223.902350902 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467816224.306489944 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467816224.738516092 ERROR [protocol.py:363(log) [topics: /rosout] [Client 5] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+1467817032.238629102 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467817032.845473051 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467817033.466658115 ERROR [protocol.py:363(log) [topics: /rosout] [Client 6] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+1467817159.129792928 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467817159.687925100 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467817160.252929925 ERROR [protocol.py:363(log) [topics: /rosout] [Client 7] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+1467817388.971692085 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467817389.631397962 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467817390.220643997 ERROR [protocol.py:363(log) [topics: /rosout] [Client 8] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+1467817668.933058977 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467817669.468185901 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467817670.026068925 ERROR [protocol.py:363(log) [topics: /rosout] [Client 9] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+1467818359.777666091 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467818360.644443035 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467818361.376312017 ERROR [protocol.py:363(log) [topics: /rosout] [Client 10] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+1467818453.155401945 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467818454.198131084 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467818455.033876895 ERROR [protocol.py:363(log) [topics: /rosout] [Client 11] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+1467818733.076030015 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467818733.964466094 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467818734.790982961 ERROR [protocol.py:363(log) [topics: /rosout] [Client 12] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+1467818772.027369976 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467818772.820064067 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467818773.407221078 ERROR [protocol.py:363(log) [topics: /rosout] [Client 13] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+1467818802.078874111 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467818802.764004945 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467818803.280049085 ERROR [protocol.py:363(log) [topics: /rosout] [Client 14] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+1467818832.575308084 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.

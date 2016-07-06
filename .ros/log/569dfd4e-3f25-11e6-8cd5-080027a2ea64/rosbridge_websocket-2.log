@@ -1,0 +1,22 @@
+[rospy.client][INFO] 2016-07-01 00:47:09,412: init_node, name[/rosbridge_websocket], pid[3399]
+[xmlrpc][INFO] 2016-07-01 00:47:09,414: XML-RPC server binding to 0.0.0.0:0
+[rospy.init][INFO] 2016-07-01 00:47:09,417: ROS Slave URI: [http://ros-indigo-desktop-trusty64:43839/]
+[xmlrpc][INFO] 2016-07-01 00:47:09,416: Started XML-RPC server [http://ros-indigo-desktop-trusty64:43839/]
+[rospy.impl.masterslave][INFO] 2016-07-01 00:47:09,421: _ready: http://ros-indigo-desktop-trusty64:43839/
+[xmlrpc][INFO] 2016-07-01 00:47:09,424: xml rpc node: starting XML-RPC server
+[rospy.registration][INFO] 2016-07-01 00:47:09,426: Registering with master node http://localhost:11311
+[rospy.init][INFO] 2016-07-01 00:47:09,522: registered with master
+[rospy.rosout][INFO] 2016-07-01 00:47:09,523: initializing /rosout core topic
+[rospy.rosout][INFO] 2016-07-01 00:47:09,529: connected to core topic /rosout
+[rospy.simtime][INFO] 2016-07-01 00:47:09,532: /use_sim_time is not set, will not subscribe to simulated time [/clock] topic
+[rosout][INFO] 2016-07-01 00:47:09,569: Rosbridge WebSocket server started on port 9090
+[rospy.internal][INFO] 2016-07-01 00:47:09,840: topic[/rosout] adding connection to [/rosout], count 0
+[rosout][INFO] 2016-07-01 00:51:06,601: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-01 00:51:07,161: [Client 0] [id: subscribe:test:1] subscribe: Cannot infer topic type for topic test as it is not yet advertised
+[rosout][INFO] 2016-07-01 00:51:21,372: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-01 00:51:21,659: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-01 00:51:22,128: [Client 1] [id: subscribe:test:1] subscribe: Cannot infer topic type for topic test as it is not yet advertised
+[rospy.core][INFO] 2016-07-01 00:52:14,270: signal_shutdown [signal-2]
+[rospy.internal][INFO] 2016-07-01 00:52:14,288: topic[/rosout] removing connection to /rosout
+[rospy.impl.masterslave][INFO] 2016-07-01 00:52:14,290: signal-2
+[rospy.core][INFO] 2016-07-01 00:52:14,917: signal_shutdown [atexit]

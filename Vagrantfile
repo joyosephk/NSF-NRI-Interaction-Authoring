@@ -27,7 +27,7 @@ Vagrant.configure(2) do |config|
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
   #config.vm.network "private_network", ip: "192.168.33.10"
-  config.vm.synced_folder ".", "/home/vagrant"
+  config.vm.synced_folder "./src", "/home/vagrant"
   config.vm.network "forwarded_port", guest: 9090, host: 9090
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on

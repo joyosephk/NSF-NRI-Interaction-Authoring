@@ -1,0 +1,76 @@
+[rospy.client][INFO] 2016-07-06 03:31:18,527: init_node, name[/rosbridge_websocket], pid[3163]
+[xmlrpc][INFO] 2016-07-06 03:31:18,528: XML-RPC server binding to 0.0.0.0:0
+[xmlrpc][INFO] 2016-07-06 03:31:18,530: Started XML-RPC server [http://ros-indigo-desktop-trusty64:57039/]
+[rospy.impl.masterslave][INFO] 2016-07-06 03:31:18,530: _ready: http://ros-indigo-desktop-trusty64:57039/
+[rospy.init][INFO] 2016-07-06 03:31:18,530: ROS Slave URI: [http://ros-indigo-desktop-trusty64:57039/]
+[xmlrpc][INFO] 2016-07-06 03:31:18,535: xml rpc node: starting XML-RPC server
+[rospy.registration][INFO] 2016-07-06 03:31:18,535: Registering with master node http://localhost:11311
+[rospy.init][INFO] 2016-07-06 03:31:18,635: registered with master
+[rospy.rosout][INFO] 2016-07-06 03:31:18,636: initializing /rosout core topic
+[rospy.rosout][INFO] 2016-07-06 03:31:18,641: connected to core topic /rosout
+[rospy.simtime][INFO] 2016-07-06 03:31:18,643: /use_sim_time is not set, will not subscribe to simulated time [/clock] topic
+[rosout][INFO] 2016-07-06 03:31:18,675: Rosbridge WebSocket server started on port 9090
+[rospy.internal][INFO] 2016-07-06 03:31:18,945: topic[/rosout] adding connection to [/rosout], count 0
+[rosout][INFO] 2016-07-06 03:31:29,796: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-06 03:31:30,232: [Client 0] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+[rosout][INFO] 2016-07-06 03:31:58,487: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 03:31:58,867: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-06 03:31:59,303: [Client 1] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+[rosout][INFO] 2016-07-06 03:32:07,217: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 03:32:07,437: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-06 03:32:07,773: [Client 2] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+[rosout][INFO] 2016-07-06 04:07:13,887: Client connected.  2 clients total.
+[rosout][ERROR] 2016-07-06 04:07:14,120: [Client 3] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+[rosout][INFO] 2016-07-06 04:07:21,960: Client disconnected. 1 clients total.
+[rosout][INFO] 2016-07-06 04:10:29,993: Client connected.  2 clients total.
+[rosout][ERROR] 2016-07-06 04:10:30,551: [Client 4] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+[rosout][INFO] 2016-07-06 04:11:44,886: Client disconnected. 1 clients total.
+[rosout][INFO] 2016-07-06 04:11:45,287: Client connected.  2 clients total.
+[rosout][ERROR] 2016-07-06 04:11:45,765: [Client 5] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+[rosout][INFO] 2016-07-06 04:26:36,447: Client disconnected. 1 clients total.
+[rosout][INFO] 2016-07-06 04:26:36,899: Client connected.  2 clients total.
+[rosout][ERROR] 2016-07-06 04:26:37,396: [Client 6] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+[rosout][INFO] 2016-07-06 04:26:59,458: Client disconnected. 1 clients total.
+[rosout][INFO] 2016-07-06 04:26:59,842: Client connected.  2 clients total.
+[rosout][ERROR] 2016-07-06 04:27:00,430: [Client 7] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+[rosout][INFO] 2016-07-06 04:29:29,255: Client disconnected. 1 clients total.
+[rosout][INFO] 2016-07-06 04:29:29,755: Client connected.  2 clients total.
+[rosout][ERROR] 2016-07-06 04:29:30,207: [Client 8] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+[rosout][INFO] 2016-07-06 04:30:43,458: Client disconnected. 1 clients total.
+[rosout][INFO] 2016-07-06 04:30:43,828: Client connected.  2 clients total.
+[rosout][ERROR] 2016-07-06 04:30:44,346: [Client 9] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+[rosout][INFO] 2016-07-06 04:34:41,720: Client disconnected. 1 clients total.
+[rosout][INFO] 2016-07-06 04:34:42,152: Client connected.  2 clients total.
+[rosout][ERROR] 2016-07-06 04:34:42,593: [Client 10] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+[rosout][INFO] 2016-07-06 04:42:47,816: Client disconnected. 1 clients total.
+[rosout][INFO] 2016-07-06 04:42:53,902: Client connected.  2 clients total.
+[rosout][ERROR] 2016-07-06 04:42:54,383: [Client 11] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+[rosout][INFO] 2016-07-06 04:44:15,901: Client disconnected. 1 clients total.
+[rosout][INFO] 2016-07-06 04:44:16,364: Client connected.  2 clients total.
+[rosout][ERROR] 2016-07-06 04:44:17,032: [Client 12] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+[rosout][INFO] 2016-07-06 04:50:20,483: Client disconnected. 1 clients total.
+[rosout][INFO] 2016-07-06 04:50:20,901: Client connected.  2 clients total.
+[rosout][ERROR] 2016-07-06 04:50:21,418: [Client 13] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+[rosout][INFO] 2016-07-06 04:50:51,488: Client disconnected. 1 clients total.
+[rosout][INFO] 2016-07-06 04:50:51,951: Client connected.  2 clients total.
+[rosout][ERROR] 2016-07-06 04:50:52,388: [Client 14] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+[rosout][INFO] 2016-07-06 04:54:04,336: Client disconnected. 1 clients total.
+[rosout][INFO] 2016-07-06 04:54:04,842: Client connected.  2 clients total.
+[rosout][ERROR] 2016-07-06 04:54:05,317: [Client 15] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+[rosout][INFO] 2016-07-06 04:54:52,374: Client disconnected. 1 clients total.
+[rosout][INFO] 2016-07-06 04:54:52,894: Client connected.  2 clients total.
+[rosout][ERROR] 2016-07-06 04:54:53,321: [Client 16] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+[rosout][INFO] 2016-07-06 04:55:26,965: Client disconnected. 1 clients total.
+[rosout][INFO] 2016-07-06 04:55:27,441: Client connected.  2 clients total.
+[rosout][ERROR] 2016-07-06 04:55:27,825: [Client 17] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+[rosout][INFO] 2016-07-06 04:57:07,269: Client disconnected. 1 clients total.
+[rosout][INFO] 2016-07-06 04:57:07,778: Client connected.  2 clients total.
+[rosout][ERROR] 2016-07-06 04:57:08,239: [Client 18] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+[rosout][INFO] 2016-07-06 04:57:40,130: Client disconnected. 1 clients total.
+[rosout][INFO] 2016-07-06 04:57:40,509: Client connected.  2 clients total.
+[rosout][ERROR] 2016-07-06 04:57:40,924: [Client 19] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+[rosout][INFO] 2016-07-06 04:58:06,768: Client disconnected. 1 clients total.
+[rospy.core][INFO] 2016-07-06 04:59:01,984: signal_shutdown [signal-2]
+[rospy.internal][INFO] 2016-07-06 04:59:01,991: topic[/rosout] removing connection to /rosout
+[rospy.impl.masterslave][INFO] 2016-07-06 04:59:01,992: signal-2
+[rospy.core][INFO] 2016-07-06 04:59:02,159: signal_shutdown [atexit]

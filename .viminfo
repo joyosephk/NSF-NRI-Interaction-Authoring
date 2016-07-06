@@ -8,6 +8,7 @@
 # hlsearch on (H) or off (h):
 ~h
 # Command Line History (newest to oldest):
+:wq
 :q
 :Q
 
@@ -22,12 +23,17 @@
 # Registers:
 
 # File marks:
-'0  1  1  ~/.bashrc
+'0  2  52  ~/.bashrc
+'1  1  1  ~/.bashrc
 
 # Jumplist (newest first):
--'  1  1  ~/.bashrc
+-'  2  52  ~/.bashrc
+-'  1  0  ~/.bashrc
 
 # History of marks within files (newest to oldest):
 
 > ~/.bashrc
-	"	1	1
+	"	2	52
+	^	2	53
+	.	2	52
+	+	2	52

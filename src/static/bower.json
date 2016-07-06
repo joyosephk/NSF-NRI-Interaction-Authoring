@@ -1,0 +1,26 @@
+{
+  "name": "y",
+  "homepage": "https://github.com/josmcg/3D-Task-Demo",
+  "authors": [
+    "Josh McGrath <joshuawmcgrath@gmail.com>"
+  ],
+  "description": "proof of authoring concept",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "roslib": "roslibjs#^0.18.0",
+    "three.js": "threejs#r61",
+    "ros3d": "^0.15.0",
+    "angular": "^1.5.7",
+    "requirejs": "^2.2.0"
+  }
+}

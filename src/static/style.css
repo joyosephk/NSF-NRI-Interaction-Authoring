@@ -1,0 +1,18 @@
+.menu{
+	background: #990000;
+	border-radius: 6px;
+	margin: 20px 5px;
+	float: left;
+	width: 20%;
+	height: 90%;
+	z-index: 100;
+	opacity: 0.8;
+}
+.menu-item{}
+#rosPoint * {
+	position: absolute;
+	z-index: -1;
+}
+body{
+	margin: 0;
+}

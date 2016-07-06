@@ -20,3 +20,18 @@ roslaunch rosbridge_server rosbridge_websocket.launch
 source .bashrc
 roslaunch rosbridge_server rosbridge_websocket.launch
 exit
+ls
+rostopic list
+vim .bashrc
+source .bashrc
+rostopic
+vim .bashrc
+roslaunch rosbridge_server rosbridge_websocket.launch 
+ls
+cd server/
+python main.py 
+python main.py 
+roslaunch rosbridge_server rosbridge_websocket.launch 
+python main.py 
+rostopic list
+exit
