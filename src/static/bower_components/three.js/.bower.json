@@ -1,0 +1,13 @@
+{
+  "name": "three.js",
+  "homepage": "https://github.com/mrdoob/three.js",
+  "_release": "r61",
+  "_resolution": {
+    "type": "tag",
+    "tag": "r61",
+    "commit": "390ce696550c9f232c66395a636e829e926c5a84"
+  },
+  "_source": "https://github.com/mrdoob/three.js.git",
+  "_target": "r61",
+  "_originalSource": "threejs"
+}

@@ -1,0 +1,5 @@
+
+
+1467740050.426395279  Node Startup
+1467740051.315325021 INFO [rosbridge_websocket:141(<module>) [topics: /rosout] Rosbridge WebSocket server started on port 9090
+1467740051.458642959 INFO [rosapi_node:175(<module>) [topics: /rosout] Rosapi started

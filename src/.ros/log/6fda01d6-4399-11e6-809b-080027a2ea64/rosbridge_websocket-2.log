@@ -1,0 +1,156 @@
+[rospy.client][INFO] 2016-07-06 16:48:18,229: init_node, name[/rosbridge_websocket], pid[7097]
+[xmlrpc][INFO] 2016-07-06 16:48:18,230: XML-RPC server binding to 0.0.0.0:0
+[rospy.init][INFO] 2016-07-06 16:48:18,231: ROS Slave URI: [http://ros-indigo-desktop-trusty64:54580/]
+[xmlrpc][INFO] 2016-07-06 16:48:18,230: Started XML-RPC server [http://ros-indigo-desktop-trusty64:54580/]
+[rospy.impl.masterslave][INFO] 2016-07-06 16:48:18,233: _ready: http://ros-indigo-desktop-trusty64:54580/
+[xmlrpc][INFO] 2016-07-06 16:48:18,235: xml rpc node: starting XML-RPC server
+[rospy.registration][INFO] 2016-07-06 16:48:18,242: Registering with master node http://localhost:11311
+[rospy.init][INFO] 2016-07-06 16:48:18,332: registered with master
+[rospy.rosout][INFO] 2016-07-06 16:48:18,333: initializing /rosout core topic
+[rospy.rosout][INFO] 2016-07-06 16:48:18,345: connected to core topic /rosout
+[rospy.simtime][INFO] 2016-07-06 16:48:18,348: /use_sim_time is not set, will not subscribe to simulated time [/clock] topic
+[rosout][INFO] 2016-07-06 16:48:18,424: Rosbridge WebSocket server started on port 9090
+[rospy.internal][INFO] 2016-07-06 16:48:18,617: topic[/rosout] adding connection to [/rosout], count 0
+[rosout][INFO] 2016-07-06 16:48:20,997: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-06 16:48:21,419: [Client 0] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+[rosout][INFO] 2016-07-06 16:49:25,143: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 16:49:25,539: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-06 16:49:25,951: [Client 1] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+[rosout][INFO] 2016-07-06 16:49:36,377: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 16:49:36,890: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-06 16:49:37,321: [Client 2] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+[rosout][INFO] 2016-07-06 16:53:43,620: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 16:53:44,114: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-06 16:53:44,574: [Client 3] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+[rosout][INFO] 2016-07-06 17:02:02,695: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 17:02:03,171: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-06 17:02:03,668: [Client 4] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+[rosout][INFO] 2016-07-06 17:03:07,718: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 17:03:08,123: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-06 17:03:08,563: [Client 5] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+[rosout][INFO] 2016-07-06 17:07:00,363: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 17:07:00,814: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-06 17:07:01,330: [Client 6] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+[rosout][INFO] 2016-07-06 17:08:47,341: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 17:08:47,682: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-06 17:08:48,119: [Client 7] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+[rosout][INFO] 2016-07-06 17:10:02,408: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 17:10:02,800: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-06 17:10:03,271: [Client 8] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+[rosout][INFO] 2016-07-06 17:10:07,926: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 17:10:08,229: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-06 17:10:08,623: [Client 9] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+[rosout][INFO] 2016-07-06 17:10:44,038: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 17:10:44,415: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-06 17:10:44,890: [Client 10] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+[rosout][INFO] 2016-07-06 17:25:30,600: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 17:29:34,154: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-06 17:29:34,545: [Client 11] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+[rosout][INFO] 2016-07-06 17:30:21,513: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 17:30:22,006: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-06 17:30:22,391: [Client 12] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+[rosout][INFO] 2016-07-06 17:30:53,836: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 17:30:54,316: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-06 17:30:54,659: [Client 13] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+[rosout][INFO] 2016-07-06 17:31:29,880: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 17:31:30,331: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-06 17:31:30,735: [Client 14] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+[rosout][INFO] 2016-07-06 17:35:15,369: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 17:35:15,912: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-06 17:35:16,305: [Client 15] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+[rosout][INFO] 2016-07-06 17:36:34,660: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 17:36:35,145: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 17:37:03,869: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 17:37:04,395: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 17:38:42,025: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 17:38:42,539: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 17:38:58,218: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 17:38:58,774: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 17:39:19,028: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 17:39:19,423: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 17:41:32,778: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 17:41:33,348: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 17:42:21,361: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 17:42:21,871: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 17:43:43,138: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 17:43:43,855: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 17:44:01,545: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 17:44:02,050: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 17:44:26,429: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 17:44:26,940: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 17:46:26,475: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 17:46:26,987: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 17:46:48,685: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 17:46:49,177: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 17:48:15,673: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 17:48:16,101: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 17:48:51,722: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 17:48:52,234: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 17:49:15,185: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 17:49:15,581: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 17:54:04,115: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 17:54:04,679: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 18:07:09,404: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 18:07:10,003: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 18:08:29,312: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 18:08:29,834: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 18:10:04,280: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 18:10:04,832: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 18:11:36,962: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 18:11:37,548: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 18:12:46,560: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 18:12:47,067: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 18:17:11,369: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 18:17:12,886: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 18:36:46,421: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 18:38:10,699: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 18:45:52,073: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 18:45:52,647: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 18:47:27,677: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 18:47:28,370: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 18:51:56,273: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 18:51:56,869: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 18:52:00,401: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 18:52:00,835: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 18:52:33,456: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 18:52:33,994: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 18:53:52,359: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 18:53:52,978: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 19:06:04,208: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 19:06:04,839: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 19:06:28,627: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 19:06:29,200: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 19:09:28,029: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 19:09:28,740: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 19:09:48,896: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 19:09:49,501: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 19:19:04,794: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 19:19:05,336: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 19:26:50,626: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 19:26:51,065: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 19:28:34,382: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 19:28:34,999: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 19:29:16,489: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 19:29:20,656: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 19:31:10,935: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 19:31:11,497: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 19:35:21,430: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 19:35:22,061: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 19:37:09,171: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 19:37:09,802: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 19:38:10,057: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 19:38:10,512: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 19:38:59,892: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 19:39:00,465: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 19:40:04,392: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 19:40:05,047: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 19:45:38,156: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 19:45:38,839: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 19:48:27,192: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 19:48:27,901: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 19:50:20,348: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 19:50:20,913: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 19:50:52,637: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 19:50:53,215: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-06 19:52:18,731: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-06 19:52:19,272: Client connected.  1 clients total.

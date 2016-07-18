@@ -1,0 +1,88 @@
+[rosmaster.main][INFO] 2016-07-06 03:31:17,826: initialization complete, waiting for shutdown
+[rosmaster.main][INFO] 2016-07-06 03:31:17,827: Starting ROS Master Node
+[xmlrpc][INFO] 2016-07-06 03:31:17,829: XML-RPC server binding to 0.0.0.0:11311
+[xmlrpc][INFO] 2016-07-06 03:31:17,830: Started XML-RPC server [http://ros-indigo-desktop-trusty64:11311/]
+[xmlrpc][INFO] 2016-07-06 03:31:17,831: xml rpc node: starting XML-RPC server
+[rosmaster.master][INFO] 2016-07-06 03:31:17,830: Master initialized: port[11311], uri[http://ros-indigo-desktop-trusty64:11311/]
+[rosmaster.master][INFO] 2016-07-06 03:31:17,915: +PARAM [/run_id] by /roslaunch
+[rosmaster.master][INFO] 2016-07-06 03:31:17,918: +PARAM [/roslaunch/uris/host_ros_indigo_desktop_trusty64__55059] by /roslaunch
+[rosmaster.master][INFO] 2016-07-06 03:31:17,982: +PARAM [/rosbridge_websocket/port] by /roslaunch
+[rosmaster.master][INFO] 2016-07-06 03:31:17,983: +PARAM [/rosdistro] by /roslaunch
+[rosmaster.master][INFO] 2016-07-06 03:31:17,984: +PARAM [/rosbridge_websocket/fragment_timeout] by /roslaunch
+[rosmaster.master][INFO] 2016-07-06 03:31:17,984: +PARAM [/rosbridge_websocket/delay_between_messages] by /roslaunch
+[rosmaster.master][INFO] 2016-07-06 03:31:17,985: +PARAM [/rosversion] by /roslaunch
+[rosmaster.master][INFO] 2016-07-06 03:31:17,985: +PARAM [/rosbridge_websocket/authenticate] by /roslaunch
+[rosmaster.master][INFO] 2016-07-06 03:31:17,986: +PARAM [/rosbridge_websocket/retry_startup_delay] by /roslaunch
+[rosmaster.master][INFO] 2016-07-06 03:31:17,987: +PARAM [/rosbridge_websocket/address] by /roslaunch
+[rosmaster.master][INFO] 2016-07-06 03:31:17,988: +PARAM [/rosbridge_websocket/max_message_size] by /roslaunch
+[rosmaster.master][INFO] 2016-07-06 03:31:18,068: +SERVICE [/rosout/get_loggers] /rosout http://ros-indigo-desktop-trusty64:46651/
+[rosmaster.master][INFO] 2016-07-06 03:31:18,070: +SERVICE [/rosout/set_logger_level] /rosout http://ros-indigo-desktop-trusty64:46651/
+[rosmaster.master][INFO] 2016-07-06 03:31:18,077: +PUB [/rosout_agg] /rosout http://ros-indigo-desktop-trusty64:46651/
+[rosmaster.master][INFO] 2016-07-06 03:31:18,083: +SUB [/rosout] /rosout http://ros-indigo-desktop-trusty64:46651/
+[rosmaster.master][INFO] 2016-07-06 03:31:18,639: +PUB [/rosout] /rosbridge_websocket http://ros-indigo-desktop-trusty64:57039/
+[rosmaster.master][INFO] 2016-07-06 03:31:18,646: +SERVICE [/rosbridge_websocket/get_loggers] /rosbridge_websocket http://ros-indigo-desktop-trusty64:57039/
+[rosmaster.master][INFO] 2016-07-06 03:31:18,648: +SERVICE [/rosbridge_websocket/set_logger_level] /rosbridge_websocket http://ros-indigo-desktop-trusty64:57039/
+[rosmaster.master][INFO] 2016-07-06 03:31:18,664: +PUB [/rosout] /rosapi http://ros-indigo-desktop-trusty64:36594/
+[rosmaster.master][INFO] 2016-07-06 03:31:18,675: +SERVICE [/rosapi/get_loggers] /rosapi http://ros-indigo-desktop-trusty64:36594/
+[rosmaster.master][INFO] 2016-07-06 03:31:18,678: +SERVICE [/rosapi/set_logger_level] /rosapi http://ros-indigo-desktop-trusty64:36594/
+[rosmaster.master][INFO] 2016-07-06 03:31:18,680: +SERVICE [/rosapi/topics] /rosapi http://ros-indigo-desktop-trusty64:36594/
+[rosmaster.master][INFO] 2016-07-06 03:31:18,682: +SERVICE [/rosapi/topics_for_type] /rosapi http://ros-indigo-desktop-trusty64:36594/
+[rosmaster.master][INFO] 2016-07-06 03:31:18,685: +SERVICE [/rosapi/services] /rosapi http://ros-indigo-desktop-trusty64:36594/
+[rosmaster.master][INFO] 2016-07-06 03:31:18,687: +SERVICE [/rosapi/services_for_type] /rosapi http://ros-indigo-desktop-trusty64:36594/
+[rosmaster.master][INFO] 2016-07-06 03:31:18,689: +SERVICE [/rosapi/nodes] /rosapi http://ros-indigo-desktop-trusty64:36594/
+[rosmaster.master][INFO] 2016-07-06 03:31:18,691: +SERVICE [/rosapi/topic_type] /rosapi http://ros-indigo-desktop-trusty64:36594/
+[rosmaster.master][INFO] 2016-07-06 03:31:18,694: +SERVICE [/rosapi/service_type] /rosapi http://ros-indigo-desktop-trusty64:36594/
+[rosmaster.master][INFO] 2016-07-06 03:31:18,695: +SERVICE [/rosapi/publishers] /rosapi http://ros-indigo-desktop-trusty64:36594/
+[rosmaster.master][INFO] 2016-07-06 03:31:18,698: +SERVICE [/rosapi/subscribers] /rosapi http://ros-indigo-desktop-trusty64:36594/
+[rosmaster.master][INFO] 2016-07-06 03:31:18,700: +SERVICE [/rosapi/service_providers] /rosapi http://ros-indigo-desktop-trusty64:36594/
+[rosmaster.master][INFO] 2016-07-06 03:31:18,702: +SERVICE [/rosapi/service_node] /rosapi http://ros-indigo-desktop-trusty64:36594/
+[rosmaster.master][INFO] 2016-07-06 03:31:18,705: +SERVICE [/rosapi/service_host] /rosapi http://ros-indigo-desktop-trusty64:36594/
+[rosmaster.master][INFO] 2016-07-06 03:31:18,707: +SERVICE [/rosapi/message_details] /rosapi http://ros-indigo-desktop-trusty64:36594/
+[rosmaster.master][INFO] 2016-07-06 03:31:18,709: +SERVICE [/rosapi/service_request_details] /rosapi http://ros-indigo-desktop-trusty64:36594/
+[rosmaster.master][INFO] 2016-07-06 03:31:18,711: +SERVICE [/rosapi/service_response_details] /rosapi http://ros-indigo-desktop-trusty64:36594/
+[rosmaster.master][INFO] 2016-07-06 03:31:18,714: +SERVICE [/rosapi/set_param] /rosapi http://ros-indigo-desktop-trusty64:36594/
+[rosmaster.master][INFO] 2016-07-06 03:31:18,716: +SERVICE [/rosapi/get_param] /rosapi http://ros-indigo-desktop-trusty64:36594/
+[rosmaster.master][INFO] 2016-07-06 03:31:18,719: +SERVICE [/rosapi/has_param] /rosapi http://ros-indigo-desktop-trusty64:36594/
+[rosmaster.master][INFO] 2016-07-06 03:31:18,721: +SERVICE [/rosapi/search_param] /rosapi http://ros-indigo-desktop-trusty64:36594/
+[rosmaster.master][INFO] 2016-07-06 03:31:18,724: +SERVICE [/rosapi/delete_param] /rosapi http://ros-indigo-desktop-trusty64:36594/
+[rosmaster.master][INFO] 2016-07-06 03:31:18,726: +SERVICE [/rosapi/get_param_names] /rosapi http://ros-indigo-desktop-trusty64:36594/
+[rosmaster.master][INFO] 2016-07-06 03:31:18,728: +SERVICE [/rosapi/get_time] /rosapi http://ros-indigo-desktop-trusty64:36594/
+[rosmaster.master][INFO] 2016-07-06 03:31:18,733: publisherUpdate[/rosout] -> http://ros-indigo-desktop-trusty64:46651/
+[rosmaster.master][INFO] 2016-07-06 03:31:18,740: publisherUpdate[/rosout] -> http://ros-indigo-desktop-trusty64:46651/
+[rosmaster.master][INFO] 2016-07-06 04:59:01,986: -PUB [/rosout] /rosapi http://ros-indigo-desktop-trusty64:36594/
+[rosmaster.master][INFO] 2016-07-06 04:59:01,988: -SERVICE [/rosapi/get_loggers] /rosapi rosrpc://ros-indigo-desktop-trusty64:37644
+[rosmaster.master][INFO] 2016-07-06 04:59:01,989: -PUB [/rosout] /rosbridge_websocket http://ros-indigo-desktop-trusty64:57039/
+[rosmaster.master][INFO] 2016-07-06 04:59:01,989: -SERVICE [/rosbridge_websocket/set_logger_level] /rosbridge_websocket rosrpc://ros-indigo-desktop-trusty64:43213
+[rosmaster.master][INFO] 2016-07-06 04:59:01,990: -SERVICE [/rosbridge_websocket/get_loggers] /rosbridge_websocket rosrpc://ros-indigo-desktop-trusty64:43213
+[rosmaster.master][INFO] 2016-07-06 04:59:01,990: -SERVICE [/rosapi/has_param] /rosapi rosrpc://ros-indigo-desktop-trusty64:37644
+[rosmaster.master][INFO] 2016-07-06 04:59:01,991: -SERVICE [/rosapi/delete_param] /rosapi rosrpc://ros-indigo-desktop-trusty64:37644
+[rosmaster.master][INFO] 2016-07-06 04:59:01,992: -SERVICE [/rosapi/search_param] /rosapi rosrpc://ros-indigo-desktop-trusty64:37644
+[rosmaster.master][INFO] 2016-07-06 04:59:01,992: -SERVICE [/rosapi/topic_type] /rosapi rosrpc://ros-indigo-desktop-trusty64:37644
+[rosmaster.master][INFO] 2016-07-06 04:59:01,993: -SERVICE [/rosapi/subscribers] /rosapi rosrpc://ros-indigo-desktop-trusty64:37644
+[rosmaster.master][INFO] 2016-07-06 04:59:01,994: -SERVICE [/rosapi/set_logger_level] /rosapi rosrpc://ros-indigo-desktop-trusty64:37644
+[rosmaster.master][INFO] 2016-07-06 04:59:01,995: -SERVICE [/rosapi/service_response_details] /rosapi rosrpc://ros-indigo-desktop-trusty64:37644
+[rosmaster.master][INFO] 2016-07-06 04:59:01,996: -SERVICE [/rosapi/service_host] /rosapi rosrpc://ros-indigo-desktop-trusty64:37644
+[rosmaster.master][INFO] 2016-07-06 04:59:01,996: -SERVICE [/rosapi/publishers] /rosapi rosrpc://ros-indigo-desktop-trusty64:37644
+[rosmaster.master][INFO] 2016-07-06 04:59:01,997: -SERVICE [/rosapi/topics] /rosapi rosrpc://ros-indigo-desktop-trusty64:37644
+[rosmaster.master][INFO] 2016-07-06 04:59:01,998: -SERVICE [/rosapi/get_param_names] /rosapi rosrpc://ros-indigo-desktop-trusty64:37644
+[rosmaster.master][INFO] 2016-07-06 04:59:01,998: -SERVICE [/rosapi/get_time] /rosapi rosrpc://ros-indigo-desktop-trusty64:37644
+[rosmaster.master][INFO] 2016-07-06 04:59:01,999: -SERVICE [/rosapi/message_details] /rosapi rosrpc://ros-indigo-desktop-trusty64:37644
+[rosmaster.master][INFO] 2016-07-06 04:59:02,000: -SERVICE [/rosapi/services] /rosapi rosrpc://ros-indigo-desktop-trusty64:37644
+[rosmaster.master][INFO] 2016-07-06 04:59:02,001: -SERVICE [/rosapi/service_node] /rosapi rosrpc://ros-indigo-desktop-trusty64:37644
+[rosmaster.master][INFO] 2016-07-06 04:59:02,001: publisherUpdate[/rosout] -> http://ros-indigo-desktop-trusty64:46651/
+[rosmaster.master][INFO] 2016-07-06 04:59:02,001: -SERVICE [/rosapi/services_for_type] /rosapi rosrpc://ros-indigo-desktop-trusty64:37644
+[rosmaster.master][INFO] 2016-07-06 04:59:02,003: publisherUpdate[/rosout] -> http://ros-indigo-desktop-trusty64:46651/
+[rosmaster.master][INFO] 2016-07-06 04:59:02,003: -SERVICE [/rosapi/nodes] /rosapi rosrpc://ros-indigo-desktop-trusty64:37644
+[rosmaster.master][INFO] 2016-07-06 04:59:02,004: -SERVICE [/rosapi/set_param] /rosapi rosrpc://ros-indigo-desktop-trusty64:37644
+[rosmaster.master][INFO] 2016-07-06 04:59:02,005: -SERVICE [/rosapi/service_providers] /rosapi rosrpc://ros-indigo-desktop-trusty64:37644
+[rosmaster.master][INFO] 2016-07-06 04:59:02,006: -SERVICE [/rosapi/get_param] /rosapi rosrpc://ros-indigo-desktop-trusty64:37644
+[rosmaster.master][INFO] 2016-07-06 04:59:02,006: -SERVICE [/rosapi/topics_for_type] /rosapi rosrpc://ros-indigo-desktop-trusty64:37644
+[rosmaster.master][INFO] 2016-07-06 04:59:02,007: -SERVICE [/rosapi/service_request_details] /rosapi rosrpc://ros-indigo-desktop-trusty64:37644
+[rosmaster.master][INFO] 2016-07-06 04:59:02,008: -SERVICE [/rosapi/service_type] /rosapi rosrpc://ros-indigo-desktop-trusty64:37644
+[rosmaster.master][INFO] 2016-07-06 04:59:02,414: -PUB [/rosout_agg] /rosout http://ros-indigo-desktop-trusty64:46651/
+[rosmaster.master][INFO] 2016-07-06 04:59:02,416: -SUB [/rosout] /rosout http://ros-indigo-desktop-trusty64:46651/
+[rosmaster.master][INFO] 2016-07-06 04:59:02,417: -SERVICE [/rosout/get_loggers] /rosout rosrpc://ros-indigo-desktop-trusty64:44928
+[rosmaster.master][INFO] 2016-07-06 04:59:02,418: -SERVICE [/rosout/set_logger_level] /rosout rosrpc://ros-indigo-desktop-trusty64:44928
+[rosmaster.main][INFO] 2016-07-06 04:59:02,606: keyboard interrupt, will exit
+[rosmaster.main][INFO] 2016-07-06 04:59:02,607: stopping master...
+[rospy.core][INFO] 2016-07-06 04:59:02,608: signal_shutdown [atexit]
