@@ -1,0 +1,148 @@
+
+
+1467823697.502369681  Node Startup
+1467823698.424806118 INFO [rosbridge_websocket:141(<module>) [topics: /rosout] Rosbridge WebSocket server started on port 9090
+1467823698.682002067 INFO [rosapi_node:175(<module>) [topics: /rosout] Rosapi started
+1467823700.997852087 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467823701.419553995 ERROR [protocol.py:363(log) [topics: /rosout] [Client 0] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+1467823765.147280931 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467823765.539545059 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467823765.951456069 ERROR [protocol.py:363(log) [topics: /rosout] [Client 1] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+1467823776.378355026 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467823776.890546083 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467823777.322366952 ERROR [protocol.py:363(log) [topics: /rosout] [Client 2] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+1467824023.620877981 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467824024.115144968 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467824024.575231075 ERROR [protocol.py:363(log) [topics: /rosout] [Client 3] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+1467824522.696558952 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467824523.172204971 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467824523.668680906 ERROR [protocol.py:363(log) [topics: /rosout] [Client 4] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+1467824587.719161033 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467824588.123820066 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467824588.564177036 ERROR [protocol.py:363(log) [topics: /rosout] [Client 5] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+1467824820.363528013 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467824820.815165996 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467824821.331016063 ERROR [protocol.py:363(log) [topics: /rosout] [Client 6] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+1467824927.342045068 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467824927.682558059 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467824928.120425939 ERROR [protocol.py:363(log) [topics: /rosout] [Client 7] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+1467825002.409542083 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467825002.800658941 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467825003.272083044 ERROR [protocol.py:363(log) [topics: /rosout] [Client 8] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+1467825007.927237987 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467825008.229298114 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467825008.623691082 ERROR [protocol.py:363(log) [topics: /rosout] [Client 9] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+1467825044.039608955 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467825044.416275024 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467825044.890547037 ERROR [protocol.py:363(log) [topics: /rosout] [Client 10] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+1467825930.602725982 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467826174.155088901 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467826174.546365976 ERROR [protocol.py:363(log) [topics: /rosout] [Client 11] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+1467826221.514266967 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467826222.006561040 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467826222.391580104 ERROR [protocol.py:363(log) [topics: /rosout] [Client 12] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+1467826253.837234973 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467826254.317400932 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467826254.659378051 ERROR [protocol.py:363(log) [topics: /rosout] [Client 13] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+1467826289.881197929 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467826290.331556081 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467826290.737317085 ERROR [protocol.py:363(log) [topics: /rosout] [Client 14] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+1467826515.369575023 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467826515.912731885 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467826516.305974960 ERROR [protocol.py:363(log) [topics: /rosout] [Client 15] [id: subscribe:/test:1] subscribe: Cannot infer topic type for topic /test as it is not yet advertised
+1467826594.660841941 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467826595.145926952 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467826623.871009111 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467826624.395982027 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467826722.025640964 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467826722.539443016 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467826738.219667911 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467826738.775278091 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467826759.028882980 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467826759.423562049 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467826892.779058933 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467826893.348956108 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467826941.361442089 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467826941.872009038 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467827023.142107963 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467827023.855865001 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467827041.545933008 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467827042.050519943 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467827066.429605960 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467827066.940466880 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467827186.476191997 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467827186.987410068 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467827208.685543060 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467827209.178158044 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467827295.674061059 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467827296.102170944 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467827331.723201036 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467827332.234982013 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467827355.185525894 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467827355.581909894 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467827644.116957902 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467827644.680092096 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467828429.405518054 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467828430.004261016 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467828509.312897920 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467828509.835011005 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467828604.280719041 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467828604.833236932 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467828696.963207006 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467828697.549202919 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467828766.561018943 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467828767.067437887 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467829031.369757890 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467829032.887286901 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467830206.422225952 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467830290.700614929 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467830752.073561906 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467830752.647634983 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467830847.678173065 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467830848.370441913 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467831116.273514986 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467831116.869968891 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467831120.401886940 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467831120.835736989 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467831153.457096099 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467831153.994899988 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467831232.360174894 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467831232.978176116 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467831964.209270954 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467831964.839638948 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467831988.628197908 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467831989.200948953 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467832168.030597925 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467832168.741027116 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467832188.896734952 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467832189.502093076 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467832744.794723033 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467832745.336431026 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467833210.627166032 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467833211.065351963 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467833314.384444952 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467833314.999602079 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467833356.489965915 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467833360.656573057 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467833470.936145067 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467833471.497802019 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467833721.430737972 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467833722.061609983 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467833829.171842098 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467833829.803029060 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467833890.057595014 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467833890.513206958 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467833939.893122911 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467833940.465926885 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467834004.394047021 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467834005.047547101 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467834338.157061100 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467834338.840131998 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467834507.192864894 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467834507.901460886 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467834620.349317073 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467834620.913722991 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467834652.638067007 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467834653.215432882 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467834738.733901977 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467834739.272711992 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.

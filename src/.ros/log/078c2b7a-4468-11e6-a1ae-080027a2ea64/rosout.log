@@ -1,0 +1,22 @@
+
+
+1467912428.213009645  Node Startup
+1467912428.877756118 INFO [rosbridge_websocket:141(<module>) [topics: /rosout] Rosbridge WebSocket server started on port 9090
+1467912428.924566984 INFO [rosapi_node:175(<module>) [topics: /rosout] Rosapi started
+1467912483.347176074 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467917482.522509098 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467917483.056531906 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467917618.486843109 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467917618.984162092 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467917647.255745887 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467917647.752573966 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467917834.099049091 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467917834.390254020 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467917944.099328041 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467917944.604257106 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467918005.719799995 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467918006.146783113 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467918289.200474023 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467918289.772855997 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.
+1467918294.330986976 INFO [websocket_handler.py:109(on_close) [topics: /rosout] Client disconnected. 0 clients total.
+1467918294.580235958 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.

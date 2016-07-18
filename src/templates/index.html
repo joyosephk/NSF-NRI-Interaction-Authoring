@@ -6,27 +6,49 @@
 
 <body ng-controller="mainController">
 	<div id="rosPoint"></div>	
-	<div id="menu" class="menu">
-		<div class="menu-item" >
-			<h3 class="btn btn-expander" data-for="object_creator">New object</h3>
-			<div class="expander-field" id="object_creator">
-          <select name="type"> 
-
-						<option value="null">Select Type</option>
-            <option ng-repeat"n in models" value="1">{{'{{n}'}}</option>
-					</select>	
-
+		<div id="menu" class="menu">
+			<div class="menu-item" >
+				<h3 class="btn btn-expander" data-for="object_creator" ng-click= expandField($event)>New Object</h3>
+				<div class="expander-field" id="object_creator">
+						<select ng-options="n.name for n in models" ng-model="selected"> </select>	
+						<h5>Position</h5>
+						<label for="x">X</label><input name="x" type="number" ng-model="pos.x"/>
+						<label for="y">Y</label><input name="y" type="number" ng-model="pos.y"/>
+						<label for="z">Z</label><input name="z" type="number" ng-model="pos.z"/>
+						<select ng-model="type">
+							<option value="environment">environment</option>	
+							<option value="interactive">interactive</option>	
+						</select>
+						<div ng-click="formSubmit($event)"  class="btn btn-submit">Add</div>	
+				</div>
 			</div>
-		</div>
-
+			<div class="menu-item">
+				<h3 class="btn btn-expander" data-for="object-editor" ng-click=expandField($event)>Edit Object</h3>
+				<div class="expander-field" id="object-editor"  >
+					<select ng-model="selected"  ng-options="obj as obj.uuid for obj in objects" ></select>
+					<h5>Position</h5>
+					<label for="x">X</label><input ng-change="updateEditor()" name="x" type="number" ng-model="pos.x"/>
+					<label for="y">Y</label><input ng-change="updateEditor()" name="y" type="number" ng-model="pos.y"/>
+					<label for="z">Z</label><input  ng-change="updateEditor()" name="z" type="number" ng-model="pos.z"/>
+					<h5>Rotation</h5>
+					<label for="x">X</label><input name="x" type="number" ng-model="rot.x"/>
+					<label for="y">Y</label><input name="y" type="number" ng-model="rot.y"/>
+					<label for="z">Z</label><input name="z" type="number" ng-model="rot.z"/>
+					<h5>Scale</h5>
+					<label for="scale">Factor</label><input name="scale" ng-model="scale" type="number"/>
+					 
+					<div class="btn btn-submit" ng-click="updateEditor()">update all</div>
+				</div>
+			</div>
 	</div>			
 
 </body>
-<script src="static/bower_components/angular/angular.js"></script>
+<script src="static/bower_components/angular/angular.min.js"></script>
 <script src="static/bower_components/eventemitter2/lib/eventemitter2.js"></script>
-<script src="static/bower_components/roslib/build/roslib.js"></script>
+<script src="static/bower_components/roslib/build/roslib.min.js"></script>
 <script src="static/bower_components/three.js/build/three.js"></script>
+<script src="static/collada.js"></script>
 <script src="static/bower_components/ros3d/build/ros3d.js"></script>
-<script src="static/app.js"></script>
 <script src="static/angular-app.js"></script>
+<script src="static/app.js"></script>
 </html>

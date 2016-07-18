@@ -1,1 +1,0 @@
-rosrun moveit_ikfast create_ikfast_moveit_plugin.py mico arm mico_ikfast_arm_plugin /home/cbodden/ROS/Robots/KinovaMico/wpi_jaco/src/mico_ikfast_arm_plugin/src/mico_arm_ikfast_solver.cpp

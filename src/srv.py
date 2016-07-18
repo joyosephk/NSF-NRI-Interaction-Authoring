@@ -13,9 +13,15 @@ models_path = "static/models"
 def listModels():
     models = []
     for entry in os.listdir(models_path):
-        print(entry)
-        models.append(entry)
+        if entry != ".DS_Store":
+            models.append(entry)
     return json.dumps(models)
+@app.route("/models/get/<name>")
+def getModelInfo(name):
+    #returns the path of the model's JSON file, in
+    #the future it will also return what type of file it is
+    # and other relevant object information like rotation needs and so forth
+    pass
 
 if __name__== '__main__':
     app.run(debug = True)
