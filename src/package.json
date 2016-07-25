@@ -1,0 +1,21 @@
+{
+  "name": "wisc-nsf-nri",
+  "version": "0.0.1",
+  "description": "Therbligs Motion Study",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-uglify": "^1.5.4",
+    "pump": "^1.0.1"
+  },
+  "scripts": {
+    "test": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "."
+  },
+  "author": "Josh McGrath",
+  "license": "MIT"
+}

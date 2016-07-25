@@ -20,11 +20,15 @@ angular_app.factory('models',["$http",function($http){
 
 //MAIN CONTROLLER
 angular_app.controller('mainController',["$scope","models","simulation",function($scope, models, simulation){
+	$scope.positions = simulation.getPositions();
+	$scope.nextID = 0;
 	$scope.pos = new THREE.Vector3();
 	$scope.rot = new THREE.Vector3();
 	$scope.objects = simulation.getObjects();
 	$scope.models = [];
-
+	$scope.moveArm = function(){
+		simulation.moveArm()
+	}
 	models.list_models().success(function(value){
 		objList = value.map(function(item){
 			obj = { name: item};
@@ -45,6 +49,10 @@ angular_app.controller('mainController',["$scope","models","simulation",function
 		}else{
 			target.style.display = "none";
 		}
+	}
+	$scope.savePos = function(){
+		simulation.savePos($scope.name, scope.nextID);
+		nextID++;
 	}
 	$scope.updateEditor = function(){
 		//simulation.changeColor($scope.selected);

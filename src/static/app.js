@@ -1,32 +1,67 @@
-angular_app.factory('simulation', ["models",function(models){
+angular_app.factory('simulation', ["models","$http",function(models, $http){
 	var environment_objects = [];
 	var interactive_objects = [];
-	var url = "ws://localhost:9090";
+	var url = "ws://50e8ad16.ngrok.io/"
 	var ros = new ROSLIB.Ros({
 		url: url
 	});
+	var incoming = new ROSLIB.Topic({
+		ros: ros, 
+		name: '/joint_position_inbox',
+		mesageType: 'geometry_msgs/Pose'
+	});
+	var rec;
+	
+	var outgoing = new ROSLIB.Topic({
+		ros: ros,
+		name: 'joint_position_remote',
+		messageType:'geometry_msgs/Pose'
+	});
+	outgoing.advertise();
+
 	var viewer = new ROS3D.Viewer({
 		divID:'rosPoint',
 		width: window.innerWidth,
 		height: window.innerHeight,
-		antialias: true,
-		intensity: 0.1
+		background:'#002232',
+		antialias: true
 	});
+	
+
+	window.viewer = viewer;
+	
 	var tf = new ROSLIB.TFClient({
 		ros: ros,
 		angularThres : 0.01,
 		transThres : 0.01,
-		rate : 10.0,
-		fixedFrame: '/tf_static'
+		rate : 10.0
+	});
+	
+	var geom = new THREE.SphereGeometry(.2,60,60);
+	var material = new THREE.MeshBasicMaterial( {color: 0xffff00} );
+	var sphere = new THREE.Mesh(geom,material);
+	//mark the sphere as the end effector
+	sphere.endEffector = true;
+	viewer.addObject(sphere,true);
 		
-	});
-	var urdf = new ROS3D.UrdfClient({
-		ros: ros,
-		tfClient: tf,
-		path: '/static/',
-		rootObject: viewer.scene,
-		loader: ROS3D.COLLADA_LOADER_2
-	});
+	
+	window.wireframe = function(obj){
+		obj.traverse(function(object){
+			if(object.material){
+				object.material.wireframe = true;
+			
+			}
+		});
+	}
+	var boundingRadius = 1;
+	var isInBoundingSphere = function(vec){
+		//calculate the bounding sphere of the arms motion
+		return vec.length() <= boundingRadius
+	}
+
+//	urdf.change(function(e){
+	//	console.log(e)	
+//	});
 	var raycaster = new THREE.Raycaster();
 	var mouse = new THREE.Vector2();
 	var  onMouseMove = function( event ) {
@@ -34,15 +69,25 @@ angular_app.factory('simulation', ["models",function(models){
 			// 	// (-1 to +1) for both components
 			mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
 			mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;		
+			raycaster.set(mouse, viewer.camera);
+			var intersects = raycaster.intersectObjects(viewer.scene.children);
+			for(i in intersects){
+				if(intersects[i].endEffector){
+					console.log("you're on the end effector!");
+				}
+			}
 	}
-	//document.addEventListener('mousemove', onMouseMove);
-	var mat = new THREE.MeshPhongMaterial({
-		color: 0x2491ce,
-		wireframe: true,
-		wireframeLinewidth: 10,
-		emissiveIntensity: .05,
-		emissive: 0x00ff00
+	var rec;
+	document.addEventListener('mousemove', onMouseMove);
+	incoming.subscribe(function(data){
+		if(!rec){
+			rec = data;
+			console.log(rec);
+		}
+		vec = data.position
+		 moveObject(sphere,new THREE.Vector3(vec.x, vec.y,vec.z));
 	});
+
 	var loader = new THREE.ObjectLoader();
 	var moveObject = function(object,vec){
 		//TODO right now this just move by distances
@@ -91,11 +136,11 @@ angular_app.factory('simulation', ["models",function(models){
 		object.traverse(function(obj, undo){
 			if(obj.material){
 				if(undo){
-					obj.material.color = obj.undoColor;
+			//		obj.material.color = obj.undoColor;
 				}else{
 					//TODO this is changing the color of lights too, fix it
-					obj.undoColor = obj.material.color;
-					obj.material.color = 0xFFFFFF;
+				//	obj.undoColor = obj.material.color;
+					//obj.material.color = 0xFFFFFF;
 				}
 			}
 		});
@@ -106,6 +151,18 @@ angular_app.factory('simulation', ["models",function(models){
 		object.applyMatrix(mat);
 
 	}
+	var moveArm = function(vec){
+		outgoing.publish(new ROSLIB.Message({
+			position:	new ROSLIB.Vector3(0.2117910853402465,-0.26117743992187786,0.47370996918522384), 
+			orientation:	new ROSLIB.Quaternion( 0.39724309036810795,0.3709431717747427,-0.6039290090423478,0.47370996918522384)
+		}));
+	}
+	//array of objects
+	var positions = [];
+	var savePos = function(name , id, vec){
+		
+	}
+
 
 	return{
 		addObject: addObject,
@@ -114,6 +171,10 @@ angular_app.factory('simulation', ["models",function(models){
 		moveObject: moveObject,
 		changeColor: changeColor,
 		rotateObject: rotateObject,
-		scaleObject: scaleObject
+		scaleObject: scaleObject,
+		moveArm: moveArm,
+		savePos:savePos,
+		getPositions: getPositions
+
 	}
 }]);

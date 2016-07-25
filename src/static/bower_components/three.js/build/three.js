@@ -13104,6 +13104,9 @@ THREE.Material.prototype = {
 
 			if ( newValue === undefined ) {
 
+				if(key == 'color'){
+					newValue = '#FFF';
+				}
 				console.warn( 'THREE.Material: \'' + key + '\' parameter is undefined.' );
 				continue;
 
