@@ -1,6 +1,9 @@
+$medium-red: #990000;
+$tan:        #eee5c7;
+$badger-red: #b70101;
 .menu{
 	position:absolute;
-	background: #990000;
+	background: $medium-red;
 	border-radius: 6px;
 	margin: 20px 5px;
 	float: left;
@@ -16,26 +19,25 @@
 .menu-item{
 	padding: 10px;
 	margin: 5px;
-	background: #eee5c7;
+	background: $tan;
 	opacity: inherit;
 }
 input{
 	display: block;
 }
 .btn{
-	padding: 2px;
+	padding: 2px 4px;
 	border-radius: 3px;
 	margin: 2px;
 	opacity: inherit;
 }
 .btn-submit{
-	background: #b70101;
+	background: $badger-red;
 }
 .btn-submit:hover{
-	background: #c81212;
+	background: darken($badger-red, 10%);  
 }
 #rosPoint {
-
 	z-index: -1;
 }
 body{

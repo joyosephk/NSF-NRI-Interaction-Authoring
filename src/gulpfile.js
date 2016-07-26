@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var uglify = require('gulp-uglify');
 var pump = require('pump');
 var concat = require('gulp-concat');
+var scss = require('gulp-scss');
 
 gulp.task('concat-minify',function(){
 			gulp.src(['js/bower_components/eventemitter2/lib/eventemitter2.js',
@@ -13,6 +14,11 @@ gulp.task('concat-minify',function(){
    				 .pipe(uglify())
 					 .pipe(concat('index.js'))
 					 .pipe(gulp.dest('./static/build'));
+});
+gulp.task('sass2css',function(){
+	gulp.src("styles/**/*.scss")
+	.pipe(scss())
+	.pipe(gulp.dest('./static'))
 });
 
 gulp.task('default',function(){
