@@ -2,8 +2,17 @@ from flask import *
 import sys
 from json import *
 import os
-import ZODB
+from ZODB import FileStorage, DB
+import transaction
+import PGraph
+from actions import ActionHandler
+import rospy
+from moveit_commander import RobotCommander, os, PlanningSceneInterface, roscpp_initialize, roscpp_shutdown
+import sys
+
 app = Flask(__name__)
+
+
 
 @app.route("/")
 def index():
@@ -24,10 +33,63 @@ def getModelInfo(name):
     # and other relevant object information like rotation needs and so forth
     pass
 
+# get all stored positions
 @app.route("/positions/get")
 def getPositions():
-    #marshall
-    pass
+    positions = {}
+    for key in pGraph:
+        positions[key] = pGraph[key]
+    return json.dumps(positions)
+
+# save new position
+def putPosition():
+    pGraph.addNode(ID, name, acHan)
+
+# move arm
+def putArmGo():
+    pGraph.setCurrNode(ID, acHan)
+
+# make plan
+def putPlan():
+    pGraph.makePath(ID, acHan)
+
+# move to a node
+def putArmMove():
+    pGraph.moveTo(ID, acHan)
 
 if __name__== '__main__':
-    app.run(debug = True)
+    ############### ROS setup #######################
+    node_name = 'mico_planner'
+    group_name = 'arm'
+    planner_name = 'RRTstarkConfigDefault'
+    ee_link_name = 'mico_link_endeffector'
+
+    roscpp_initialize(sys.argv)
+    rospy.init_node(node_name, anonymous=True)
+
+    acHan = ActionHandler(group_name, planner_name, ee_link_name)
+
+    rospy.sleep(1)
+    #################################################
+    print "running"
+
+    # Database setup
+    storage = FileStorage.FileStorage("pGraph.fs")
+    db = DB(storage)
+    conn = db.open()
+    pGraphDB = conn.root()
+
+    if not pGraphDB.has_key("graph"):
+        pGraphDB["graph"] = PGraph.PGraph()
+
+    # Variables
+    pGraph = pGraphDB["graph"]
+
+    # clear persistent program memory
+    pGraph.setCurrNodeNone()
+
+    # save initial position
+    pGraph.addNode(9999, "initalposition", acHan)
+    transaction.commit()
+    app.run(debug = True, use_reloader=False)
+
