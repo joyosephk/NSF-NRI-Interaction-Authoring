@@ -1,8 +1,8 @@
 angular_app.factory('simulation', ["models","$http",'ros',function(models, $http, ros){
 	var environment_objects = [];
 	var interactive_objects = [];
-	var url = "ws://demo.robotwebtools.org:9090"; 
-  var ros = new ROSLIB.Ros({
+	var url = "ws://localhost:9090/"
+	var ros = new ROSLIB.Ros({
 		url: url
 	});
 	var incoming = new ROSLIB.Topic({

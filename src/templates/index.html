@@ -45,8 +45,13 @@
 				<div class="expander-field" id="roboMove">
 					<div class="btn btn-submit" ng-click="moveArm()">move arm</div>
 					<div class="form-container">
-						<label for="name"><input name="name" ng-model="poseName" type="text"/>
+						<label for="name">name:</label><input name="name" ng-model="poseName" type="text"/>
 						<div class="btn btn-submit" ng-click="savePos()">Save Current Position</div>
+					</div>
+					<div class="form-container">
+						<h4>Move to pose</h4>
+						<label for="pose_name">Pose Name</label>
+						<select ng-model="posToMove" ng-options="obj as obj.name for obj in positions" ng-change="previewPosition()"/>
 					</div>
 				</div>
 			</div>
