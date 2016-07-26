@@ -21,8 +21,8 @@ angular_app.factory('models',["$http",function($http){
 //MAIN CONTROLLER
 angular_app.controller('mainController',["$scope","models","simulation", "ros",function($scope, models, simulation, ros){
 	$scope.positions =  [];
-		ros.getPositions().sucess(function(value){
-			$scope.positions = vlaue;
+		ros.getPositions().success(function(value){
+			$scope.positions = value;
 		})
 
 	$scope.pos = new THREE.Vector3();
@@ -33,7 +33,12 @@ angular_app.controller('mainController',["$scope","models","simulation", "ros",f
 		simulation.moveArm()
 	}
 	$scope.previewPosition = function(){
-		var vec = $scope.posToMove.pose.position;
+		//var vec = $scope.posToMove.pose.position;
+		console.log(posTomove)
+		ros.moveTo($scope.posToMove.id);
+	}
+	$scope.moveToPosition = function(){
+		ros.moveTo($scope.posToMove.id);
 	}
 
 	models.list_models().success(function(value){

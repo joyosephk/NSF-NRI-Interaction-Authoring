@@ -4,12 +4,11 @@ angular_app.factory('ros',['$http', function($http){
 	  return $http.get('/positions/get');
 	}
 	var savePosition = function(name){
-		return $http.post('/positions/save',{
-			name: name
-		});
+		return $http.get('/positions/save/'+name);
 	}
 	var moveTo = function(id){
-	
+		return $http.get('/positions/move/'+id);
+
 	}
 	return {
 		getPositions: getPositions,
