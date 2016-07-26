@@ -9,6 +9,7 @@ from actions import ActionHandler
 import rospy
 from moveit_commander import RobotCommander, os, PlanningSceneInterface, roscpp_initialize, roscpp_shutdown
 import sys
+import random
 
 app = Flask(__name__)
 
@@ -36,17 +37,18 @@ def getModelInfo(name):
 # get all stored positions
 @app.route("/positions/get")
 def getPositions():
-    positions = {}
-    for key in pGraph:
-        positions[key] = pGraph[key]
+    positions = pGraph.getAuthoringInfo()
     return json.dumps(positions)
 
 # save new position
-def putPosition():
+@app.route("/positions/save/<name>")
+def putPosition(name):
+    ID = random.random()
     pGraph.addNode(ID, name, acHan)
 
 # move arm
-def putArmGo():
+@app.route("/positions/move/<id>")
+def putArmGo(ID):
     pGraph.setCurrNode(ID, acHan)
 
 # make plan
