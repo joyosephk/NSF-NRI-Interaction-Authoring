@@ -2,6 +2,7 @@ from flask import *
 import sys
 from json import *
 import os
+import ZODB
 app = Flask(__name__)
 
 @app.route("/")
@@ -21,6 +22,11 @@ def getModelInfo(name):
     #returns the path of the model's JSON file, in
     #the future it will also return what type of file it is
     # and other relevant object information like rotation needs and so forth
+    pass
+
+@app.route("/positions/get")
+def getPositions():
+    #marshall
     pass
 
 if __name__== '__main__':
