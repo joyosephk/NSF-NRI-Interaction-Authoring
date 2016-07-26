@@ -1,0 +1,1025 @@
+[rospy.client][INFO] 2016-07-13 21:26:39,071: init_node, name[/rosbridge_websocket], pid[3872]
+[xmlrpc][INFO] 2016-07-13 21:26:39,072: XML-RPC server binding to 0.0.0.0:0
+[rospy.init][INFO] 2016-07-13 21:26:39,076: ROS Slave URI: [http://ros-indigo-desktop-trusty64:49178/]
+[xmlrpc][INFO] 2016-07-13 21:26:39,075: Started XML-RPC server [http://ros-indigo-desktop-trusty64:49178/]
+[rospy.impl.masterslave][INFO] 2016-07-13 21:26:39,077: _ready: http://ros-indigo-desktop-trusty64:49178/
+[xmlrpc][INFO] 2016-07-13 21:26:39,078: xml rpc node: starting XML-RPC server
+[rospy.registration][INFO] 2016-07-13 21:26:39,079: Registering with master node http://localhost:11311
+[rospy.init][INFO] 2016-07-13 21:26:39,177: registered with master
+[rospy.rosout][INFO] 2016-07-13 21:26:39,178: initializing /rosout core topic
+[rospy.rosout][INFO] 2016-07-13 21:26:39,183: connected to core topic /rosout
+[rospy.simtime][INFO] 2016-07-13 21:26:39,186: /use_sim_time is not set, will not subscribe to simulated time [/clock] topic
+[rosout][INFO] 2016-07-13 21:26:39,231: Rosbridge WebSocket server started on port 9090
+[rospy.internal][INFO] 2016-07-13 21:26:39,403: topic[/rosout] adding connection to [/rosout], count 0
+[rospy.core][INFO] 2016-07-13 21:26:41,745: signal_shutdown [signal-2]
+[rospy.internal][INFO] 2016-07-13 21:26:41,765: topic[/rosout] removing connection to /rosout
+[rospy.impl.masterslave][INFO] 2016-07-13 21:26:41,766: signal-2
+[rospy.core][INFO] 2016-07-13 21:26:42,398: signal_shutdown [atexit]
+[rospy.client][INFO] 2016-07-13 21:27:18,012: init_node, name[/rosbridge_websocket], pid[3988]
+[xmlrpc][INFO] 2016-07-13 21:27:18,015: XML-RPC server binding to 0.0.0.0:0
+[xmlrpc][INFO] 2016-07-13 21:27:18,017: Started XML-RPC server [http://ros-indigo-desktop-trusty64:44542/]
+[rospy.init][INFO] 2016-07-13 21:27:18,017: ROS Slave URI: [http://ros-indigo-desktop-trusty64:44542/]
+[rospy.impl.masterslave][INFO] 2016-07-13 21:27:18,017: _ready: http://ros-indigo-desktop-trusty64:44542/
+[xmlrpc][INFO] 2016-07-13 21:27:18,020: xml rpc node: starting XML-RPC server
+[rospy.registration][INFO] 2016-07-13 21:27:18,022: Registering with master node http://localhost:11311
+[rospy.init][INFO] 2016-07-13 21:27:18,127: registered with master
+[rospy.rosout][INFO] 2016-07-13 21:27:18,128: initializing /rosout core topic
+[rospy.rosout][INFO] 2016-07-13 21:27:18,139: connected to core topic /rosout
+[rospy.simtime][INFO] 2016-07-13 21:27:18,144: /use_sim_time is not set, will not subscribe to simulated time [/clock] topic
+[rosout][INFO] 2016-07-13 21:27:18,183: Rosbridge WebSocket server started on port 9090
+[rospy.internal][INFO] 2016-07-13 21:27:18,393: topic[/rosout] adding connection to [/rosout], count 0
+[rosout][INFO] 2016-07-13 21:27:28,127: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-13 21:27:28,588: [Client 0] [id: advertise:/tf2_web_republisher/goal:1] advertise: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-13 21:27:29,120: [Client 0] [id: subscribe:/tf2_web_republisher/feedback:3] subscribe: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-13 21:27:29,237: [Client 0] [id: publish:/tf2_web_republisher/goal:5] publish: Cannot infer topic type for topic /tf2_web_republisher/goal as it is not yet advertised
+[rospy.internal][INFO] 2016-07-13 21:38:02,882: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rosout][INFO] 2016-07-13 21:38:02,898: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-13 21:38:03,362: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-13 21:38:55,981: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-13 21:38:56,574: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-13 21:38:57,181: [Client 2] [id: advertise:/tf2_web_republisher/goal:1] advertise: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-13 21:38:57,216: [Client 2] [id: subscribe:/tf2_web_republisher/feedback:3] subscribe: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-13 21:38:57,409: [Client 2] [id: publish:/tf2_web_republisher/goal:5] publish: Cannot infer topic type for topic /tf2_web_republisher/goal as it is not yet advertised
+[rospy.internal][INFO] 2016-07-13 21:41:47,630: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rosout][INFO] 2016-07-13 21:41:47,638: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-13 21:41:48,215: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-13 21:41:48,682: [Client 3] [id: advertise:/tf2_web_republisher/goal:1] advertise: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-13 21:41:48,709: [Client 3] [id: subscribe:/tf2_web_republisher/feedback:3] subscribe: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-13 21:41:48,901: [Client 3] [id: publish:/tf2_web_republisher/goal:5] publish: Cannot infer topic type for topic /tf2_web_republisher/goal as it is not yet advertised
+[rospy.internal][INFO] 2016-07-13 21:44:37,900: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rosout][INFO] 2016-07-13 21:44:37,906: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-13 21:44:38,524: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-13 21:44:38,945: [Client 4] [id: advertise:/tf2_web_republisher/goal:1] advertise: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-13 21:44:38,974: [Client 4] [id: subscribe:/tf2_web_republisher/feedback:3] subscribe: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-13 21:44:39,143: [Client 4] [id: publish:/tf2_web_republisher/goal:5] publish: Cannot infer topic type for topic /tf2_web_republisher/goal as it is not yet advertised
+[rospy.internal][INFO] 2016-07-13 21:48:08,790: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rosout][INFO] 2016-07-13 21:48:08,805: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-13 21:48:09,452: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-13 21:48:09,915: [Client 5] [id: advertise:/tf2_web_republisher/goal:1] advertise: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-13 21:48:09,936: [Client 5] [id: subscribe:/tf2_web_republisher/feedback:3] subscribe: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-13 21:48:10,148: [Client 5] [id: publish:/tf2_web_republisher/goal:5] publish: Cannot infer topic type for topic /tf2_web_republisher/goal as it is not yet advertised
+[rospy.internal][INFO] 2016-07-13 21:53:31,282: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rosout][INFO] 2016-07-13 21:53:31,290: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-13 21:53:31,962: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-13 21:53:32,417: [Client 6] [id: advertise:/tf2_web_republisher/goal:1] advertise: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-13 21:53:32,438: [Client 6] [id: subscribe:/tf2_web_republisher/feedback:3] subscribe: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-13 21:53:32,634: [Client 6] [id: publish:/tf2_web_republisher/goal:5] publish: Cannot infer topic type for topic /tf2_web_republisher/goal as it is not yet advertised
+[rospy.internal][INFO] 2016-07-13 21:54:34,180: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rosout][INFO] 2016-07-13 21:54:34,188: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-13 21:54:35,194: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-13 21:54:35,815: [Client 7] [id: advertise:/tf2_web_republisher/goal:1] advertise: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-13 21:54:35,846: [Client 7] [id: subscribe:/tf2_web_republisher/feedback:3] subscribe: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-13 21:54:36,121: [Client 7] [id: publish:/tf2_web_republisher/goal:5] publish: Cannot infer topic type for topic /tf2_web_republisher/goal as it is not yet advertised
+[rospy.internal][INFO] 2016-07-13 21:55:01,681: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rosout][INFO] 2016-07-13 21:55:01,688: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-13 21:55:02,156: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-13 21:55:02,584: [Client 8] [id: advertise:/tf2_web_republisher/goal:1] advertise: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-13 21:55:02,602: [Client 8] [id: subscribe:/tf2_web_republisher/feedback:3] subscribe: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-13 21:55:03,345: [Client 8] [id: publish:/tf2_web_republisher/goal:5] publish: Cannot infer topic type for topic /tf2_web_republisher/goal as it is not yet advertised
+[rospy.internal][INFO] 2016-07-13 21:56:27,785: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rosout][INFO] 2016-07-13 21:56:27,791: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-13 21:56:28,784: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-13 21:56:29,450: [Client 9] [id: advertise:/tf2_web_republisher/goal:1] advertise: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-13 21:56:29,489: [Client 9] [id: subscribe:/tf2_web_republisher/feedback:3] subscribe: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-13 21:56:29,676: [Client 9] [id: publish:/tf2_web_republisher/goal:5] publish: Cannot infer topic type for topic /tf2_web_republisher/goal as it is not yet advertised
+[rospy.internal][INFO] 2016-07-13 22:00:32,156: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rosout][INFO] 2016-07-13 22:00:32,162: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-13 22:00:32,666: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-13 22:00:33,067: [Client 10] [id: advertise:/tf2_web_republisher/goal:1] advertise: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-13 22:00:33,086: [Client 10] [id: subscribe:/tf2_web_republisher/feedback:3] subscribe: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-13 22:00:33,785: [Client 10] [id: publish:/tf2_web_republisher/goal:5] publish: Cannot infer topic type for topic /tf2_web_republisher/goal as it is not yet advertised
+[rospy.core][INFO] 2016-07-13 22:01:30,840: signal_shutdown [signal-2]
+[rospy.internal][INFO] 2016-07-13 22:01:30,850: topic[/rosout] removing connection to /rosout
+[rospy.impl.masterslave][INFO] 2016-07-13 22:01:30,850: signal-2
+[rospy.core][INFO] 2016-07-13 22:01:30,984: signal_shutdown [atexit]
+[rospy.client][INFO] 2016-07-13 22:01:42,540: init_node, name[/rosbridge_websocket], pid[4339]
+[xmlrpc][INFO] 2016-07-13 22:01:42,541: XML-RPC server binding to 0.0.0.0:0
+[rospy.init][INFO] 2016-07-13 22:01:42,543: ROS Slave URI: [http://ros-indigo-desktop-trusty64:36795/]
+[xmlrpc][INFO] 2016-07-13 22:01:42,543: Started XML-RPC server [http://ros-indigo-desktop-trusty64:36795/]
+[rospy.impl.masterslave][INFO] 2016-07-13 22:01:42,545: _ready: http://ros-indigo-desktop-trusty64:36795/
+[xmlrpc][INFO] 2016-07-13 22:01:42,546: xml rpc node: starting XML-RPC server
+[rospy.registration][INFO] 2016-07-13 22:01:42,549: Registering with master node http://localhost:11311
+[rospy.init][INFO] 2016-07-13 22:01:42,644: registered with master
+[rospy.rosout][INFO] 2016-07-13 22:01:42,647: initializing /rosout core topic
+[rospy.rosout][INFO] 2016-07-13 22:01:42,658: connected to core topic /rosout
+[rospy.simtime][INFO] 2016-07-13 22:01:42,668: /use_sim_time is not set, will not subscribe to simulated time [/clock] topic
+[rosout][INFO] 2016-07-13 22:01:42,715: Rosbridge WebSocket server started on port 9090
+[rospy.internal][INFO] 2016-07-13 22:01:42,874: topic[/rosout] adding connection to [/rosout], count 0
+[rosout][INFO] 2016-07-13 22:01:58,536: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-13 22:01:59,102: [Client 0] [id: advertise:/tf2_web_republisher/goal:1] advertise: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-13 22:01:59,497: [Client 0] [id: subscribe:/tf2_web_republisher/feedback:3] subscribe: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-13 22:01:59,927: [Client 0] [id: publish:/tf2_web_republisher/goal:5] publish: Cannot infer topic type for topic /tf2_web_republisher/goal as it is not yet advertised
+[rospy.core][INFO] 2016-07-13 22:02:10,628: signal_shutdown [signal-2]
+[rospy.internal][INFO] 2016-07-13 22:02:10,640: topic[/rosout] removing connection to /rosout
+[rospy.impl.masterslave][INFO] 2016-07-13 22:02:10,641: signal-2
+[rospy.core][INFO] 2016-07-13 22:02:11,263: signal_shutdown [atexit]
+[rospy.client][INFO] 2016-07-13 22:03:55,798: init_node, name[/rosbridge_websocket], pid[4450]
+[xmlrpc][INFO] 2016-07-13 22:03:55,801: XML-RPC server binding to 0.0.0.0:0
+[rospy.init][INFO] 2016-07-13 22:03:55,804: ROS Slave URI: [http://ros-indigo-desktop-trusty64:36299/]
+[xmlrpc][INFO] 2016-07-13 22:03:55,803: Started XML-RPC server [http://ros-indigo-desktop-trusty64:36299/]
+[rospy.impl.masterslave][INFO] 2016-07-13 22:03:55,809: _ready: http://ros-indigo-desktop-trusty64:36299/
+[xmlrpc][INFO] 2016-07-13 22:03:55,810: xml rpc node: starting XML-RPC server
+[rospy.registration][INFO] 2016-07-13 22:03:55,811: Registering with master node http://localhost:11311
+[rospy.init][INFO] 2016-07-13 22:03:55,908: registered with master
+[rospy.rosout][INFO] 2016-07-13 22:03:55,908: initializing /rosout core topic
+[rospy.rosout][INFO] 2016-07-13 22:03:55,914: connected to core topic /rosout
+[rospy.simtime][INFO] 2016-07-13 22:03:55,918: /use_sim_time is not set, will not subscribe to simulated time [/clock] topic
+[rosout][INFO] 2016-07-13 22:03:55,954: Rosbridge WebSocket server started on port 9090
+[rospy.internal][INFO] 2016-07-13 22:03:56,283: topic[/rosout] adding connection to [/rosout], count 0
+[rosout][INFO] 2016-07-13 22:04:13,150: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-13 22:04:13,583: [Client 0] [id: advertise:/tf2_web_republisher/goal:1] advertise: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-13 22:04:14,076: [Client 0] [id: subscribe:/tf2_web_republisher/feedback:3] subscribe: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-13 22:04:14,537: [Client 0] [id: publish:/tf2_web_republisher/goal:5] publish: Cannot infer topic type for topic /tf2_web_republisher/goal as it is not yet advertised
+[rospy.internal][INFO] 2016-07-13 22:04:59,640: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rosout][INFO] 2016-07-13 22:04:59,667: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-13 22:05:00,586: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-13 22:05:01,255: [Client 1] [id: advertise:/tf2_web_republisher/goal:1] advertise: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-13 22:05:01,278: [Client 1] [id: subscribe:/tf2_web_republisher/feedback:3] subscribe: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-13 22:05:02,091: [Client 1] [id: publish:/tf2_web_republisher/goal:5] publish: Cannot infer topic type for topic /tf2_web_republisher/goal as it is not yet advertised
+[rospy.internal][INFO] 2016-07-13 22:12:01,526: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rosout][INFO] 2016-07-13 22:12:01,563: Client disconnected. 0 clients total.
+[rospy.core][INFO] 2016-07-13 22:12:18,909: signal_shutdown [signal-2]
+[rospy.internal][INFO] 2016-07-13 22:12:18,917: topic[/rosout] removing connection to /rosout
+[rospy.impl.masterslave][INFO] 2016-07-13 22:12:18,917: signal-2
+[rospy.core][INFO] 2016-07-13 22:12:19,051: signal_shutdown [atexit]
+[rospy.client][INFO] 2016-07-18 17:26:17,687: init_node, name[/rosbridge_websocket], pid[6646]
+[xmlrpc][INFO] 2016-07-18 17:26:17,689: XML-RPC server binding to 0.0.0.0:0
+[xmlrpc][INFO] 2016-07-18 17:26:17,690: Started XML-RPC server [http://ros-indigo-desktop-trusty64:40258/]
+[rospy.impl.masterslave][INFO] 2016-07-18 17:26:17,690: _ready: http://ros-indigo-desktop-trusty64:40258/
+[rospy.init][INFO] 2016-07-18 17:26:17,690: ROS Slave URI: [http://ros-indigo-desktop-trusty64:40258/]
+[xmlrpc][INFO] 2016-07-18 17:26:17,692: xml rpc node: starting XML-RPC server
+[rospy.registration][INFO] 2016-07-18 17:26:17,696: Registering with master node http://localhost:11311
+[rospy.init][INFO] 2016-07-18 17:26:17,792: registered with master
+[rospy.rosout][INFO] 2016-07-18 17:26:17,793: initializing /rosout core topic
+[rospy.rosout][INFO] 2016-07-18 17:26:17,797: connected to core topic /rosout
+[rospy.simtime][INFO] 2016-07-18 17:26:17,800: /use_sim_time is not set, will not subscribe to simulated time [/clock] topic
+[rosout][INFO] 2016-07-18 17:26:17,831: Rosbridge WebSocket server started on port 9090
+[rospy.internal][INFO] 2016-07-18 17:26:18,006: topic[/rosout] adding connection to [/rosout], count 0
+[rosout][INFO] 2016-07-18 17:26:47,898: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-18 17:26:48,400: [Client 0] [id: advertise:/tf2_web_republisher/goal:1] advertise: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-18 17:26:48,939: [Client 0] [id: subscribe:/tf2_web_republisher/feedback:3] subscribe: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-18 17:26:49,344: [Client 0] [id: publish:/tf2_web_republisher/goal:5] publish: Cannot infer topic type for topic /tf2_web_republisher/goal as it is not yet advertised
+[rospy.internal][INFO] 2016-07-18 17:28:53,857: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rosout][INFO] 2016-07-18 17:28:53,865: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-18 17:28:54,250: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-18 17:28:54,674: [Client 1] [id: advertise:/tf2_web_republisher/goal:1] advertise: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-18 17:28:54,706: [Client 1] [id: subscribe:/tf2_web_republisher/feedback:3] subscribe: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-18 17:28:55,199: [Client 1] [id: publish:/tf2_web_republisher/goal:5] publish: Cannot infer topic type for topic /tf2_web_republisher/goal as it is not yet advertised
+[rospy.core][INFO] 2016-07-18 17:34:43,227: signal_shutdown [signal-2]
+[rospy.internal][INFO] 2016-07-18 17:34:43,236: topic[/rosout] removing connection to /rosout
+[rospy.impl.masterslave][INFO] 2016-07-18 17:34:43,237: signal-2
+[rospy.core][INFO] 2016-07-18 17:34:43,343: signal_shutdown [atexit]
+[rospy.client][INFO] 2016-07-18 17:34:58,945: init_node, name[/rosbridge_websocket], pid[6765]
+[xmlrpc][INFO] 2016-07-18 17:34:58,947: XML-RPC server binding to 0.0.0.0:0
+[xmlrpc][INFO] 2016-07-18 17:34:58,948: Started XML-RPC server [http://ros-indigo-desktop-trusty64:45857/]
+[rospy.impl.masterslave][INFO] 2016-07-18 17:34:58,949: _ready: http://ros-indigo-desktop-trusty64:45857/
+[rospy.init][INFO] 2016-07-18 17:34:58,949: ROS Slave URI: [http://ros-indigo-desktop-trusty64:45857/]
+[xmlrpc][INFO] 2016-07-18 17:34:58,953: xml rpc node: starting XML-RPC server
+[rospy.registration][INFO] 2016-07-18 17:34:58,953: Registering with master node http://localhost:11311
+[rospy.init][INFO] 2016-07-18 17:34:59,051: registered with master
+[rospy.rosout][INFO] 2016-07-18 17:34:59,051: initializing /rosout core topic
+[rospy.rosout][INFO] 2016-07-18 17:34:59,056: connected to core topic /rosout
+[rospy.simtime][INFO] 2016-07-18 17:34:59,058: /use_sim_time is not set, will not subscribe to simulated time [/clock] topic
+[rosout][INFO] 2016-07-18 17:34:59,084: Rosbridge WebSocket server started on port 9090
+[rospy.internal][INFO] 2016-07-18 17:34:59,308: topic[/rosout] adding connection to [/rosout], count 0
+[rospy.client][INFO] 2016-07-18 17:35:24,008: init_node, name[/rosbridge_websocket], pid[6841]
+[xmlrpc][INFO] 2016-07-18 17:35:24,013: XML-RPC server binding to 0.0.0.0:0
+[xmlrpc][INFO] 2016-07-18 17:35:24,017: Started XML-RPC server [http://ros-indigo-desktop-trusty64:41783/]
+[rospy.init][INFO] 2016-07-18 17:35:24,017: ROS Slave URI: [http://ros-indigo-desktop-trusty64:41783/]
+[rospy.impl.masterslave][INFO] 2016-07-18 17:35:24,018: _ready: http://ros-indigo-desktop-trusty64:41783/
+[xmlrpc][INFO] 2016-07-18 17:35:24,020: xml rpc node: starting XML-RPC server
+[rospy.registration][INFO] 2016-07-18 17:35:24,021: Registering with master node http://localhost:11311
+[rospy.init][INFO] 2016-07-18 17:35:24,120: registered with master
+[rospy.rosout][INFO] 2016-07-18 17:35:24,122: initializing /rosout core topic
+[rospy.rosout][INFO] 2016-07-18 17:35:24,128: connected to core topic /rosout
+[rospy.simtime][INFO] 2016-07-18 17:35:24,131: /use_sim_time is not set, will not subscribe to simulated time [/clock] topic
+[rospy.impl.masterslave][INFO] 2016-07-18 17:35:24,152: external shutdown request from [/master]: new node registered with same name
+[rospy.core][INFO] 2016-07-18 17:35:24,154: signal_shutdown [external shutdown request from [/master]: [new node registered with same name]]
+[rospy.internal][INFO] 2016-07-18 17:35:24,165: topic[/rosout] removing connection to /rosout
+[rosout][WARNING] 2016-07-18 17:35:24,178: Unable to start server: [Errno 98] Address already in use Retrying in 5s.
+[rospy.core][INFO] 2016-07-18 17:35:24,331: signal_shutdown [atexit]
+[rospy.internal][INFO] 2016-07-18 17:35:24,362: topic[/rosout] adding connection to [/rosout], count 0
+[rosout][INFO] 2016-07-18 17:35:29,186: Rosbridge WebSocket server started on port 9090
+[rospy.client][INFO] 2016-07-18 17:36:41,485: init_node, name[/rosbridge_websocket], pid[6933]
+[xmlrpc][INFO] 2016-07-18 17:36:41,488: XML-RPC server binding to 0.0.0.0:0
+[xmlrpc][INFO] 2016-07-18 17:36:41,489: Started XML-RPC server [http://ros-indigo-desktop-trusty64:59617/]
+[rospy.impl.masterslave][INFO] 2016-07-18 17:36:41,489: _ready: http://ros-indigo-desktop-trusty64:59617/
+[rospy.init][INFO] 2016-07-18 17:36:41,489: ROS Slave URI: [http://ros-indigo-desktop-trusty64:59617/]
+[xmlrpc][INFO] 2016-07-18 17:36:41,490: xml rpc node: starting XML-RPC server
+[rospy.registration][INFO] 2016-07-18 17:36:41,491: Registering with master node http://localhost:11311
+[rospy.init][INFO] 2016-07-18 17:36:41,591: registered with master
+[rospy.rosout][INFO] 2016-07-18 17:36:41,591: initializing /rosout core topic
+[rospy.rosout][INFO] 2016-07-18 17:36:41,596: connected to core topic /rosout
+[rospy.simtime][INFO] 2016-07-18 17:36:41,598: /use_sim_time is not set, will not subscribe to simulated time [/clock] topic
+[rosout][WARNING] 2016-07-18 17:36:41,622: Unable to start server: [Errno 98] Address already in use Retrying in 5s.
+[rospy.impl.masterslave][INFO] 2016-07-18 17:36:41,633: external shutdown request from [/master]: new node registered with same name
+[rospy.core][INFO] 2016-07-18 17:36:41,634: signal_shutdown [external shutdown request from [/master]: [new node registered with same name]]
+[rospy.internal][INFO] 2016-07-18 17:36:41,638: topic[/rosout] removing connection to /rosout
+[rospy.core][INFO] 2016-07-18 17:36:41,740: signal_shutdown [atexit]
+[rospy.internal][INFO] 2016-07-18 17:36:41,865: topic[/rosout] adding connection to [/rosout], count 0
+[rosout][INFO] 2016-07-18 17:36:46,626: Rosbridge WebSocket server started on port 9090
+[rospy.core][INFO] 2016-07-18 17:37:08,640: signal_shutdown [signal-2]
+[rospy.internal][INFO] 2016-07-18 17:37:08,657: topic[/rosout] removing connection to /rosout
+[rospy.impl.masterslave][INFO] 2016-07-18 17:37:08,658: signal-2
+[rospy.core][INFO] 2016-07-18 17:37:09,281: signal_shutdown [atexit]
+[rospy.client][INFO] 2016-07-18 17:37:15,231: init_node, name[/rosbridge_websocket], pid[7085]
+[xmlrpc][INFO] 2016-07-18 17:37:15,232: XML-RPC server binding to 0.0.0.0:0
+[rospy.init][INFO] 2016-07-18 17:37:15,233: ROS Slave URI: [http://ros-indigo-desktop-trusty64:54234/]
+[xmlrpc][INFO] 2016-07-18 17:37:15,233: Started XML-RPC server [http://ros-indigo-desktop-trusty64:54234/]
+[rospy.impl.masterslave][INFO] 2016-07-18 17:37:15,234: _ready: http://ros-indigo-desktop-trusty64:54234/
+[xmlrpc][INFO] 2016-07-18 17:37:15,235: xml rpc node: starting XML-RPC server
+[rospy.registration][INFO] 2016-07-18 17:37:15,235: Registering with master node http://localhost:11311
+[rospy.init][INFO] 2016-07-18 17:37:15,334: registered with master
+[rospy.rosout][INFO] 2016-07-18 17:37:15,335: initializing /rosout core topic
+[rospy.rosout][INFO] 2016-07-18 17:37:15,339: connected to core topic /rosout
+[rospy.simtime][INFO] 2016-07-18 17:37:15,341: /use_sim_time is not set, will not subscribe to simulated time [/clock] topic
+[rosout][INFO] 2016-07-18 17:37:15,369: Rosbridge WebSocket server started on port 9090
+[rospy.internal][INFO] 2016-07-18 17:37:15,588: topic[/rosout] adding connection to [/rosout], count 0
+[rospy.core][INFO] 2016-07-18 17:37:25,153: signal_shutdown [signal-2]
+[rospy.internal][INFO] 2016-07-18 17:37:25,170: topic[/rosout] removing connection to /rosout
+[rospy.impl.masterslave][INFO] 2016-07-18 17:37:25,170: signal-2
+[rospy.core][INFO] 2016-07-18 17:37:25,305: signal_shutdown [atexit]
+[rospy.client][INFO] 2016-07-18 17:41:49,458: init_node, name[/rosbridge_websocket], pid[8322]
+[xmlrpc][INFO] 2016-07-18 17:41:49,460: XML-RPC server binding to 0.0.0.0:0
+[rospy.init][INFO] 2016-07-18 17:41:49,462: ROS Slave URI: [http://ros-indigo-desktop-trusty64:57009/]
+[xmlrpc][INFO] 2016-07-18 17:41:49,462: Started XML-RPC server [http://ros-indigo-desktop-trusty64:57009/]
+[rospy.impl.masterslave][INFO] 2016-07-18 17:41:49,464: _ready: http://ros-indigo-desktop-trusty64:57009/
+[xmlrpc][INFO] 2016-07-18 17:41:49,464: xml rpc node: starting XML-RPC server
+[rospy.registration][INFO] 2016-07-18 17:41:49,466: Registering with master node http://localhost:11311
+[rospy.init][INFO] 2016-07-18 17:41:49,564: registered with master
+[rospy.rosout][INFO] 2016-07-18 17:41:49,577: initializing /rosout core topic
+[rospy.rosout][INFO] 2016-07-18 17:41:49,591: connected to core topic /rosout
+[rospy.simtime][INFO] 2016-07-18 17:41:49,603: /use_sim_time is not set, will not subscribe to simulated time [/clock] topic
+[rosout][INFO] 2016-07-18 17:41:49,710: Rosbridge WebSocket server started on port 9090
+[rospy.internal][INFO] 2016-07-18 17:41:49,796: topic[/rosout] adding connection to [/rosout], count 0
+[rospy.client][INFO] 2016-07-18 17:42:29,518: init_node, name[/rosbridge_websocket], pid[8399]
+[xmlrpc][INFO] 2016-07-18 17:42:29,520: XML-RPC server binding to 0.0.0.0:0
+[xmlrpc][INFO] 2016-07-18 17:42:29,521: Started XML-RPC server [http://ros-indigo-desktop-trusty64:35247/]
+[rospy.impl.masterslave][INFO] 2016-07-18 17:42:29,524: _ready: http://ros-indigo-desktop-trusty64:35247/
+[rospy.init][INFO] 2016-07-18 17:42:29,527: ROS Slave URI: [http://ros-indigo-desktop-trusty64:35247/]
+[rospy.registration][INFO] 2016-07-18 17:42:29,536: Registering with master node http://localhost:11311
+[xmlrpc][INFO] 2016-07-18 17:42:29,552: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2016-07-18 17:42:29,636: registered with master
+[rospy.rosout][INFO] 2016-07-18 17:42:29,637: initializing /rosout core topic
+[rospy.rosout][INFO] 2016-07-18 17:42:29,640: connected to core topic /rosout
+[rospy.simtime][INFO] 2016-07-18 17:42:29,642: /use_sim_time is not set, will not subscribe to simulated time [/clock] topic
+[rosout][WARNING] 2016-07-18 17:42:29,670: Unable to start server: [Errno 98] Address already in use Retrying in 5s.
+[rospy.impl.masterslave][INFO] 2016-07-18 17:42:29,711: external shutdown request from [/master]: new node registered with same name
+[rospy.core][INFO] 2016-07-18 17:42:29,712: signal_shutdown [external shutdown request from [/master]: [new node registered with same name]]
+[rospy.internal][INFO] 2016-07-18 17:42:29,721: topic[/rosout] removing connection to /rosout
+[rospy.core][INFO] 2016-07-18 17:42:29,857: signal_shutdown [atexit]
+[rospy.internal][INFO] 2016-07-18 17:42:29,917: topic[/rosout] adding connection to [/rosout], count 0
+[rosout][INFO] 2016-07-18 17:42:34,677: Rosbridge WebSocket server started on port 9090
+[rosout][INFO] 2016-07-18 17:42:47,355: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-18 17:42:48,397: [Client 0] [id: advertise:/tf2_web_republisher/goal:1] advertise: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-18 17:42:49,282: [Client 0] [id: subscribe:/tf2_web_republisher/feedback:3] subscribe: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-18 17:42:50,132: [Client 0] [id: publish:/tf2_web_republisher/goal:5] publish: Cannot infer topic type for topic /tf2_web_republisher/goal as it is not yet advertised
+[rospy.client][INFO] 2016-07-18 17:45:20,731: init_node, name[/rosbridge_websocket], pid[8569]
+[xmlrpc][INFO] 2016-07-18 17:45:20,733: XML-RPC server binding to 0.0.0.0:0
+[xmlrpc][INFO] 2016-07-18 17:45:20,735: Started XML-RPC server [http://ros-indigo-desktop-trusty64:42372/]
+[rospy.init][INFO] 2016-07-18 17:45:20,735: ROS Slave URI: [http://ros-indigo-desktop-trusty64:42372/]
+[rospy.impl.masterslave][INFO] 2016-07-18 17:45:20,738: _ready: http://ros-indigo-desktop-trusty64:42372/
+[rospy.registration][INFO] 2016-07-18 17:45:20,739: Registering with master node http://localhost:11311
+[xmlrpc][INFO] 2016-07-18 17:45:20,739: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2016-07-18 17:45:20,838: registered with master
+[rospy.rosout][INFO] 2016-07-18 17:45:20,839: initializing /rosout core topic
+[rospy.rosout][INFO] 2016-07-18 17:45:20,847: connected to core topic /rosout
+[rospy.simtime][INFO] 2016-07-18 17:45:20,862: /use_sim_time is not set, will not subscribe to simulated time [/clock] topic
+[rospy.impl.masterslave][INFO] 2016-07-18 17:45:20,877: external shutdown request from [/master]: new node registered with same name
+[rospy.core][INFO] 2016-07-18 17:45:20,880: signal_shutdown [external shutdown request from [/master]: [new node registered with same name]]
+[rospy.internal][INFO] 2016-07-18 17:45:20,906: topic[/rosout] removing connection to /rosout
+[rosout][WARNING] 2016-07-18 17:45:20,919: Unable to start server: [Errno 98] Address already in use Retrying in 5s.
+[rospy.core][INFO] 2016-07-18 17:45:21,025: signal_shutdown [atexit]
+[rospy.internal][INFO] 2016-07-18 17:45:21,101: topic[/rosout] adding connection to [/rosout], count 0
+[rosout][INFO] 2016-07-18 17:45:25,927: Rosbridge WebSocket server started on port 9090
+[rosout][INFO] 2016-07-18 17:45:31,147: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-18 17:45:34,357: [Client 0] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-18 17:52:19,804: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-18 17:52:19,844: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-18 17:52:19,857: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-18 17:52:19,867: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-18 17:52:20,505: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-18 17:52:21,085: [Client 1] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-18 17:54:44,563: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-18 17:54:44,575: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-18 17:54:44,585: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-18 17:54:44,591: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-18 17:54:45,230: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-18 17:54:46,165: [Client 2] Subscribed to /tf2_web_republisher/feedback
+[rospy.core][INFO] 2016-07-18 17:56:24,252: signal_shutdown [signal-2]
+[rospy.internal][INFO] 2016-07-18 17:56:24,266: topic[/rosout] removing connection to /rosout
+[rospy.impl.masterslave][INFO] 2016-07-18 17:56:24,267: signal-2
+[rospy.core][INFO] 2016-07-18 17:56:24,385: signal_shutdown [atexit]
+[rospy.client][INFO] 2016-07-18 17:57:52,385: init_node, name[/rosbridge_websocket], pid[8812]
+[xmlrpc][INFO] 2016-07-18 17:57:52,389: XML-RPC server binding to 0.0.0.0:0
+[xmlrpc][INFO] 2016-07-18 17:57:52,393: Started XML-RPC server [http://ros-indigo-desktop-trusty64:51399/]
+[rospy.init][INFO] 2016-07-18 17:57:52,394: ROS Slave URI: [http://ros-indigo-desktop-trusty64:51399/]
+[rospy.impl.masterslave][INFO] 2016-07-18 17:57:52,400: _ready: http://ros-indigo-desktop-trusty64:51399/
+[xmlrpc][INFO] 2016-07-18 17:57:52,403: xml rpc node: starting XML-RPC server
+[rospy.registration][INFO] 2016-07-18 17:57:52,405: Registering with master node http://localhost:11311
+[rospy.init][INFO] 2016-07-18 17:57:52,499: registered with master
+[rospy.rosout][INFO] 2016-07-18 17:57:52,500: initializing /rosout core topic
+[rospy.rosout][INFO] 2016-07-18 17:57:52,508: connected to core topic /rosout
+[rospy.simtime][INFO] 2016-07-18 17:57:52,509: /use_sim_time is not set, will not subscribe to simulated time [/clock] topic
+[rosout][INFO] 2016-07-18 17:57:52,559: Rosbridge WebSocket server started on port 9090
+[rospy.internal][INFO] 2016-07-18 17:57:52,722: topic[/rosout] adding connection to [/rosout], count 0
+[rosout][INFO] 2016-07-18 17:58:16,447: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-18 17:58:18,861: [Client 0] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-18 18:00:04,878: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-18 18:00:04,887: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-18 18:00:04,895: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-18 18:00:04,918: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-18 18:00:06,019: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-18 18:00:06,938: [Client 1] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-18 18:00:20,903: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-18 18:00:20,913: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-18 18:00:20,922: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-18 18:00:20,930: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-18 18:00:21,786: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-18 18:00:22,485: [Client 2] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-18 18:01:14,836: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-18 18:01:14,859: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-18 18:01:14,864: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-18 18:01:14,873: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-18 18:01:16,193: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-18 18:01:17,443: [Client 3] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-18 18:02:39,467: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-18 18:02:39,486: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-18 18:02:39,513: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-18 18:02:39,523: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-18 18:02:40,955: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-18 18:02:42,260: [Client 4] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-18 18:04:15,603: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-18 18:04:15,633: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-18 18:04:15,643: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-18 18:04:15,655: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-18 18:04:16,817: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-18 18:04:17,704: [Client 5] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-18 18:06:23,975: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-18 18:06:23,981: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-18 18:06:23,988: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-18 18:06:23,995: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-18 18:06:25,286: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-18 18:06:26,512: [Client 6] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-18 18:13:02,846: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-18 18:13:02,864: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-18 18:13:02,889: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-18 18:13:02,911: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-18 18:13:04,159: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-18 18:13:06,683: [Client 7] Subscribed to /tf2_web_republisher/feedback
+[rospy.core][INFO] 2016-07-18 18:13:33,448: signal_shutdown [signal-2]
+[rospy.internal][INFO] 2016-07-18 18:13:33,500: topic[/rosout] removing connection to /rosout
+[rospy.impl.masterslave][INFO] 2016-07-18 18:13:33,518: signal-2
+[rospy.core][INFO] 2016-07-18 18:13:34,094: signal_shutdown [atexit]
+[rospy.client][INFO] 2016-07-18 18:34:45,241: init_node, name[/rosbridge_websocket], pid[10539]
+[xmlrpc][INFO] 2016-07-18 18:34:45,243: XML-RPC server binding to 0.0.0.0:0
+[xmlrpc][INFO] 2016-07-18 18:34:45,245: Started XML-RPC server [http://ros-indigo-desktop-trusty64:42085/]
+[rospy.init][INFO] 2016-07-18 18:34:45,245: ROS Slave URI: [http://ros-indigo-desktop-trusty64:42085/]
+[rospy.impl.masterslave][INFO] 2016-07-18 18:34:45,249: _ready: http://ros-indigo-desktop-trusty64:42085/
+[rospy.registration][INFO] 2016-07-18 18:34:45,253: Registering with master node http://localhost:11311
+[xmlrpc][INFO] 2016-07-18 18:34:45,257: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2016-07-18 18:34:45,350: registered with master
+[rospy.rosout][INFO] 2016-07-18 18:34:45,351: initializing /rosout core topic
+[rospy.rosout][INFO] 2016-07-18 18:34:45,356: connected to core topic /rosout
+[rospy.simtime][INFO] 2016-07-18 18:34:45,360: /use_sim_time is not set, will not subscribe to simulated time [/clock] topic
+[rosout][INFO] 2016-07-18 18:34:45,422: Rosbridge WebSocket server started on port 9090
+[rospy.internal][INFO] 2016-07-18 18:34:45,563: topic[/rosout] adding connection to [/rosout], count 0
+[rosout][INFO] 2016-07-18 18:35:23,846: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-18 18:35:25,955: [Client 0] Subscribed to /tf2_web_republisher/feedback
+[rospy.core][INFO] 2016-07-18 18:36:25,948: signal_shutdown [signal-2]
+[rospy.internal][INFO] 2016-07-18 18:36:25,979: topic[/rosout] removing connection to /rosout
+[rospy.impl.masterslave][INFO] 2016-07-18 18:36:25,980: signal-2
+[rospy.core][INFO] 2016-07-18 18:36:26,089: signal_shutdown [atexit]
+[rospy.client][INFO] 2016-07-18 18:47:09,256: init_node, name[/rosbridge_websocket], pid[11022]
+[xmlrpc][INFO] 2016-07-18 18:47:09,262: XML-RPC server binding to 0.0.0.0:0
+[rospy.init][INFO] 2016-07-18 18:47:09,266: ROS Slave URI: [http://ros-indigo-desktop-trusty64:40320/]
+[xmlrpc][INFO] 2016-07-18 18:47:09,266: Started XML-RPC server [http://ros-indigo-desktop-trusty64:40320/]
+[rospy.impl.masterslave][INFO] 2016-07-18 18:47:09,269: _ready: http://ros-indigo-desktop-trusty64:40320/
+[rospy.registration][INFO] 2016-07-18 18:47:09,271: Registering with master node http://localhost:11311
+[xmlrpc][INFO] 2016-07-18 18:47:09,271: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2016-07-18 18:47:09,368: registered with master
+[rospy.rosout][INFO] 2016-07-18 18:47:09,368: initializing /rosout core topic
+[rospy.rosout][INFO] 2016-07-18 18:47:09,381: connected to core topic /rosout
+[rospy.simtime][INFO] 2016-07-18 18:47:09,386: /use_sim_time is not set, will not subscribe to simulated time [/clock] topic
+[rosout][INFO] 2016-07-18 18:47:09,446: Rosbridge WebSocket server started on port 9090
+[rospy.internal][INFO] 2016-07-18 18:47:09,590: topic[/rosout] adding connection to [/rosout], count 0
+[rosout][INFO] 2016-07-18 18:47:18,308: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-18 18:47:21,842: [Client 0] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-18 18:52:16,078: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-18 18:52:16,113: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-18 18:52:16,152: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-18 18:52:16,175: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-18 18:52:17,036: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-18 18:53:13,901: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-18 18:53:14,877: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-18 18:53:39,800: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-18 18:53:40,602: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-18 18:53:41,437: [Client 3] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-18 18:57:58,254: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-18 18:57:58,260: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-18 18:57:58,266: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-18 18:57:58,270: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-18 18:57:58,789: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-18 18:57:59,505: [Client 4] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-18 18:58:26,756: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-18 18:58:26,762: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-18 18:58:26,766: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-18 18:58:26,772: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-18 18:58:27,268: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-18 18:58:27,759: [Client 5] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-18 18:59:13,349: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-18 18:59:13,355: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-18 18:59:13,359: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-18 18:59:13,364: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-18 18:59:14,037: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-18 18:59:14,633: [Client 6] Subscribed to /tf2_web_republisher/feedback
+[rospy.core][INFO] 2016-07-18 19:00:58,270: signal_shutdown [signal-2]
+[rospy.internal][INFO] 2016-07-18 19:00:58,295: topic[/rosout] removing connection to /rosout
+[rospy.impl.masterslave][INFO] 2016-07-18 19:00:58,296: signal-2
+[rospy.core][INFO] 2016-07-18 19:00:58,429: signal_shutdown [atexit]
+[rospy.client][INFO] 2016-07-18 19:13:14,819: init_node, name[/rosbridge_websocket], pid[12259]
+[xmlrpc][INFO] 2016-07-18 19:13:14,821: XML-RPC server binding to 0.0.0.0:0
+[xmlrpc][INFO] 2016-07-18 19:13:14,822: Started XML-RPC server [http://ros-indigo-desktop-trusty64:53476/]
+[rospy.init][INFO] 2016-07-18 19:13:14,822: ROS Slave URI: [http://ros-indigo-desktop-trusty64:53476/]
+[rospy.impl.masterslave][INFO] 2016-07-18 19:13:14,823: _ready: http://ros-indigo-desktop-trusty64:53476/
+[rospy.registration][INFO] 2016-07-18 19:13:14,827: Registering with master node http://localhost:11311
+[xmlrpc][INFO] 2016-07-18 19:13:14,827: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2016-07-18 19:13:14,925: registered with master
+[rospy.rosout][INFO] 2016-07-18 19:13:14,926: initializing /rosout core topic
+[rospy.rosout][INFO] 2016-07-18 19:13:14,930: connected to core topic /rosout
+[rospy.simtime][INFO] 2016-07-18 19:13:14,933: /use_sim_time is not set, will not subscribe to simulated time [/clock] topic
+[rosout][INFO] 2016-07-18 19:13:14,956: Rosbridge WebSocket server started on port 9090
+[rospy.internal][INFO] 2016-07-18 19:13:15,138: topic[/rosout] adding connection to [/rosout], count 0
+[rosout][INFO] 2016-07-18 19:13:18,618: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-18 19:13:19,665: [Client 0] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-18 19:14:39,725: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-18 19:14:39,732: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-18 19:14:39,742: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-18 19:14:39,752: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-18 19:14:44,781: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-18 19:14:45,303: [Client 1] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-18 19:22:18,387: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-18 19:22:18,401: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-18 19:22:18,413: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-18 19:22:18,420: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-18 19:22:19,226: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-18 19:22:19,993: [Client 2] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-18 19:22:41,481: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-18 19:22:41,487: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-18 19:22:41,495: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-18 19:22:41,501: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-18 19:22:42,220: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-18 19:22:42,919: [Client 3] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-18 19:23:02,598: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-18 19:23:02,605: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-18 19:23:02,609: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-18 19:23:02,618: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-18 19:23:03,251: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-18 19:23:03,630: [Client 4] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-18 19:29:12,572: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-18 19:29:12,584: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-18 19:29:12,594: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-18 19:29:12,601: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-18 19:29:27,453: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-18 19:29:28,042: [Client 5] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-18 19:40:15,776: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-18 19:40:15,782: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-18 19:40:15,787: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-18 19:40:15,792: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-18 19:40:16,557: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-18 19:40:16,965: [Client 6] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-18 19:40:55,078: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-18 19:40:55,091: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-18 19:40:55,106: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-18 19:40:55,112: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-18 19:40:58,805: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-18 19:40:59,176: [Client 7] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-18 19:43:14,427: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-18 19:43:14,445: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-18 19:43:14,473: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-18 19:43:14,488: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-18 19:43:15,086: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-18 19:43:15,799: [Client 8] Subscribed to /tf2_web_republisher/feedback
+[rosout][INFO] 2016-07-18 19:44:09,533: Client connected.  2 clients total.
+[rosout][INFO] 2016-07-18 19:44:09,878: [Client 9] Subscribed to /tf2_web_republisher/feedback
+[rosout][INFO] 2016-07-18 19:44:22,656: Client disconnected. 1 clients total.
+[rospy.core][INFO] 2016-07-18 19:45:43,053: signal_shutdown [signal-2]
+[rospy.internal][INFO] 2016-07-18 19:45:43,069: topic[/rosout] removing connection to /rosout
+[rospy.impl.masterslave][INFO] 2016-07-18 19:45:43,070: signal-2
+[rospy.core][INFO] 2016-07-18 19:45:43,191: signal_shutdown [atexit]
+[rospy.client][INFO] 2016-07-18 20:05:10,194: init_node, name[/rosbridge_websocket], pid[14928]
+[xmlrpc][INFO] 2016-07-18 20:05:10,196: XML-RPC server binding to 0.0.0.0:0
+[xmlrpc][INFO] 2016-07-18 20:05:10,198: Started XML-RPC server [http://ros-indigo-desktop-trusty64:59770/]
+[rospy.init][INFO] 2016-07-18 20:05:10,198: ROS Slave URI: [http://ros-indigo-desktop-trusty64:59770/]
+[rospy.impl.masterslave][INFO] 2016-07-18 20:05:10,199: _ready: http://ros-indigo-desktop-trusty64:59770/
+[rospy.registration][INFO] 2016-07-18 20:05:10,201: Registering with master node http://localhost:11311
+[xmlrpc][INFO] 2016-07-18 20:05:10,204: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2016-07-18 20:05:10,300: registered with master
+[rospy.rosout][INFO] 2016-07-18 20:05:10,301: initializing /rosout core topic
+[rospy.rosout][INFO] 2016-07-18 20:05:10,307: connected to core topic /rosout
+[rospy.simtime][INFO] 2016-07-18 20:05:10,309: /use_sim_time is not set, will not subscribe to simulated time [/clock] topic
+[rosout][INFO] 2016-07-18 20:05:10,333: Rosbridge WebSocket server started on port 9090
+[rospy.internal][INFO] 2016-07-18 20:05:10,524: topic[/rosout] adding connection to [/rosout], count 0
+[rosout][INFO] 2016-07-18 20:05:25,656: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-18 20:05:26,855: [Client 0] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-18 20:08:02,884: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-18 20:08:02,894: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-18 20:08:02,900: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-18 20:08:02,904: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-18 20:08:03,639: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-18 20:08:04,148: [Client 1] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-18 20:10:35,557: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-18 20:10:35,564: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-18 20:10:35,570: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-18 20:10:35,574: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-18 20:10:36,246: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-18 20:10:36,754: [Client 2] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-18 20:16:44,296: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-18 20:16:44,327: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-18 20:16:44,334: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-18 20:16:44,339: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-18 20:16:49,392: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-18 20:16:49,761: [Client 3] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-18 20:17:31,858: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-18 20:17:31,863: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-18 20:17:31,868: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-18 20:17:31,872: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-18 20:17:32,400: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-18 20:17:32,727: [Client 4] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-18 20:21:25,350: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-18 20:21:25,360: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-18 20:21:25,364: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-18 20:21:25,368: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-18 20:21:26,130: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-18 20:21:26,701: [Client 5] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-18 20:22:03,605: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-18 20:22:03,628: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-18 20:22:03,636: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-18 20:22:03,641: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-18 20:22:04,232: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-18 20:22:04,875: [Client 6] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-18 20:22:13,305: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-18 20:22:13,313: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-18 20:22:13,325: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-18 20:22:13,335: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-18 20:22:13,893: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-18 20:22:14,267: [Client 7] Subscribed to /tf2_web_republisher/feedback
+[rospy.core][INFO] 2016-07-18 20:24:21,152: signal_shutdown [signal-2]
+[rospy.internal][INFO] 2016-07-18 20:24:21,171: topic[/rosout] removing connection to /rosout
+[rospy.impl.masterslave][INFO] 2016-07-18 20:24:21,172: signal-2
+[rospy.core][INFO] 2016-07-18 20:24:21,302: signal_shutdown [atexit]
+[rospy.client][INFO] 2016-07-18 20:25:40,544: init_node, name[/rosbridge_websocket], pid[15315]
+[xmlrpc][INFO] 2016-07-18 20:25:40,546: XML-RPC server binding to 0.0.0.0:0
+[rospy.init][INFO] 2016-07-18 20:25:40,546: ROS Slave URI: [http://ros-indigo-desktop-trusty64:56697/]
+[xmlrpc][INFO] 2016-07-18 20:25:40,546: Started XML-RPC server [http://ros-indigo-desktop-trusty64:56697/]
+[rospy.impl.masterslave][INFO] 2016-07-18 20:25:40,547: _ready: http://ros-indigo-desktop-trusty64:56697/
+[rospy.registration][INFO] 2016-07-18 20:25:40,548: Registering with master node http://localhost:11311
+[xmlrpc][INFO] 2016-07-18 20:25:40,548: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2016-07-18 20:25:40,648: registered with master
+[rospy.rosout][INFO] 2016-07-18 20:25:40,649: initializing /rosout core topic
+[rospy.rosout][INFO] 2016-07-18 20:25:40,656: connected to core topic /rosout
+[rospy.simtime][INFO] 2016-07-18 20:25:40,660: /use_sim_time is not set, will not subscribe to simulated time [/clock] topic
+[rosout][INFO] 2016-07-18 20:25:40,683: Rosbridge WebSocket server started on port 9090
+[rospy.internal][INFO] 2016-07-18 20:25:40,904: topic[/rosout] adding connection to [/rosout], count 0
+[rosout][INFO] 2016-07-18 20:26:48,703: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-18 20:26:49,760: [Client 0] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-18 20:27:37,589: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-18 20:27:37,597: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-18 20:27:37,605: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-18 20:27:37,618: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-18 20:28:02,353: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-18 20:28:02,820: [Client 1] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-18 20:29:09,806: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-18 20:29:09,813: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-18 20:29:09,818: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-18 20:29:09,824: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-18 20:29:10,472: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-18 20:29:11,013: [Client 2] Subscribed to /tf2_web_republisher/feedback
+[rospy.core][INFO] 2016-07-18 20:31:30,185: signal_shutdown [signal-2]
+[rospy.internal][INFO] 2016-07-18 20:31:30,199: topic[/rosout] removing connection to /rosout
+[rospy.impl.masterslave][INFO] 2016-07-18 20:31:30,200: signal-2
+[rospy.core][INFO] 2016-07-18 20:31:30,828: signal_shutdown [atexit]
+[rospy.client][INFO] 2016-07-19 19:44:38,541: init_node, name[/rosbridge_websocket], pid[21467]
+[xmlrpc][INFO] 2016-07-19 19:44:38,545: XML-RPC server binding to 0.0.0.0:0
+[xmlrpc][INFO] 2016-07-19 19:44:38,547: Started XML-RPC server [http://ros-indigo-desktop-trusty64:51027/]
+[rospy.impl.masterslave][INFO] 2016-07-19 19:44:38,548: _ready: http://ros-indigo-desktop-trusty64:51027/
+[rospy.init][INFO] 2016-07-19 19:44:38,547: ROS Slave URI: [http://ros-indigo-desktop-trusty64:51027/]
+[xmlrpc][INFO] 2016-07-19 19:44:38,549: xml rpc node: starting XML-RPC server
+[rospy.registration][INFO] 2016-07-19 19:44:38,550: Registering with master node http://localhost:11311
+[rospy.init][INFO] 2016-07-19 19:44:38,650: registered with master
+[rospy.rosout][INFO] 2016-07-19 19:44:38,651: initializing /rosout core topic
+[rospy.rosout][INFO] 2016-07-19 19:44:38,656: connected to core topic /rosout
+[rospy.simtime][INFO] 2016-07-19 19:44:38,659: initializing /clock core topic
+[rospy.simtime][INFO] 2016-07-19 19:44:38,682: connected to core topic /clock
+[rosout][INFO] 2016-07-19 19:44:38,721: Rosbridge WebSocket server started on port 9090
+[rospy.internal][INFO] 2016-07-19 19:44:38,889: topic[/rosout] adding connection to [/rosout], count 0
+[rosout][INFO] 2016-07-19 19:44:43,285: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-19 19:44:44,642: [Client 0] Subscribed to /tf2_web_republisher/feedback
+[rospy.core][INFO] 2016-07-19 19:45:03,748: signal_shutdown [signal-2]
+[rospy.internal][INFO] 2016-07-19 19:45:03,778: topic[/rosout] removing connection to /rosout
+[rospy.impl.masterslave][INFO] 2016-07-19 19:45:03,779: signal-2
+[rospy.core][INFO] 2016-07-19 19:45:04,411: signal_shutdown [atexit]
+[rospy.client][INFO] 2016-07-19 19:47:59,077: init_node, name[/rosbridge_websocket], pid[21694]
+[xmlrpc][INFO] 2016-07-19 19:47:59,078: XML-RPC server binding to 0.0.0.0:0
+[rospy.init][INFO] 2016-07-19 19:47:59,079: ROS Slave URI: [http://ros-indigo-desktop-trusty64:40220/]
+[xmlrpc][INFO] 2016-07-19 19:47:59,079: Started XML-RPC server [http://ros-indigo-desktop-trusty64:40220/]
+[rospy.impl.masterslave][INFO] 2016-07-19 19:47:59,080: _ready: http://ros-indigo-desktop-trusty64:40220/
+[rospy.registration][INFO] 2016-07-19 19:47:59,082: Registering with master node http://localhost:11311
+[xmlrpc][INFO] 2016-07-19 19:47:59,082: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2016-07-19 19:47:59,181: registered with master
+[rospy.rosout][INFO] 2016-07-19 19:47:59,181: initializing /rosout core topic
+[rospy.rosout][INFO] 2016-07-19 19:47:59,187: connected to core topic /rosout
+[rospy.simtime][INFO] 2016-07-19 19:47:59,189: initializing /clock core topic
+[rospy.simtime][INFO] 2016-07-19 19:47:59,201: connected to core topic /clock
+[rosout][INFO] 2016-07-19 19:47:59,232: Rosbridge WebSocket server started on port 9090
+[rospy.internal][INFO] 2016-07-19 19:47:59,414: topic[/rosout] adding connection to [/rosout], count 0
+[rosout][INFO] 2016-07-19 19:50:03,744: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-19 19:50:05,672: [Client 0] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-19 19:50:53,513: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-19 19:50:53,525: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-19 19:50:53,540: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-19 19:50:53,547: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-19 19:50:54,291: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-19 19:50:54,738: [Client 1] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-19 19:58:21,320: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-19 19:58:21,334: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-19 19:58:21,341: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-19 19:58:21,349: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-19 19:58:22,185: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-19 19:58:22,833: [Client 2] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-19 19:58:44,517: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-19 19:58:44,522: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-19 19:58:44,526: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-19 19:58:44,531: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-19 19:58:45,193: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-19 19:58:45,671: [Client 3] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-19 19:58:50,097: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-19 19:58:50,104: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-19 19:58:50,109: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-19 19:58:50,115: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-19 19:58:50,706: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-19 19:58:51,172: [Client 4] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-19 20:00:10,065: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-19 20:00:10,073: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-19 20:00:10,077: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-19 20:00:10,082: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-19 20:00:10,868: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-19 20:00:11,507: [Client 5] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-19 20:10:16,057: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-19 20:10:16,067: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-19 20:10:16,071: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-19 20:10:16,076: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-19 20:10:16,638: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-19 20:10:17,102: [Client 6] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-19 20:18:58,000: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-19 20:18:58,013: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-19 20:18:58,018: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-19 20:18:58,026: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-19 20:18:58,509: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-19 20:18:59,121: [Client 7] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-19 20:20:56,357: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-19 20:20:56,363: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-19 20:20:56,373: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-19 20:20:56,381: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-19 20:20:57,005: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-19 20:20:57,555: [Client 8] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-19 20:23:48,214: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-19 20:23:48,224: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-19 20:23:48,229: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-19 20:23:48,235: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-19 20:23:49,001: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-19 20:23:49,529: [Client 9] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-19 20:27:41,076: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-19 20:27:41,084: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-19 20:27:41,101: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-19 20:27:41,107: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-19 20:27:41,982: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-19 20:27:42,563: [Client 10] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-19 20:29:37,760: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-19 20:29:37,785: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-19 20:29:37,800: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-19 20:29:37,821: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-19 20:29:38,475: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-19 20:29:39,044: [Client 11] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-19 20:33:49,426: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-19 20:33:49,435: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-19 20:33:49,440: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-19 20:33:49,445: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-19 20:33:50,220: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-19 20:33:50,748: [Client 12] Subscribed to /tf2_web_republisher/feedback
+[rospy.core][INFO] 2016-07-19 20:40:11,455: signal_shutdown [signal-2]
+[rospy.internal][INFO] 2016-07-19 20:40:11,487: topic[/rosout] removing connection to /rosout
+[rospy.impl.masterslave][INFO] 2016-07-19 20:40:11,487: signal-2
+[rospy.core][INFO] 2016-07-19 20:40:12,119: signal_shutdown [atexit]
+[rospy.client][INFO] 2016-07-19 20:57:57,747: init_node, name[/rosbridge_websocket], pid[25705]
+[xmlrpc][INFO] 2016-07-19 20:57:57,749: XML-RPC server binding to 0.0.0.0:0
+[xmlrpc][INFO] 2016-07-19 20:57:57,750: Started XML-RPC server [http://ros-indigo-desktop-trusty64:49627/]
+[rospy.impl.masterslave][INFO] 2016-07-19 20:57:57,751: _ready: http://ros-indigo-desktop-trusty64:49627/
+[rospy.init][INFO] 2016-07-19 20:57:57,750: ROS Slave URI: [http://ros-indigo-desktop-trusty64:49627/]
+[xmlrpc][INFO] 2016-07-19 20:57:57,754: xml rpc node: starting XML-RPC server
+[rospy.registration][INFO] 2016-07-19 20:57:57,755: Registering with master node http://localhost:11311
+[rospy.init][INFO] 2016-07-19 20:57:57,854: registered with master
+[rospy.rosout][INFO] 2016-07-19 20:57:57,855: initializing /rosout core topic
+[rospy.rosout][INFO] 2016-07-19 20:57:57,859: connected to core topic /rosout
+[rospy.simtime][INFO] 2016-07-19 20:57:57,862: initializing /clock core topic
+[rospy.simtime][INFO] 2016-07-19 20:57:57,877: connected to core topic /clock
+[rosout][INFO] 2016-07-19 20:57:57,910: Rosbridge WebSocket server started on port 9090
+[rospy.internal][INFO] 2016-07-19 20:57:58,078: topic[/rosout] adding connection to [/rosout], count 0
+[rosout][INFO] 2016-07-19 20:58:05,735: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-19 20:58:06,902: [Client 0] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-19 21:01:45,766: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-19 21:01:45,776: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-19 21:01:45,782: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-19 21:01:45,796: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-19 21:01:47,001: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-19 21:01:47,727: [Client 1] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-19 21:05:10,742: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-19 21:05:10,751: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-19 21:05:10,757: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-19 21:05:10,764: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-19 21:05:11,949: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-19 21:05:12,994: [Client 2] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-19 21:07:06,762: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-19 21:07:06,790: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-19 21:07:06,799: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-19 21:07:06,810: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-19 21:07:07,995: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-19 21:07:09,257: [Client 3] Subscribed to /tf2_web_republisher/feedback
+[rospy.core][INFO] 2016-07-19 21:07:45,089: signal_shutdown [signal-2]
+[rospy.internal][INFO] 2016-07-19 21:07:45,107: topic[/rosout] removing connection to /rosout
+[rospy.impl.masterslave][INFO] 2016-07-19 21:07:45,108: signal-2
+[rospy.core][INFO] 2016-07-19 21:07:45,226: signal_shutdown [atexit]
+[rospy.client][INFO] 2016-07-19 21:14:35,694: init_node, name[/rosbridge_websocket], pid[27281]
+[xmlrpc][INFO] 2016-07-19 21:14:35,706: XML-RPC server binding to 0.0.0.0:0
+[rospy.init][INFO] 2016-07-19 21:14:35,708: ROS Slave URI: [http://ros-indigo-desktop-trusty64:50482/]
+[xmlrpc][INFO] 2016-07-19 21:14:35,708: Started XML-RPC server [http://ros-indigo-desktop-trusty64:50482/]
+[rospy.impl.masterslave][INFO] 2016-07-19 21:14:35,709: _ready: http://ros-indigo-desktop-trusty64:50482/
+[rospy.registration][INFO] 2016-07-19 21:14:35,712: Registering with master node http://localhost:11311
+[xmlrpc][INFO] 2016-07-19 21:14:35,712: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2016-07-19 21:14:35,809: registered with master
+[rospy.rosout][INFO] 2016-07-19 21:14:35,810: initializing /rosout core topic
+[rospy.rosout][INFO] 2016-07-19 21:14:35,816: connected to core topic /rosout
+[rospy.simtime][INFO] 2016-07-19 21:14:35,818: initializing /clock core topic
+[rospy.simtime][INFO] 2016-07-19 21:14:35,830: connected to core topic /clock
+[rosout][INFO] 2016-07-19 21:14:35,877: Rosbridge WebSocket server started on port 9090
+[rospy.internal][INFO] 2016-07-19 21:14:36,090: topic[/rosout] adding connection to [/rosout], count 0
+[rosout][INFO] 2016-07-19 21:20:22,492: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-19 21:20:24,559: [Client 0] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-19 21:29:28,657: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-19 21:29:28,666: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-19 21:29:28,670: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-19 21:29:28,674: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-19 21:30:19,521: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-19 21:31:08,528: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-19 21:31:27,001: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-19 21:32:21,733: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-19 21:32:22,468: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-19 21:34:31,567: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-19 21:34:32,116: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-19 21:34:32,905: [Client 4] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-19 21:35:01,819: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-19 21:35:01,825: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-19 21:35:01,831: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-19 21:35:01,840: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-19 21:35:02,525: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-19 21:35:02,993: [Client 5] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-19 21:36:24,001: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-19 21:36:24,010: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-19 21:36:24,015: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-19 21:36:24,019: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-19 21:36:24,745: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-19 21:36:25,315: [Client 6] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-19 21:37:56,289: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-19 21:37:56,294: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-19 21:37:56,306: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-19 21:37:56,310: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-19 21:37:56,955: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-19 21:37:57,756: [Client 7] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-19 21:39:00,231: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-19 21:39:00,248: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-19 21:39:00,255: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-19 21:39:00,260: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-19 21:39:01,258: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-19 21:39:02,035: [Client 8] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-19 21:40:30,537: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-19 21:40:30,546: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-19 21:40:30,552: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-19 21:40:30,558: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-19 21:40:31,978: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-19 21:40:32,717: [Client 9] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-19 21:41:29,312: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-19 21:41:29,328: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-19 21:41:29,343: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-19 21:41:29,351: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-19 21:41:29,960: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-19 21:41:30,525: [Client 10] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-19 21:41:36,157: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-19 21:41:36,162: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-19 21:41:36,172: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-19 21:41:36,181: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-19 21:41:36,693: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-19 21:41:37,113: [Client 11] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-19 21:43:54,833: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-19 21:43:54,841: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-19 21:43:54,847: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-19 21:43:54,854: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-19 21:43:55,496: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-19 21:43:56,155: [Client 12] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-19 21:44:17,281: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-19 21:44:17,289: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-19 21:44:17,296: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-19 21:44:17,305: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-19 21:44:18,161: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-19 21:44:18,797: [Client 13] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-19 21:44:28,148: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-19 21:44:28,157: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-19 21:44:28,163: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-19 21:44:28,168: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-19 21:44:28,831: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-19 21:44:29,323: [Client 14] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-19 21:45:50,906: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-19 21:45:50,912: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-19 21:45:50,917: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-19 21:45:50,921: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-19 21:45:51,541: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-19 21:45:52,076: [Client 15] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-19 21:46:08,966: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-19 21:46:08,971: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-19 21:46:08,977: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-19 21:46:08,984: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-19 21:46:09,738: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-19 21:46:10,214: [Client 16] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-19 21:46:23,637: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-19 21:46:23,645: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-19 21:46:23,649: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-19 21:46:23,653: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-19 21:46:24,287: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-19 21:46:24,762: [Client 17] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-19 21:47:51,060: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-19 21:47:51,066: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-19 21:47:51,071: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-19 21:47:51,076: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-19 21:47:52,009: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-19 21:47:52,902: [Client 18] Subscribed to /tf2_web_republisher/feedback
+[rospy.core][INFO] 2016-07-19 21:56:14,038: signal_shutdown [signal-2]
+[rospy.internal][INFO] 2016-07-19 21:56:14,055: topic[/rosout] removing connection to /rosout
+[rospy.impl.masterslave][INFO] 2016-07-19 21:56:14,056: signal-2
+[rospy.core][INFO] 2016-07-19 21:56:14,677: signal_shutdown [atexit]
+[rospy.client][INFO] 2016-07-20 16:56:25,289: init_node, name[/rosbridge_websocket], pid[29644]
+[xmlrpc][INFO] 2016-07-20 16:56:25,291: XML-RPC server binding to 0.0.0.0:0
+[xmlrpc][INFO] 2016-07-20 16:56:25,292: Started XML-RPC server [http://ros-indigo-desktop-trusty64:33690/]
+[rospy.init][INFO] 2016-07-20 16:56:25,293: ROS Slave URI: [http://ros-indigo-desktop-trusty64:33690/]
+[rospy.impl.masterslave][INFO] 2016-07-20 16:56:25,294: _ready: http://ros-indigo-desktop-trusty64:33690/
+[rospy.registration][INFO] 2016-07-20 16:56:25,297: Registering with master node http://localhost:11311
+[xmlrpc][INFO] 2016-07-20 16:56:25,297: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2016-07-20 16:56:25,395: registered with master
+[rospy.rosout][INFO] 2016-07-20 16:56:25,396: initializing /rosout core topic
+[rospy.rosout][INFO] 2016-07-20 16:56:25,400: connected to core topic /rosout
+[rospy.simtime][INFO] 2016-07-20 16:56:25,404: initializing /clock core topic
+[rospy.simtime][INFO] 2016-07-20 16:56:25,422: connected to core topic /clock
+[rosout][INFO] 2016-07-20 16:56:25,473: Rosbridge WebSocket server started on port 9090
+[rospy.internal][INFO] 2016-07-20 16:56:25,620: topic[/rosout] adding connection to [/rosout], count 0
+[rosout][INFO] 2016-07-20 16:56:34,880: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-20 16:56:37,654: [Client 0] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-20 17:02:51,513: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-20 17:02:51,526: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-20 17:02:51,539: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-20 17:02:51,550: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-20 17:02:52,351: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-20 17:02:53,079: [Client 1] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-20 17:03:15,210: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-20 17:03:15,217: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-20 17:03:15,223: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-20 17:03:15,231: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-20 17:03:15,863: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-20 17:03:16,400: [Client 2] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-20 17:06:46,397: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-20 17:06:46,406: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-20 17:06:46,411: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-20 17:06:46,418: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-20 17:06:47,848: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-20 17:06:48,393: [Client 3] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-20 17:07:21,502: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-20 17:07:21,508: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-20 17:07:21,514: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-20 17:07:21,518: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-20 17:07:22,282: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-20 17:08:38,818: [Client 4] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-20 17:08:51,771: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-20 17:08:51,780: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-20 17:08:51,788: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-20 17:08:51,798: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-20 17:08:52,730: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-20 17:08:55,533: [Client 5] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-20 17:09:40,078: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-20 17:09:40,083: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-20 17:09:40,093: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-20 17:09:40,100: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-20 17:09:41,139: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-20 17:09:54,354: [Client 6] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-20 17:17:40,221: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-20 17:17:40,233: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-20 17:17:40,240: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-20 17:17:40,247: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-20 17:17:42,030: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-20 17:18:04,755: [Client 7] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-20 17:18:15,006: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-20 17:18:15,019: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-20 17:18:15,024: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-20 17:18:15,031: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-20 17:18:16,391: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-20 17:18:19,846: [Client 8] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-20 17:20:07,355: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-20 17:20:07,367: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-20 17:20:07,372: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-20 17:20:07,378: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-20 17:20:08,896: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-20 17:21:29,074: [Client 9] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-20 17:21:56,224: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-20 17:21:56,243: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-20 17:21:56,255: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-20 17:21:56,265: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-20 17:21:58,643: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-20 17:22:18,715: [Client 10] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-20 17:22:54,239: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-20 17:22:54,261: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-20 17:22:54,271: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-20 17:22:54,278: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-20 17:22:55,945: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-20 17:24:33,627: [Client 11] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-20 17:24:41,752: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-20 17:24:41,760: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-20 17:24:41,768: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-20 17:24:41,776: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-20 17:24:43,330: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-20 17:32:18,905: [Client 12] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-20 17:32:27,028: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-20 17:32:27,065: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-20 17:32:27,087: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-20 17:32:27,104: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-20 17:33:11,112: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-20 17:33:11,849: [Client 13] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-20 17:34:25,512: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-20 17:34:25,525: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-20 17:34:25,534: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-20 17:34:25,545: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-20 17:34:26,556: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-20 17:34:27,667: [Client 14] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-20 17:34:38,106: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-20 17:34:38,113: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-20 17:34:38,119: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-20 17:34:38,124: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-20 17:34:38,841: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-20 17:34:39,392: [Client 15] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-20 17:40:11,588: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-20 17:40:11,598: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-20 17:40:11,604: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-20 17:40:11,615: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-20 17:40:12,569: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-20 17:40:42,564: [Client 16] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-20 17:42:36,020: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-20 17:42:36,040: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-20 17:42:36,045: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-20 17:42:36,050: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-20 17:42:36,774: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-20 17:42:37,466: [Client 17] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-20 17:44:19,260: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-20 17:44:19,271: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-20 17:44:19,277: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-20 17:44:19,288: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-20 17:44:20,037: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-20 17:44:20,720: [Client 18] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-20 17:51:47,181: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-20 17:51:47,191: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-20 17:51:47,200: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-20 17:51:47,204: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-20 17:51:47,927: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-20 17:51:48,555: [Client 19] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-20 17:52:21,821: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-20 17:52:21,827: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-20 17:52:21,836: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-20 17:52:21,852: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-20 17:52:22,431: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-20 17:52:22,888: [Client 20] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-20 17:52:57,738: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-20 17:52:57,747: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-20 17:52:57,754: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-20 17:52:57,760: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-20 17:52:58,428: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-20 17:52:58,896: [Client 21] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-20 17:54:00,354: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-20 17:54:00,395: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-20 17:54:00,400: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-20 17:54:00,405: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-20 17:54:01,090: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-20 17:54:01,637: [Client 22] Subscribed to /tf2_web_republisher/feedback
+[rospy.internal][INFO] 2016-07-20 18:02:18,861: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rospy.internal][INFO] 2016-07-20 18:02:18,881: topic impl's ref count is zero, deleting topic /tf2_web_republisher/goal...
+[rospy.internal][INFO] 2016-07-20 18:02:18,894: topic impl's ref count is zero, deleting topic /tf2_web_republisher/feedback...
+[rosout][INFO] 2016-07-20 18:02:18,902: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-20 18:02:20,355: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-20 18:02:21,308: [Client 23] Subscribed to /tf2_web_republisher/feedback
+[rospy.core][INFO] 2016-07-20 18:54:45,774: signal_shutdown [signal-2]
+[rospy.internal][INFO] 2016-07-20 18:54:45,806: topic[/rosout] removing connection to /rosout
+[rospy.impl.masterslave][INFO] 2016-07-20 18:54:45,810: signal-2
+[rospy.core][INFO] 2016-07-20 18:54:45,922: signal_shutdown [atexit]

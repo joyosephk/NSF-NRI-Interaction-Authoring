@@ -7,10 +7,19 @@
 
 # hlsearch on (H) or off (h):
 ~h
+# Last Substitute Search Pattern:
+~MSle0~&MYROBOT
+
+# Last Substitute String:
+$mico
+
 # Command Line History (newest to oldest):
+:q
 :wq
+:s/MYROBOT/mico/g
 
 # Search String History (newest to oldest):
+? MYROBOT
 
 # Expression History (newest to oldest):
 
@@ -22,16 +31,145 @@
 
 # File marks:
 '0  1  1  ~/.bashrc
-'1  3  70  ~/.bashrc
+'1  5  53  ~/.bashrc
+'2  5  1  ~/therblig-motion-library/mico/wpi_jaco/src/mico_description/launch/view.launch
+'3  1  1  ~/gazebo_spawn.sh
+'4  6  52  ~/therblig-motion-library/mico/wpi_jaco/viz.sh
+'5  1  1  ~/therblig-motion-library/mico/wpi_jaco/devel/setup.sh
+'6  1  0  ~/therblig-motion-library/mico/wpi_jaco/devel/setup.
+'7  18  49  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+'8  3  0  ~/.bashrc
 
 # Jumplist (newest first):
 -'  1  1  ~/.bashrc
--'  3  70  ~/.bashrc
+-'  5  53  ~/.bashrc
+-'  5  1  ~/therblig-motion-library/mico/wpi_jaco/src/mico_description/launch/view.launch
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/src/mico_description/launch/view.launch
+-'  1  1  ~/gazebo_spawn.sh
+-'  6  52  ~/therblig-motion-library/mico/wpi_jaco/viz.sh
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/viz.sh
+-'  1  1  ~/therblig-motion-library/mico/wpi_jaco/devel/setup.sh
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/devel/setup.
+-'  18  49  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  3  0  ~/.bashrc
+-'  18  49  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/devel/setup.
+-'  18  49  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  18  49  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  1  1  ~/therblig-motion-library/mico/wpi_jaco/devel/setup.sh
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/devel/setup.
+-'  18  49  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  18  49  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/devel/setup.
+-'  18  49  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  18  49  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  6  52  ~/therblig-motion-library/mico/wpi_jaco/viz.sh
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/viz.sh
+-'  1  1  ~/therblig-motion-library/mico/wpi_jaco/devel/setup.sh
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/devel/setup.
+-'  18  49  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  18  49  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/devel/setup.
+-'  18  49  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  18  49  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  1  1  ~/therblig-motion-library/mico/wpi_jaco/devel/setup.sh
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/devel/setup.
+-'  18  49  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  18  49  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  5  1  ~/therblig-motion-library/mico/wpi_jaco/src/mico_description/launch/view.launch
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/src/mico_description/launch/view.launch
+-'  1  1  ~/gazebo_spawn.sh
+-'  6  52  ~/therblig-motion-library/mico/wpi_jaco/viz.sh
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/viz.sh
+-'  1  1  ~/therblig-motion-library/mico/wpi_jaco/devel/setup.sh
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/devel/setup.
+-'  18  49  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  18  49  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/devel/setup.
+-'  18  49  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  18  49  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  1  1  ~/therblig-motion-library/mico/wpi_jaco/devel/setup.sh
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/devel/setup.
+-'  18  49  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  18  49  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/devel/setup.
+-'  18  49  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  18  49  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  6  52  ~/therblig-motion-library/mico/wpi_jaco/viz.sh
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/viz.sh
+-'  1  1  ~/therblig-motion-library/mico/wpi_jaco/devel/setup.sh
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/devel/setup.
+-'  18  49  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  18  49  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/devel/setup.
+-'  18  49  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  18  49  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  1  1  ~/therblig-motion-library/mico/wpi_jaco/devel/setup.sh
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/devel/setup.
+-'  18  49  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  1  0  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+-'  18  49  ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
 
 # History of marks within files (newest to oldest):
 
 > ~/.bashrc
 	"	1	1
-	^	3	71
-	.	3	17
+	^	5	54
+	.	5	53
 	+	3	17
+	+	5	53
+
+> ~/therblig-motion-library/mico/wpi_jaco/src/mico_description/launch/view.launch
+	"	5	1
+
+> ~/gazebo_spawn.sh
+	"	1	1
+	^	1	124
+	.	1	0
+	+	1	104
+	+	1	0
+
+> ~/therblig-motion-library/mico/wpi_jaco/viz.sh
+	"	6	52
+	^	6	53
+	.	6	53
+	+	2	48
+	+	6	53
+
+> ~/therblig-motion-library/mico/wpi_jaco/devel/setup.sh
+	"	1	1
+
+> ~/therblig-motion-library/mico/wpi_jaco/devel/setup.
+	"	1	0
+
+> ~/therblig-motion-library/mico/wpi_jaco/runRviz.sh
+	"	18	49
+	^	18	50
+	.	18	49
+	+	19	0
+	+	18	49

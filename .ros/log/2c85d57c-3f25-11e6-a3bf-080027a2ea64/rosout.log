@@ -1,6 +1,0 @@
-
-
-1467333958.307662344  Node Startup
-1467333958.978106021 INFO [rosbridge_websocket:141(<module>) [topics: /rosout] Rosbridge WebSocket server started on port 9090
-1467333959.005677938 INFO [rosapi_node:175(<module>) [topics: /rosout] Rosapi started
-1467333969.516891956 INFO [websocket_handler.py:74(open) [topics: /rosout] Client connected.  1 clients total.

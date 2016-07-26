@@ -1,0 +1,3 @@
+/opt/ros/indigo/lib/robot_state_publisher/robot_state_publisher
+[33m[ WARN] [1468962075.985611692]: Shutdown request received.[0m
+[33m[ WARN] [1468962075.985925044]: Reason given for shutdown: [new node registered with same name][0m

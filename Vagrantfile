@@ -69,4 +69,9 @@ Vagrant.configure(2) do |config|
   #   sudo apt-get update
   #   sudo apt-get install -y apache2
   # SHELL
+	config.ssh.username = "vagrant"
+	config.ssh.password = "vagrant"
+	config.ssh.insert_key = "false"
+	config.ssh.forward_x11 = true
+	config.ssh.forward_agent = true
 end

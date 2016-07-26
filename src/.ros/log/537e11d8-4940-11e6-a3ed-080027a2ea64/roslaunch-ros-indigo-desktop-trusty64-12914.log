@@ -1,0 +1,109 @@
+[roslaunch][INFO] 2016-07-18 19:43:48,702: Checking log directory for disk usage. This may take awhile.
+Press Ctrl-C to interrupt
+[roslaunch][INFO] 2016-07-18 19:43:48,795: Done checking log file disk usage. Usage is <1GB.
+[roslaunch][INFO] 2016-07-18 19:43:48,796: roslaunch starting with args ['/opt/ros/indigo/bin/roslaunch', 'mico_description', 'view.launch']
+[roslaunch][INFO] 2016-07-18 19:43:48,796: roslaunch env is {'ROS_DISTRO': 'indigo', 'SSH_CLIENT': '10.0.2.2 57124 22', 'CPATH': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/devel/include:/opt/ros/indigo/include', 'LOGNAME': 'vagrant', 'USER': 'vagrant', 'HOME': '/home/vagrant', 'PATH': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/devel/bin:/opt/ros/indigo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games', 'CMAKE_PREFIX_PATH': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/devel:/opt/ros/indigo', 'LD_LIBRARY_PATH': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/devel/lib/x86_64-linux-gnu:/opt/ros/indigo/lib/x86_64-linux-gnu:/home/vagrant/therblig-motion-library/mico/wpi_jaco/devel/lib:/opt/ros/indigo/lib', 'LANG': 'en_US.UTF-8', 'TERM': 'screen', 'SHELL': '/bin/bash', 'ROS_LOG_FILENAME': '/home/vagrant/.ros/log/537e11d8-4940-11e6-a3ed-080027a2ea64/roslaunch-ros-indigo-desktop-trusty64-12914.log', 'SHLVL': '2', 'XDG_SESSION_ID': '9', 'QT_QPA_PLATFORMTHEME': 'appmenu-qt5', 'DISPLAY': 'localhost:10.0', 'ROS_ETC_DIR': '/opt/ros/indigo/etc/ros', 'XDG_RUNTIME_DIR': '/run/user/1000', 'PYTHONPATH': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/devel/lib/python2.7/dist-packages:/opt/ros/indigo/lib/python2.7/dist-packages', 'TMUX': '/tmp/tmux-1000/default,11988,0', 'ROS_ROOT': '/opt/ros/indigo/share/ros', 'PKG_CONFIG_PATH': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/devel/lib/x86_64-linux-gnu/pkgconfig:/opt/ros/indigo/lib/x86_64-linux-gnu/pkgconfig:/home/vagrant/therblig-motion-library/mico/wpi_jaco/devel/lib/pkgconfig:/opt/ros/indigo/lib/pkgconfig', 'ROS_PACKAGE_PATH': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/src:/opt/ros/indigo/share:/opt/ros/indigo/stacks', 'ROS_TEST_RESULTS_DIR': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/build/test_results', '_': '/opt/ros/indigo/bin/roslaunch', 'CATKIN_TEST_RESULTS_DIR': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/build/test_results', 'SSH_TTY': '/dev/pts/0', 'OLDPWD': '/home/vagrant/therblig-motion-library/mico/wpi_jaco', 'ROSLISP_PACKAGE_DIRECTORIES': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/devel/share/common-lisp', 'PWD': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/devel', 'ROS_MASTER_URI': 'http://localhost:11311', 'MAIL': '/var/mail/vagrant', 'SSH_CONNECTION': '10.0.2.2 57124 10.0.2.15 22', 'TMUX_PANE': '%0'}
+[roslaunch][INFO] 2016-07-18 19:43:48,797: starting in server mode
+[roslaunch.parent][INFO] 2016-07-18 19:43:48,798: starting roslaunch parent run
+[roslaunch][INFO] 2016-07-18 19:43:48,798: loading roscore config file /opt/ros/indigo/etc/ros/roscore.xml
+[roslaunch][INFO] 2016-07-18 19:43:50,105: Added core node of type [rosout/rosout] in namespace [/]
+[roslaunch.config][INFO] 2016-07-18 19:43:50,106: loading config file /home/vagrant/therblig-motion-library/mico/wpi_jaco/src/mico_description/launch/view.launch
+[roslaunch][INFO] 2016-07-18 19:43:53,250: Added node of type [robot_state_publisher/robot_state_publisher] in namespace [/]
+[roslaunch][INFO] 2016-07-18 19:43:53,269: Added node of type [joint_state_publisher/joint_state_publisher] in namespace [/]
+[roslaunch][INFO] 2016-07-18 19:43:53,773: Added node of type [rviz/rviz] in namespace [/]
+[roslaunch][INFO] 2016-07-18 19:43:53,773: ... selected machine [] for node of type [robot_state_publisher/robot_state_publisher]
+[roslaunch][INFO] 2016-07-18 19:43:53,774: ... selected machine [] for node of type [joint_state_publisher/joint_state_publisher]
+[roslaunch][INFO] 2016-07-18 19:43:53,774: ... selected machine [] for node of type [rviz/rviz]
+[roslaunch.pmon][INFO] 2016-07-18 19:43:53,785: start_process_monitor: creating ProcessMonitor
+[roslaunch.pmon][INFO] 2016-07-18 19:43:53,786: created process monitor <ProcessMonitor(ProcessMonitor-1, initial daemon)>
+[roslaunch.pmon][INFO] 2016-07-18 19:43:53,786: start_process_monitor: ProcessMonitor started
+[roslaunch.parent][INFO] 2016-07-18 19:43:53,787: starting parent XML-RPC server
+[roslaunch.server][INFO] 2016-07-18 19:43:53,788: starting roslaunch XML-RPC server
+[roslaunch.server][INFO] 2016-07-18 19:43:53,788: waiting for roslaunch XML-RPC server to initialize
+[xmlrpc][INFO] 2016-07-18 19:43:53,788: XML-RPC server binding to 0.0.0.0:0
+[xmlrpc][INFO] 2016-07-18 19:43:53,789: Started XML-RPC server [http://ros-indigo-desktop-trusty64:49602/]
+[xmlrpc][INFO] 2016-07-18 19:43:53,790: xml rpc node: starting XML-RPC server
+[roslaunch][INFO] 2016-07-18 19:43:53,805: started roslaunch server http://ros-indigo-desktop-trusty64:49602/
+[roslaunch.parent][INFO] 2016-07-18 19:43:53,806: ... parent XML-RPC server started
+[roslaunch][INFO] 2016-07-18 19:43:53,808: master.is_running[http://localhost:11311]
+[roslaunch][INFO] 2016-07-18 19:43:53,811: master.is_running[http://localhost:11311]
+[roslaunch][INFO] 2016-07-18 19:43:53,813: ROS_MASTER_URI=http://localhost:11311
+[roslaunch][INFO] 2016-07-18 19:43:53,817: setting /roslaunch/uris/host_ros_indigo_desktop_trusty64__49602' to http://ros-indigo-desktop-trusty64:49602/
+[roslaunch][INFO] 2016-07-18 19:43:53,822: load_parameters starting ...
+[roslaunch][INFO] 2016-07-18 19:43:53,833: ... load_parameters complete
+[roslaunch][INFO] 2016-07-18 19:43:53,834: launch_nodes: launching local nodes ...
+[roslaunch][INFO] 2016-07-18 19:43:53,834: ... preparing to launch node of type [robot_state_publisher/robot_state_publisher]
+[roslaunch][INFO] 2016-07-18 19:43:53,835: create_node_process: package[robot_state_publisher] type[robot_state_publisher] machine[Machine(name[] env_loader[None] address[localhost] ssh_port[22] user[None] assignable[True] timeout[10.0])] master_uri[http://localhost:11311]
+[roslaunch][INFO] 2016-07-18 19:43:53,836: process[robot_state_publisher-1]: env[{'ROS_DISTRO': 'indigo', 'SSH_CLIENT': '10.0.2.2 57124 22', 'CPATH': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/devel/include:/opt/ros/indigo/include', 'LOGNAME': 'vagrant', 'USER': 'vagrant', 'HOME': '/home/vagrant', 'PATH': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/devel/bin:/opt/ros/indigo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games', 'CMAKE_PREFIX_PATH': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/devel:/opt/ros/indigo', 'ROS_LOG_FILENAME': '/home/vagrant/.ros/log/537e11d8-4940-11e6-a3ed-080027a2ea64/roslaunch-ros-indigo-desktop-trusty64-12914.log', 'LANG': 'en_US.UTF-8', 'TERM': 'screen', 'SHELL': '/bin/bash', 'SHLVL': '2', 'ROS_TEST_RESULTS_DIR': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/build/test_results', 'QT_QPA_PLATFORMTHEME': 'appmenu-qt5', 'DISPLAY': 'localhost:10.0', 'ROS_MASTER_URI': 'http://localhost:11311', 'XDG_RUNTIME_DIR': '/run/user/1000', 'PYTHONPATH': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/devel/lib/python2.7/dist-packages:/opt/ros/indigo/lib/python2.7/dist-packages', 'TMUX': '/tmp/tmux-1000/default,11988,0', 'ROS_ROOT': '/opt/ros/indigo/share/ros', 'PKG_CONFIG_PATH': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/devel/lib/x86_64-linux-gnu/pkgconfig:/opt/ros/indigo/lib/x86_64-linux-gnu/pkgconfig:/home/vagrant/therblig-motion-library/mico/wpi_jaco/devel/lib/pkgconfig:/opt/ros/indigo/lib/pkgconfig', 'ROS_PACKAGE_PATH': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/src:/opt/ros/indigo/share:/opt/ros/indigo/stacks', 'XDG_SESSION_ID': '9', '_': '/opt/ros/indigo/bin/roslaunch', 'CATKIN_TEST_RESULTS_DIR': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/build/test_results', 'LD_LIBRARY_PATH': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/devel/lib/x86_64-linux-gnu:/opt/ros/indigo/lib/x86_64-linux-gnu:/home/vagrant/therblig-motion-library/mico/wpi_jaco/devel/lib:/opt/ros/indigo/lib', 'SSH_TTY': '/dev/pts/0', 'OLDPWD': '/home/vagrant/therblig-motion-library/mico/wpi_jaco', 'ROSLISP_PACKAGE_DIRECTORIES': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/devel/share/common-lisp', 'PWD': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/devel', 'ROS_ETC_DIR': '/opt/ros/indigo/etc/ros', 'MAIL': '/var/mail/vagrant', 'SSH_CONNECTION': '10.0.2.2 57124 10.0.2.15 22', 'TMUX_PANE': '%0'}]
+[roslaunch][INFO] 2016-07-18 19:43:54,613: process[robot_state_publisher-1]: args[[u'/opt/ros/indigo/lib/robot_state_publisher/robot_state_publisher', u'__name:=robot_state_publisher']]
+[roslaunch][INFO] 2016-07-18 19:43:54,614: ... created process [robot_state_publisher-1]
+[roslaunch.pmon][INFO] 2016-07-18 19:43:54,615: ProcessMonitor.register[robot_state_publisher-1]
+[roslaunch.pmon][INFO] 2016-07-18 19:43:54,615: ProcessMonitor.register[robot_state_publisher-1] complete
+[roslaunch][INFO] 2016-07-18 19:43:54,616: ... registered process [robot_state_publisher-1]
+[roslaunch][INFO] 2016-07-18 19:43:54,616: process[robot_state_publisher-1]: starting os process
+[roslaunch][INFO] 2016-07-18 19:43:54,621: process[robot_state_publisher-1]: start w/ args [[u'/opt/ros/indigo/lib/robot_state_publisher/robot_state_publisher', u'__name:=robot_state_publisher', u'__log:=/home/vagrant/.ros/log/537e11d8-4940-11e6-a3ed-080027a2ea64/robot_state_publisher-1.log']]
+[roslaunch][INFO] 2016-07-18 19:43:54,621: process[robot_state_publisher-1]: cwd will be [/home/vagrant/.ros]
+[roslaunch][INFO] 2016-07-18 19:43:54,625: process[robot_state_publisher-1]: started with pid [12936]
+[roslaunch][INFO] 2016-07-18 19:43:54,627: ... successfully launched [robot_state_publisher-1]
+[roslaunch][INFO] 2016-07-18 19:43:54,628: ... preparing to launch node of type [joint_state_publisher/joint_state_publisher]
+[roslaunch][INFO] 2016-07-18 19:43:54,629: create_node_process: package[joint_state_publisher] type[joint_state_publisher] machine[Machine(name[] env_loader[None] address[localhost] ssh_port[22] user[None] assignable[True] timeout[10.0])] master_uri[http://localhost:11311]
+[roslaunch][INFO] 2016-07-18 19:43:54,630: process[joint_state_publisher-2]: env[{'ROS_DISTRO': 'indigo', 'SSH_CLIENT': '10.0.2.2 57124 22', 'CPATH': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/devel/include:/opt/ros/indigo/include', 'LOGNAME': 'vagrant', 'USER': 'vagrant', 'HOME': '/home/vagrant', 'PATH': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/devel/bin:/opt/ros/indigo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games', 'CMAKE_PREFIX_PATH': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/devel:/opt/ros/indigo', 'ROS_LOG_FILENAME': '/home/vagrant/.ros/log/537e11d8-4940-11e6-a3ed-080027a2ea64/roslaunch-ros-indigo-desktop-trusty64-12914.log', 'LANG': 'en_US.UTF-8', 'TERM': 'screen', 'SHELL': '/bin/bash', 'SHLVL': '2', 'ROS_TEST_RESULTS_DIR': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/build/test_results', 'QT_QPA_PLATFORMTHEME': 'appmenu-qt5', 'DISPLAY': 'localhost:10.0', 'ROS_MASTER_URI': 'http://localhost:11311', 'XDG_RUNTIME_DIR': '/run/user/1000', 'PYTHONPATH': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/devel/lib/python2.7/dist-packages:/opt/ros/indigo/lib/python2.7/dist-packages', 'TMUX': '/tmp/tmux-1000/default,11988,0', 'ROS_ROOT': '/opt/ros/indigo/share/ros', 'PKG_CONFIG_PATH': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/devel/lib/x86_64-linux-gnu/pkgconfig:/opt/ros/indigo/lib/x86_64-linux-gnu/pkgconfig:/home/vagrant/therblig-motion-library/mico/wpi_jaco/devel/lib/pkgconfig:/opt/ros/indigo/lib/pkgconfig', 'ROS_PACKAGE_PATH': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/src:/opt/ros/indigo/share:/opt/ros/indigo/stacks', 'XDG_SESSION_ID': '9', '_': '/opt/ros/indigo/bin/roslaunch', 'CATKIN_TEST_RESULTS_DIR': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/build/test_results', 'LD_LIBRARY_PATH': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/devel/lib/x86_64-linux-gnu:/opt/ros/indigo/lib/x86_64-linux-gnu:/home/vagrant/therblig-motion-library/mico/wpi_jaco/devel/lib:/opt/ros/indigo/lib', 'SSH_TTY': '/dev/pts/0', 'OLDPWD': '/home/vagrant/therblig-motion-library/mico/wpi_jaco', 'ROSLISP_PACKAGE_DIRECTORIES': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/devel/share/common-lisp', 'PWD': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/devel', 'ROS_ETC_DIR': '/opt/ros/indigo/etc/ros', 'MAIL': '/var/mail/vagrant', 'SSH_CONNECTION': '10.0.2.2 57124 10.0.2.15 22', 'TMUX_PANE': '%0'}]
+[roslaunch][INFO] 2016-07-18 19:43:55,441: process[joint_state_publisher-2]: args[[u'/opt/ros/indigo/lib/joint_state_publisher/joint_state_publisher', u'__name:=joint_state_publisher']]
+[roslaunch][INFO] 2016-07-18 19:43:55,442: ... created process [joint_state_publisher-2]
+[roslaunch.pmon][INFO] 2016-07-18 19:43:55,442: ProcessMonitor.register[joint_state_publisher-2]
+[roslaunch.pmon][INFO] 2016-07-18 19:43:55,443: ProcessMonitor.register[joint_state_publisher-2] complete
+[roslaunch][INFO] 2016-07-18 19:43:55,444: ... registered process [joint_state_publisher-2]
+[roslaunch][INFO] 2016-07-18 19:43:55,444: process[joint_state_publisher-2]: starting os process
+[roslaunch][INFO] 2016-07-18 19:43:55,449: process[joint_state_publisher-2]: start w/ args [[u'/opt/ros/indigo/lib/joint_state_publisher/joint_state_publisher', u'__name:=joint_state_publisher', u'__log:=/home/vagrant/.ros/log/537e11d8-4940-11e6-a3ed-080027a2ea64/joint_state_publisher-2.log']]
+[roslaunch][INFO] 2016-07-18 19:43:55,450: process[joint_state_publisher-2]: cwd will be [/home/vagrant/.ros]
+[roslaunch][INFO] 2016-07-18 19:43:55,455: process[joint_state_publisher-2]: started with pid [12961]
+[roslaunch][INFO] 2016-07-18 19:43:55,456: ... successfully launched [joint_state_publisher-2]
+[roslaunch][INFO] 2016-07-18 19:43:55,456: ... preparing to launch node of type [rviz/rviz]
+[roslaunch][INFO] 2016-07-18 19:43:55,457: create_node_process: package[rviz] type[rviz] machine[Machine(name[] env_loader[None] address[localhost] ssh_port[22] user[None] assignable[True] timeout[10.0])] master_uri[http://localhost:11311]
+[roslaunch][INFO] 2016-07-18 19:43:55,458: process[rviz-3]: env[{'ROS_DISTRO': 'indigo', 'SSH_CLIENT': '10.0.2.2 57124 22', 'CPATH': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/devel/include:/opt/ros/indigo/include', 'LOGNAME': 'vagrant', 'USER': 'vagrant', 'HOME': '/home/vagrant', 'PATH': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/devel/bin:/opt/ros/indigo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games', 'CMAKE_PREFIX_PATH': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/devel:/opt/ros/indigo', 'ROS_LOG_FILENAME': '/home/vagrant/.ros/log/537e11d8-4940-11e6-a3ed-080027a2ea64/roslaunch-ros-indigo-desktop-trusty64-12914.log', 'LANG': 'en_US.UTF-8', 'TERM': 'screen', 'SHELL': '/bin/bash', 'SHLVL': '2', 'ROS_TEST_RESULTS_DIR': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/build/test_results', 'QT_QPA_PLATFORMTHEME': 'appmenu-qt5', 'DISPLAY': 'localhost:10.0', 'ROS_MASTER_URI': 'http://localhost:11311', 'XDG_RUNTIME_DIR': '/run/user/1000', 'PYTHONPATH': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/devel/lib/python2.7/dist-packages:/opt/ros/indigo/lib/python2.7/dist-packages', 'TMUX': '/tmp/tmux-1000/default,11988,0', 'ROS_ROOT': '/opt/ros/indigo/share/ros', 'PKG_CONFIG_PATH': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/devel/lib/x86_64-linux-gnu/pkgconfig:/opt/ros/indigo/lib/x86_64-linux-gnu/pkgconfig:/home/vagrant/therblig-motion-library/mico/wpi_jaco/devel/lib/pkgconfig:/opt/ros/indigo/lib/pkgconfig', 'ROS_PACKAGE_PATH': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/src:/opt/ros/indigo/share:/opt/ros/indigo/stacks', 'XDG_SESSION_ID': '9', '_': '/opt/ros/indigo/bin/roslaunch', 'CATKIN_TEST_RESULTS_DIR': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/build/test_results', 'LD_LIBRARY_PATH': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/devel/lib/x86_64-linux-gnu:/opt/ros/indigo/lib/x86_64-linux-gnu:/home/vagrant/therblig-motion-library/mico/wpi_jaco/devel/lib:/opt/ros/indigo/lib', 'SSH_TTY': '/dev/pts/0', 'OLDPWD': '/home/vagrant/therblig-motion-library/mico/wpi_jaco', 'ROSLISP_PACKAGE_DIRECTORIES': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/devel/share/common-lisp', 'PWD': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/devel', 'ROS_ETC_DIR': '/opt/ros/indigo/etc/ros', 'MAIL': '/var/mail/vagrant', 'SSH_CONNECTION': '10.0.2.2 57124 10.0.2.15 22', 'TMUX_PANE': '%0'}]
+[roslaunch][INFO] 2016-07-18 19:43:56,445: process[rviz-3]: args[[u'/opt/ros/indigo/lib/rviz/rviz', '-d', '/home/vagrant/therblig-motion-library/mico/wpi_jaco/src/mico_description/rviz/view_robot.rviz', u'__name:=rviz']]
+[roslaunch][INFO] 2016-07-18 19:43:56,446: ... created process [rviz-3]
+[roslaunch.pmon][INFO] 2016-07-18 19:43:56,447: ProcessMonitor.register[rviz-3]
+[roslaunch.pmon][INFO] 2016-07-18 19:43:56,447: ProcessMonitor.register[rviz-3] complete
+[roslaunch][INFO] 2016-07-18 19:43:56,449: ... registered process [rviz-3]
+[roslaunch][INFO] 2016-07-18 19:43:56,449: process[rviz-3]: starting os process
+[roslaunch][INFO] 2016-07-18 19:43:56,454: process[rviz-3]: start w/ args [[u'/opt/ros/indigo/lib/rviz/rviz', '-d', '/home/vagrant/therblig-motion-library/mico/wpi_jaco/src/mico_description/rviz/view_robot.rviz', u'__name:=rviz', u'__log:=/home/vagrant/.ros/log/537e11d8-4940-11e6-a3ed-080027a2ea64/rviz-3.log']]
+[roslaunch][INFO] 2016-07-18 19:43:56,455: process[rviz-3]: cwd will be [/home/vagrant/.ros]
+[roslaunch][INFO] 2016-07-18 19:43:56,460: process[rviz-3]: started with pid [12964]
+[roslaunch][INFO] 2016-07-18 19:43:56,461: ... successfully launched [rviz-3]
+[roslaunch][INFO] 2016-07-18 19:43:56,463: ... launch_nodes complete
+[roslaunch.pmon][INFO] 2016-07-18 19:43:56,464: registrations completed <ProcessMonitor(ProcessMonitor-1, started daemon 140559856764672)>
+[roslaunch.parent][INFO] 2016-07-18 19:43:56,464: ... roslaunch parent running, waiting for process exit
+[roslaunch][INFO] 2016-07-18 19:43:56,465: spin
+[roslaunch][ERROR] 2016-07-18 19:43:56,797: ================================================================================REQUIRED process [rviz-3] has died!
+process has died [pid 12964, exit code 1, cmd /opt/ros/indigo/lib/rviz/rviz -d /home/vagrant/therblig-motion-library/mico/wpi_jaco/src/mico_description/rviz/view_robot.rviz __name:=rviz __log:=/home/vagrant/.ros/log/537e11d8-4940-11e6-a3ed-080027a2ea64/rviz-3.log].
+log file: /home/vagrant/.ros/log/537e11d8-4940-11e6-a3ed-080027a2ea64/rviz-3*.log
+Initiating shutdown!
+================================================================================
+[roslaunch.pmon][INFO] 2016-07-18 19:43:56,898: ProcessMonitor._post_run <ProcessMonitor(ProcessMonitor-1, started daemon 140559856764672)>
+[roslaunch.pmon][INFO] 2016-07-18 19:43:56,900: ProcessMonitor._post_run <ProcessMonitor(ProcessMonitor-1, started daemon 140559856764672)>: remaining procs are [<roslaunch.nodeprocess.LocalProcess object at 0x7fd6a480b510>, <roslaunch.nodeprocess.LocalProcess object at 0x7fd6a4846a10>, <roslaunch.nodeprocess.LocalProcess object at 0x7fd6a480ba90>]
+[roslaunch.pmon][INFO] 2016-07-18 19:43:56,902: ProcessMonitor exit: killing rviz-3
+[roslaunch][INFO] 2016-07-18 19:43:56,904: [rviz-3] killing on exit
+[roslaunch.pmon][INFO] 2016-07-18 19:43:56,903: ProcessMonitor exit: killing joint_state_publisher-2
+[roslaunch][INFO] 2016-07-18 19:43:56,907: [joint_state_publisher-2] killing on exit
+[roslaunch][INFO] 2016-07-18 19:43:56,909: process[joint_state_publisher-2]: killing os process with pid[12961] pgid[12961]
+[roslaunch][INFO] 2016-07-18 19:43:56,910: [joint_state_publisher-2] sending SIGINT to pgid [12961]
+[roslaunch][INFO] 2016-07-18 19:43:56,912: [joint_state_publisher-2] sent SIGINT to pgid [12961]
+[roslaunch.pmon][INFO] 2016-07-18 19:43:56,910: ProcessMonitor exit: killing robot_state_publisher-1
+[roslaunch][INFO] 2016-07-18 19:43:56,913: [robot_state_publisher-1] killing on exit
+[roslaunch][INFO] 2016-07-18 19:43:56,915: process[robot_state_publisher-1]: killing os process with pid[12936] pgid[12936]
+[roslaunch][INFO] 2016-07-18 19:43:56,916: [robot_state_publisher-1] sending SIGINT to pgid [12936]
+[roslaunch][INFO] 2016-07-18 19:43:56,917: [robot_state_publisher-1] sent SIGINT to pgid [12936]
+[roslaunch][INFO] 2016-07-18 19:43:57,123: process[robot_state_publisher-1]: SIGINT killed with return value 0
+[roslaunch][INFO] 2016-07-18 19:43:57,616: process[joint_state_publisher-2]: SIGINT killed with return value 1
+[roslaunch.pmon][INFO] 2016-07-18 19:43:57,617: ProcessMonitor exit: cleaning up data structures and signals
+[roslaunch.pmon][INFO] 2016-07-18 19:43:57,618: ProcessMonitor exit: pmon has shutdown
+[roslaunch][INFO] 2016-07-18 19:43:57,674: process monitor is done spinning, initiating full shutdown
+[roslaunch][INFO] 2016-07-18 19:43:57,675: runner.stop()
+[roslaunch][INFO] 2016-07-18 19:43:57,676: shutting down processing monitor...
+[roslaunch][INFO] 2016-07-18 19:43:57,676: shutting down processing monitor <ProcessMonitor(ProcessMonitor-1, stopped daemon 140559856764672)>
+[roslaunch.pmon][INFO] 2016-07-18 19:43:57,677: ProcessMonitor.shutdown <ProcessMonitor(ProcessMonitor-1, stopped daemon 140559856764672)>
+[roslaunch][INFO] 2016-07-18 19:43:57,678: ... shutting down processing monitor complete
+[roslaunch][INFO] 2016-07-18 19:43:57,678: done
+[roslaunch.pmon][INFO] 2016-07-18 19:43:57,680: ProcessMonitor.shutdown <ProcessMonitor(ProcessMonitor-1, stopped daemon 140559856764672)>
+[rospy.core][INFO] 2016-07-18 19:43:57,681: signal_shutdown [atexit]

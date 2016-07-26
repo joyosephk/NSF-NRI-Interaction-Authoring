@@ -1,0 +1,26 @@
+[roslaunch][INFO] 2016-07-18 19:03:02,508: Checking log directory for disk usage. This may take awhile.
+Press Ctrl-C to interrupt
+[roslaunch][INFO] 2016-07-18 19:03:02,586: Done checking log file disk usage. Usage is <1GB.
+[roslaunch][INFO] 2016-07-18 19:03:02,586: roslaunch starting with args ['/opt/ros/indigo/bin/roslaunch', 'robot_state_publisher', 'robot_state_publisher']
+[roslaunch][INFO] 2016-07-18 19:03:02,587: roslaunch env is {'ROS_DISTRO': 'indigo', 'SSH_CLIENT': '10.0.2.2 57124 22', 'CPATH': '/opt/ros/indigo/include', 'LOGNAME': 'vagrant', 'USER': 'vagrant', 'PATH': '/opt/ros/indigo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games', 'HOME': '/home/vagrant', 'CMAKE_PREFIX_PATH': '/opt/ros/indigo', 'LD_LIBRARY_PATH': '/opt/ros/indigo/lib:/opt/ros/indigo/lib/x86_64-linux-gnu', 'LANG': 'en_US.UTF-8', 'TERM': 'xterm-256color', 'SHELL': '/bin/bash', 'ROS_LOG_FILENAME': '/home/vagrant/.ros/log/537e11d8-4940-11e6-a3ed-080027a2ea64/roslaunch-ros-indigo-desktop-trusty64-11385.log', 'SHLVL': '1', 'QT_QPA_PLATFORMTHEME': 'appmenu-qt5', 'DISPLAY': 'localhost:10.0', 'ROS_ETC_DIR': '/opt/ros/indigo/etc/ros', 'XDG_RUNTIME_DIR': '/run/user/1000', 'PYTHONPATH': '/opt/ros/indigo/lib/python2.7/dist-packages', 'ROS_ROOT': '/opt/ros/indigo/share/ros', 'PKG_CONFIG_PATH': '/opt/ros/indigo/lib/pkgconfig:/opt/ros/indigo/lib/x86_64-linux-gnu/pkgconfig', 'ROS_PACKAGE_PATH': '/opt/ros/indigo/share:/opt/ros/indigo/stacks', 'XDG_SESSION_ID': '9', '_': '/opt/ros/indigo/bin/roslaunch', 'SSH_TTY': '/dev/pts/0', 'OLDPWD': '/home/vagrant/therblig-motion-library/mico/wpi_jaco', 'ROSLISP_PACKAGE_DIRECTORIES': '', 'PWD': '/home/vagrant/therblig-motion-library/mico/wpi_jaco/devel', 'ROS_MASTER_URI': 'http://localhost:11311', 'MAIL': '/var/mail/vagrant', 'SSH_CONNECTION': '10.0.2.2 57124 10.0.2.15 22'}
+[roslaunch][INFO] 2016-07-18 19:03:02,587: starting in server mode
+[roslaunch.parent][INFO] 2016-07-18 19:03:02,588: starting roslaunch parent run
+[roslaunch][INFO] 2016-07-18 19:03:02,589: loading roscore config file /opt/ros/indigo/etc/ros/roscore.xml
+[roslaunch][INFO] 2016-07-18 19:03:02,707: Added core node of type [rosout/rosout] in namespace [/]
+[roslaunch.config][INFO] 2016-07-18 19:03:02,708: loading config file /opt/ros/indigo/lib/robot_state_publisher/robot_state_publisher
+[roslaunch][ERROR] 2016-07-18 19:03:02,709: Invalid roslaunch XML syntax: not well-formed (invalid token): line 1, column 0
+[roslaunch][ERROR] 2016-07-18 19:03:02,710: The traceback for the exception was written to the log file
+[roslaunch][ERROR] 2016-07-18 19:03:02,711: Traceback (most recent call last):
+  File "/opt/ros/indigo/lib/python2.7/dist-packages/roslaunch/__init__.py", line 298, in main
+    p.start()
+  File "/opt/ros/indigo/lib/python2.7/dist-packages/roslaunch/parent.py", line 260, in start
+    self._start_infrastructure()
+  File "/opt/ros/indigo/lib/python2.7/dist-packages/roslaunch/parent.py", line 209, in _start_infrastructure
+    self._load_config()
+  File "/opt/ros/indigo/lib/python2.7/dist-packages/roslaunch/parent.py", line 124, in _load_config
+    roslaunch_strs=self.roslaunch_strs, verbose=self.verbose)
+  File "/opt/ros/indigo/lib/python2.7/dist-packages/roslaunch/config.py", line 453, in load_config_default
+    raise RLException(e)
+RLException: Invalid roslaunch XML syntax: not well-formed (invalid token): line 1, column 0
+
+[rospy.core][INFO] 2016-07-18 19:03:02,712: signal_shutdown [atexit]

@@ -1,22 +1,21 @@
 var gulp = require('gulp');
 var uglify = require('gulp-uglify');
 var pump = require('pump');
+var concat = require('gulp-concat');
 
-var done = function(){
-	console.log('done')
-}
-gulp.task('default',function(){
-	pump([
-			gulp.src('static/bower_components/three.js/build/three.js'),
-			gulp.src('static/bower_components/angular/angular.min.js'),
-			gulp.src('static/bower_components/eventemitter2/lib/eventemitter2.js'),
-			gulp.src('static/collada.js'),
-			gulp.src('static/collada2.js'),
-			gulp.src('static/stl.js'),
-			gulp.src('static/bower_components/ros3d/build/ros3d.js'),
-			gulp.src('static/*.js'),
-			uglify(), 
-			gulp.dest('static/build')			
-			],
-			done);
+gulp.task('concat-minify',function(){
+			gulp.src(['js/bower_components/eventemitter2/lib/eventemitter2.js',
+			'js/bower_components/three.js/build/three.js',
+			'js/bower_components/roslib/build/roslib.js',
+			'js/bower_components/ros3d/build/ros3d.js',
+			'js/bower_components/angular/angular.js',
+			'js/*.js'])
+   				 .pipe(uglify())
+					 .pipe(concat('index.js'))
+					 .pipe(gulp.dest('./static/build'));
 });
+
+gulp.task('default',function(){
+	gulp.watch('js/*.js',['concat-minify']);
+})
+

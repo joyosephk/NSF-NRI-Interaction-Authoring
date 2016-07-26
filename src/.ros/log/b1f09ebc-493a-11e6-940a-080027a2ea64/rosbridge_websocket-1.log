@@ -1,0 +1,76 @@
+[rospy.client][INFO] 2016-07-13 20:47:56,355: init_node, name[/rosbridge_websocket], pid[10311]
+[xmlrpc][INFO] 2016-07-13 20:47:56,356: XML-RPC server binding to 0.0.0.0:0
+[rospy.init][INFO] 2016-07-13 20:47:56,357: ROS Slave URI: [http://ros-indigo-desktop-trusty64:37210/]
+[xmlrpc][INFO] 2016-07-13 20:47:56,357: Started XML-RPC server [http://ros-indigo-desktop-trusty64:37210/]
+[rospy.impl.masterslave][INFO] 2016-07-13 20:47:56,359: _ready: http://ros-indigo-desktop-trusty64:37210/
+[xmlrpc][INFO] 2016-07-13 20:47:56,359: xml rpc node: starting XML-RPC server
+[rospy.registration][INFO] 2016-07-13 20:47:56,361: Registering with master node http://localhost:11311
+[rospy.init][INFO] 2016-07-13 20:47:56,459: registered with master
+[rospy.rosout][INFO] 2016-07-13 20:47:56,460: initializing /rosout core topic
+[rospy.rosout][INFO] 2016-07-13 20:47:56,464: connected to core topic /rosout
+[rospy.simtime][INFO] 2016-07-13 20:47:56,467: /use_sim_time is not set, will not subscribe to simulated time [/clock] topic
+[rosout][INFO] 2016-07-13 20:47:56,495: Rosbridge WebSocket server started on port 9090
+[rospy.internal][INFO] 2016-07-13 20:47:56,758: topic[/rosout] adding connection to [/rosout], count 0
+[rosout][INFO] 2016-07-13 20:48:04,702: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-13 20:51:13,716: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-13 20:51:14,979: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-13 20:51:40,667: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-13 20:51:43,722: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-13 20:51:47,143: [Client 2] [id: advertise:/tf2_web_republisher/goal:1] advertise: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-13 20:51:47,906: [Client 2] [id: subscribe:/tf2_web_republisher/feedback:3] subscribe: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rospy.internal][INFO] 2016-07-13 20:53:10,481: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rosout][INFO] 2016-07-13 20:53:10,490: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-13 20:53:11,430: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-13 20:53:12,184: [Client 3] [id: advertise:/tf2_web_republisher/goal:1] advertise: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-13 20:53:12,216: [Client 3] [id: subscribe:/tf2_web_republisher/feedback:3] subscribe: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-13 20:53:12,594: [Client 3] [id: publish:/tf2_web_republisher/goal:5] publish: Cannot infer topic type for topic /tf2_web_republisher/goal as it is not yet advertised
+[rospy.internal][INFO] 2016-07-13 20:54:03,962: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rosout][INFO] 2016-07-13 20:54:03,972: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-13 20:54:04,595: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-13 20:54:05,021: [Client 4] [id: advertise:/tf2_web_republisher/goal:1] advertise: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-13 20:54:05,050: [Client 4] [id: subscribe:/tf2_web_republisher/feedback:3] subscribe: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rospy.internal][INFO] 2016-07-13 20:54:19,806: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rosout][INFO] 2016-07-13 20:54:19,815: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-13 20:54:20,373: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-13 20:54:20,599: [Client 5] [id: advertise:/tf2_web_republisher/goal:1] advertise: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-13 20:54:20,632: [Client 5] [id: subscribe:/tf2_web_republisher/feedback:3] subscribe: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rospy.internal][INFO] 2016-07-13 20:54:25,366: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rosout][INFO] 2016-07-13 20:54:25,371: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-13 20:54:25,787: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-13 20:54:25,997: [Client 6] [id: advertise:/tf2_web_republisher/goal:1] advertise: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-13 20:54:26,031: [Client 6] [id: subscribe:/tf2_web_republisher/feedback:3] subscribe: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rospy.internal][INFO] 2016-07-13 20:55:08,645: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rosout][INFO] 2016-07-13 20:55:08,672: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-13 20:55:09,877: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-13 20:55:10,499: [Client 7] [id: advertise:/tf2_web_republisher/goal:1] advertise: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-13 20:55:10,547: [Client 7] [id: subscribe:/tf2_web_republisher/feedback:3] subscribe: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rospy.internal][INFO] 2016-07-13 20:55:31,038: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rosout][INFO] 2016-07-13 20:55:31,045: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-13 20:55:31,900: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-13 20:55:32,518: [Client 8] [id: advertise:/tf2_web_republisher/goal:1] advertise: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-13 20:55:32,552: [Client 8] [id: subscribe:/tf2_web_republisher/feedback:3] subscribe: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-13 20:55:32,776: [Client 8] [id: publish:/tf2_web_republisher/goal:5] publish: Cannot infer topic type for topic /tf2_web_republisher/goal as it is not yet advertised
+[rospy.internal][INFO] 2016-07-13 20:56:29,563: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rosout][INFO] 2016-07-13 20:56:29,582: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-13 20:56:30,901: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-13 20:56:32,376: [Client 9] [id: advertise:/tf2_web_republisher/goal:1] advertise: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-13 20:56:32,435: [Client 9] [id: subscribe:/tf2_web_republisher/feedback:3] subscribe: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-13 20:56:32,676: [Client 9] [id: publish:/tf2_web_republisher/goal:5] publish: Cannot infer topic type for topic /tf2_web_republisher/goal as it is not yet advertised
+[rospy.internal][INFO] 2016-07-13 20:57:56,193: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rosout][INFO] 2016-07-13 20:57:56,215: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-13 20:57:57,129: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-13 20:57:57,762: [Client 10] [id: advertise:/tf2_web_republisher/goal:1] advertise: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-13 20:57:57,788: [Client 10] [id: subscribe:/tf2_web_republisher/feedback:3] subscribe: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-13 20:57:57,955: [Client 10] [id: publish:/tf2_web_republisher/goal:5] publish: Cannot infer topic type for topic /tf2_web_republisher/goal as it is not yet advertised
+[rospy.internal][INFO] 2016-07-13 21:00:31,152: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rosout][INFO] 2016-07-13 21:00:31,162: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-13 21:00:31,927: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-13 21:00:32,634: [Client 11] [id: advertise:/tf2_web_republisher/goal:1] advertise: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-13 21:00:32,668: [Client 11] [id: subscribe:/tf2_web_republisher/feedback:3] subscribe: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-13 21:00:32,931: [Client 11] [id: publish:/tf2_web_republisher/goal:5] publish: Cannot infer topic type for topic /tf2_web_republisher/goal as it is not yet advertised
+[rospy.internal][INFO] 2016-07-13 21:01:09,665: topic impl's ref count is zero, deleting topic /tf2_web_republisher/cancel...
+[rosout][INFO] 2016-07-13 21:01:09,671: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-13 21:01:10,652: Client connected.  1 clients total.
+[rosout][ERROR] 2016-07-13 21:01:11,119: [Client 12] [id: advertise:/tf2_web_republisher/goal:1] advertise: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-13 21:01:11,150: [Client 12] [id: subscribe:/tf2_web_republisher/feedback:3] subscribe: Unable to load the manifest for package tf2_web_republisher. Caused by: tf2_web_republisher
+[rosout][ERROR] 2016-07-13 21:01:11,330: [Client 12] [id: publish:/tf2_web_republisher/goal:5] publish: Cannot infer topic type for topic /tf2_web_republisher/goal as it is not yet advertised

@@ -1,0 +1,3 @@
+logging to /home/vagrant/.ros/log/537e11d8-4940-11e6-a3ed-080027a2ea64/rosout.log
+re-publishing aggregated messages to /rosout_agg
+subscribed to /rosout

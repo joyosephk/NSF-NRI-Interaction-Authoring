@@ -1,0 +1,14 @@
+[rospy.client][INFO] 2016-07-13 20:45:36,677: init_node, name[/joint_state_publisher], pid[9871]
+[xmlrpc][INFO] 2016-07-13 20:45:36,678: XML-RPC server binding to 0.0.0.0:0
+[xmlrpc][INFO] 2016-07-13 20:45:36,679: Started XML-RPC server [http://ros-indigo-desktop-trusty64:51537/]
+[rospy.init][INFO] 2016-07-13 20:45:36,680: ROS Slave URI: [http://ros-indigo-desktop-trusty64:51537/]
+[rospy.impl.masterslave][INFO] 2016-07-13 20:45:36,680: _ready: http://ros-indigo-desktop-trusty64:51537/
+[rospy.registration][INFO] 2016-07-13 20:45:36,683: Registering with master node http://localhost:11311
+[xmlrpc][INFO] 2016-07-13 20:45:36,683: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2016-07-13 20:45:36,781: registered with master
+[rospy.rosout][INFO] 2016-07-13 20:45:36,782: initializing /rosout core topic
+[rospy.rosout][INFO] 2016-07-13 20:45:36,787: connected to core topic /rosout
+[rospy.simtime][INFO] 2016-07-13 20:45:36,791: /use_sim_time is not set, will not subscribe to simulated time [/clock] topic
+[rospy.internal][INFO] 2016-07-13 20:45:37,061: topic[/rosout] adding connection to [/rosout], count 0
+[rospy.internal][INFO] 2016-07-13 20:45:37,263: topic[/joint_states] adding connection to [/robot_state_publisher], count 0
+[rospy.internal][INFO] 2016-07-13 20:45:41,385: topic[/joint_states] adding connection to [/move_group], count 1

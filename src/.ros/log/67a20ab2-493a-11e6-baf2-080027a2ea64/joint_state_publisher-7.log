@@ -1,0 +1,20 @@
+[rospy.client][INFO] 2016-07-13 20:43:34,154: init_node, name[/joint_state_publisher], pid[9155]
+[xmlrpc][INFO] 2016-07-13 20:43:34,156: XML-RPC server binding to 0.0.0.0:0
+[rospy.init][INFO] 2016-07-13 20:43:34,160: ROS Slave URI: [http://ros-indigo-desktop-trusty64:40993/]
+[xmlrpc][INFO] 2016-07-13 20:43:34,160: Started XML-RPC server [http://ros-indigo-desktop-trusty64:40993/]
+[rospy.impl.masterslave][INFO] 2016-07-13 20:43:34,163: _ready: http://ros-indigo-desktop-trusty64:40993/
+[rospy.registration][INFO] 2016-07-13 20:43:34,165: Registering with master node http://localhost:11311
+[xmlrpc][INFO] 2016-07-13 20:43:34,165: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2016-07-13 20:43:34,261: registered with master
+[rospy.rosout][INFO] 2016-07-13 20:43:34,262: initializing /rosout core topic
+[rospy.rosout][INFO] 2016-07-13 20:43:34,269: connected to core topic /rosout
+[rospy.simtime][INFO] 2016-07-13 20:43:34,273: /use_sim_time is not set, will not subscribe to simulated time [/clock] topic
+[rospy.internal][INFO] 2016-07-13 20:43:34,500: topic[/rosout] adding connection to [/rosout], count 0
+[rospy.internal][INFO] 2016-07-13 20:43:34,506: topic[/joint_states] adding connection to [/robot_state_publisher], count 0
+[rospy.internal][INFO] 2016-07-13 20:43:39,318: topic[/joint_states] adding connection to [/move_group], count 1
+[rospy.core][INFO] 2016-07-13 20:43:58,019: signal_shutdown [signal-2]
+[rospy.internal][INFO] 2016-07-13 20:43:58,036: topic[/joint_states] removing connection to /robot_state_publisher
+[rospy.internal][INFO] 2016-07-13 20:43:58,036: topic[/joint_states] removing connection to /move_group
+[rospy.internal][INFO] 2016-07-13 20:43:58,037: topic[/rosout] removing connection to /rosout
+[rospy.impl.masterslave][INFO] 2016-07-13 20:43:58,038: signal-2
+[rospy.core][INFO] 2016-07-13 20:43:58,659: signal_shutdown [atexit]

@@ -1,0 +1,88 @@
+[roslaunch][INFO] 2016-07-19 20:57:57,054: Checking log directory for disk usage. This may take awhile.
+Press Ctrl-C to interrupt
+[roslaunch][INFO] 2016-07-19 20:57:57,151: Done checking log file disk usage. Usage is <1GB.
+[roslaunch][INFO] 2016-07-19 20:57:57,152: roslaunch starting with args ['/opt/ros/indigo/bin/roslaunch', 'rosbridge_server', 'rosbridge_websocket.launch']
+[roslaunch][INFO] 2016-07-19 20:57:57,153: roslaunch env is {'ROS_DISTRO': 'indigo', 'SSH_CLIENT': '10.0.2.2 50675 22', 'CPATH': '/opt/ros/indigo/include', 'LOGNAME': 'vagrant', 'USER': 'vagrant', 'PATH': '/opt/ros/indigo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games', 'HOME': '/home/vagrant', 'CMAKE_PREFIX_PATH': '/opt/ros/indigo', 'LD_LIBRARY_PATH': '/opt/ros/indigo/lib/x86_64-linux-gnu:/opt/ros/indigo/lib', 'LANG': 'en_US.UTF-8', 'TERM': 'screen', 'SHELL': '/bin/bash', 'ROS_LOG_FILENAME': '/home/vagrant/.ros/log/537e11d8-4940-11e6-a3ed-080027a2ea64/roslaunch-ros-indigo-desktop-trusty64-25686.log', 'SHLVL': '2', 'QT_QPA_PLATFORMTHEME': 'appmenu-qt5', 'DISPLAY': 'localhost:10.0', 'ROS_ETC_DIR': '/opt/ros/indigo/etc/ros', 'XDG_RUNTIME_DIR': '/run/user/1000', 'PYTHONPATH': '/opt/ros/indigo/lib/python2.7/dist-packages', 'SSH_AUTH_SOCK': '/tmp/ssh-07Ecys5WIh/agent.24847', 'TMUX': '/tmp/tmux-1000/default,24949,0', 'ROS_ROOT': '/opt/ros/indigo/share/ros', 'PKG_CONFIG_PATH': '/opt/ros/indigo/lib/x86_64-linux-gnu/pkgconfig:/opt/ros/indigo/lib/pkgconfig', 'ROS_PACKAGE_PATH': '/opt/ros/indigo/share:/opt/ros/indigo/stacks', 'XDG_SESSION_ID': '24', '_': '/opt/ros/indigo/bin/roslaunch', 'SSH_TTY': '/dev/pts/0', 'ROSLISP_PACKAGE_DIRECTORIES': '', 'PWD': '/home/vagrant', 'ROS_MASTER_URI': 'http://localhost:11311', 'MAIL': '/var/mail/vagrant', 'SSH_CONNECTION': '10.0.2.2 50675 10.0.2.15 22', 'TMUX_PANE': '%1'}
+[roslaunch][INFO] 2016-07-19 20:57:57,153: starting in server mode
+[roslaunch.parent][INFO] 2016-07-19 20:57:57,154: starting roslaunch parent run
+[roslaunch][INFO] 2016-07-19 20:57:57,155: loading roscore config file /opt/ros/indigo/etc/ros/roscore.xml
+[roslaunch][INFO] 2016-07-19 20:57:57,290: Added core node of type [rosout/rosout] in namespace [/]
+[roslaunch.config][INFO] 2016-07-19 20:57:57,291: loading config file /opt/ros/indigo/share/rosbridge_server/launch/rosbridge_websocket.launch
+[roslaunch][INFO] 2016-07-19 20:57:57,294: Added node of type [rosbridge_server/rosbridge_websocket] in namespace [/]
+[roslaunch][INFO] 2016-07-19 20:57:57,295: Added node of type [rosapi/rosapi_node] in namespace [/]
+[roslaunch][INFO] 2016-07-19 20:57:57,295: ... selected machine [] for node of type [rosbridge_server/rosbridge_websocket]
+[roslaunch][INFO] 2016-07-19 20:57:57,296: ... selected machine [] for node of type [rosapi/rosapi_node]
+[roslaunch.pmon][INFO] 2016-07-19 20:57:57,298: start_process_monitor: creating ProcessMonitor
+[roslaunch.pmon][INFO] 2016-07-19 20:57:57,298: created process monitor <ProcessMonitor(ProcessMonitor-1, initial daemon)>
+[roslaunch.pmon][INFO] 2016-07-19 20:57:57,299: start_process_monitor: ProcessMonitor started
+[roslaunch.parent][INFO] 2016-07-19 20:57:57,299: starting parent XML-RPC server
+[roslaunch.server][INFO] 2016-07-19 20:57:57,300: starting roslaunch XML-RPC server
+[roslaunch.server][INFO] 2016-07-19 20:57:57,300: waiting for roslaunch XML-RPC server to initialize
+[xmlrpc][INFO] 2016-07-19 20:57:57,301: XML-RPC server binding to 0.0.0.0:0
+[xmlrpc][INFO] 2016-07-19 20:57:57,302: Started XML-RPC server [http://ros-indigo-desktop-trusty64:32809/]
+[xmlrpc][INFO] 2016-07-19 20:57:57,302: xml rpc node: starting XML-RPC server
+[roslaunch][INFO] 2016-07-19 20:57:57,315: started roslaunch server http://ros-indigo-desktop-trusty64:32809/
+[roslaunch.parent][INFO] 2016-07-19 20:57:57,316: ... parent XML-RPC server started
+[roslaunch][INFO] 2016-07-19 20:57:57,318: master.is_running[http://localhost:11311]
+[roslaunch][INFO] 2016-07-19 20:57:57,322: master.is_running[http://localhost:11311]
+[roslaunch][INFO] 2016-07-19 20:57:57,324: ROS_MASTER_URI=http://localhost:11311
+[roslaunch][INFO] 2016-07-19 20:57:57,330: setting /roslaunch/uris/host_ros_indigo_desktop_trusty64__32809' to http://ros-indigo-desktop-trusty64:32809/
+[roslaunch][INFO] 2016-07-19 20:57:57,337: load_parameters starting ...
+[roslaunch][INFO] 2016-07-19 20:57:57,351: ... load_parameters complete
+[roslaunch][INFO] 2016-07-19 20:57:57,352: launch_nodes: launching local nodes ...
+[roslaunch][INFO] 2016-07-19 20:57:57,352: ... preparing to launch node of type [rosbridge_server/rosbridge_websocket]
+[roslaunch][INFO] 2016-07-19 20:57:57,353: create_node_process: package[rosbridge_server] type[rosbridge_websocket] machine[Machine(name[] env_loader[None] address[localhost] ssh_port[22] user[None] assignable[True] timeout[10.0])] master_uri[http://localhost:11311]
+[roslaunch][INFO] 2016-07-19 20:57:57,353: process[rosbridge_websocket-1]: env[{'ROS_DISTRO': 'indigo', 'SSH_CLIENT': '10.0.2.2 50675 22', 'CPATH': '/opt/ros/indigo/include', 'LOGNAME': 'vagrant', 'USER': 'vagrant', 'PATH': '/opt/ros/indigo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games', 'HOME': '/home/vagrant', 'CMAKE_PREFIX_PATH': '/opt/ros/indigo', 'ROS_LOG_FILENAME': '/home/vagrant/.ros/log/537e11d8-4940-11e6-a3ed-080027a2ea64/roslaunch-ros-indigo-desktop-trusty64-25686.log', 'LANG': 'en_US.UTF-8', 'TERM': 'screen', 'SHELL': '/bin/bash', 'SHLVL': '2', 'QT_QPA_PLATFORMTHEME': 'appmenu-qt5', 'DISPLAY': 'localhost:10.0', 'ROS_MASTER_URI': 'http://localhost:11311', 'XDG_RUNTIME_DIR': '/run/user/1000', 'PYTHONPATH': '/opt/ros/indigo/lib/python2.7/dist-packages', 'SSH_AUTH_SOCK': '/tmp/ssh-07Ecys5WIh/agent.24847', 'TMUX': '/tmp/tmux-1000/default,24949,0', 'ROS_ROOT': '/opt/ros/indigo/share/ros', 'PKG_CONFIG_PATH': '/opt/ros/indigo/lib/x86_64-linux-gnu/pkgconfig:/opt/ros/indigo/lib/pkgconfig', 'ROS_PACKAGE_PATH': '/opt/ros/indigo/share:/opt/ros/indigo/stacks', 'XDG_SESSION_ID': '24', '_': '/opt/ros/indigo/bin/roslaunch', 'LD_LIBRARY_PATH': '/opt/ros/indigo/lib/x86_64-linux-gnu:/opt/ros/indigo/lib', 'SSH_TTY': '/dev/pts/0', 'ROSLISP_PACKAGE_DIRECTORIES': '', 'PWD': '/home/vagrant', 'ROS_ETC_DIR': '/opt/ros/indigo/etc/ros', 'MAIL': '/var/mail/vagrant', 'SSH_CONNECTION': '10.0.2.2 50675 10.0.2.15 22', 'TMUX_PANE': '%1'}]
+[roslaunch][INFO] 2016-07-19 20:57:57,397: process[rosbridge_websocket-1]: args[[u'/opt/ros/indigo/lib/rosbridge_server/rosbridge_websocket', u'__name:=rosbridge_websocket']]
+[roslaunch][INFO] 2016-07-19 20:57:57,398: ... created process [rosbridge_websocket-1]
+[roslaunch.pmon][INFO] 2016-07-19 20:57:57,399: ProcessMonitor.register[rosbridge_websocket-1]
+[roslaunch.pmon][INFO] 2016-07-19 20:57:57,399: ProcessMonitor.register[rosbridge_websocket-1] complete
+[roslaunch][INFO] 2016-07-19 20:57:57,400: ... registered process [rosbridge_websocket-1]
+[roslaunch][INFO] 2016-07-19 20:57:57,400: process[rosbridge_websocket-1]: starting os process
+[roslaunch][INFO] 2016-07-19 20:57:57,401: process[rosbridge_websocket-1]: start w/ args [[u'/opt/ros/indigo/lib/rosbridge_server/rosbridge_websocket', u'__name:=rosbridge_websocket', u'__log:=/home/vagrant/.ros/log/537e11d8-4940-11e6-a3ed-080027a2ea64/rosbridge_websocket-1.log']]
+[roslaunch][INFO] 2016-07-19 20:57:57,401: process[rosbridge_websocket-1]: cwd will be [/home/vagrant/.ros]
+[roslaunch][INFO] 2016-07-19 20:57:57,406: process[rosbridge_websocket-1]: started with pid [25705]
+[roslaunch][INFO] 2016-07-19 20:57:57,407: ... successfully launched [rosbridge_websocket-1]
+[roslaunch][INFO] 2016-07-19 20:57:57,408: ... preparing to launch node of type [rosapi/rosapi_node]
+[roslaunch][INFO] 2016-07-19 20:57:57,409: create_node_process: package[rosapi] type[rosapi_node] machine[Machine(name[] env_loader[None] address[localhost] ssh_port[22] user[None] assignable[True] timeout[10.0])] master_uri[http://localhost:11311]
+[roslaunch][INFO] 2016-07-19 20:57:57,410: process[rosapi-2]: env[{'ROS_DISTRO': 'indigo', 'SSH_CLIENT': '10.0.2.2 50675 22', 'CPATH': '/opt/ros/indigo/include', 'LOGNAME': 'vagrant', 'USER': 'vagrant', 'PATH': '/opt/ros/indigo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games', 'HOME': '/home/vagrant', 'CMAKE_PREFIX_PATH': '/opt/ros/indigo', 'ROS_LOG_FILENAME': '/home/vagrant/.ros/log/537e11d8-4940-11e6-a3ed-080027a2ea64/roslaunch-ros-indigo-desktop-trusty64-25686.log', 'LANG': 'en_US.UTF-8', 'TERM': 'screen', 'SHELL': '/bin/bash', 'SHLVL': '2', 'QT_QPA_PLATFORMTHEME': 'appmenu-qt5', 'DISPLAY': 'localhost:10.0', 'ROS_MASTER_URI': 'http://localhost:11311', 'XDG_RUNTIME_DIR': '/run/user/1000', 'PYTHONPATH': '/opt/ros/indigo/lib/python2.7/dist-packages', 'SSH_AUTH_SOCK': '/tmp/ssh-07Ecys5WIh/agent.24847', 'TMUX': '/tmp/tmux-1000/default,24949,0', 'ROS_ROOT': '/opt/ros/indigo/share/ros', 'PKG_CONFIG_PATH': '/opt/ros/indigo/lib/x86_64-linux-gnu/pkgconfig:/opt/ros/indigo/lib/pkgconfig', 'ROS_PACKAGE_PATH': '/opt/ros/indigo/share:/opt/ros/indigo/stacks', 'XDG_SESSION_ID': '24', '_': '/opt/ros/indigo/bin/roslaunch', 'LD_LIBRARY_PATH': '/opt/ros/indigo/lib/x86_64-linux-gnu:/opt/ros/indigo/lib', 'SSH_TTY': '/dev/pts/0', 'ROSLISP_PACKAGE_DIRECTORIES': '', 'PWD': '/home/vagrant', 'ROS_ETC_DIR': '/opt/ros/indigo/etc/ros', 'MAIL': '/var/mail/vagrant', 'SSH_CONNECTION': '10.0.2.2 50675 10.0.2.15 22', 'TMUX_PANE': '%1'}]
+[roslaunch][INFO] 2016-07-19 20:57:57,453: process[rosapi-2]: args[[u'/opt/ros/indigo/lib/rosapi/rosapi_node', u'__name:=rosapi']]
+[roslaunch][INFO] 2016-07-19 20:57:57,454: ... created process [rosapi-2]
+[roslaunch.pmon][INFO] 2016-07-19 20:57:57,455: ProcessMonitor.register[rosapi-2]
+[roslaunch.pmon][INFO] 2016-07-19 20:57:57,456: ProcessMonitor.register[rosapi-2] complete
+[roslaunch][INFO] 2016-07-19 20:57:57,456: ... registered process [rosapi-2]
+[roslaunch][INFO] 2016-07-19 20:57:57,457: process[rosapi-2]: starting os process
+[roslaunch][INFO] 2016-07-19 20:57:57,461: process[rosapi-2]: start w/ args [[u'/opt/ros/indigo/lib/rosapi/rosapi_node', u'__name:=rosapi', u'__log:=/home/vagrant/.ros/log/537e11d8-4940-11e6-a3ed-080027a2ea64/rosapi-2.log']]
+[roslaunch][INFO] 2016-07-19 20:57:57,462: process[rosapi-2]: cwd will be [/home/vagrant/.ros]
+[roslaunch][INFO] 2016-07-19 20:57:57,472: process[rosapi-2]: started with pid [25706]
+[roslaunch][INFO] 2016-07-19 20:57:57,474: ... successfully launched [rosapi-2]
+[roslaunch][INFO] 2016-07-19 20:57:57,475: ... launch_nodes complete
+[roslaunch.pmon][INFO] 2016-07-19 20:57:57,477: registrations completed <ProcessMonitor(ProcessMonitor-1, started daemon 139885978437376)>
+[roslaunch.parent][INFO] 2016-07-19 20:57:57,478: ... roslaunch parent running, waiting for process exit
+[roslaunch][INFO] 2016-07-19 20:57:57,479: spin
+[roslaunch.pmon][INFO] 2016-07-19 21:07:45,037: ProcessMonitor.shutdown <ProcessMonitor(ProcessMonitor-1, started daemon 139885978437376)>
+[roslaunch.pmon][INFO] 2016-07-19 21:07:45,068: ProcessMonitor._post_run <ProcessMonitor(ProcessMonitor-1, started daemon 139885978437376)>
+[roslaunch.pmon][INFO] 2016-07-19 21:07:45,068: ProcessMonitor._post_run <ProcessMonitor(ProcessMonitor-1, started daemon 139885978437376)>: remaining procs are [<roslaunch.nodeprocess.LocalProcess object at 0x7f39be360fd0>, <roslaunch.nodeprocess.LocalProcess object at 0x7f39be360f50>]
+[roslaunch.pmon][INFO] 2016-07-19 21:07:45,069: ProcessMonitor exit: killing rosapi-2
+[roslaunch][INFO] 2016-07-19 21:07:45,071: [rosapi-2] killing on exit
+[roslaunch.pmon][INFO] 2016-07-19 21:07:45,072: ProcessMonitor exit: killing rosbridge_websocket-1
+[roslaunch][INFO] 2016-07-19 21:07:45,077: [rosbridge_websocket-1] killing on exit
+[roslaunch][INFO] 2016-07-19 21:07:45,078: process[rosapi-2]: killing os process with pid[25706] pgid[25706]
+[roslaunch][INFO] 2016-07-19 21:07:45,080: process[rosbridge_websocket-1]: killing os process with pid[25705] pgid[25705]
+[roslaunch][INFO] 2016-07-19 21:07:45,081: [rosapi-2] sending SIGINT to pgid [25706]
+[roslaunch][INFO] 2016-07-19 21:07:45,082: [rosbridge_websocket-1] sending SIGINT to pgid [25705]
+[roslaunch][INFO] 2016-07-19 21:07:45,088: [rosbridge_websocket-1] sent SIGINT to pgid [25705]
+[roslaunch][INFO] 2016-07-19 21:07:45,084: [rosapi-2] sent SIGINT to pgid [25706]
+[roslaunch][INFO] 2016-07-19 21:07:45,391: process[rosbridge_websocket-1]: SIGINT killed with return value 0
+[roslaunch][INFO] 2016-07-19 21:07:45,899: process[rosapi-2]: SIGINT killed with return value 0
+[roslaunch.pmon][INFO] 2016-07-19 21:07:45,901: ProcessMonitor exit: cleaning up data structures and signals
+[roslaunch.pmon][INFO] 2016-07-19 21:07:45,902: ProcessMonitor exit: pmon has shutdown
+[roslaunch][INFO] 2016-07-19 21:07:45,917: process monitor is done spinning, initiating full shutdown
+[roslaunch][INFO] 2016-07-19 21:07:45,918: runner.stop()
+[roslaunch][INFO] 2016-07-19 21:07:45,919: shutting down processing monitor...
+[roslaunch][INFO] 2016-07-19 21:07:45,920: shutting down processing monitor <ProcessMonitor(ProcessMonitor-1, stopped daemon 139885978437376)>
+[roslaunch.pmon][INFO] 2016-07-19 21:07:45,920: ProcessMonitor.shutdown <ProcessMonitor(ProcessMonitor-1, stopped daemon 139885978437376)>
+[roslaunch][INFO] 2016-07-19 21:07:45,921: ... shutting down processing monitor complete
+[roslaunch][INFO] 2016-07-19 21:07:45,921: done
+[roslaunch.pmon][INFO] 2016-07-19 21:07:45,922: ProcessMonitor.shutdown <ProcessMonitor(ProcessMonitor-1, stopped daemon 139885978437376)>
+[rospy.core][INFO] 2016-07-19 21:07:45,923: signal_shutdown [atexit]

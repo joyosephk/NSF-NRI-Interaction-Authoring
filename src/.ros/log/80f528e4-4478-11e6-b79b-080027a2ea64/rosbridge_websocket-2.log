@@ -1,0 +1,40 @@
+[rospy.client][INFO] 2016-07-07 19:25:04,052: init_node, name[/rosbridge_websocket], pid[3986]
+[xmlrpc][INFO] 2016-07-07 19:25:04,053: XML-RPC server binding to 0.0.0.0:0
+[rospy.init][INFO] 2016-07-07 19:25:04,054: ROS Slave URI: [http://ros-indigo-desktop-trusty64:56599/]
+[xmlrpc][INFO] 2016-07-07 19:25:04,054: Started XML-RPC server [http://ros-indigo-desktop-trusty64:56599/]
+[rospy.impl.masterslave][INFO] 2016-07-07 19:25:04,055: _ready: http://ros-indigo-desktop-trusty64:56599/
+[xmlrpc][INFO] 2016-07-07 19:25:04,056: xml rpc node: starting XML-RPC server
+[rospy.registration][INFO] 2016-07-07 19:25:04,057: Registering with master node http://localhost:11311
+[rospy.init][INFO] 2016-07-07 19:25:04,155: registered with master
+[rospy.rosout][INFO] 2016-07-07 19:25:04,156: initializing /rosout core topic
+[rospy.rosout][INFO] 2016-07-07 19:25:04,162: connected to core topic /rosout
+[rospy.simtime][INFO] 2016-07-07 19:25:04,165: /use_sim_time is not set, will not subscribe to simulated time [/clock] topic
+[rosout][INFO] 2016-07-07 19:25:04,203: Rosbridge WebSocket server started on port 9090
+[rospy.internal][INFO] 2016-07-07 19:25:04,381: topic[/rosout] adding connection to [/rosout], count 0
+[rosout][INFO] 2016-07-07 19:25:08,242: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-07 19:28:08,771: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-07 19:28:09,794: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-07 19:31:51,699: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-07 19:31:52,187: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-07 19:33:39,663: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-07 19:33:40,203: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-07 19:40:44,773: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-07 19:40:45,225: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-07 19:41:21,848: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-07 19:41:22,099: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-07 19:43:50,923: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-07 19:43:51,444: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-07 19:43:57,123: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-07 19:43:57,373: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-07 19:52:45,496: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-07 19:52:45,958: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-07 19:55:13,150: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-07 19:55:13,491: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-07 19:55:53,006: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-07 19:55:53,531: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-07 19:57:20,777: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-07 19:57:21,098: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-07 19:58:01,547: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-07 19:58:01,874: Client connected.  1 clients total.
+[rosout][INFO] 2016-07-07 19:58:43,709: Client disconnected. 0 clients total.
+[rosout][INFO] 2016-07-07 19:58:44,067: Client connected.  1 clients total.
