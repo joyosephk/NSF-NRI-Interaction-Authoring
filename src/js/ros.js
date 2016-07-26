@@ -11,4 +11,9 @@ angular_app.factory('ros',['$http', function($http){
 	var moveTo = function(id){
 	
 	}
+	return {
+		getPositions: getPositions,
+		savePosition: savePosition,
+		moveTo: moveTo
+	}
 }])
