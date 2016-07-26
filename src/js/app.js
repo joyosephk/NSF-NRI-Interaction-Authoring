@@ -1,4 +1,4 @@
-angular_app.factory('simulation', ["models","$http",function(models, $http){
+angular_app.factory('simulation', ["models","$http",'ros',function(models, $http, ros){
 	var environment_objects = [];
 	var interactive_objects = [];
 	var url = "ws://demo.robotwebtools.org:9090"; 

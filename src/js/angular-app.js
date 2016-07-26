@@ -19,15 +19,17 @@ angular_app.factory('models',["$http",function($http){
 }]);
 
 //MAIN CONTROLLER
-angular_app.controller('mainController',["$scope","models","simulation",function($scope, models, simulation){
-	$scope.positions = simulation.getPositions();
-	$scope.nextID = 0;
+angular_app.controller('mainController',["$scope","models","simulation", "ros",function($scope, models, simulation, ros){
+	$scope.positions = ros.getPositions();
 	$scope.pos = new THREE.Vector3();
 	$scope.rot = new THREE.Vector3();
 	$scope.objects = simulation.getObjects();
 	$scope.models = [];
 	$scope.moveArm = function(){
 		simulation.moveArm()
+	}
+	$scope.previewPosition = function(){
+		var vec = $scope.posToMove.pose.position;
 	}
 	models.list_models().success(function(value){
 		objList = value.map(function(item){
@@ -51,8 +53,7 @@ angular_app.controller('mainController',["$scope","models","simulation",function
 		}
 	}
 	$scope.savePos = function(){
-		simulation.savePos($scope.name, $scope.nextID);
-		$scope.nextID++;
+		ros.savePosition($scope.name);
 	}
 	$scope.updateEditor = function(){
 		//simulation.changeColor($scope.selected);
