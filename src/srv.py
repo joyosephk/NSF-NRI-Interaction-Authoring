@@ -47,9 +47,13 @@ def putPosition(name):
     pGraph.addNode(ID, name, acHan)
 
 # move arm
-@app.route("/positions/move/<id>")
+@app.route("/positions/move/<ID>")
 def putArmGo(ID):
-    pGraph.setCurrNode(ID, acHan)
+    print "moving to " + ID
+    ret = pGraph.setCurrNode(int(ID), acHan)
+    print ret
+    print "moved to " + ID
+    return ID
 
 # make plan
 def putPlan():

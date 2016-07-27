@@ -1,2 +1,4 @@
 sesh.vim
+*.fs
+*.fs.*
 
