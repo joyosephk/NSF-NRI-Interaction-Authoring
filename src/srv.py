@@ -111,10 +111,6 @@ def putArmMove(ID):
 def putForceControl(on):
     print on
     if on == "true":
-        on = True
-    else:
-        on = False;
-    if on:
         fc.startForceControl()
     else:
         fc.stopForceControl()
