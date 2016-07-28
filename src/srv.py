@@ -61,6 +61,7 @@ def putPosition(name):
 # move arm
 @app.route("/positions/move/<ID>")
 def putArmGo(ID):
+    print "Got and ID to move to" + str(ID)
     try:
         ret = pGraph.setCurrNode(int(ID), acHan)
         print "return value: " + str(ret)
