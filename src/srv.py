@@ -109,14 +109,11 @@ def putArmMove(ID):
 # turn on/off force control
 @app.route("/forcecontrol/<on>")
 def putForceControl(on):
-    print on
-    print type(on)
     if on == "true":
-        ret = fc.startForceControl()
+        fc.startForceControl()
     else:
-        ret = fc.stopForceControl()
-    print ret
-    return ret
+        fc.stopForceControl()
+    return str(on)
 
 if __name__== '__main__':
     ############### ROS setup #######################
