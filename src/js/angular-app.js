@@ -31,7 +31,7 @@ angular_app.controller('mainController',["$scope","models","simulation", "ros",f
 	$scope.objects = simulation.getObjects();
 	$scope.models = [];
 	$scope.moveArm = function(){
-		simulation.moveArm()
+		simulation.moveArm($scope.posToMove.id)
 	}
 	$scope.previewPosition = function(){
 		//var vec = $scope.posToMove.pose.position;

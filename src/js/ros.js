@@ -18,6 +18,5 @@ angular_app.factory('ros',['$http', function($http){
 		savePosition: savePosition,
 		moveTo: moveTo,
 		compliantControl: compliantControl
-
 	}
 }])
