@@ -10,9 +10,14 @@ angular_app.factory('ros',['$http', function($http){
 		return $http.get('/positions/move/'+id);
 
 	}
+	var compliantControl = function(flag){
+		return $http.get('/forcecontrol/'+flag)	
+	}
 	return {
 		getPositions: getPositions,
 		savePosition: savePosition,
-		moveTo: moveTo
+		moveTo: moveTo,
+		compliantControl: compliantControl
+
 	}
 }])
