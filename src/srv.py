@@ -109,6 +109,7 @@ def putArmMove(ID):
 # turn on/off force control
 @app.route("/forcecontrol/<on>")
 def putForceControl(on):
+    on = bool(on)
     if on:
         fc.startForceControl()
     else:
