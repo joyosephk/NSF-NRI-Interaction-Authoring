@@ -20,6 +20,7 @@ angular_app.factory('models',["$http",function($http){
 
 //MAIN CONTROLLER
 angular_app.controller('mainController',["$scope","models","simulation", "ros",function($scope, models, simulation, ros){
+	$scope.posToMove = undefined;
 	$scope.positions =  [];
 		ros.getPositions().success(function(value){
 			$scope.positions = value;
@@ -34,13 +35,15 @@ angular_app.controller('mainController',["$scope","models","simulation", "ros",f
 	}
 	$scope.previewPosition = function(){
 		//var vec = $scope.posToMove.pose.position;
-		console.log(posTomove)
+	}
+	$scope.moveTo = function(){
 		ros.moveTo($scope.posToMove.id);
 	}
-	$scope.moveToPosition = function(){
-		ros.moveTo($scope.posToMove.id);
+	var compliantControl = false;
+	$scope.compliantControl= function(){
+		compliantControl = !compliantControl;
+		ros.compliantControl(compliantControl);
 	}
-
 	models.list_models().success(function(value){
 		objList = value.map(function(item){
 			obj = { name: item};
