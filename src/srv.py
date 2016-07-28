@@ -111,14 +111,10 @@ def putArmMove(ID):
 def putForceControl(on):
     print on
     if on == "true":
-        on = True
+        ret = fc.startForceControl()
     else:
-        on = False;
-    if on:
-        fc.startForceControl()
-    else:
-        fc.stopForceControl()
-    return on
+        ret = fc.stopForceControl()
+    return ret
 
 if __name__== '__main__':
     ############### ROS setup #######################
