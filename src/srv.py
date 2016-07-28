@@ -51,7 +51,10 @@ def getPlans():
 # save new position
 @app.route("/positions/save/<name>")
 def putPosition(name):
-    ID = random.random()
+    # generate a random ID
+    ID = int(random.random() * 1000000)
+    while pGraph.hasNode(ID):
+        ID = int(random.random() * 1000000)
     pGraph.addNode(ID, name, acHan)
     return ID
 
@@ -60,7 +63,7 @@ def putPosition(name):
 def putArmGo(ID):
     try:
         ret = pGraph.setCurrNode(int(ID), acHan)
-        print "return value: " + ret
+        print "return value: " + str(ret)
     except ValueError:
         print "Non integer-convertible value given for ID"
     return ID
