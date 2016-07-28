@@ -123,7 +123,7 @@ if __name__== '__main__':
     ############### ROS setup #######################
     node_name = 'mico_planner'
     group_name = 'arm'
-    planner_name = 'RRTstarkConfigDefault'
+    planner_name = 'RRTConnectkConfigDefault'
     ee_link_name = 'mico_link_endeffector'
 
     roscpp_initialize(sys.argv)
