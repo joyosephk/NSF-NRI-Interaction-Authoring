@@ -56,7 +56,8 @@ def putPosition(name):
     while pGraph.hasNode(ID):
         ID = int(random.random() * 1000000)
     pGraph.addNode(ID, name, acHan)
-    return name
+    transaction.commit()
+    return str(ID)
 
 # move arm
 @app.route("/positions/move/<ID>")
@@ -85,7 +86,8 @@ def putPlan(taskname):
             pGraph.makePath(int(ID), acHan)
         except ValueError:
             print "Non integer-convertible value given for ID"
-    pGraph.setAuthoredPlans(taskname, path)
+    pGraph.setAuthoredPlans(taskname, path)i
+    transaction.commit()
     return taskname
 
 # plan from current position to another position
@@ -93,6 +95,7 @@ def putPlan(taskname):
 def putIndividualPlan(ID):
     try:
         pGraph.makePath(int(ID), acHan)
+	transaction.commit()
     except ValueError:
         print "Non integer-convertible value given for ID"
     return ID
