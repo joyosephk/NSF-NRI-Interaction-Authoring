@@ -86,7 +86,7 @@ def putPlan(taskname):
             pGraph.makePath(int(ID), acHan)
         except ValueError:
             print "Non integer-convertible value given for ID"
-    pGraph.setAuthoredPlans(taskname, path)i
+    pGraph.setAuthoredPlans(taskname, path)
     transaction.commit()
     return taskname
 
