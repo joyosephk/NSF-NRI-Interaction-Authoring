@@ -110,7 +110,7 @@ def putArmMove(ID):
 @app.route("/forcecontrol/<on>")
 def putForceControl(on):
     print on
-    if on == "True":
+    if on == "true":
         on = True
     else:
         on = False;
