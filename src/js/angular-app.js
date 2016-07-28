@@ -63,7 +63,7 @@ angular_app.controller('mainController',["$scope","models","simulation", "ros",f
 		}
 	}
 	$scope.savePos = function(){
-		ros.savePosition($scope.name);
+		ros.savePosition($scope.posName);
 	}
 	$scope.updateEditor = function(){
 		//simulation.changeColor($scope.selected);
