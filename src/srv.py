@@ -56,7 +56,7 @@ def putPosition(name):
     while pGraph.hasNode(ID):
         ID = int(random.random() * 1000000)
     pGraph.addNode(ID, name, acHan)
-    return ID
+    return name
 
 # move arm
 @app.route("/positions/move/<ID>")
