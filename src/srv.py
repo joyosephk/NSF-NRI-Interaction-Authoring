@@ -56,7 +56,8 @@ def putPosition(name):
     while pGraph.hasNode(ID):
         ID = int(random.random() * 1000000)
     pGraph.addNode(ID, name, acHan)
-    return name
+    transaction.commit()
+    return str(ID)
 
 # move arm
 @app.route("/positions/move/<ID>")
@@ -86,6 +87,7 @@ def putPlan(taskname):
         except ValueError:
             print "Non integer-convertible value given for ID"
     pGraph.setAuthoredPlans(taskname, path)
+    transaction.commit()
     return taskname
 
 # plan from current position to another position
@@ -93,6 +95,7 @@ def putPlan(taskname):
 def putIndividualPlan(ID):
     try:
         pGraph.makePath(int(ID), acHan)
+	transaction.commit()
     except ValueError:
         print "Non integer-convertible value given for ID"
     return ID
@@ -120,7 +123,7 @@ if __name__== '__main__':
     ############### ROS setup #######################
     node_name = 'mico_planner'
     group_name = 'arm'
-    planner_name = 'RRTstarkConfigDefault'
+    planner_name = 'RRTConnectkConfigDefault'
     ee_link_name = 'mico_link_endeffector'
 
     roscpp_initialize(sys.argv)
