@@ -44,7 +44,8 @@
 			<div class="menu-item">
 				<h3 class="btn btn-expander" data-for="roboMove" ng-click="expandField($event)"> Robot Controls</h3>
 				<div class="expander-field" id="roboMove">
-					<div class="btn btn-submit" ng-click="compliantControl()">Turn on compliant control</div>
+					<div class="btn btn-submit" ng-click="compliantControlTog()"> compliant control: {{compliantControl}}</div>
+
 					<div class="form-container">
 						<label for="name">name:</label><input name="name" ng-model="poseName" type="text"/>
 						<div class="btn btn-submit" ng-click="savePos()">Save Current Position</div>
@@ -58,7 +59,7 @@
 					<div class="btn btn-submit" ng-click="moveTo()">Move</div>
 					<div class="form-container">
 						<h4>Make Plan</h4>
-						<label for="pname">Name:</label><input name="pname" ng-model="PlanName" type="text"/>
+						<label for="pname">Name:</label><input name="pname" ng-model="planName" type="text"/>
 						<select ng-options="obj as obj.name for obj in positions" ng-model="posToAdd"></select>
 						<div class="btn btn-submit" ng-click="addToPlan()">Add to plan</div>	
 						<div ng-repeat="pos in plan track by $index">
@@ -68,7 +69,23 @@
 					</div>	
 				</div>
 			</div>
+			<div class="menu-item">
+				<h3 class="btn btn-expander" data-for="executePlans" ng-click="expandField($event)">Execute Plans</h3>
+				<div class="expander-field" id="executePlans">
+					<div class="form-container">
+						<h4>Select a plan</h4>
+						<select ng-options="plan as plan.name for plan in savedPlans" ng-model="selectedPlan"></select>
+						<div class="btn btn-submit" ng-click="executePlan">Execute Plan</div>
 
+					</div>
+					<div class="form-container">
+						<h4> Make Individual Plan</h4>
+						<select ng-change="previewPosition()" ng-options="pos as pos.name for pos in positions" ng-model="posToMove"></select>
+
+						<div class="btn btn-submit" ng-click="makeIndividualPlan()">Make individual</div>
+					</div>
+			</div>
+		</div
 	</div>			
 
 </body>

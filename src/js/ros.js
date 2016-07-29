@@ -1,5 +1,19 @@
 angular_app.factory('ros',['$http', function($http){
-	var url ="http://cd46b0f1.ngrok.io"
+	var url ="http://7abacf62.ngrok.io"
+	var makePlanObject = function(arr){
+		//array of pose objects
+		var dict = {"path": null}
+		arr.map(function(el){
+			obj = {
+				id : el.id,
+				graspVal: 20
+			}
+			return obj;
+		});		
+		dict['path'] = arr;
+		return dict;
+	}
+	
 	//routes for ros related functionality
 	var getPositions = function(){
 	  return $http.get(url+'/positions/get');
@@ -18,10 +32,16 @@ angular_app.factory('ros',['$http', function($http){
 		return $http.get(url+'/plans/get');
 	}
 	var makePlan = function(taskname, positions ){
-		return $http.post(url+'plans/make/'+taskname, positions);
+		plan = makePlanObject(positions)
+		return $http({
+			method:'POST',
+			url: 	url+'/plans/make/'+taskname,
+			data: plan
+		} );
 	} 
 	//move from one pose to another and save that movement as a plan
   var moveAndSavePath = function(id ){
+		console.log("making individual");
 		return $http.get(url+'/plans/individual/'+id);	
 	}
 

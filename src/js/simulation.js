@@ -187,7 +187,8 @@ angular_app.factory('simulation', ["models","$http",'ros',function(models, $http
 		}	
 					));	
 	}
-	var previewSphere = new THREE.Mesh(material,geom);
+	var previewMaterial = new THREE.MeshBasicMaterial( {color: 0x1fdfc03} );
+	var previewSphere = new THREE.Mesh(previewMaterial,geom);
 	var preview = function(vec){
 		vec = new THREE.Vector3(vec.x,vec.y,vec.z);
 		moveObject(previewSphere,vec);

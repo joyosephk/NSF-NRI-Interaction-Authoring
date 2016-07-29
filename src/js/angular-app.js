@@ -28,24 +28,30 @@ angular_app.controller('mainController',["$scope","models","simulation", "ros",f
 	$scope.models = [];
 	$scope.savedPlans = [];
 	$scope.plan = [];
-	var compliantControl = false;
+	$scope.selectedPlan = undefined;
+
+	$scope.compliantControl = false;
 	//setup functions
 	ros.getPositions().success(function(value){
 			$scope.positions = value;
 	});
-
+	ros.getPlans().success(function(value){
+		console.log(value)
+		$scope.savedPlans = value;
+	});
 	$scope.previewPosition = function(){
-		var vec = $scope.posToMove.pose.position;
-		simulation.preview(vec);
+		console.log($scope.posToMove);
+		var vec = $scope.posToMove.position;
+		//simulation.previewPosition(vec);
 	}
 
 	$scope.moveTo = function(){
 		ros.moveTo($scope.posToMove.id);
 	}
 	
-	$scope.compliantControl= function(){
-		compliantControl = !compliantControl;
-		ros.compliantControl(compliantControl);
+	$scope.compliantControlTog = function(){
+		$scope.compliantControl = !$scope.compliantControl;
+		ros.compliantControl($scope.compliantControl);
 	}
 	models.list_models().success(function(value){
 		objList = value.map(function(item){
@@ -81,6 +87,12 @@ angular_app.controller('mainController',["$scope","models","simulation", "ros",f
 	}	
 	$scope.addToPlan = function(){
 		$scope.plan.push($scope.posToAdd);
+	}
+	$scope.executePlan = function(){
+		ros.executePlan($scope.selectedPlan.id);
+	}
+	$scope.makeIndividualPlan = function(){
+		ros.moveAndSavePath($scope.posToMove.id)
 	}
 }]);
 
