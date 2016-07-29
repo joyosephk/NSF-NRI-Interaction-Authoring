@@ -73,7 +73,7 @@ def putArmGo(ID):
 # make plan from a dictionary of plans, with each key corresponding to and ID, and the value being a grasp value 0-100
 # 100 = closed, 0 = open, floating point value
 @app.route("/plans/make/<taskname>")
-def putPlan(taskname):
+def putTaskPlan(taskname):
     # path is the dictionary of ID's
     path = request.json['path']
     # skip first node
@@ -81,8 +81,9 @@ def putPlan(taskname):
     next(iterable)
     #set first node to be current node
     pGraph.setCurrNode(path[0], acHan)
-    for ID in iterable:
+    for pose in iterable:
         try:
+            (ID, graspVal) = pose.items()
             pGraph.makePath(int(ID), acHan)
         except ValueError:
             print "Non integer-convertible value given for ID"
@@ -92,10 +93,10 @@ def putPlan(taskname):
 
 # plan from current position to another position
 @app.route("/plans/individual/<ID>")
-def putIndividualPlan(ID):
+def putPlan(ID):
     try:
         pGraph.makePath(int(ID), acHan)
-	transaction.commit()
+        transaction.commit()
     except ValueError:
         print "Non integer-convertible value given for ID"
     return ID
@@ -118,6 +119,19 @@ def putForceControl(on):
     else:
         fc.stopForceControl()
     return str(on)
+
+#grasp
+@app.route("/grasp/<value>")
+def grasp(value):
+    try:
+        value = float(value)
+        if value >= 0 and value <= 100
+            acHan.grasp(value)
+        else:
+            print "Value is out of range 0-100, value given: " + str(value)
+    except ValueError:
+        print "Grasp value must be a floating point value"
+    return str(value)
 
 if __name__== '__main__':
     ############### ROS setup #######################
