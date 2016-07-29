@@ -22,21 +22,27 @@ angular_app.factory('models',["$http",function($http){
 angular_app.controller('mainController',["$scope","models","simulation", "ros",function($scope, models, simulation, ros){
 	$scope.posToMove = undefined;
 	$scope.positions =  [];
-		ros.getPositions().success(function(value){
-			$scope.positions = value;
-		})
-
 	$scope.pos = new THREE.Vector3();
 	$scope.rot = new THREE.Vector3();
 	$scope.objects = simulation.getObjects();
 	$scope.models = [];
+	$scope.savedPlans = [];
+	$scope.plan = [];
+	var compliantControl = false;
+	//setup functions
+	ros.getPositions().success(function(value){
+			$scope.positions = value;
+	});
+
 	$scope.previewPosition = function(){
-		//var vec = $scope.posToMove.pose.position;
+		var vec = $scope.posToMove.pose.position;
+		simulation.preview(vec);
 	}
+
 	$scope.moveTo = function(){
 		ros.moveTo($scope.posToMove.id);
 	}
-	var compliantControl = false;
+	
 	$scope.compliantControl= function(){
 		compliantControl = !compliantControl;
 		ros.compliantControl(compliantControl);
@@ -63,13 +69,18 @@ angular_app.controller('mainController',["$scope","models","simulation", "ros",f
 		}
 	}
 	$scope.savePos = function(){
-		ros.savePosition($scope.posName);
+		ros.savePosition($scope.poseName);
 	}
 	$scope.updateEditor = function(){
-		//simulation.changeColor($scope.selected);
 		simulation.moveObject($scope.selected, $scope.pos );
 		simulation.rotateObject($scope.selected, $scope.rot);
 		simulation.scaleObject($scope.selected, $scope.scale);
+	}
+	$scope.makePlan = function(){
+		ros.makePlan($scope.planName,$scope.plan)
+	}	
+	$scope.addToPlan = function(){
+		$scope.plan.push($scope.posToAdd);
 	}
 }]);
 

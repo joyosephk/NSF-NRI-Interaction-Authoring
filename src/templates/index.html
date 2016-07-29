@@ -1,3 +1,4 @@
+{% raw %}
 <html ng-app="nriApp">
 <head>
 	<Title>ROS 3D</Title>
@@ -49,12 +50,22 @@
 						<div class="btn btn-submit" ng-click="savePos()">Save Current Position</div>
 					</div>
 
-					<div class="btn btn-submit" ng-click="moveTo()">Move</div>
 					<div class="form-container">
 						<h4>Move to pose</h4>
 						<label for="pose_name">Pose Name</label>
-						<select ng-model="posToMove" ng-options="obj as obj.name for obj in positions" ng-change="previewPosition()"/>
+						<select ng-model="posToMove" ng-options="obj as obj.name for obj in positions" ng-change="previewPosition()"></select>
 					</div>
+					<div class="btn btn-submit" ng-click="moveTo()">Move</div>
+					<div class="form-container">
+						<h4>Make Plan</h4>
+						<label for="pname">Name:</label><input name="pname" ng-model="PlanName" type="text"/>
+						<select ng-options="obj as obj.name for obj in positions" ng-model="posToAdd"></select>
+						<div class="btn btn-submit" ng-click="addToPlan()">Add to plan</div>	
+						<div ng-repeat="pos in plan track by $index">
+							<div>{{$index}}.{{pos.name}}</div>
+						</div>
+						<div class="btn btn-submit" ng-click="makePlan()">Save Plan</div>
+					</div>	
 				</div>
 			</div>
 
@@ -63,3 +74,4 @@
 </body>
 <script src="static/build/index.js"></script>
 </html>
+{% endraw %}

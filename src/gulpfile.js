@@ -22,7 +22,9 @@ gulp.task('sass2css',function(){
 });
 
 gulp.task('default',function(){
-	gulp.watch('js/*.js',['concat-minify']);
+	console.log("beginning watch....");
+	gulp.watch('js/*.js',['concat']);
+	gulp.watch('styles/*.scss', ['sass2css']);
 });
 gulp.task('concat',function(){
 			gulp.src(['js/bower_components/eventemitter2/lib/eventemitter2.js',

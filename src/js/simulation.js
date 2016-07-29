@@ -1,7 +1,14 @@
 angular_app.factory('simulation', ["models","$http",'ros',function(models, $http, ros){
 	var environment_objects = [];
 	var interactive_objects = [];
-	var url = "ws://localhost:9090/"
+	var url = null;
+	var warning = function(){
+		console.warn("running in test mode, most ROS functions won't work");
+	}
+	if (!url){
+		warning();
+	}
+
 	var ros = new ROSLIB.Ros({
 		url: url
 	});
@@ -180,20 +187,23 @@ angular_app.factory('simulation', ["models","$http",'ros',function(models, $http
 		}	
 					));	
 	}
-	var getPositions = function(){}
+	var previewSphere = new THREE.Mesh(material,geom);
+	var preview = function(vec){
+		vec = new THREE.Vector3(vec.x,vec.y,vec.z);
+		moveObject(previewSphere,vec);
+		viewer.addObject(previewSphere);
+	}
 
-
+	var addFunction = function(func){
+		return url ? func: warning;
+	}
 	return{
-		addObject: addObject,
-		getObjects: getObjects,
-		getObject: getObject,
-		moveObject: moveObject,
-		changeColor: changeColor,
-		rotateObject: rotateObject,
-		scaleObject: scaleObject,
-		moveArm: moveArm,
-		savePos:savePos,
-		getPositions: getPositions
-
+		addObject: addFunction(addObject),
+		getObjects: addFunction(getObjects),
+		getObject: addFunction(getObject),
+		moveObject: addFunction(moveObject),
+		changeColor: addFunction(changeColor),
+		rotateObject: addFunction(rotateObject),
+		scaleObject: addFunction(scaleObject)
 	}
 }]);
