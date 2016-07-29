@@ -1,4 +1,4 @@
-from flask import *
+import flask
 import sys
 from json import *
 import forceControlWrapper
@@ -11,25 +11,37 @@ import rospy
 from moveit_commander import RobotCommander, os, PlanningSceneInterface, roscpp_initialize, roscpp_shutdown
 import sys
 import random
+from functools import wraps
 
-app = Flask(__name__)
+app = flask.Flask(__name__)
 
 fc = forceControlWrapper.ForceControl()
 
+def decorator(func):
+    @wraps(func)
+    def func_wrapper(*args):
+        resp = flask.Response(func(*args))
+        resp.headers['Access-Control-Allow-Origin'] = '*'
+        return resp
+    return func_wrapper
+
 @app.route("/")
-def index():
-    return render_template("index.html")
+@decorator
+def index(arg=None):
+    return flask.render_template("index.html")
 
 models_path = "static/models"
 @app.route("/models/list")
-def listModels():
+@decorator
+def listModels(arg=None):
     models = []
     for entry in os.listdir(models_path):
         if entry != ".DS_Store":
             models.append(entry)
-    return json.dumps(models)
+    return flask.json.dumps(models)
 
 @app.route("/models/get/<name>")
+@decorator
 def getModelInfo(name):
     #returns the path of the model's JSON file, in
     #the future it will also return what type of file it is
@@ -39,17 +51,20 @@ def getModelInfo(name):
 # get all stored positions, ALSO ***NEW*** added lists of paths for each position that they have a planned path to
 # as key 'paths'
 @app.route("/positions/get")
-def getPositions():
+@decorator
+def getPositions(arg=None):
     positions = pGraph.getAuthoringInfo()
-    return json.dumps(positions)
+    return flask.json.dumps(positions)
 
 # get all overarching plans made in the authoring environment
 @app.route("/plans/get")
-def getPlans():
-    return json.dumps(pGraph.getAuthoredPlans())
+@decorator
+def getPlans(arg=None):
+    return flask.json.dumps(pGraph.getAuthoredPlans())
 
 # save new position
 @app.route("/positions/save/<name>")
+@decorator
 def putPosition(name):
     # generate a random ID
     ID = int(random.random() * 1000000)
@@ -61,6 +76,7 @@ def putPosition(name):
 
 # move arm
 @app.route("/positions/move/<ID>")
+@decorator
 def putArmGo(ID):
     print "Got and ID to move to" + str(ID)
     try:
@@ -73,13 +89,14 @@ def putArmGo(ID):
 # make plan from a dictionary of plans, with each key corresponding to and ID, and the value being a grasp value 0-100
 # 100 = closed, 0 = open, floating point value
 @app.route("/plans/make/<taskname>")
+@decorator
 def putTaskPlan(taskname):
     # path is the dictionary of ID's
-    path = request.json['path']
+    path = flask.request.json['path']
     # skip first node
     iterable = iter(path)
     next(iterable)
-    #set first node to be current node
+    # set first node to be current node
     pGraph.setCurrNode(path[0], acHan)
     for pose in iterable:
         try:
@@ -93,6 +110,7 @@ def putTaskPlan(taskname):
 
 # plan from current position to another position
 @app.route("/plans/individual/<ID>")
+@decorator
 def putPlan(ID):
     try:
         pGraph.makePath(int(ID), acHan)
@@ -103,6 +121,7 @@ def putPlan(ID):
 
 # move to a node from the current node of the arm
 @app.route("/plans/move/<ID>")
+@decorator
 def putArmMove(ID):
     try:
         pGraph.moveTo(int(ID), acHan)
@@ -113,6 +132,7 @@ def putArmMove(ID):
 
 # turn on/off force control
 @app.route("/forcecontrol/<on>")
+@decorator
 def putForceControl(on):
     if on == "true":
         fc.startForceControl()
@@ -122,10 +142,11 @@ def putForceControl(on):
 
 #grasp
 @app.route("/grasp/<value>")
+@decorator
 def grasp(value):
     try:
         value = float(value)
-        if value >= 0 and value <= 100
+        if value >= 0 and value <= 100:
             acHan.grasp(value)
         else:
             print "Value is out of range 0-100, value given: " + str(value)
@@ -165,7 +186,6 @@ if __name__== '__main__':
     pGraph.setCurrNodeNone()
 
     # save initial position
-    pGraph.addNode(9999, "initalposition", acHan)
     transaction.commit()
     app.run(debug = True, use_reloader=False)
 
