@@ -1,7 +1,6 @@
 import flask
 import sys
 from json import *
-import forceControlWrapper
 import os
 from ZODB import FileStorage, DB
 import transaction
@@ -154,10 +153,7 @@ def putArmMove(ID):
 @app.route("/forcecontrol/<on>")
 @logged
 def putForceControl(on):
-    if on == "true":
-        fc.startForceControl()
-    else:
-        fc.stopForceControl()
+    pub.publish(data=on)
     return str(on)
 
 #grasp
@@ -204,6 +200,9 @@ if __name__== '__main__':
 
     # clear persistent program memory
     pGraph.setCurrNodeNone()
+
+    pub = rospy.Publisher('mico_arm/Forcecontrol', std_msgs.msg.Bool, queue_size=10)
+    rospy.sleep(1)
 
     # save initial position
     transaction.commit()
