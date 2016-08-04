@@ -13,10 +13,10 @@ import random
 from functools import wraps, partial
 import logging
 from flask_cors import CORS, cross_origin
+import std_msgs.msg
 
 app = flask.Flask(__name__)
 CORS(app)
-fc = forceControlWrapper.ForceControl()
 
 def logged(func): #, level=logging.INFO, name=None, message=None):
     '''
@@ -69,13 +69,23 @@ def getModelInfo(name):
 @logged
 def getPositions(arg=None):
     positions = pGraph.getAuthoringInfo()
+    print "getPositions\n"
     return flask.json.dumps(positions)
 
 # get all overarching plans made in the authoring environment
 @app.route("/plans/get")
 @logged
 def getPlans(arg=None):
+    print "getPlans\n"
     return flask.json.dumps(pGraph.getAuthoredPlans())
+
+@app.route("/plans/execute/<name>")
+@logged
+def executePlan(name):
+    pGraph.taskPlanPlayback(name, acHan)
+    print "executePlan\n"
+    return name
+
 
 # save new position
 @app.route("/positions/save/<name>")
@@ -87,6 +97,7 @@ def putPosition(name):
         ID = int(random.random() * 1000000)
     pGraph.addNode(ID, name, acHan)
     transaction.commit()
+    print "putPosition\n"
     return str(ID)
 
 # move arm
@@ -99,13 +110,13 @@ def putArmGo(ID):
         print "return value: " + str(ret)
     except ValueError:
         print "Non integer-convertible value given for ID"
+    print "putArmGo\n"
     return ID
 
 # make plan from a dictionary of plans, with each key corresponding to and ID, and the value being a grasp value 0-100
 # 100 = closed, 0 = open, floating point value
 @app.route("/plans/make/<taskname>", methods=["GET", "POST"])
 @cross_origin()
-@logged
 def putTaskPlan(taskname):
     # path is the dictionary of ID's
     path = flask.request.json['path']
@@ -125,18 +136,21 @@ def putTaskPlan(taskname):
             print "Non integer-convertible value given for ID"
     pGraph.setAuthoredPlans(taskname, path)
     transaction.commit()
+    print "putTaskPlan\n"
     return taskname
 
 # plan from current position to another position
 @app.route("/plans/individual/<ID>")
 @logged
 def putPlan(ID):
+    result = ""
     try:
-        pGraph.makePath(int(ID), acHan)
+        result = pGraph.makePath(int(ID), acHan)
         transaction.commit()
     except ValueError:
         print "Non integer-convertible value given for ID"
-    return ID
+    print "putPlan\n"
+    return str(result)
 
 # move to a node from the current node of the arm
 @app.route("/plans/move/<ID>")
@@ -147,13 +161,18 @@ def putArmMove(ID):
     except ValueError:
         print "Non integer-convertible value given for ID"
 
+    print "putArmMove\n"
     return ID
 
 # turn on/off force control
 @app.route("/forcecontrol/<on>")
 @logged
 def putForceControl(on):
-    pub.publish(data=on)
+    print "Toggling force control\n"
+    if on == 'true':
+        pub.publish(data=True)
+    else:
+        pub.publish(data=False)
     return str(on)
 
 #grasp
@@ -204,7 +223,5 @@ if __name__== '__main__':
     pub = rospy.Publisher('mico_arm/Forcecontrol', std_msgs.msg.Bool, queue_size=10)
     rospy.sleep(1)
 
-    # save initial position
-    transaction.commit()
     app.run(debug = True, use_reloader=False)
 
