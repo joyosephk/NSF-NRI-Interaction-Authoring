@@ -44,8 +44,9 @@
 			<div class="menu-item">
 				<h3 class="btn btn-expander" data-for="roboMove" ng-click="expandField($event)"> Robot Controls</h3>
 				<div class="expander-field" id="roboMove">
-					<div class="btn btn-submit" ng-click="compliantControlTog()"> compliant control: {{compliantControl}}</div>
-
+					<div class="btn btn-submit" ng-click="compliantControlTog()"> compliant control: </div>
+					<div class="off" ng-if="!compliantControl" >off</div>
+					<div class="on" ng-if=compliantControl>on</div>
 					<div class="form-container">
 						<label for="name">name:</label><input name="name" ng-model="poseName" type="text"/>
 						<div class="btn btn-submit" ng-click="savePos()">Save Current Position</div>
@@ -75,13 +76,13 @@
 					<div class="form-container">
 						<h4>Select a plan</h4>
 						<select ng-options="plan as plan.name for plan in savedPlans" ng-model="selectedPlan"></select>
-						<div class="btn btn-submit" ng-click="executePlan">Execute Plan</div>
+						<div class="btn btn-submit" ng-click="executePlan()">Execute Plan</div>
 
 					</div>
 					<div class="form-container">
 						<h4> Make Individual Plan</h4>
 						<select ng-change="previewPosition()" ng-options="pos as pos.name for pos in positions" ng-model="posToMove"></select>
-
+						
 						<div class="btn btn-submit" ng-click="makeIndividualPlan()">Make individual</div>
 					</div>
 			</div>

@@ -1,16 +1,20 @@
 angular_app.factory('ros',['$http', function($http){
-	var url ="http://7abacf62.ngrok.io"
+	var url ="http://b020ab43.ngrok.io"
 	var makePlanObject = function(arr){
 		//array of pose objects
 		var dict = {"path": null}
-		arr.map(function(el){
+		arr = arr.map(function(el){
 			obj = {
 				id : el.id,
-				graspVal: 20
+				graspVal: 20,
+				name: name
+
 			}
+			console.log(obj);
 			return obj;
 		});		
 		dict['path'] = arr;
+		console.log(dict)
 		return dict;
 	}
 	
@@ -45,8 +49,8 @@ angular_app.factory('ros',['$http', function($http){
 		return $http.get(url+'/plans/individual/'+id);	
 	}
 
-	var executePlan = function(id){
-		return $http.get(url+'/plans/move/'+id);
+	var executePlan = function(name){
+		return $http.get(url+'/plans/execute/'+name);
 	}
 
 	return {

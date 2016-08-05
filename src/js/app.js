@@ -1,6 +1,4 @@
 var angular_app = angular.module('nriApp',[]);
-
-
 // Model service
 angular_app.factory('models',["$http",function($http){
 	var list_models = function(){
@@ -37,6 +35,12 @@ angular_app.controller('mainController',["$scope","models","simulation", "ros",f
 	});
 	ros.getPlans().success(function(value){
 		console.log(value)
+		var arr = [];
+		var keys = Object.keys(value);
+		for(i in keys){
+			value[keys[i]].name = keys[i];
+			arr.push(value[keys[i]]);
+		}
 		$scope.savedPlans = value;
 	});
 	$scope.previewPosition = function(){
@@ -89,7 +93,8 @@ angular_app.controller('mainController',["$scope","models","simulation", "ros",f
 		$scope.plan.push($scope.posToAdd);
 	}
 	$scope.executePlan = function(){
-		ros.executePlan($scope.selectedPlan.id);
+		console.log($scope.selectedPlan);
+		ros.executePlan($scope.selectedPlan.name);
 	}
 	$scope.makeIndividualPlan = function(){
 		ros.moveAndSavePath($scope.posToMove.id)
