@@ -27,7 +27,7 @@ angular_app.controller('mainController',["$scope","models","simulation", "ros",f
 	$scope.savedPlans = [];
 	$scope.plan = [];
 	$scope.selectedPlan = undefined;
-
+		
 	$scope.compliantControl = false;
 	//setup functions
 	ros.getPositions().success(function(value){

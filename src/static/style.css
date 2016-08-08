@@ -13,6 +13,14 @@
 .menu:hover {
   opacity: 0.95; }
 
+.on {
+  background: green;
+  display: inline-block; }
+
+.off {
+  background: red;
+  display: inline-block; }
+
 .menu-item {
   padding: 10px;
   margin: 5px;
@@ -38,7 +46,8 @@ input {
   z-index: -1; }
 
 body {
-  margin: 0; }
+  margin: 0;
+  overflow: hidden; }
 
 /*
  * EXPANDER FIELDS
