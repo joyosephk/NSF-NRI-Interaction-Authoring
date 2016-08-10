@@ -8,7 +8,6 @@ gulp.task('concat-minify',function(){
 			gulp.src(['js/bower_components/eventemitter2/lib/eventemitter2.js',
 			'js/bower_components/three.js/build/three.js',
 			'js/bower_components/roslib/build/roslib.js',
-			'js/bower_components/ros3d/build/ros3d.js',
 			'js/bower_components/angular/angular.js',
 			'js/*.js'])
    				 .pipe(uglify())
@@ -30,7 +29,6 @@ gulp.task('concat',function(){
 			gulp.src(['js/bower_components/eventemitter2/lib/eventemitter2.js',
 			'js/bower_components/three.js/build/three.js',
 			'js/bower_components/roslib/build/roslib.js',
-			'js/bower_components/ros3d/build/ros3d.js',
 			'js/bower_components/angular/angular.js',
 			'js/*.js'])
 					 .pipe(concat('index.js'))

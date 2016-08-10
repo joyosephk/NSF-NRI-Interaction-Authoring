@@ -18,8 +18,7 @@
   ],
   "dependencies": {
     "roslib": "roslibjs#^0.18.0",
-    "three.js": "threejs#r61",
-    "ros3d": "^0.15.0",
+    "three.js": "threejs#r79",
     "angular": "^1.5.7",
     "requirejs": "^2.2.0"
   }
