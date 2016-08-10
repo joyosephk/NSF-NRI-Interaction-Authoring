@@ -1,5 +1,6 @@
 var angular_app = angular.module('nriApp',[]);
 //MAIN CONTROLLER
+
 angular_app.controller('mainController',["$scope","models","simulation", "ros",function($scope, models, simulation, ros){
 	$scope.posToMove = undefined;
 	$scope.graspVal = 0;
@@ -11,13 +12,17 @@ angular_app.controller('mainController',["$scope","models","simulation", "ros",f
 	$scope.savedPlans = [];
 	$scope.plan = [];
 	$scope.selectedPlan = undefined;
-		
+	ros.compliantControl(false);	
 	$scope.compliantControl = false;
+	//default function for http failure
+	var httpFailure = function(err){
+		console.log(err);
+	}
 	//setup functions
-	ros.getPositions().success(function(value){
+	ros.getPositions().then(function(value){
 			$scope.positions = value;
-	});
-	ros.getPlans().success(function(value){
+	},httpFailure);
+	ros.getPlans().then(function(value){
 		console.log(value)
 		var arr = [];
 		var keys = Object.keys(value);
@@ -26,7 +31,7 @@ angular_app.controller('mainController',["$scope","models","simulation", "ros",f
 			arr.push(value[keys[i]]);
 		}
 		$scope.savedPlans = value;
-	});
+	},httpFailure);
 	$scope.previewPosition = function(){
 		console.log($scope.posToMove);
 		var vec = $scope.posToMove.position;
@@ -44,18 +49,18 @@ angular_app.controller('mainController',["$scope","models","simulation", "ros",f
 		$scope.compliantControl = !$scope.compliantControl;
 		ros.compliantControl($scope.compliantControl);
 	}
-	models.list_models().success(function(value){
+	models.list_models().then(function(value){
 		objList = value.map(function(item){
 			obj = { name: item};
 			return obj;
-		});
+		},httpFailure);
 		$scope.models = objList; 
 	});
 	$scope.formSubmit = function(e){
 		simulation.addObject("environment",$scope.selected.name, $scope.pos );
 	}
+
 	$scope.expandField = function(e){
-		$scope.objects = simulation.getObjects();
 		var el = e.srcElement;
 		var id = el.getAttribute("data-for");
 		var target = document.getElementById(id);

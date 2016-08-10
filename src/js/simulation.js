@@ -1,15 +1,24 @@
-angular_app.factory('simulation', ["models","$http",'ros',function(models, $http, ros){
+angular_app.factory('simulation', ["models","$http",'ros','3DUtils',function(models, $http, ros, 3DUtils){
+	var scene = new THREE.Scene();
+	var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+	var renderer = new THREE.WebGLRenderer();
+	renderer.setSize( window.innerWidth, window.innerHeight );
+	camera.position.z = 5;
+	var gridHelper = new THREE.GridHelper(100,100);
+	var insertionPoint = document.getElementById('rosPoint');
+	insertionPoint.appendChild(renderer.domElement);
+	var controls = new THREE.OrbitControls(camera, renderer.domElement);
+	controls.enableZoom = true;
 	var environment_objects = [];
 	var interactive_objects = [];
-	var url = "ws://192.168.1.163:9090";
+	var url = undefined;
 	var loader = new THREE.ObjectLoader();
 	//done for debugging purposes
-	window.viewer = viewer;
 	var boundingRadius = 1;
 	var raycaster = new THREE.Raycaster();
 	var mouse = new THREE.Vector2();
 	var sphereGeom = new THREE.SphereGeometry(.08,60,60);
-	var material = new THREE.MeshBasicMaterial( {color: 0xffff00} );
+	var material = new THREE.MeshBasicMaterial( {color: 0x0f5f00} );
 	var sphere = new THREE.Mesh(sphereGeom,material);
 	//mark the sphere as the end effector, makes it easier to spot in searches
 	sphere.endEffector = true;
@@ -30,19 +39,15 @@ angular_app.factory('simulation', ["models","$http",'ros',function(models, $http
 	var ros = new ROSLIB.Ros({
 		url: url
 	});
-	var viewer = new ROS3D.Viewer({
-		divID:'rosPoint',
-		width: window.innerWidth,
-		height: window.innerHeight,
-		background:'#002232',
-		antialias: true
-	});
 	
+	
+	window.scene = scene;
 	
 	//the following is all the code for the end effector display
 	
 	//add the end effector to the scene
-	viewer.addObject(sphere,true);
+	scene.add(sphere);
+	scene.add(gridHelper);
 	//gets data of arm positions, used to display end effector
 	var incoming = new ROSLIB.Topic({
 		ros: ros, 
@@ -66,8 +71,8 @@ angular_app.factory('simulation', ["models","$http",'ros',function(models, $http
 			// 	// (-1 to +1) for both components
 			mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
 			mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;		
-			raycaster.set(mouse, viewer.camera);
-			var intersects = raycaster.intersectObjects(viewer.scene.children);
+			raycaster.set(mouse, camera);
+			var intersects = raycaster.intersectObjects(scene.children);
 			for(i in intersects){
 				if(intersects[i].endEffector){
 					console.log("you're on the end effector!");
@@ -100,13 +105,7 @@ angular_app.factory('simulation', ["models","$http",'ros',function(models, $http
 		object.rotateZ(vec.z);
 		object.updateMatrix();
 	}
-  // adds in a grid
-	viewer.addObject(new ROS3D.Grid({
-				color:0x3000ff,
-				cellSize: 0.5,
-				size: 300
-	}));
-	
+		
 	/**
 	 * Add an object to the space
 	 * @param{enum} type - interactive or envirmonental objects
@@ -117,7 +116,7 @@ angular_app.factory('simulation', ["models","$http",'ros',function(models, $http
 		loader.load(models.get_model_path(object),function(object){
 			console.log(object);
 			moveObject(object,pos); 
-			viewer.addObject(object);
+			scene.add(object);
 			object.tag = true;
 		});
 	}
@@ -126,7 +125,7 @@ angular_app.factory('simulation', ["models","$http",'ros',function(models, $http
  * @return{array} an array of THREE.Object3D objects
  */
 	var getObjects = function(){
-		return viewer.scene.children.filter(function(el){
+		return scene.children.filter(function(el){
 			if(el.tag){
 				return true;
 			}
@@ -177,7 +176,7 @@ angular_app.factory('simulation', ["models","$http",'ros',function(models, $http
 		previewSphere.preview = true;
 		vec = new THREE.Vector3(vec.x,vec.y,vec.z);
 		moveObject(previewSphere,vec);
-		viewer.addObject(previewSphere);
+		scene.add(previewSphere);
 	}
 /**
  * preview a path of motions
@@ -195,7 +194,7 @@ angular_app.factory('simulation', ["models","$http",'ros',function(models, $http
 				next = arr[i+1].position;
 			}
 			var sphere = new THREE.Mesh(sphereGeom, previewMaterial)
-			viewer.addObject(sphere);
+			scene.add(sphere);
 			moveObject(sphere, makeTHREEVector(vec))
 			//draw line from one node to the next
 			if(next){
@@ -203,22 +202,27 @@ angular_app.factory('simulation', ["models","$http",'ros',function(models, $http
 				var geom = new THREE.Geometry();
 				geom.vertices.push(makeTHREEVector(vec), makeTHREEVector(next));
 				var line = new THREE.Line(geom, lineMaterial);
-				viewer.addObject(line, true);
+				scene.add(line);
 			}
 		}
 	}
 
 	//removes all nodes marked as previews
 	var cleanNodes = function(){
-		viewer.scene.traverse(function(object){
+		scene.traverse(function(object){
 			if(object.preview){
-				viewer.scene.remove(object);	
+				scene.remove(object);	
 			}		
 		});	
 	}
 	var makeTHREEVector = function(vec){
 		return new THREE.Vector3(vec.x, vec.y, vec.z);
 	}
+	var render = function(){
+		requestAnimationFrame( render );
+		renderer.render(scene, camera);
+	}
+	render();
 	return{
 		addObject: addFunction(addObject),
 		getObjects: addFunction(getObjects),
