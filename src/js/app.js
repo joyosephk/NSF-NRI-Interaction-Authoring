@@ -1,24 +1,8 @@
 var angular_app = angular.module('nriApp',[]);
-// Model service
-angular_app.factory('models',["$http",function($http){
-	var list_models = function(){
-		return $http.get("models/list");
-	}
-	var static_path = "static/models/"
-	var get_model_path = function(name){
-		//TODO this should give filetype based on where
-		return static_path+name+"/"+name+".json";
-	}
-	return{
-		list_models: list_models,
-		get_model_path: get_model_path
-	}
-
-}]);
-
 //MAIN CONTROLLER
 angular_app.controller('mainController',["$scope","models","simulation", "ros",function($scope, models, simulation, ros){
 	$scope.posToMove = undefined;
+	$scope.graspVal = 0;
 	$scope.positions =  [];
 	$scope.pos = new THREE.Vector3();
 	$scope.rot = new THREE.Vector3();
@@ -46,9 +30,12 @@ angular_app.controller('mainController',["$scope","models","simulation", "ros",f
 	$scope.previewPosition = function(){
 		console.log($scope.posToMove);
 		var vec = $scope.posToMove.position;
-		//simulation.previewPosition(vec);
+		simulation.previewPoint(vec);
 	}
-
+	$scope.previewPlan = function(){
+		console.log($scope.selectedPlan);
+		simulation.previewPath($scope.selectedPlan);
+	}
 	$scope.moveTo = function(){
 		ros.moveTo($scope.posToMove.id);
 	}
@@ -90,11 +77,11 @@ angular_app.controller('mainController',["$scope","models","simulation", "ros",f
 		ros.makePlan($scope.planName,$scope.plan)
 	}	
 	$scope.addToPlan = function(){
+		$scope.posToAdd.graspVal = $scope.graspVal;
 		$scope.plan.push($scope.posToAdd);
 	}
 	$scope.executePlan = function(){
-		console.log($scope.selectedPlan);
-		ros.executePlan($scope.selectedPlan.name);
+		ros.executePlan($scope.selectedPlan);
 	}
 	$scope.makeIndividualPlan = function(){
 		ros.moveAndSavePath($scope.posToMove.id)

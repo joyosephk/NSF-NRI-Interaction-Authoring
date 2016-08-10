@@ -75487,47 +75487,50 @@ var Position = function(name, id, vector){
 }
 
 var angular_app = angular.module('nriApp',[]);
-
-
-// Model service
-angular_app.factory('models',["$http",function($http){
-	var list_models = function(){
-		return $http.get("models/list");
-	}
-	var static_path = "static/models/"
-	var get_model_path = function(name){
-		//TODO this should give filetype based on where
-		return static_path+name+"/"+name+".json";
-	}
-	return{
-		list_models: list_models,
-		get_model_path: get_model_path
-	}
-
-}]);
-
 //MAIN CONTROLLER
 angular_app.controller('mainController',["$scope","models","simulation", "ros",function($scope, models, simulation, ros){
 	$scope.posToMove = undefined;
+	$scope.graspVal = 0;
 	$scope.positions =  [];
-		ros.getPositions().success(function(value){
-			$scope.positions = value;
-		})
-
 	$scope.pos = new THREE.Vector3();
 	$scope.rot = new THREE.Vector3();
 	$scope.objects = simulation.getObjects();
 	$scope.models = [];
+	$scope.savedPlans = [];
+	$scope.plan = [];
+	$scope.selectedPlan = undefined;
+
+	$scope.compliantControl = false;
+	//setup functions
+	ros.getPositions().success(function(value){
+			$scope.positions = value;
+	});
+	ros.getPlans().success(function(value){
+		console.log(value)
+		var arr = [];
+		var keys = Object.keys(value);
+		for(i in keys){
+			value[keys[i]].name = keys[i];
+			arr.push(value[keys[i]]);
+		}
+		$scope.savedPlans = value;
+	});
 	$scope.previewPosition = function(){
-		//var vec = $scope.posToMove.pose.position;
+		console.log($scope.posToMove);
+		var vec = $scope.posToMove.position;
+		simulation.previewPoint(vec);
+	}
+	$scope.previewPlan = function(){
+		console.log($scope.selectedPlan);
+		simulation.previewPath($scope.selectedPlan);
 	}
 	$scope.moveTo = function(){
 		ros.moveTo($scope.posToMove.id);
 	}
-	var compliantControl = false;
-	$scope.compliantControl= function(){
-		compliantControl = !compliantControl;
-		ros.compliantControl(compliantControl);
+	
+	$scope.compliantControlTog = function(){
+		$scope.compliantControl = !$scope.compliantControl;
+		ros.compliantControl($scope.compliantControl);
 	}
 	models.list_models().success(function(value){
 		objList = value.map(function(item){
@@ -75551,220 +75554,32 @@ angular_app.controller('mainController',["$scope","models","simulation", "ros",f
 		}
 	}
 	$scope.savePos = function(){
-		ros.savePosition($scope.name);
+		ros.savePosition($scope.poseName);
 	}
 	$scope.updateEditor = function(){
-		//simulation.changeColor($scope.selected);
 		simulation.moveObject($scope.selected, $scope.pos );
 		simulation.rotateObject($scope.selected, $scope.rot);
 		simulation.scaleObject($scope.selected, $scope.scale);
 	}
-}]);
-
-
-
-
-
-
-angular_app.factory('simulation', ["models","$http",'ros',function(models, $http, ros){
-	var environment_objects = [];
-	var interactive_objects = [];
-	var url = "ws://localhost:9090/"
-	var ros = new ROSLIB.Ros({
-		url: url
-	});
-	var incoming = new ROSLIB.Topic({
-		ros: ros, 
-		name: '/joint_position_inbox',
-		mesageType: 'geometry_msgs/Pose'
-	});
-	var rec;
-	
-	var outgoing = new ROSLIB.Topic({
-		ros: ros,
-		name: 'joint_position_remote',
-		messageType:'geometry_msgs/Pose'
-	});
-	outgoing.advertise();
-	var viewer = new ROS3D.Viewer({
-		divID:'rosPoint',
-		width: window.innerWidth,
-		height: window.innerHeight,
-		background:'#002232',
-		antialias: true
-	});
-	
-
-	window.viewer = viewer;
-	
-	var tf = new ROSLIB.TFClient({
-		ros: ros,
-		angularThres : 0.01,
-		transThres : 0.01,
-		rate : 10.0
-	});
-	
-	var geom = new THREE.SphereGeometry(.2,60,60);
-	var material = new THREE.MeshBasicMaterial( {color: 0xffff00} );
-	var sphere = new THREE.Mesh(geom,material);
-	//mark the sphere as the end effector
-	sphere.endEffector = true;
-	viewer.addObject(sphere,true);
-		
-	
-	window.wireframe = function(obj){
-		obj.traverse(function(object){
-			if(object.material){
-				object.material.wireframe = true;
-			
-			}
-		});
+	$scope.makePlan = function(){
+		ros.makePlan($scope.planName,$scope.plan)
+	}	
+	$scope.addToPlan = function(){
+		$scope.posToAdd.graspVal = $scope.graspVal;
+		$scope.plan.push($scope.posToAdd);
 	}
-	var boundingRadius = 1;
-	var isInBoundingSphere = function(vec){
-		//calculate the bounding sphere of the arms motion
-		return vec.length() <= boundingRadius
+	$scope.executePlan = function(){
+		ros.executePlan($scope.selectedPlan);
 	}
-
-//	urdf.change(function(e){
-	//	console.log(e)	
-//	});
-	var raycaster = new THREE.Raycaster();
-	var mouse = new THREE.Vector2();
-	var  onMouseMove = function( event ) {
-			// calculate mouse position in normalized device coordinates
-			// 	// (-1 to +1) for both components
-			mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-			mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;		
-			raycaster.set(mouse, viewer.camera);
-			var intersects = raycaster.intersectObjects(viewer.scene.children);
-			for(i in intersects){
-				if(intersects[i].endEffector){
-					console.log("you're on the end effector!");
-				}
-			}
-	}
-	var rec;
-	document.addEventListener('mousemove', onMouseMove);
-	incoming.subscribe(function(data){
-		if(!rec){
-			rec = data;
-			console.log(rec);
-		}
-		vec = data.position
-		 moveObject(sphere,new THREE.Vector3(vec.x, vec.y,vec.z));
-	});
-
-	var loader = new THREE.ObjectLoader();
-	var moveObject = function(object,vec){
-		//TODO right now this just move by distances
-		//it should just do final coordinates
-		var pos = object.position;
-		var end = vec.sub(pos);
-		var mat = new THREE.Matrix4();
-		mat.makeTranslation(end.x, end.y, end.z);
-		object.applyMatrix(object.matrix.multiply(mat));
-	}
-	var rotateObject = function(object,vec ){
-		object.rotateX(vec.x);
-		object.rotateY(vec.y);
-		object.rotateZ(vec.z);
-		object.updateMatrix();
-	}
-
-	viewer.addObject(new ROS3D.Grid({
-				color:0x3000ff,
-				cellSize: 0.5,
-				size: 300
-
-	}));
-	var addObject = function(type, object, pos){
-		loader.load(models.get_model_path(object),function(object){
-			console.log(object);
-			moveObject(object,pos); 
-			viewer.addObject(object);
-			object.tag = true;
-		});
-	
-	}
-	var getObject = function(){
-
-	}
-	var getObjects = function(){
-		return viewer.scene.children.filter(function(el){
-			if(el.tag){
-				return true;
-			}
-			return false;
-		});
-	
-	}
-	var changeColor = function(object, undo){
-		object.traverse(function(obj, undo){
-			if(obj.material){
-				if(undo){
-			//		obj.material.color = obj.undoColor;
-				}else{
-					//TODO this is changing the color of lights too, fix it
-				//	obj.undoColor = obj.material.color;
-					//obj.material.color = 0xFFFFFF;
-				}
-			}
-		});
-	}
-	var scaleObject = function(object, scale){
-		mat = new THREE.Matrix4();
-		mat.makeScale(scale,scale,scale);
-		object.applyMatrix(mat);
-
-	}
-	var moveArm = function(vec){
-		outgoing.publish(new ROSLIB.Message({
-			position:	new ROSLIB.Vector3(0.2117910853402465,-0.26117743992187786,0.47370996918522384), 
-			orientation:	new ROSLIB.Quaternion( 0.39724309036810795,0.3709431717747427,-0.6039290090423478,0.47370996918522384)
-		}));
-	}
-	//array of objects
-	var positions = [];
-	var nodeData = new ROSLIB.Topic({
-		ros:ros,
-		name:'nodedata',
-		messageType:'wpi_jaco_msgs/ArmNode'
-	});
-	nodeData.advertise();
-	var savePos = function(name , id){
-		console.log("sending message");
-		vec = sphere.position
-		nodeData.publish(new ROSLIB.Message({
-					name: name,
-					ID: id,
-					pose:{
-						position:{
-							x: vec.x,
-							y: vec.y,
-							z:vec.z
-						}
-					}
-		}	
-					));	
-	}
-	var getPositions = function(){}
-
-
-	return{
-		addObject: addObject,
-		getObjects: getObjects,
-		getObject: getObject,
-		moveObject: moveObject,
-		changeColor: changeColor,
-		rotateObject: rotateObject,
-		scaleObject: scaleObject,
-		moveArm: moveArm,
-		savePos:savePos,
-		getPositions: getPositions
-
+	$scope.makeIndividualPlan = function(){
+		ros.moveAndSavePath($scope.posToMove.id)
 	}
 }]);
+
+
+
+
+
 
 /**
  * @author mrdoob / http://mrdoob.com/
@@ -77366,27 +77181,339 @@ THREE.ColladaLoader.prototype = {
 
 
 
+angular_app.factory('models',["$http",function($http){
+	var list_models = function(){
+		return $http.get("models/list");
+	}
+	var static_path = "static/models/"
+	var get_model_path = function(name){
+		//TODO this should give filetype based on where
+		return static_path+name+"/"+name+".json";
+	}
+	return{
+		list_models: list_models,
+		get_model_path: get_model_path
+	}
+
+}]);
+
+
+
 angular_app.factory('ros',['$http', function($http){
+	var url =""
+	var currentPlan = [];
+	var makePlanObject = function(arr){
+		//array of pose objects
+		var dict = {"path": null}
+		arr = arr.map(function(el){
+			obj = {
+				id : el.id,
+				graspVal: el.graspVal,
+				name: el.name,
+				position: el.position
+			}
+			console.log(obj);
+			return obj;
+		});		
+		dict['path'] = arr;
+		console.log(dict)
+		return dict;
+	}
+	
 	//routes for ros related functionality
 	var getPositions = function(){
-	  return $http.get('/positions/get');
+	  return $http.get(url+'/positions/get');
 	}
 	var savePosition = function(name){
-		return $http.get('/positions/save/'+name);
+		return $http.get(url+'/positions/save/'+name);
 	}
 	var moveTo = function(id){
-		return $http.get('/positions/move/'+id);
+		return $http.get(url+'/positions/move/'+id);
 
 	}
 	var compliantControl = function(flag){
-		return $http.get('/forcecontrol/'+flag)	
+		return $http.get(url+'/forcecontrol/'+flag)	
 	}
+	var getPlans = function(){
+		return $http.get(url+'/plans/get');
+	}
+	var makePlan = function(taskname, positions ){
+		plan = makePlanObject(positions)
+		return $http({
+			method:'POST',
+			url: 	url+'/plans/make/'+taskname,
+			data: plan
+		} );
+	} 
+	//move from one pose to another and save that movement as a plan
+  var moveAndSavePath = function(id ){
+		console.log("making individual");
+		return $http.get(url+'/plans/individual/'+id);	
+	}
+
+	var executePlan = function(plan){
+		executePlanHelper(plan,0);
+	}
+	var index = 0;
+	var executePlanHelper = function(plan, index){
+		if(index >= plan.length) return;
+		executePlanListener(plan,index).success(function(){
+			index++;
+			executePlanHelper(plan, index);	
+		});
+	}
+
+	var executePlanListener = function(plan, index){
+		if(index < plan.length){
+			return $http.post(url+'/plans/execute', plan[index])
+		}
+		else return;
+	}
+
 	return {
 		getPositions: getPositions,
 		savePosition: savePosition,
 		moveTo: moveTo,
-		compliantControl: compliantControl
+		compliantControl: compliantControl,
+		makePlan: makePlan,
+		executePlan: executePlan,
+		getPlans: getPlans,
+		moveAndSavePath: moveAndSavePath
 	}
-}])
+}]);
+
+angular_app.factory('simulation', ["models","$http",'ros',function(models, $http, ros){
+	var environment_objects = [];
+	var interactive_objects = [];
+	var url = "ws://192.168.1.163:9090";
+	var loader = new THREE.ObjectLoader();
+	//done for debugging purposes
+	window.viewer = viewer;
+	var boundingRadius = 1;
+	var raycaster = new THREE.Raycaster();
+	var mouse = new THREE.Vector2();
+	var sphereGeom = new THREE.SphereGeometry(.08,60,60);
+	var material = new THREE.MeshBasicMaterial( {color: 0xffff00} );
+	var sphere = new THREE.Mesh(sphereGeom,material);
+	//mark the sphere as the end effector, makes it easier to spot in searches
+	sphere.endEffector = true;
+	var currentPath = [];
+	var previewMaterial = new THREE.MeshBasicMaterial( {color: 0x1fdfc03} );
+	var lineMaterial = new THREE.LineBasicMaterial({color: 0x0000ff});
+
+	var warning = function(){
+		console.warn("running in test mode, most ROS functions won't work");
+	}
+	if (!url){
+		warning();
+	}
+	var addFunction = function(func){
+		return url ? func: warning;
+	}
+	//websocket connection to ROS
+	var ros = new ROSLIB.Ros({
+		url: url
+	});
+	var viewer = new ROS3D.Viewer({
+		divID:'rosPoint',
+		width: window.innerWidth,
+		height: window.innerHeight,
+		background:'#002232',
+		antialias: true
+	});
+	
+	
+	//the following is all the code for the end effector display
+	
+	//add the end effector to the scene
+	viewer.addObject(sphere,true);
+	//gets data of arm positions, used to display end effector
+	var incoming = new ROSLIB.Topic({
+		ros: ros, 
+		name: '/joint_position_inbox',
+		mesageType: 'geometry_msgs/Pose'
+	});
+	//behavior for when the client receives new data for the arm position
+	incoming.subscribe(function(data){
+	  vec = data.position
+		moveObject(sphere,new THREE.Vector3(vec.x, vec.y,vec.z));
+	});
+	
+	
+	var isInBoundingSphere = function(vec){
+		//calculate the bounding sphere of the arms motion
+		return vec.length() <= boundingRadius
+	}
+
+	var  onMouseMove = function( event ) {
+			// calculate mouse position in normalized device coordinates
+			// 	// (-1 to +1) for both components
+			mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+			mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;		
+			raycaster.set(mouse, viewer.camera);
+			var intersects = raycaster.intersectObjects(viewer.scene.children);
+			for(i in intersects){
+				if(intersects[i].endEffector){
+					console.log("you're on the end effector!");
+				}
+			}
+	}
+	document.addEventListener('mousemove', onMouseMove);
+
+
+	/**
+	 * move an object in 3D space
+	 *@param{THREE.Object3D} object, the object to move
+	 *@param{THREE.Vector3} vec, the 3D position to move to
+	*/
+	var moveObject = function(object,vec){
+		var pos = object.position;
+		var end = vec.sub(pos);
+		var mat = new THREE.Matrix4();
+		mat.makeTranslation(end.x, end.y, end.z);
+		object.applyMatrix(object.matrix.multiply(mat));
+	}
+	/**
+	 * rotate an object
+	 *@param{THREE.Object3D} object, the object to rotate
+	 *@param{THREE.Vector3} vec, the radians of rotation along each axis
+	*/
+	var rotateObject = function(object,vec ){
+		object.rotateX(vec.x);
+		object.rotateY(vec.y);
+		object.rotateZ(vec.z);
+		object.updateMatrix();
+	}
+  // adds in a grid
+	viewer.addObject(new ROS3D.Grid({
+				color:0x3000ff,
+				cellSize: 0.5,
+				size: 300
+	}));
+	
+	/**
+	 * Add an object to the space
+	 * @param{enum} type - interactive or envirmonental objects
+	 * @param{THREE.Object3D} object - the 3D model of the object
+	 * @param{THREE.Vector3} pos - the position to add the object at
+	 * */
+	var addObject = function(type, object, pos){
+		loader.load(models.get_model_path(object),function(object){
+			console.log(object);
+			moveObject(object,pos); 
+			viewer.addObject(object);
+			object.tag = true;
+		});
+	}
+/**
+ * Get all of the objects the user (or the program) has added, leaves out things like lighting that ROS3D generates
+ * @return{array} an array of THREE.Object3D objects
+ */
+	var getObjects = function(){
+		return viewer.scene.children.filter(function(el){
+			if(el.tag){
+				return true;
+			}
+			return false;
+		});
+	}
+	/**
+	 *not yet implemented
+	 */
+	var getObject = function(){}
+/**
+ * Change the color of a given object
+ * @param{THREE.Object3D} object - the object to change the color of
+ * @param{boolean} undo - flag to revert to the previous color
+ */
+	var changeColor = function(object, undo){
+		object.traverse(function(obj, undo){
+			if(obj.material){
+				if(undo){
+					obj.material.color = obj.undoColor;
+				}else{
+					//TODO this is changing the color of lights too, fix it
+					obj.undoColor = obj.material.color;
+					obj.material.color = 0xFFFFFF;
+				}
+			}
+		});
+	}
+/**
+ * change the scale of a given object relative to its current size
+ * @param{THREE.Object3D} object -  the object to rescale
+ * @param{number} scale - the scale to make the object, relative to the current scale 
+ */
+	var scaleObject = function(object, scale){
+		mat = new THREE.Matrix4();
+		mat.makeScale(scale,scale,scale);
+		object.applyMatrix(mat);
+	}
+
+	/**
+	 * preview a single  point in space
+	 * @param{Vector3} vec - the position to preview
+	 */
+	var previewPoint = function(vec){
+		cleanNodes();
+		//TODO remove old spheres
+		var previewSphere = new THREE.Mesh(sphereGeom, previewMaterial) 
+		previewSphere.preview = true;
+		vec = new THREE.Vector3(vec.x,vec.y,vec.z);
+		moveObject(previewSphere,vec);
+		viewer.addObject(previewSphere);
+	}
+/**
+ * preview a path of motions
+ * @param{array} arr - an array of positional data
+ */
+	var previewPath = function(arr){
+		console.log(arr);
+		cleanNodes();
+		for(i in arr){
+			if( !(arr[i] instanceof Object) )continue;
+			//add node
+			var vec = arr[i].position;
+			var next;
+			if(arr[i+1]){
+				next = arr[i+1].position;
+			}
+			var sphere = new THREE.Mesh(sphereGeom, previewMaterial)
+			viewer.addObject(sphere);
+			moveObject(sphere, makeTHREEVector(vec))
+			//draw line from one node to the next
+			if(next){
+				//create the line
+				var geom = new THREE.Geometry();
+				geom.vertices.push(makeTHREEVector(vec), makeTHREEVector(next));
+				var line = new THREE.Line(geom, lineMaterial);
+				viewer.addObject(line, true);
+			}
+		}
+	}
+
+	//removes all nodes marked as previews
+	var cleanNodes = function(){
+		viewer.scene.traverse(function(object){
+			if(object.preview){
+				viewer.scene.remove(object);	
+			}		
+		});	
+	}
+	var makeTHREEVector = function(vec){
+		return new THREE.Vector3(vec.x, vec.y, vec.z);
+	}
+	return{
+		addObject: addFunction(addObject),
+		getObjects: addFunction(getObjects),
+		getObject: addFunction(getObject),
+		moveObject: addFunction(moveObject),
+		changeColor: addFunction(changeColor),
+		rotateObject: addFunction(rotateObject),
+		scaleObject: addFunction(scaleObject),
+		previewPoint: addFunction(previewPoint),
+		previewPath: addFunction(previewPath)
+	 }
+}]);
 
 THREE.STLLoader=function(){};THREE.STLLoader.prototype={constructor:THREE.STLLoader};THREE.STLLoader.prototype.load=function(e,t){function i(r){if(r.target.status===200||r.target.status===0){var i=n.parse(r.target.response||r.target.responseText);n.dispatchEvent({type:"load",content:i});if(t)t(i)}else{n.dispatchEvent({type:"error",message:"Couldn't load URL ["+e+"]",response:r.target.responseText})}}var n=this;var r=new XMLHttpRequest;r.addEventListener("load",i,false);r.addEventListener("progress",function(e){n.dispatchEvent({type:"progress",loaded:e.loaded,total:e.total})},false);r.addEventListener("error",function(){n.dispatchEvent({type:"error",message:"Couldn't load URL ["+e+"]"})},false);r.overrideMimeType("text/plain; charset=x-user-defined");r.open("GET",e,true);r.responseType="arraybuffer";r.send(null)};THREE.STLLoader.prototype.parse=function(e){var t=function(){var e,t,r,i;i=new DataView(n);t=32/8*3+32/8*3*3+16/8;r=i.getUint32(80,true);e=80+32/8+r*t;return e===i.byteLength};var n=this.ensureBinary(e);return t()?this.parseBinary(n):this.parseASCII(this.ensureString(e))};THREE.STLLoader.prototype.parseBinary=function(e){var t,n,r,i,s,o,u,a,f,l,c;i=new DataView(e);r=i.getUint32(80,true);n=new THREE.Geometry;a=84;f=12*4+2;for(t=0;t<r;t++){l=a+t*f;o=new THREE.Vector3(i.getFloat32(l,true),i.getFloat32(l+4,true),i.getFloat32(l+8,true));for(u=1;u<=3;u++){c=l+u*12;n.vertices.push(new THREE.Vector3(i.getFloat32(c,true),i.getFloat32(c+4,true),i.getFloat32(c+8,true)))}s=n.vertices.length;n.faces.push(new THREE.Face3(s-3,s-2,s-1,o))}n.computeCentroids();n.computeBoundingSphere();return n};THREE.STLLoader.prototype.parseASCII=function(e){var t,n,r,i,s,o,u,a;t=new THREE.Geometry;i=/facet([\s\S]*?)endfacet/g;while((u=i.exec(e))!=null){a=u[0];s=/normal[\s]+([\-+]?[0-9]+\.?[0-9]*([eE][\-+]?[0-9]+)?)+[\s]+([\-+]?[0-9]*\.?[0-9]+([eE][\-+]?[0-9]+)?)+[\s]+([\-+]?[0-9]*\.?[0-9]+([eE][\-+]?[0-9]+)?)+/g;while((u=s.exec(a))!=null){r=new THREE.Vector3(parseFloat(u[1]),parseFloat(u[3]),parseFloat(u[5]))}o=/vertex[\s]+([\-+]?[0-9]+\.?[0-9]*([eE][\-+]?[0-9]+)?)+[\s]+([\-+]?[0-9]*\.?[0-9]+([eE][\-+]?[0-9]+)?)+[\s]+([\-+]?[0-9]*\.?[0-9]+([eE][\-+]?[0-9]+)?)+/g;while((u=o.exec(a))!=null){t.vertices.push(new THREE.Vector3(parseFloat(u[1]),parseFloat(u[3]),parseFloat(u[5])))}n=t.vertices.length;t.faces.push(new THREE.Face3(n-3,n-2,n-1,r))}t.computeCentroids();t.computeBoundingBox();t.computeBoundingSphere();return t};THREE.STLLoader.prototype.ensureString=function(e){if(typeof e!=="string"){var t=new Uint8Array(e);var n="";for(var r=0;r<e.byteLength;r++){n+=String.fromCharCode(t[r])}return n}else{return e}};THREE.STLLoader.prototype.ensureBinary=function(e){if(typeof e==="string"){var t=new Uint8Array(e.length);for(var n=0;n<e.length;n++){t[n]=e.charCodeAt(n)&255}return t.buffer||t}else{return e}};THREE.EventDispatcher.prototype.apply(THREE.STLLoader.prototype);if(typeof DataView==="undefined"){DataView=function(e,t,n){this.buffer=e;this.byteOffset=t||0;this.byteLength=n||e.byteLength||e.length;this._isString=typeof e==="string"};DataView.prototype={_getCharCodes:function(e,t,n){t=t||0;n=n||e.length;var r=t+n;var i=[];for(var s=t;s<r;s++){i.push(e.charCodeAt(s)&255)}return i},_getBytes:function(e,t,n){var r;if(n===undefined){n=this._littleEndian}if(t===undefined){t=this.byteOffset}else{t=this.byteOffset+t}if(e===undefined){e=this.byteLength-t}if(typeof t!=="number"){throw new TypeError("DataView byteOffset is not a number")}if(e<0||t+e>this.byteLength){throw new Error("DataView length or (byteOffset+length) value is out of bounds")}if(this.isString){r=this._getCharCodes(this.buffer,t,t+e)}else{r=this.buffer.slice(t,t+e)}if(!n&&e>1){if(!(r instanceof Array)){r=Array.prototype.slice.call(r)}r.reverse()}return r},getFloat64:function(e,t){var n=this._getBytes(8,e,t),r=1-2*(n[7]>>7),i=((n[7]<<1&255)<<3|n[6]>>4)-((1<<10)-1),s=(n[6]&15)*Math.pow(2,48)+n[5]*Math.pow(2,40)+n[4]*Math.pow(2,32)+n[3]*Math.pow(2,24)+n[2]*Math.pow(2,16)+n[1]*Math.pow(2,8)+n[0];if(i===1024){if(s!==0){return NaN}else{return r*Infinity}}if(i===-1023){return r*s*Math.pow(2,-1022-52)}return r*(1+s*Math.pow(2,-52))*Math.pow(2,i)},getFloat32:function(e,t){var n=this._getBytes(4,e,t),r=1-2*(n[3]>>7),i=(n[3]<<1&255|n[2]>>7)-127,s=(n[2]&127)<<16|n[1]<<8|n[0];if(i===128){if(s!==0){return NaN}else{return r*Infinity}}if(i===-127){return r*s*Math.pow(2,-126-23)}return r*(1+s*Math.pow(2,-23))*Math.pow(2,i)},getInt32:function(e,t){var n=this._getBytes(4,e,t);return n[3]<<24|n[2]<<16|n[1]<<8|n[0]},getUint32:function(e,t){return this.getInt32(e,t)>>>0},getInt16:function(e,t){return this.getUint16(e,t)<<16>>16},getUint16:function(e,t){var n=this._getBytes(2,e,t);return n[1]<<8|n[0]},getInt8:function(e){return this.getUint8(e)<<24>>24},getUint8:function(e){return this._getBytes(1,e)[0]}}}

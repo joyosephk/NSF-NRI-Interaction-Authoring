@@ -1,30 +1,35 @@
 angular_app.factory('simulation', ["models","$http",'ros',function(models, $http, ros){
 	var environment_objects = [];
 	var interactive_objects = [];
-	var url = null;
+	var url = "ws://192.168.1.163:9090";
+	var loader = new THREE.ObjectLoader();
+	//done for debugging purposes
+	window.viewer = viewer;
+	var boundingRadius = 1;
+	var raycaster = new THREE.Raycaster();
+	var mouse = new THREE.Vector2();
+	var sphereGeom = new THREE.SphereGeometry(.08,60,60);
+	var material = new THREE.MeshBasicMaterial( {color: 0xffff00} );
+	var sphere = new THREE.Mesh(sphereGeom,material);
+	//mark the sphere as the end effector, makes it easier to spot in searches
+	sphere.endEffector = true;
+	var currentPath = [];
+	var previewMaterial = new THREE.MeshBasicMaterial( {color: 0x1fdfc03} );
+	var lineMaterial = new THREE.LineBasicMaterial({color: 0x0000ff});
+
 	var warning = function(){
 		console.warn("running in test mode, most ROS functions won't work");
 	}
 	if (!url){
 		warning();
 	}
-
+	var addFunction = function(func){
+		return url ? func: warning;
+	}
+	//websocket connection to ROS
 	var ros = new ROSLIB.Ros({
 		url: url
 	});
-	var incoming = new ROSLIB.Topic({
-		ros: ros, 
-		name: '/joint_position_inbox',
-		mesageType: 'geometry_msgs/Pose'
-	});
-	var rec;
-	
-	var outgoing = new ROSLIB.Topic({
-		ros: ros,
-		name: 'joint_position_remote',
-		messageType:'geometry_msgs/Pose'
-	});
-	outgoing.advertise();
 	var viewer = new ROS3D.Viewer({
 		divID:'rosPoint',
 		width: window.innerWidth,
@@ -33,43 +38,29 @@ angular_app.factory('simulation', ["models","$http",'ros',function(models, $http
 		antialias: true
 	});
 	
-
-	window.viewer = viewer;
 	
-	var tf = new ROSLIB.TFClient({
-		ros: ros,
-		angularThres : 0.01,
-		transThres : 0.01,
-		rate : 10.0
+	//the following is all the code for the end effector display
+	
+	//add the end effector to the scene
+	viewer.addObject(sphere,true);
+	//gets data of arm positions, used to display end effector
+	var incoming = new ROSLIB.Topic({
+		ros: ros, 
+		name: '/joint_position_inbox',
+		mesageType: 'geometry_msgs/Pose'
+	});
+	//behavior for when the client receives new data for the arm position
+	incoming.subscribe(function(data){
+	  vec = data.position
+		moveObject(sphere,new THREE.Vector3(vec.x, vec.y,vec.z));
 	});
 	
-	var geom = new THREE.SphereGeometry(.2,60,60);
-	var material = new THREE.MeshBasicMaterial( {color: 0xffff00} );
-	var sphere = new THREE.Mesh(geom,material);
-	//mark the sphere as the end effector
-	sphere.endEffector = true;
-	viewer.addObject(sphere,true);
-		
 	
-	window.wireframe = function(obj){
-		obj.traverse(function(object){
-			if(object.material){
-				object.material.wireframe = true;
-			
-			}
-		});
-	}
-	var boundingRadius = 1;
 	var isInBoundingSphere = function(vec){
 		//calculate the bounding sphere of the arms motion
 		return vec.length() <= boundingRadius
 	}
 
-//	urdf.change(function(e){
-	//	console.log(e)	
-//	});
-	var raycaster = new THREE.Raycaster();
-	var mouse = new THREE.Vector2();
 	var  onMouseMove = function( event ) {
 			// calculate mouse position in normalized device coordinates
 			// 	// (-1 to +1) for both components
@@ -83,40 +74,45 @@ angular_app.factory('simulation', ["models","$http",'ros',function(models, $http
 				}
 			}
 	}
-	var rec;
 	document.addEventListener('mousemove', onMouseMove);
-	incoming.subscribe(function(data){
-		if(!rec){
-			rec = data;
-			console.log(rec);
-		}
-		vec = data.position
-		 moveObject(sphere,new THREE.Vector3(vec.x, vec.y,vec.z));
-	});
 
-	var loader = new THREE.ObjectLoader();
+
+	/**
+	 * move an object in 3D space
+	 *@param{THREE.Object3D} object, the object to move
+	 *@param{THREE.Vector3} vec, the 3D position to move to
+	*/
 	var moveObject = function(object,vec){
-		//TODO right now this just move by distances
-		//it should just do final coordinates
 		var pos = object.position;
 		var end = vec.sub(pos);
 		var mat = new THREE.Matrix4();
 		mat.makeTranslation(end.x, end.y, end.z);
 		object.applyMatrix(object.matrix.multiply(mat));
 	}
+	/**
+	 * rotate an object
+	 *@param{THREE.Object3D} object, the object to rotate
+	 *@param{THREE.Vector3} vec, the radians of rotation along each axis
+	*/
 	var rotateObject = function(object,vec ){
 		object.rotateX(vec.x);
 		object.rotateY(vec.y);
 		object.rotateZ(vec.z);
 		object.updateMatrix();
 	}
-
+  // adds in a grid
 	viewer.addObject(new ROS3D.Grid({
 				color:0x3000ff,
 				cellSize: 0.5,
 				size: 300
-
 	}));
+	
+	/**
+	 * Add an object to the space
+	 * @param{enum} type - interactive or envirmonental objects
+	 * @param{THREE.Object3D} object - the 3D model of the object
+	 * @param{THREE.Vector3} pos - the position to add the object at
+	 * */
 	var addObject = function(type, object, pos){
 		loader.load(models.get_model_path(object),function(object){
 			console.log(object);
@@ -124,11 +120,11 @@ angular_app.factory('simulation', ["models","$http",'ros',function(models, $http
 			viewer.addObject(object);
 			object.tag = true;
 		});
-	
 	}
-	var getObject = function(){
-
-	}
+/**
+ * Get all of the objects the user (or the program) has added, leaves out things like lighting that ROS3D generates
+ * @return{array} an array of THREE.Object3D objects
+ */
 	var getObjects = function(){
 		return viewer.scene.children.filter(function(el){
 			if(el.tag){
@@ -136,67 +132,92 @@ angular_app.factory('simulation', ["models","$http",'ros',function(models, $http
 			}
 			return false;
 		});
-	
 	}
+	/**
+	 *not yet implemented
+	 */
+	var getObject = function(){}
+/**
+ * Change the color of a given object
+ * @param{THREE.Object3D} object - the object to change the color of
+ * @param{boolean} undo - flag to revert to the previous color
+ */
 	var changeColor = function(object, undo){
 		object.traverse(function(obj, undo){
 			if(obj.material){
 				if(undo){
-			//		obj.material.color = obj.undoColor;
+					obj.material.color = obj.undoColor;
 				}else{
 					//TODO this is changing the color of lights too, fix it
-				//	obj.undoColor = obj.material.color;
-					//obj.material.color = 0xFFFFFF;
+					obj.undoColor = obj.material.color;
+					obj.material.color = 0xFFFFFF;
 				}
 			}
 		});
 	}
+/**
+ * change the scale of a given object relative to its current size
+ * @param{THREE.Object3D} object -  the object to rescale
+ * @param{number} scale - the scale to make the object, relative to the current scale 
+ */
 	var scaleObject = function(object, scale){
 		mat = new THREE.Matrix4();
 		mat.makeScale(scale,scale,scale);
 		object.applyMatrix(mat);
+	}
 
-	}
-	var moveArm = function(vec){
-		outgoing.publish(new ROSLIB.Message({
-			position:	new ROSLIB.Vector3(0.2117910853402465,-0.26117743992187786,0.47370996918522384), 
-			orientation:	new ROSLIB.Quaternion( 0.39724309036810795,0.3709431717747427,-0.6039290090423478,0.47370996918522384)
-		}));
-	}
-	//array of objects
-	var positions = [];
-	var nodeData = new ROSLIB.Topic({
-		ros:ros,
-		name:'nodedata',
-		messageType:'wpi_jaco_msgs/ArmNode'
-	});
-	nodeData.advertise();
-	var savePos = function(name , id){
-		console.log("sending message");
-		vec = sphere.position
-		nodeData.publish(new ROSLIB.Message({
-					name: name,
-					ID: id,
-					pose:{
-						position:{
-							x: vec.x,
-							y: vec.y,
-							z:vec.z
-						}
-					}
-		}	
-					));	
-	}
-	var previewMaterial = new THREE.MeshBasicMaterial( {color: 0x1fdfc03} );
-	var previewSphere = new THREE.Mesh(previewMaterial,geom);
-	var preview = function(vec){
+	/**
+	 * preview a single  point in space
+	 * @param{Vector3} vec - the position to preview
+	 */
+	var previewPoint = function(vec){
+		cleanNodes();
+		//TODO remove old spheres
+		var previewSphere = new THREE.Mesh(sphereGeom, previewMaterial) 
+		previewSphere.preview = true;
 		vec = new THREE.Vector3(vec.x,vec.y,vec.z);
 		moveObject(previewSphere,vec);
 		viewer.addObject(previewSphere);
 	}
+/**
+ * preview a path of motions
+ * @param{array} arr - an array of positional data
+ */
+	var previewPath = function(arr){
+		console.log(arr);
+		cleanNodes();
+		for(i in arr){
+			if( !(arr[i] instanceof Object) )continue;
+			//add node
+			var vec = arr[i].position;
+			var next;
+			if(arr[i+1]){
+				next = arr[i+1].position;
+			}
+			var sphere = new THREE.Mesh(sphereGeom, previewMaterial)
+			viewer.addObject(sphere);
+			moveObject(sphere, makeTHREEVector(vec))
+			//draw line from one node to the next
+			if(next){
+				//create the line
+				var geom = new THREE.Geometry();
+				geom.vertices.push(makeTHREEVector(vec), makeTHREEVector(next));
+				var line = new THREE.Line(geom, lineMaterial);
+				viewer.addObject(line, true);
+			}
+		}
+	}
 
-	var addFunction = function(func){
-		return url ? func: warning;
+	//removes all nodes marked as previews
+	var cleanNodes = function(){
+		viewer.scene.traverse(function(object){
+			if(object.preview){
+				viewer.scene.remove(object);	
+			}		
+		});	
+	}
+	var makeTHREEVector = function(vec){
+		return new THREE.Vector3(vec.x, vec.y, vec.z);
 	}
 	return{
 		addObject: addFunction(addObject),
@@ -205,6 +226,8 @@ angular_app.factory('simulation', ["models","$http",'ros',function(models, $http
 		moveObject: addFunction(moveObject),
 		changeColor: addFunction(changeColor),
 		rotateObject: addFunction(rotateObject),
-		scaleObject: addFunction(scaleObject)
-	}
+		scaleObject: addFunction(scaleObject),
+		previewPoint: addFunction(previewPoint),
+		previewPath: addFunction(previewPath)
+	 }
 }]);
