@@ -62,6 +62,7 @@
 						<h4>Make Plan</h4>
 						<label for="pname">Name:</label><input name="pname" ng-model="planName" type="text"/>
 						<select ng-options="obj as obj.name for obj in positions" ng-model="posToAdd"></select>
+						<input type="number" ng-model="graspVal" placeholder="Grasp Value" default="0"/>
 						<div class="btn btn-submit" ng-click="addToPlan()">Add to plan</div>	
 						<div ng-repeat="pos in plan track by $index">
 							<div>{{$index}}.{{pos.name}}</div>
@@ -75,19 +76,17 @@
 				<div class="expander-field" id="executePlans">
 					<div class="form-container">
 						<h4>Select a plan</h4>
-						<select ng-options="plan as plan.name for plan in savedPlans" ng-model="selectedPlan"></select>
+						<select ng-options="plan as plan.name for plan in savedPlans" ng-model="selectedPlan" ng-change=previewPlan()></select>
 						<div class="btn btn-submit" ng-click="executePlan()">Execute Plan</div>
-
 					</div>
 					<div class="form-container">
 						<h4> Make Individual Plan</h4>
 						<select ng-change="previewPosition()" ng-options="pos as pos.name for pos in positions" ng-model="posToMove"></select>
-						
 						<div class="btn btn-submit" ng-click="makeIndividualPlan()">Make individual</div>
 					</div>
 			</div>
 		</div
-	</div>			
+</div> 			
 
 </body>
 <script src="static/build/index.js"></script>

@@ -79,12 +79,30 @@ def getPlans(arg=None):
     print "getPlans\n"
     return flask.json.dumps(pGraph.getAuthoredPlans())
 
+'''
 @app.route("/plans/execute/<name>")
 @logged
 def executePlan(name):
     pGraph.taskPlanPlayback(name, acHan)
     print "executePlan\n"
     return name
+'''
+
+@app.route("/plans/execute", methods=["POST", "GET"])
+@logged
+def executeStep():
+    ID = flask.request.json['id']
+    graspVal = flask.request.json['graspVal'] 
+    print "waiting for arm to be ready"
+    while pGraph.setCurrNode(ID, acHan) is not True:
+        pass
+    print "trajectory sent"
+    print "grasping if any"
+    pGraph.grasp(graspVal, acHan)
+    print "executeStep\n"
+    return "True"
+
+
 
 
 # save new position
@@ -120,6 +138,7 @@ def putArmGo(ID):
 def putTaskPlan(taskname):
     # path is the dictionary of ID's
     path = flask.request.json['path']
+    ''' commenting out until we implement saved trajectories
     # skip first node
     iterable = iter(path)
     next(iterable)
@@ -134,6 +153,7 @@ def putTaskPlan(taskname):
             pGraph.makePath(int(ID), acHan)
         except ValueError:
             print "Non integer-convertible value given for ID"
+    '''
     pGraph.setAuthoredPlans(taskname, path)
     transaction.commit()
     print "putTaskPlan\n"
@@ -223,5 +243,5 @@ if __name__== '__main__':
     pub = rospy.Publisher('mico_arm/Forcecontrol', std_msgs.msg.Bool, queue_size=10)
     rospy.sleep(1)
 
-    app.run(debug = True, use_reloader=False)
+    app.run(host='0.0.0.0',debug = True, use_reloader=False)
 
