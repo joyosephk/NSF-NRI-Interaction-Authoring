@@ -1,9 +1,11 @@
-angular_app.factory('simulation', ["models","$http",'ros','3DUtils',function(models, $http, ros, 3DUtils){
+angular_app.factory('simulation', ["models","$http",'ros','Utils3D',function(models, $http, ros, Utils3D){
 	var scene = new THREE.Scene();
+	scene.up = new THREE.Vector3(0,1,0);
 	var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+	camera.up = new THREE.Vector3(0 ,-1,0);
+	camera.position.z = 5;
 	var renderer = new THREE.WebGLRenderer();
 	renderer.setSize( window.innerWidth, window.innerHeight );
-	camera.position.z = 5;
 	var gridHelper = new THREE.GridHelper(100,100);
 	var insertionPoint = document.getElementById('rosPoint');
 	insertionPoint.appendChild(renderer.domElement);
@@ -11,7 +13,7 @@ angular_app.factory('simulation', ["models","$http",'ros','3DUtils',function(mod
 	controls.enableZoom = true;
 	var environment_objects = [];
 	var interactive_objects = [];
-	var url = undefined;
+	var url = "ws://192.168.1.163:9090";
 	var loader = new THREE.ObjectLoader();
 	//done for debugging purposes
 	var boundingRadius = 1;
@@ -183,13 +185,13 @@ angular_app.factory('simulation', ["models","$http",'ros','3DUtils',function(mod
  * @param{array} arr - an array of positional data
  */
 	var previewPath = function(arr){
-		console.log(arr);
+		var next;
+		var geom = new THREE.Geometry();
 		cleanNodes();
-		for(i in arr){
+		for(i=0; i < arr.length; i++){
 			if( !(arr[i] instanceof Object) )continue;
 			//add node
 			var vec = arr[i].position;
-			var next;
 			if(arr[i+1]){
 				next = arr[i+1].position;
 			}
@@ -199,11 +201,10 @@ angular_app.factory('simulation', ["models","$http",'ros','3DUtils',function(mod
 			//draw line from one node to the next
 			if(next){
 				//create the line
-				var geom = new THREE.Geometry();
-				geom.vertices.push(makeTHREEVector(vec), makeTHREEVector(next));
-				var line = new THREE.Line(geom, lineMaterial);
-				scene.add(line);
+				geom.vertices.push(makeTHREEVector(vec))
 			}
+			var line = new THREE.Line(geom, lineMaterial);
+			scene.add(line) ;
 		}
 	}
 

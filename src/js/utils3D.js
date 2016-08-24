@@ -1,7 +1,4 @@
-angular_app.factory('3DUtils',[function(){
-	
-
-
+angular_app.factory('Utils3D',[function(){
 	var createLabel = function(message){
 		var canvas = document.createElement('canvas');
 		var ctx = canvas.getContext('2d');
