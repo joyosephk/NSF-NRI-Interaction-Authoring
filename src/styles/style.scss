@@ -7,11 +7,14 @@ $badger-red: #b70101;
 	border-radius: 6px;
 	margin: 20px 5px;
 	float: left;
-	width: 20%;
-	height: 90%;
 	z-index: 0;
 	opacity: 0.8;
-	top:0;
+}
+.menu-right{
+	top: 0;
+	width: 20%;
+	height: 90%;
+	overflow-y: scroll;
 }
 .menu:hover{
 	opacity: 0.95;
@@ -68,8 +71,31 @@ body{
 }
 
 /*
+ * TIMELINE
+ */
+
+.timeline-container{
+	@extend .menu;
+	background: $tan;
+	height: 15%;
+	width: 70%;
+	margin-left: 22%;
+	bottom: 0;
+	overflow-x: scroll;
+}
+
+.timeline-container > div{
+	overflow: scroll;
+	width:100%;
+	height: 100%;
+	padding: 8px;
+	margin-top: 5px;
+}
+
+/*
  * TRANSITIONS
  */
 *{
 	transition: all 0.2s ease-out;
 }
+

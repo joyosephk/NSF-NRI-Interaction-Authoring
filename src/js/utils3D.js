@@ -1,4 +1,4 @@
-angular_app.factory('3DUtils',[function(){
+angular_app.factory('utils3D',[function(){
 	
 
 

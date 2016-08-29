@@ -1,16 +1,19 @@
-.menu {
+.menu, .timeline-container {
   position: absolute;
   background: #990000;
   border-radius: 6px;
   margin: 20px 5px;
   float: left;
+  z-index: 0;
+  opacity: 0.8; }
+
+.menu-right {
+  top: 0;
   width: 20%;
   height: 90%;
-  z-index: 0;
-  opacity: 0.8;
-  top: 0; }
+  overflow-y: scroll; }
 
-.menu:hover {
+.menu:hover, .timeline-container:hover {
   opacity: 0.95; }
 
 .on {
@@ -62,6 +65,24 @@ body {
 .expander-field {
   display: none;
   transition-duration: 0.5s; }
+
+/*
+ * TIMELINE
+ */
+.timeline-container {
+  background: #eee5c7;
+  height: 15%;
+  width: 70%;
+  margin-left: 22%;
+  bottom: 0;
+  overflow-x: scroll; }
+
+.timeline-container > div {
+  overflow: scroll;
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+  margin-top: 5px; }
 
 /*
  * TRANSITIONS

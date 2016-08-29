@@ -7,7 +7,7 @@
 
 <body ng-controller="mainController">
 	<div id="rosPoint"></div>	
-		<div id="menu" class="menu">
+	<div id="menu" class="menu menu-right">
 			<div class="menu-item" >
 				<h3 class="btn btn-expander" data-for="object_creator" ng-click= expandField($event)>New Object</h3>
 				<div class="expander-field" id="object_creator">
@@ -61,8 +61,9 @@
 					<div class="form-container">
 						<h4>Make Plan</h4>
 						<label for="pname">Name:</label><input name="pname" ng-model="planName" type="text"/>
-						<select ng-options="obj as obj.name for obj in positions" ng-model="posToAdd"></select>
-						<input type="number" ng-model="graspVal" placeholder="Grasp Value" default="0"/>
+						<label for="positionName">Position:</label>
+						<select ng-options="obj as obj.name for obj in positions" name="positionName" ng-model="posToAdd"></select>
+						<label for="therblig">Therblig:<label/> <select ng-model="selectedTherblig"  ng-options="obj as obj.name for obj in therbligs"></select>
 						<div class="btn btn-submit" ng-click="addToPlan()">Add to plan</div>	
 						<div ng-repeat="pos in plan track by $index">
 							<div>{{$index}}.{{pos.name}}</div>
@@ -87,8 +88,10 @@
 			</div>
 		</div
 </div> 			
-
+</div>
+<div id="timeline" class="timeline-container" ng-controller="timelineController"></div>
 </body>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script src="static/build/index.js"></script>
 </html>
 {% endraw %}

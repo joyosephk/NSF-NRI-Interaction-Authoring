@@ -1,4 +1,6 @@
-angular_app.factory('models',["$http",function($http){
+angular_app.factory('models',["$http", "utils",function($http, utils){
+	var url = utils.url;
+
 	var list_models = function(){
 		return $http.get("models/list");
 	}
@@ -8,8 +10,8 @@ angular_app.factory('models',["$http",function($http){
 		return static_path+name+"/"+name+".json";
 	}
 	return{
-		list_models: list_models,
-		get_model_path: get_model_path
+		list_models: (list_models),
+		get_model_path: (get_model_path)
 	}
 
 }]);

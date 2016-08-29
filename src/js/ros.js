@@ -1,5 +1,5 @@
-angular_app.factory('ros',['$http', function($http){
-	var url =""
+angular_app.factory('ros',['$http','utils', function($http, utils){
+	var url = utils.url;
 	var currentPlan = [];
 	var makePlanObject = function(arr){
 		//array of pose objects
@@ -68,15 +68,21 @@ angular_app.factory('ros',['$http', function($http){
 		}
 		else return;
 	}
+	var addFunction = function(func){
+		if(!url){
+			return () => {console.warn("running in no-ros mode, most functionality is dead"); return new Promise((a,b)=>{}) }
+		}
+		return func
+	}
 
 	return {
-		getPositions: getPositions,
-		savePosition: savePosition,
-		moveTo: moveTo,
-		compliantControl: compliantControl,
-		makePlan: makePlan,
-		executePlan: executePlan,
-		getPlans: getPlans,
+		getPositions: addFunction(getPositions),
+		savePosition: addFunction(savePosition),
+		moveTo:addFunction(moveTo),
+		compliantControl: addFunction(compliantControl),
+		makePlan:addFunction(makePlan),
+		executePlan:addFunction(executePlan),
+		getPlans:addFunction(getPlans),
 		moveAndSavePath: moveAndSavePath
 	}
 }]);

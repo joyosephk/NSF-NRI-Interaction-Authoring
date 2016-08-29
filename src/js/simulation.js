@@ -1,4 +1,4 @@
-angular_app.factory('simulation', ["models","$http",'ros','3DUtils',function(models, $http, ros, 3DUtils){
+angular_app.factory('simulation', ["models","$http",'ros','utils3D','utils',function(models, $http, ros,utils3D, utils){
 	var scene = new THREE.Scene();
 	var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
 	var renderer = new THREE.WebGLRenderer();
@@ -11,7 +11,7 @@ angular_app.factory('simulation', ["models","$http",'ros','3DUtils',function(mod
 	controls.enableZoom = true;
 	var environment_objects = [];
 	var interactive_objects = [];
-	var url = undefined;
+	var url = utils.url;
 	var loader = new THREE.ObjectLoader();
 	//done for debugging purposes
 	var boundingRadius = 1;

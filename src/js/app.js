@@ -1,7 +1,7 @@
 var angular_app = angular.module('nriApp',[]);
 //MAIN CONTROLLER
 
-angular_app.controller('mainController',["$scope","models","simulation", "ros",function($scope, models, simulation, ros){
+angular_app.controller('mainController',["$scope","models","simulation", "ros", "utils",function($scope, models, simulation, ros, utils){
 	$scope.posToMove = undefined;
 	$scope.graspVal = 0;
 	$scope.positions =  [];
@@ -50,7 +50,8 @@ angular_app.controller('mainController',["$scope","models","simulation", "ros",f
 		ros.compliantControl($scope.compliantControl);
 	}
 	models.list_models().then(function(value){
-		objList = value.map(function(item){
+		console.log(value);
+		objList = value.data.map(function(item){
 			obj = { name: item};
 			return obj;
 		},httpFailure);
@@ -61,7 +62,7 @@ angular_app.controller('mainController',["$scope","models","simulation", "ros",f
 	}
 
 	$scope.expandField = function(e){
-		var el = e.srcElement;
+		var el = e.target;
 		var id = el.getAttribute("data-for");
 		var target = document.getElementById(id);
 		if(target.style.display == "none"){
