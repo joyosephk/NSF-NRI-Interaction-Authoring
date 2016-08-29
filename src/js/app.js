@@ -20,10 +20,10 @@ angular_app.controller('mainController',["$scope","models","simulation", "ros", 
 	}
 	//setup functions
 	ros.getPositions().then(function(value){
-			$scope.positions = value;
+			$scope.positions = value.data;
 	},httpFailure);
 	ros.getPlans().then(function(value){
-		console.log(value)
+		value = value.data
 		var arr = [];
 		var keys = Object.keys(value);
 		for(i in keys){
