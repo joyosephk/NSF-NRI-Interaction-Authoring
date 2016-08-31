@@ -44,10 +44,10 @@
 			<div class="menu-item">
 				<h3 class="btn btn-expander" data-for="roboMove" ng-click="expandField($event)"> Robot Controls</h3>
 				<div class="expander-field" id="roboMove">
-					<div class="btn btn-submit" ng-click="compliantControlTog()"> compliant control: </div>
-					<div class="off" ng-if="!compliantControl" >off</div>
+					<div class="btn btn-submit" ng-click="compliantControlTog()"> compliant control: <div class="off" ng-if="!compliantControl" >off</div>
 					<div class="on" ng-if=compliantControl>on</div>
-					<div class="form-container">
+</div>
+										<div class="form-container">
 						<label for="name">name:</label><input name="name" ng-model="poseName" type="text"/>
 						<div class="btn btn-submit" ng-click="savePos()">Save Current Position</div>
 					</div>

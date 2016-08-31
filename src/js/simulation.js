@@ -1,4 +1,4 @@
-angular_app.factory('simulation', ["models","$http",'ros','utils3D','utils',function(models, $http, ros,utils3D, utils){
+angular_app.factory('simulation', ["models","$http",'ros','Utils3D','utils',function(models, $http, ros,utils3D, utils){
 	var scene = new THREE.Scene();
 	scene.up = new THREE.Vector3(0,1,0);
 	var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);

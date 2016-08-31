@@ -8,7 +8,15 @@ angular_app.factory('utils', [function(){
 		}
 		return func
 	}
+	
 	exports.addFunction = addFunction;
+
+	exports.stringsAsObject = function(arr){
+		 arr = arr.map(function(el){
+			return {name: el}
+		});
+		return arr;
+	}
 	return exports;
 
 }]);

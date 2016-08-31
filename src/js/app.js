@@ -1,7 +1,7 @@
 var angular_app = angular.module('nriApp',[]);
 //MAIN CONTROLLER
 
-angular_app.controller('mainController',["$scope","models","simulation", "ros", "utils",function($scope, models, simulation, ros, utils){
+angular_app.controller('mainController',["$scope","models","simulation", "ros", "utils","therbligs" ,function($scope, models, simulation, ros, utils, therbligs){
 	$scope.posToMove = undefined;
 	$scope.graspVal = 0;
 	$scope.positions =  [];
@@ -14,6 +14,7 @@ angular_app.controller('mainController',["$scope","models","simulation", "ros", 
 	$scope.selectedPlan = undefined;
 	ros.compliantControl(false);	
 	$scope.compliantControl = false;
+	$scope.therbligs = therbligs.therblig_types;
 	//default function for http failure
 	var httpFailure = function(err){
 		console.log(err);

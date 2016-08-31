@@ -1,5 +1,6 @@
-angular_app.factory('therbligs', [function(){
- var theribligFactory =  function(el){
+angular_app.factory('therbligs', ["utils",function(utils){
+	var exports = {};
+	exports.theribligFactory =  function(el){
 	switch (el.type){
 		//switch graspVal based on therbligs
 		case "grasp":
@@ -21,5 +22,7 @@ angular_app.factory('therbligs', [function(){
 				name: el.name,
 				position: el.position
 			}
- }
+	}
+ exports.therblig_types = utils.stringsAsObject(["grasp", "move", "moveObject", "release"]);
+ return exports;
 }]);

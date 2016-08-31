@@ -33,6 +33,9 @@
 input {
   display: block; }
 
+label {
+  display: block; }
+
 .btn {
   padding: 2px 4px;
   border-radius: 3px;
@@ -88,4 +91,4 @@ body {
  * TRANSITIONS
  */
 * {
-  transition: all 0.2s ease-out; }
+  transition: all 0.52s ease-out; }
