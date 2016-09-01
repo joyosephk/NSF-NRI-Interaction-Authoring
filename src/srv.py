@@ -15,6 +15,13 @@ import logging
 from flask_cors import CORS, cross_origin
 import std_msgs.msg
 
+################## DATA ############################
+# current task
+tracking = {}
+tracking["currTask"] = ""
+tracking["currTherblig"] = ""
+tracking["currHAL"] = ""
+
 app = flask.Flask(__name__)
 CORS(app)
 
@@ -195,7 +202,7 @@ def putForceControl(on):
         pub.publish(data=False)
     return str(on)
 
-#grasp
+# grasp
 @app.route("/grasp/<value>")
 @logged
 def grasp(value):
@@ -208,6 +215,39 @@ def grasp(value):
     except ValueError:
         print "Grasp value must be a floating point value"
     return str(value)
+
+# kinect tracking data
+@app.route("/tracking/kinect/<task>")
+@logged
+def kinectTrack(task):
+    # update current tracked task
+    tracking["currTask"] = task
+    return str(task)
+
+# myo therblig data
+@app.route("/tracking/myo/therblig/<therblig>")
+@logged
+def myoTrack(therblig):
+    # update current tracked therblig
+    tracking["currTherblig"] = therblig
+    return str(therblig)
+
+# myo HAL data
+@app.route("/tracking/myo/HAL/<HAL>")
+@logged
+def myoTrack(HAL):
+    # update current tracked HAL
+    tracking["currHAL"] = HAL
+    return str(HAL)
+
+
+# get tracking data
+@app.route("/tracking/get")
+@logged
+def getTracking():
+    # return json of tracking dictionary
+    return flask.json.dumps(tracking)
+
 
 if __name__== '__main__':
     ############### ROS setup #######################
