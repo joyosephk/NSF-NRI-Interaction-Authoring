@@ -1,15 +1,17 @@
-angular_app.controller('timelineController',['utils',function(utils,$scope){
-	var container = document.getElementById('timeline');
+angular_app.controller('timelineController',['$scope','utils',function($scope ,utils){
 	var chart;
-	console.log("in controller scope");
-	google.charts.load("current", {packages:["timeline"]});
-	google.charts.setOnLoadCallback(initChart);
-	function initChart(){
-		console.log("charts loaded");
-		chart = new google.visualization.Timeline(container);		
-		drawChart()
+	$scope.init = function(){
+			if(utils.chartsLoaded()){
+			var container = document.getElementById('timeline');
+			chart = new google.visualization.Timeline(container);		
+			drawChart()
+			}else{
+				console.log("charts not yet loaded")
+				utils.onChartsLoaded(function(){
+					$scope.init();
+				})
+			}
 	}
-
 	function drawChart() {
 			var humanData, robotData; 
 			if(utils.test){
@@ -32,4 +34,5 @@ angular_app.controller('timelineController',['utils',function(utils,$scope){
 		}
 		return arr;
 	}
+	$scope.init();
 }]);

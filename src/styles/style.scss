@@ -72,7 +72,10 @@ body{
 	display:none;
 	transition-duration: 0.5s;
 }
-
+.menu-link{
+	@extend .btn-expander;
+	text-decoration: none !important;
+}
 /*
  * TIMELINE
  */

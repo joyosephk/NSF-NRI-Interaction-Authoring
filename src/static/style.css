@@ -58,16 +58,19 @@ body {
 /*
  * EXPANDER FIELDS
  */
-.btn-expander {
+.btn-expander, .menu-link {
   text-align: center;
   text-transform: uppercase; }
 
-.btn-expander:hover {
+.btn-expander:hover, .menu-link:hover {
   background: #FFF; }
 
 .expander-field {
   display: none;
   transition-duration: 0.5s; }
+
+.menu-link {
+  text-decoration: none !important; }
 
 /*
  * TIMELINE

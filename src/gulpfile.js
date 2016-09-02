@@ -30,7 +30,9 @@ gulp.task('concat',function(){
 			'js/bower_components/three.js/build/three.js',
 			'js/bower_components/roslib/build/roslib.js',
 			'js/bower_components/angular/angular.js',
-			'js/*.js'])
+			'bower_components/angular-route/angular-route.js',
+			'js/*.js'
+			])
 					 .pipe(concat('index.js'))
 					 .pipe(gulp.dest('./static/build'));
 });

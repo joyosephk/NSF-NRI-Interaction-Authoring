@@ -1,0 +1,88 @@
+	<div id="rosPoint"></div>	
+	<div id="menu" class="menu menu-right">
+			<div class="menu-item" >
+				<h3 class="btn btn-expander" data-for="object_creator" ng-click= expandField($event)>New Object</h3>
+				<div class="expander-field" id="object_creator">
+						<select ng-options="n.name for n in models" ng-model="selected"> </select>	
+						<h5>Position</h5>
+						<label for="x">X</label><input name="x" type="number" ng-model="pos.x"/>
+						<label for="y">Y</label><input name="y" type="number" ng-model="pos.y"/>
+						<label for="z">Z</label><input name="z" type="number" ng-model="pos.z"/>
+						<select ng-model="type">
+							<option value="environment">environment</option>	
+							<option value="interactive">interactive</option>	
+						</select>
+						<div ng-click="formSubmit($event)"  class="btn btn-submit">Add</div>	
+				</div>
+			</div>
+			<div class="menu-item">
+				<h3 class="btn btn-expander" data-for="object-editor" ng-click=expandField($event)>Edit Object</h3>
+				<div class="expander-field" id="object-editor"  >
+					<select ng-model="selected"  ng-options="obj as obj.uuid for obj in objects" ></select>
+					<h5>Position</h5>
+					<label for="x">X</label><input ng-change="updateEditor()" name="x" type="number" ng-model="pos.x"/>
+					<label for="y">Y</label><input ng-change="updateEditor()" name="y" type="number" ng-model="pos.y"/>
+					<label for="z">Z</label><input  ng-change="updateEditor()" name="z" type="number" ng-model="pos.z"/>
+					<h5>Rotation</h5>
+					<label for="x">X</label><input name="x" type="number" ng-model="rot.x"/>
+					<label for="y">Y</label><input name="y" type="number" ng-model="rot.y"/>
+					<label for="z">Z</label><input name="z" type="number" ng-model="rot.z"/>
+					<h5>Scale</h5>
+					<label for="scale">Factor</label><input name="scale" ng-model="scale" type="number"/>
+					 
+					<div class="btn btn-submit" ng-click="updateEditor()">update all</div>
+				</div>
+			</div>
+			<div class="menu-item">
+				<h3 class="btn btn-expander" data-for="roboMove" ng-click="expandField($event)"> Robot Controls</h3>
+				<div class="expander-field" id="roboMove">
+					<div class="btn btn-submit" ng-click="compliantControlTog()"> compliant control: <div class="off" ng-if="!compliantControl" >off</div>
+					<div class="on" ng-if=compliantControl>on</div>
+</div>
+										<div class="form-container">
+						<label for="name">name:</label><input name="name" ng-model="poseName" type="text"/>
+						<div class="btn btn-submit" ng-click="savePos()">Save Current Position</div>
+					</div>
+
+					<div class="form-container">
+						<h4>Move to pose</h4>
+						<label for="pose_name">Pose Name</label>
+						<select ng-model="posToMove" ng-options="obj as obj.name for obj in positions" ng-change="previewPosition()"></select>
+					</div>
+					<div class="btn btn-submit" ng-click="moveTo()">Move</div>
+					<div class="form-container">
+						<h4>Make Plan</h4>
+						<label for="pname">Name:</label><input name="pname" ng-model="planName" type="text"/>
+						<label for="positionName">Position:</label>
+						<select ng-options="obj as obj.name for obj in positions" name="positionName" ng-model="posToAdd"></select>
+						<label for="therblig">Therblig:<label/> <select ng-model="selectedTherblig"  ng-options="obj as obj.name for obj in therbligs"></select>
+						<div class="btn btn-submit" ng-click="addToPlan()">Add to plan</div>	
+						<div ng-repeat="pos in plan track by $index">
+							<div>{{$index}}.{{pos.name}}</div>
+						</div>
+						<div class="btn btn-submit" ng-click="makePlan()">Save Plan</div>
+					</div>	
+				</div>
+			</div>
+			<div class="menu-item">
+				<h3 class="btn btn-expander" data-for="executePlans" ng-click="expandField($event)">Execute Plans</h3>
+				<div class="expander-field" id="executePlans">
+					<div class="form-container">
+						<h4>Select a plan</h4>
+						<select ng-options="plan as plan.name for plan in savedPlans" ng-model="selectedPlan" ng-change=previewPlan()></select>
+						<div class="btn btn-submit" ng-click="executePlan()">Execute Plan</div>
+					</div>
+					<div class="form-container">
+						<h4> Make Individual Plan</h4>
+						<select ng-change="previewPosition()" ng-options="pos as pos.name for pos in positions" ng-model="posToMove"></select>
+						<div class="btn btn-submit" ng-click="makeIndividualPlan()">Make individual</div>
+					</div>
+			</div>
+			</div>
+			<div class="menu-item">
+				<h3><a href="#/timeline" class="menu-link">Timeline View</a></h3>
+			</div>
+</div> 			
+</div>
+<div id="timeline" class="timeline-container" ng-controller="timelineController"></div>
+

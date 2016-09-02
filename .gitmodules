@@ -1,3 +1,6 @@
 [submodule "src/therblig-motion-library"]
 	path = src/therblig-motion-library
 	url = https://github.com/Wisc-HCI/therblig-motion-library.git
+[submodule "src/timeline"]
+	path = src/timeline
+	url = https://github.com/joyosephk/timeline.git
