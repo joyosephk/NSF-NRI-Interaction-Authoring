@@ -14,6 +14,7 @@ from functools import wraps, partial
 import logging
 from flask_cors import CORS, cross_origin
 import std_msgs.msg
+import thread
 
 ################## DATA ############################
 # current task
@@ -133,7 +134,7 @@ def putArmGo(ID):
     try:
         ###############J O S H   L O O K   H E R E ###################
         # below line moves arm
-        ret = pGraph.setCurrNode(int(ID), acHan)
+        thread.start_new_thread(pGraph.setCurrNode, [int(ID), acHan, ])
         # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
         print "return value: " + str(ret)
     except ValueError:
@@ -224,23 +225,23 @@ def grasp(value):
 @logged
 def kinectTrack(task):
     # update current tracked task
-    tracking["currTask"] = task
+    tracking["currTask"] = str(task)
     return str(task)
 
 # myo therblig data
 @app.route("/tracking/myo/therblig/<therblig>")
 @logged
-def myoTrack(therblig):
+def myoTrackTherblig(therblig):
     # update current tracked therblig
-    tracking["currTherblig"] = therblig
+    tracking["currTherblig"] = str(therblig)
     return str(therblig)
 
 # myo HAL data
 @app.route("/tracking/myo/HAL/<HAL>")
 @logged
-def myoTrack(HAL):
+def myoTrackHAL(HAL):
     # update current tracked HAL
-    tracking["currHAL"] = HAL
+    tracking["currHAL"] = str(HAL)
     return str(HAL)
 
 
