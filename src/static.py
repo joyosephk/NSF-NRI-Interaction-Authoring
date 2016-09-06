@@ -2,6 +2,7 @@ from flask import *
 import os
 import sys
 import requests
+from planner import Planner
 
 app = Flask(__name__)
 
@@ -25,5 +26,11 @@ def listModels(arg=None):
             models.append(entry)
     return json.dumps(models)
 
+@app.route("/plan/get")
+def get_plan():
+   robot, human = planner.get_plans()
+   return json.dumps( {"robot":robot, "human":human})
+
 if __name__ == '__main__':
+    planner = Planner()
     app.run(debug=True)

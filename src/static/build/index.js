@@ -80277,7 +80277,7 @@ angular_app.factory('plannerService', ['utils', 'ros', function(utils,ros){
 }])
 
 angular_app.factory('ros',['$http','utils', function($http, utils){
-	var url = utils.url;
+	var url = utils.url? utils.url : "";
 	var currentPlan = [];
 	var makePlanObject = function(arr){
 		//array of pose objects
@@ -80342,7 +80342,7 @@ angular_app.factory('ros',['$http','utils', function($http, utils){
 
 	var executePlanListener = function(plan, index){
 		if(index < plan.length){
-			return $http.post(url+'/plans/execute', plan[index])
+			return $http.post(url+'/plans/execute', plan[index]);
 		}
 		else return;
 	}
@@ -80351,6 +80351,12 @@ angular_app.factory('ros',['$http','utils', function($http, utils){
 			return () => {console.warn("running in no-ros mode, most functionality is dead"); return new Promise((a,b)=>{}) }
 		}
 		return func
+	}
+	var regeneratePlan = function(){
+		return $http.get(url+'/plan/regenerate_plan');
+	}
+	var getPlans = function(){
+		return $http.get(url+'/plan/get');
 	}
 
 	return {
@@ -80361,7 +80367,9 @@ angular_app.factory('ros',['$http','utils', function($http, utils){
 		makePlan:addFunction(makePlan),
 		executePlan:addFunction(executePlan),
 		getPlans:addFunction(getPlans),
-		moveAndSavePath: moveAndSavePath
+		moveAndSavePath: moveAndSavePath,
+		regeneratePlan: addFunction(regeneratePlan),
+		getPlans: (getPlans)
 	}
 }]);
 
@@ -80635,13 +80643,14 @@ angular_app.factory('therbligs', ["utils",function(utils){
  return exports;
 }]);
 
-angular_app.controller('timelineController',['$scope','utils',function($scope ,utils){
+angular_app.controller('timelineController',['$scope','utils','ros',function($scope ,utils, ros){
 	var chart;
 	$scope.init = function(){
 			if(utils.chartsLoaded()){
-			var container = document.getElementById('timeline');
-			chart = new google.visualization.Timeline(container);		
-			drawChart()
+				console.log("executing chart initialization")
+				var container = document.getElementById('timeline');
+				chart = new google.visualization.Timeline(container);		
+				drawChart()
 			}else{
 				console.log("charts not yet loaded")
 				utils.onChartsLoaded(function(){
@@ -80649,20 +80658,49 @@ angular_app.controller('timelineController',['$scope','utils',function($scope ,u
 				})
 			}
 	}
-	function drawChart() {
+	var getData = function(callback){
+			console.log("getting chart data")
 			var humanData, robotData; 
-			if(utils.test){
-					humanData = testDataFactory("  Human");
-					robotData = testDataFactory("Robot");
-			}
+				if(false){
+						humanData = testDataFactory("  Human");
+						robotData = testDataFactory("Robot");
+				}else{
+					ros.getPlans().success(function(data){
+						humanData = [];
+						for(i in data["human"]){
+							el = data["human"][i]
+							console.log(el)
+							humanData.push(["human", el["action"],new Date(2016, 3,30, 2, parseFloat(el["start"])),new Date(2016, 3, 30, 2, parseFloat(el["start"])+parseFloat(el["duration"]))]);
+							humanData.push(["human-resource", el["object"],new Date(2016, 3,30, 2, parseFloat(el["start"])),new Date(2016, 3, 30, 2, parseFloat(el["start"])+parseFloat(el["duration"]))]);
+
+						}
+						for(i in data["robot"]){
+							el = data["robot"][i]
+							humanData.push(["robot", el["action"], new Date(2016, 3,30, 2, parseFloat(el["start"])),new Date(2016, 3, 30, 2, parseFloat(el["start"])+parseFloat(el["duration"]))]);
+							humanData.push(["robot-resource", el["object"],new Date(2016, 3,30, 2, parseFloat(el["start"])),new Date(2016, 3, 30, 2, parseFloat(el["start"])+parseFloat(el["duration"]))]);
+						}		
+						console.log(humanData)
+						data = humanData
+						callback(data);
+					})
+				}
+	}
+	function drawChart() {
+		getData(function(data){	
 			var dataTable = new google.visualization.DataTable();
 			dataTable.addColumn({ type: 'string', id: 'Position' });
 			dataTable.addColumn({ type: 'string', id: 'Name' });
 			dataTable.addColumn({ type: 'date', id: 'Start' });
 			dataTable.addColumn({ type: 'date', id: 'End' });
-			dataTable.addRows(humanData.concat( robotData) );
+			
+			dataTable.addRows(data );
 			// Draw the timeline!
-			chart.draw(dataTable);
+			chart.draw(dataTable, {
+				avoidOverlappingGridLines: false,
+				height: window.height/2
+
+			});
+		});
 	}
 	var testDataFactory = function(type){
 		var arr = [];
@@ -80674,8 +80712,9 @@ angular_app.controller('timelineController',['$scope','utils',function($scope ,u
 	$scope.init();
 }]);
 
-angular_app.controller('timelineViewController', ['utils', function(utils ){
+angular_app.controller('timelineViewController', ['$scope','utils', 'ros',function($scope,utils,ros ){
 
+	$scope.regeneratePlan = ros.regeneratePlan;
 
 }]);
 
