@@ -131,7 +131,10 @@ def putPosition(name):
 def putArmGo(ID):
     print "Got and ID to move to" + str(ID)
     try:
+        ###############J O S H   L O O K   H E R E ###################
+        # below line moves arm
         ret = pGraph.setCurrNode(int(ID), acHan)
+        # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
         print "return value: " + str(ret)
     except ValueError:
         print "Non integer-convertible value given for ID"
