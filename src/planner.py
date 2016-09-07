@@ -10,7 +10,7 @@ class Planner:
 
     def run(self):
         os.system("./lpg-td-1.0 -o domain.pddl -f pfile -quality -out mysol")
-        if not detect():
+        if not self.detect():
             self.run()
         self.parse(open("mysol.SOL"))
 
