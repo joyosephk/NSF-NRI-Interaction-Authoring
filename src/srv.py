@@ -224,24 +224,30 @@ def grasp(value):
 @app.route("/tracking/kinect/<task>")
 @logged
 def kinectTrack(task):
+    print "\nTracking kinect"
     # update current tracked task
     tracking["currTask"] = str(task)
+    print str(task)
     return str(task)
 
 # myo therblig data
-@app.route("/tracking/myo/therblig/<therblig>")
+@app.route("/tracking/myo/therblig/<therblig>", methods=["GET", "POST"])
 @logged
 def myoTrackTherblig(therblig):
+    print "\nTracking therblig"
     # update current tracked therblig
     tracking["currTherblig"] = str(therblig)
+    print str(therblig)
     return str(therblig)
 
 # myo HAL data
-@app.route("/tracking/myo/HAL/<HAL>")
+@app.route("/tracking/myo/HAL/<HAL>", methods=["GET", "POST"])
 @logged
 def myoTrackHAL(HAL):
+    print "\nTracking HAL"
     # update current tracked HAL
     tracking["currHAL"] = str(HAL)
+    print str(HAL)
     return str(HAL)
 
 
@@ -249,12 +255,14 @@ def myoTrackHAL(HAL):
 @app.route("/tracking/get")
 @logged
 def getTracking():
+    print "\nMethod get tracking"
     # return json of tracking dictionary
     return flask.json.dumps(tracking)
 
 
 if __name__== '__main__':
     ############### ROS setup #######################
+    '''uncomment this
     node_name = 'mico_planner'
     group_name = 'arm'
     planner_name = 'RRTConnectkConfigDefault'
@@ -266,6 +274,7 @@ if __name__== '__main__':
     acHan = ActionHandler(group_name, planner_name, ee_link_name)
 
     rospy.sleep(1)
+    '''
     #################################################
     print "running"
 
@@ -284,8 +293,10 @@ if __name__== '__main__':
     # clear persistent program memory
     pGraph.setCurrNodeNone()
 
+    '''uncomment this
     pub = rospy.Publisher('mico_arm/Forcecontrol', std_msgs.msg.Bool, queue_size=10)
     rospy.sleep(1)
+    '''
 
     app.run(host='0.0.0.0',debug = True, use_reloader=False)
 
