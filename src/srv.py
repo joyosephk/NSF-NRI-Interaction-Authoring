@@ -153,7 +153,7 @@ def putArmGo(ID):
 def putTaskPlan(taskname):
     # path is the dictionary of ID's
     path = flask.request.json['path']
-    ''' commenting out until we implement saved trajectories
+    '''commenting for now
     # skip first node
     iterable = iter(path)
     next(iterable)
@@ -168,7 +168,7 @@ def putTaskPlan(taskname):
             pGraph.makePath(int(ID), acHan)
         except ValueError:
             print "Non integer-convertible value given for ID"
-    '''
+            '''
     pGraph.setAuthoredPlans(taskname, path)
     transaction.commit()
     print "putTaskPlan\n"
@@ -296,13 +296,13 @@ def start_build():
     time_start = time.time()
     listen_flag = True
     robot, human = planner.get_plans()
-    handle = thread.start_new_thread(execute_plan, [robot])
+    handle = thread.start_new_thread(execute_plan,(robot,))
     return "success"
 
 def execute_plan(plan):
     for item in plan:
-        therblig = item["action"]
-        handle = thread.start_new_thread(pGraph.taskPlanPlayback, [therblig, acHan, ])
+        therblig = item["action"].strip()
+        handle = thread.start_new_thread(pGraph.taskPlanPlayback, (therblig, acHan,pGraph.getAuthoredPlans(),  ))
         time.sleep(float(item["duration"]))
 
 def find_position_from_therblig(therblig):
@@ -317,7 +317,6 @@ def end_build():
 
 if __name__== '__main__':
     ############### ROS setup #######################
-    '''uncomment this
     node_name = 'mico_planner'
     group_name = 'arm'
     planner_name = 'RRTConnectkConfigDefault'
@@ -331,7 +330,6 @@ if __name__== '__main__':
     acHan = ActionHandler(group_name, planner_name, ee_link_name)
 
     rospy.sleep(1)
-    '''
     #################################################
     print "running"
     planner = Planner()
@@ -352,10 +350,8 @@ if __name__== '__main__':
     # clear persistent program memory
     pGraph.setCurrNodeNone()
 
-    '''uncomment this
     pub = rospy.Publisher('mico_arm/Forcecontrol', std_msgs.msg.Bool, queue_size=10)
     rospy.sleep(1)
-    '''
 
     app.run(host='0.0.0.0',debug = True, use_reloader=False)
 
