@@ -1,5 +1,5 @@
 angular_app.factory('ros',['$http','utils', function($http, utils){
-	var url = utils.url;
+	var url = utils.url? utils.url : "";
 	var currentPlan = [];
 	var makePlanObject = function(arr){
 		//array of pose objects
@@ -64,7 +64,7 @@ angular_app.factory('ros',['$http','utils', function($http, utils){
 
 	var executePlanListener = function(plan, index){
 		if(index < plan.length){
-			return $http.post(url+'/plans/execute', plan[index])
+			return $http.post(url+'/plans/execute', plan[index]);
 		}
 		else return;
 	}
@@ -73,6 +73,12 @@ angular_app.factory('ros',['$http','utils', function($http, utils){
 			return () => {console.warn("running in no-ros mode, most functionality is dead"); return new Promise((a,b)=>{}) }
 		}
 		return func
+	}
+	var regeneratePlan = function(){
+		return $http.get(url+'/plan/regenerate_plan');
+	}
+	var getPlans = function(){
+		return $http.get(url+'/plan/get');
 	}
 
 	return {
@@ -83,6 +89,8 @@ angular_app.factory('ros',['$http','utils', function($http, utils){
 		makePlan:addFunction(makePlan),
 		executePlan:addFunction(executePlan),
 		getPlans:addFunction(getPlans),
-		moveAndSavePath: moveAndSavePath
+		moveAndSavePath: moveAndSavePath,
+		regeneratePlan: addFunction(regeneratePlan),
+		getPlans: (getPlans)
 	}
 }]);

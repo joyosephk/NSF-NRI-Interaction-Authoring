@@ -1,5 +1,9 @@
 import flask
+import time
+from planner import Planner
 import sys
+from timing import Timing
+import Planner 
 from json import *
 import os
 from ZODB import FileStorage, DB
@@ -22,7 +26,7 @@ tracking = {}
 tracking["currTask"] = ""
 tracking["currTherblig"] = ""
 tracking["currHAL"] = ""
-
+time_start = None
 app = flask.Flask(__name__)
 CORS(app)
 
@@ -225,6 +229,9 @@ def grasp(value):
 @logged
 def kinectTrack(task):
     print "\nTracking kinect"
+    if( not (task==timing.get_current_task("HUMAN"))):
+        timing.end_task("HUMAN", timing.get_current_task("HUMAN"))
+        timing.start_task("HUMAN", task)
     # update current tracked task
     tracking["currTask"] = str(task)
     print str(task)
@@ -258,8 +265,33 @@ def getTracking():
     print "\nMethod get tracking"
     # return json of tracking dictionary
     return flask.json.dumps(tracking)
+@app.route("/plan/regenerate_plan")
+def regenerate_plan():
+    human_data, robot_data = timing.generate_report()
+    retrieve = human_data["Inventory retrieval"]["duration"]/1000
+    assemble_base_duration = (human_data["Assembly"]["duration"]/1000) * .75
+    assemble_top_duration = (human_data["Assembly"]["duration"]/1000)*.25
+    stock_duration = human_data["Stocking"]["duration"]/1000
+    kitting_duration = human_data["Kitting"]["duration"]/1000
+    string = render_template('pfile',
+            retrieve = retrieve,
+            assemble_base_duration  = assemble_base_duration, 
+            assemble_top_duration = assemble_top_duration,
+            kitting_duration = kitting_duration,
+            stock_duration = stock_duration
+            )
+    handle  =   open('timeline/planner/pfile','w').close()
+    handle.write(string)
+
+@app.route("/plan/get")
+def get_plan():
+   robot, human = planner.get_plans()
+   return {"robot":robot, "human":human}
 
 
+@app.route("/time/start")
+def start_build():
+    time_start = time.time()
 if __name__== '__main__':
     ############### ROS setup #######################
     '''uncomment this
@@ -267,7 +299,9 @@ if __name__== '__main__':
     group_name = 'arm'
     planner_name = 'RRTConnectkConfigDefault'
     ee_link_name = 'mico_link_endeffector'
-
+    timing = Timing()
+    planner = Planner()
+    planner.run()
     roscpp_initialize(sys.argv)
     rospy.init_node(node_name, anonymous=True)
 
