@@ -52,7 +52,8 @@ angular_app.controller('timelineController',['$scope','utils','ros',function($sc
 			// Draw the timeline!
 			chart.draw(dataTable, {
 				avoidOverlappingGridLines: false,
-				height: window.height/2
+				height: window.height/2,
+				width: window.width *2
 
 			});
 		});

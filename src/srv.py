@@ -297,22 +297,24 @@ def start_build():
     listen_flag = True
     robot, human = planner.get_plans()
     handle = thread.start_new_thread(execute_plan, [robot])
-    handle.join()
     return "success"
 
 def execute_plan(plan):
-    #TODO get ID to move to
     for item in plan:
-        ID = 1
-        handle = thread.start_new_thread(pGraph.setCurrNode, [int(ID), acHan, ])
-        handle.join()
-        sleep(item["duration"]*1000)
+        therblig = item["action"]
+        handle = thread.start_new_thread(pGraph.taskPlanPlayback, [therblig, acHan, ])
+        time.sleep(float(item["duration"]))
+
+def find_position_from_therblig(therblig):
+    nodes = pGraph.listNodes()
+    return nodes[therblig] 
 
 @app.route("/time/end")
 def end_build():
     listen_flag = False
     timing.end_task("HUMAN", timing.get_current_task("HUMAN"))
     return "success"
+
 if __name__== '__main__':
     ############### ROS setup #######################
     '''uncomment this

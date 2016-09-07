@@ -2,11 +2,13 @@ import sys
 import os
 import re
 class Planner:
-    def __init__(self):
+    def __init__(self, test= False):
         args = sys.argv
         #:w
         #self.run()
         file = open("mysol.SOL",'r')
+        if(test):
+            self.parse(file)
 
     def run(self):
         os.system("./lpg-td-1.0 -o domain.pddl -f pfile -quality -out mysol")
@@ -39,10 +41,9 @@ class Planner:
                     start = num.group(0)
                     end_num = re.search("(\[)(\d{1,8}\.\d{1,8})(\])",el)
                     end = end_num.group(2)
-                    words = re.search("([A-Z _]{1,20}\ )([A-Z _ ]{1,20}\ )([A-Z _ ]{1,20})",el)
+                    words = re.search("([A-Z _]{1,20}\ )([A-Z _ ]{1,20}\ )([A-Z _ 0-9]{1,20})",el)
                     action = words.group(1)
                     agent  =  words.group(2)
-                    print agent
                     obj = words.group(3)
 		    if(agent == "ROBOT "):
                             agent = "ROBOT"
@@ -51,8 +52,6 @@ class Planner:
 			    timed_arr_human.append( {"start": start, "duration": end, "action": action, "agent":agent, "object":obj})
             self.timed_arr_robot = timed_arr_robot
             self.timed_arr_human = timed_arr_human
-            print timed_arr_robot
-            print timed_arr_human
             return (timed_arr_robot, timed_arr_human)
     def get_plans(self):
         return (self.timed_arr_robot, self.timed_arr_human)

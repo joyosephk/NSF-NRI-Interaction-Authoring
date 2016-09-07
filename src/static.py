@@ -3,6 +3,7 @@ import os
 import sys
 import requests
 from planner import Planner
+import time
 
 app = Flask(__name__)
 
@@ -31,6 +32,15 @@ def get_plan():
    robot, human = planner.get_plans()
    return json.dumps( {"robot":robot, "human":human})
 
+def execute_plan(plan):
+    for item in plan:
+        print item
+        therblig = item["action"]
+        print therblig
+        time.sleep(float(item["duration"]))
+
 if __name__ == '__main__':
-    planner = Planner()
-    app.run(debug=True)
+    planner = Planner(True)
+    robot, human = planner.get_plans()
+    execute_plan(robot)
+#    app.run(debug=True)
