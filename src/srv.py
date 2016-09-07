@@ -300,6 +300,7 @@ def start_build():
 @app.route("/time/end")
 def end_build():
     listen_flag = False
+    timing.end_task("HUMAN", timing.get_current_task("HUMAN"))
     return "success"
 if __name__== '__main__':
     ############### ROS setup #######################
