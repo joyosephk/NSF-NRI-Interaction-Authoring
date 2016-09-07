@@ -297,6 +297,13 @@ def start_build():
     listen_flag = True
     return "success"
 
+def execute_plan(plan):
+    #TODO get ID to move to
+    for item in plan:
+        ID = 1
+        thread.start_new_thread(pGraph.setCurrNode, [int(ID), acHan, ])
+        sleep(item["duration"]*1000)
+
 @app.route("/time/end")
 def end_build():
     listen_flag = False
