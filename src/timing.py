@@ -9,10 +9,13 @@ class Timing:
 
     def start_task(self, agent, task_name):
         if(agent == "ROBOT"):
-            self.robot_data[task_name] = {"start": time.time()}
+            self.robot_data[task_name] = {"start": [time.time()] , "end": []}
             self.robot_task = task_name
         else:
-            self.human_data[task_name] = {"start": time.time()}
+            if task_name in self.human_data:
+                self.human_data[task_name]["start"].append(time.time())
+            else:
+                self.human_data[task_name] = {"start": [time.time()], "end":[]}
             self.human_task = task_name
 
     def get_current_task(self,agent):
@@ -23,17 +26,19 @@ class Timing:
 
     def end_task(self,agent, task_name):
         if(agent == "ROBOT"):
-            self.robot_data[task_name]["end"] = time.time()
+            self.robot_data[task_name]["end"].append(time.time())
             self.robot_task = "none"
         else:
-            self.human_data[task_name]["end"] = time.time()
+            self.human_data[task_name]["end"].append( time.time())
             self.human_task = "none"
 
     def generate_report(self):
         for key in human_data:
             curr =  human_data[key]
-            duration = curr["end"]-  curr["start"]
-            curr["duration"] = duration
+            duration = 0
+            for (idx, stamp) in enumerate(curr["start"]):
+                duration += curr["end"][idx] - stamp 
+            curr["duration"] = duration/len(curr["end"])
         for key in robot_data:
             curr =  robot_data[key]
             duration = curr["end"]-  curr["start"]
