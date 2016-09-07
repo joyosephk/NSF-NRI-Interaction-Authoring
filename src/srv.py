@@ -296,10 +296,12 @@ def get_plan():
 def start_build():
     time_start = time.time()
     listen_flag = True
+    return "success"
 
 @app.route("/time/end")
 def end_build():
     listen_flag = False
+    return "success"
 if __name__== '__main__':
     ############### ROS setup #######################
     '''uncomment this
