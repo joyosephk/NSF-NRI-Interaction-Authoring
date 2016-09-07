@@ -288,7 +288,7 @@ def regenerate_plan():
 @app.route("/plan/get")
 def get_plan():
    robot, human = planner.get_plans()
-   return {"robot":robot, "human":human}
+   return flask.json.dumps({"robot":robot, "human":human})
 
 
 @app.route("/time/start")
@@ -319,6 +319,7 @@ if __name__== '__main__':
     #################################################
     print "running"
     planner = Planner()
+    timing = Timing()
     planner.run()
     # Database setup
     storage = FileStorage.FileStorage("pGraph.fs")
