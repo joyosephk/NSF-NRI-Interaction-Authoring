@@ -80,6 +80,12 @@ angular_app.factory('ros',['$http','utils', function($http, utils){
 	var getPlans = function(){
 		return $http.get(url+'/plan/get');
 	}
+	var startTime = function(){
+		return $http.get(url+'/time/start');
+	}
+	var endTime = function(){
+		return $http.get(url+'/time/end');
+	}
 
 	return {
 		getPositions: addFunction(getPositions),
@@ -91,6 +97,8 @@ angular_app.factory('ros',['$http','utils', function($http, utils){
 		getPlans:addFunction(getPlans),
 		moveAndSavePath: moveAndSavePath,
 		regeneratePlan: addFunction(regeneratePlan),
-		getPlans: (getPlans)
+		getPlans: (getPlans),
+		startTime: addFunction(startTime),
+		endTime: addFunction(endTime)
 	}
 }]);

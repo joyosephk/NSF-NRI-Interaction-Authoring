@@ -27,6 +27,7 @@ tracking["currTask"] = ""
 tracking["currTherblig"] = ""
 tracking["currHAL"] = ""
 time_start = None
+listen_flag = False
 app = flask.Flask(__name__)
 CORS(app)
 
@@ -229,7 +230,7 @@ def grasp(value):
 @logged
 def kinectTrack(task):
     print "\nTracking kinect"
-    if( not (task==timing.get_current_task("HUMAN"))):
+    if( not (task==timing.get_current_task("HUMAN") ) and listen_flag):
         timing.end_task("HUMAN", timing.get_current_task("HUMAN"))
         timing.start_task("HUMAN", task)
     # update current tracked task
@@ -253,9 +254,10 @@ def myoTrackTherblig(therblig):
 def myoTrackHAL(HAL):
     print "\nTracking HAL"
     # update current tracked HAL
-    tracking["currHAL"] = str(HAL)
-    print str(HAL)
-    return str(HAL)
+    if listen_flag:
+        tracking["currHAL"] = str(HAL)
+        print str(HAL)
+        return str(HAL)
 
 
 # get tracking data
@@ -280,8 +282,9 @@ def regenerate_plan():
             kitting_duration = kitting_duration,
             stock_duration = stock_duration
             )
-    handle  =   open('timeline/planner/pfile','w').close()
+    handle  =   open('/pfile','w')
     handle.write(string)
+    handle.close()
 
 @app.route("/plan/get")
 def get_plan():
@@ -292,6 +295,11 @@ def get_plan():
 @app.route("/time/start")
 def start_build():
     time_start = time.time()
+    listen_flag = True
+
+@app.route("/time/end")
+def end_build():
+    listen_flag = False
 if __name__== '__main__':
     ############### ROS setup #######################
     '''uncomment this

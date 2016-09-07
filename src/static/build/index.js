@@ -80358,6 +80358,12 @@ angular_app.factory('ros',['$http','utils', function($http, utils){
 	var getPlans = function(){
 		return $http.get(url+'/plan/get');
 	}
+	var startTime = function(){
+		return $http.get(url+'/time/start');
+	}
+	var endTime = function(){
+		return $http.get(url+'/time/end');
+	}
 
 	return {
 		getPositions: addFunction(getPositions),
@@ -80369,7 +80375,9 @@ angular_app.factory('ros',['$http','utils', function($http, utils){
 		getPlans:addFunction(getPlans),
 		moveAndSavePath: moveAndSavePath,
 		regeneratePlan: addFunction(regeneratePlan),
-		getPlans: (getPlans)
+		getPlans: (getPlans),
+		startTime: addFunction(startTime),
+		endTime: addFunction(endTime)
 	}
 }]);
 
@@ -80713,7 +80721,8 @@ angular_app.controller('timelineController',['$scope','utils','ros',function($sc
 }]);
 
 angular_app.controller('timelineViewController', ['$scope','utils', 'ros',function($scope,utils,ros ){
-
+	$scope.startTime = ros.startTime;
+	$scope.endTime   = ros.endTime;
 	$scope.regeneratePlan = ros.regeneratePlan;
 
 }]);
