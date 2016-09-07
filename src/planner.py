@@ -48,19 +48,19 @@ class Planner:
     def current_tasks(self, time_elapsed):
         return (get_current_task("HUMAN", time_elapsed), get_current_task("ROBOT", time_elapsed))
 	
-	def get_current_task(self, agent, time_elapsed):
-			data = []
-			if(agent == "ROBOT"):
-					data = self.timed_arr_robot
-			else: 
-					data = self.timed_arr_human
-			curr_index = 0
-			curr = data[curr_index]
-			while time_elapsed > 0:
-				time_elapsed = time_elapsed - curr[curr_index]["duration"]
-				curr_index+=1
-				curr = data[curr_index]
-			return curr
+    def get_current_task(self, agent, time_elapsed):
+                    data = []
+                    if(agent == "ROBOT"):
+                                    data = self.timed_arr_robot
+                    else: 
+                                    data = self.timed_arr_human
+                    curr_index = 0
+                    curr = data[curr_index]
+                    while time_elapsed > 0:
+                            time_elapsed = time_elapsed - curr[curr_index]["duration"]
+                            curr_index+=1
+                            curr = data[curr_index]
+                    return curr
 
 #TEST SCRIPTS HERE
 if __name__ == '__main__':
