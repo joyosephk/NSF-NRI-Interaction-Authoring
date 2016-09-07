@@ -318,7 +318,8 @@ if __name__== '__main__':
     '''
     #################################################
     print "running"
-
+    planner = Planner
+    planner.run()
     # Database setup
     storage = FileStorage.FileStorage("pGraph.fs")
     db = DB(storage)

@@ -7,10 +7,21 @@ class Planner:
         #:w
         #self.run()
         file = open("mysol.SOL",'r')
-        self.parse(file)
 
     def run(self):
         os.system("./lpg-td-1.0 -o domain.pddl -f pfile -quality -out mysol")
+        if not detect():
+            self.run()
+        self.parse(open("mysol.SOL"))
+
+    def detect(self):
+        handle = open("mysol.SOL","r")
+        for line in handle:
+            reg = re.search("^\d",line)
+            if not (reg is None):
+                return True
+        return False
+
 
     def parse(self, file):
             #takes a file handle, parses the file
