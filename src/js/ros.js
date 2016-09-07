@@ -69,7 +69,7 @@ angular_app.factory('ros',['$http','utils', function($http, utils){
 		else return;
 	}
 	var addFunction = function(func){
-		if(!url){
+		if(utils.test){
 			return () => {console.warn("running in no-ros mode, most functionality is dead"); return new Promise((a,b)=>{}) }
 		}
 		return func

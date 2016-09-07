@@ -80347,7 +80347,7 @@ angular_app.factory('ros',['$http','utils', function($http, utils){
 		else return;
 	}
 	var addFunction = function(func){
-		if(!url){
+		if(utils.test){
 			return () => {console.warn("running in no-ros mode, most functionality is dead"); return new Promise((a,b)=>{}) }
 		}
 		return func
@@ -80729,10 +80729,10 @@ angular_app.controller('timelineViewController', ['$scope','utils', 'ros',functi
 
 angular_app.factory('utils', [function(){
 	var exports = {}
-	exports.url = undefined;
-	exports.test = true;
+	exports.url = "";
+	exports.test = false;
 	var addFunction = function(func){
-		if(!url && test){
+		if(!url && exports.test){
 			return () => {console.warn("running in no-ros mode, most functionality is unavailable"); return new Promise((a,b)=>{})}
 		}
 		return func
