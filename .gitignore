@@ -5,3 +5,4 @@ src/node_modules
 .vagrant/
 src/.gulp-scss-cache
 src/.sass-cache
+*.pyc
