@@ -300,6 +300,7 @@ def start_build():
     thread_stopper = threading.Event()
     robot, human = planner.get_plans()
     handle = threading.Thread(target = execute_plan,args = (robot,thread_stopper))
+    handle.start()
     return "success"
 
 def execute_plan(plan, stop_event):
