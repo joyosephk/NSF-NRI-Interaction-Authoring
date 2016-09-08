@@ -55,7 +55,7 @@
 						<label for="pname">Name:</label><input name="pname" ng-model="planName" type="text"/>
 						<label for="positionName">Position:</label>
 						<select ng-options="obj as obj.name for obj in positions" name="positionName" ng-model="posToAdd"></select>
-						<label for="therblig">Therblig:<label/> <select ng-model="selectedTherblig"  ng-options="obj as obj.name for obj in therbligs"></select>
+						<label for="graspVal">Grasp Value</label><input name="graspVal" type ="number" ng-model="graspVal" placeholder="graspVal"/>
 						<div class="btn btn-submit" ng-click="addToPlan()">Add to plan</div>	
 						<div ng-repeat="pos in plan track by $index">
 							<div>{{$index}}.{{pos.name}}</div>

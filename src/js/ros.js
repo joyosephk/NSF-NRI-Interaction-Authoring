@@ -1,4 +1,6 @@
+/*jshint asi: true, esversion: 6*/
 angular_app.factory('ros',['$http','utils', function($http, utils){
+
 	var url = utils.url? utils.url : "";
 	var currentPlan = [];
 	var makePlanObject = function(arr){
@@ -77,7 +79,7 @@ angular_app.factory('ros',['$http','utils', function($http, utils){
 	var regeneratePlan = function(){
 		return $http.get(url+'/plan/regenerate_plan');
 	}
-	var getPlans = function(){
+	var getPlan= function(){
 		return $http.get(url+'/plan/get');
 	}
 	var startTime = function(){
@@ -97,8 +99,8 @@ angular_app.factory('ros',['$http','utils', function($http, utils){
 		getPlans:addFunction(getPlans),
 		moveAndSavePath: moveAndSavePath,
 		regeneratePlan: addFunction(regeneratePlan),
-		getPlans: (getPlans),
 		startTime: addFunction(startTime),
-		endTime: addFunction(endTime)
+		endTime: addFunction(endTime),
+		getPlan: addFunction(getPlan)
 	}
 }]);

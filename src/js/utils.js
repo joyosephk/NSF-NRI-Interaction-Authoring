@@ -1,3 +1,4 @@
+//jshint asi: true, esversion: 6
 angular_app.factory('utils', [function(){
 	var exports = {}
 	exports.url = "";
@@ -12,7 +13,7 @@ angular_app.factory('utils', [function(){
 	var charts = false;
 	var chartsCallback = function(){
 		charts = true;
-		for(i in callbacks){
+		for(var i in callbacks){
 			callbacks[i]();
 		}
 	}

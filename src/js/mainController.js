@@ -1,3 +1,4 @@
+//jshint asi: true
 angular_app.controller('mainController',["$scope","$route","$routeParams","$location","models","simulation", "ros", "utils","therbligs" ,
 		function($scope,$route, $routeParams, $location, models, simulation, ros, utils, therbligs){
 	$scope.$route = $route;
@@ -28,7 +29,7 @@ angular_app.controller('mainController',["$scope","$route","$routeParams","$loca
 		value = value.data
 		var arr = [];
 		var keys = Object.keys(value);
-		for(i in keys){
+		for(var i in keys){
 			value[keys[i]].name = keys[i];
 			arr.push(value[keys[i]]);
 		}

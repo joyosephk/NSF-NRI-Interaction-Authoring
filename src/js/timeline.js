@@ -1,3 +1,4 @@
+//jshint asi: true
 angular_app.controller('timelineController',['$scope','utils','ros',function($scope ,utils, ros){
 	var chart;
 	$scope.init = function(){
@@ -20,19 +21,19 @@ angular_app.controller('timelineController',['$scope','utils','ros',function($sc
 						humanData = testDataFactory("  Human");
 						robotData = testDataFactory("Robot");
 				}else{
-					ros.getPlans().success(function(data){
+					ros.getPlan().success(function(data){
 						humanData = [];
-						for(i in data["human"]){
-							el = data["human"][i]
+						for(var i in data.human){
+							el = data.human[i]
 							console.log(el)
-							humanData.push(["human", el["action"],new Date(2016, 3,30, 2, parseFloat(el["start"])),new Date(2016, 3, 30, 2, parseFloat(el["start"])+parseFloat(el["duration"]))]);
-							humanData.push(["human-resource", el["object"],new Date(2016, 3,30, 2, parseFloat(el["start"])),new Date(2016, 3, 30, 2, parseFloat(el["start"])+parseFloat(el["duration"]))]);
+							humanData.push(["human", el.action,new Date(2016, 3,30, 2, parseFloat(el.start)),new Date(2016, 3, 30, 2, parseFloat(el.start)+parseFloat(el.duration))]);
+							humanData.push(["human-resource", el.object,new Date(2016, 3,30, 2, parseFloat(el.start)),new Date(2016, 3, 30, 2, parseFloat(el.start)+parseFloat(el.duration))]);
 
 						}
-						for(i in data["robot"]){
-							el = data["robot"][i]
-							humanData.push(["robot", el["action"], new Date(2016, 3,30, 2, parseFloat(el["start"])),new Date(2016, 3, 30, 2, parseFloat(el["start"])+parseFloat(el["duration"]))]);
-							humanData.push(["robot-resource", el["object"],new Date(2016, 3,30, 2, parseFloat(el["start"])),new Date(2016, 3, 30, 2, parseFloat(el["start"])+parseFloat(el["duration"]))]);
+						for(i in data.robot){
+							el = data.robot[i]
+							humanData.push(["robot", el.action, new Date(2016, 3,30, 2, parseFloat(el.start)),new Date(2016, 3, 30, 2, parseFloat(el.start)+parseFloat(el.duration))]);
+							humanData.push(["robot-resource", el.object,new Date(2016, 3,30, 2, parseFloat(el.start)),new Date(2016, 3, 30, 2, parseFloat(el.start)+parseFloat(el.duration))]);
 						}		
 						console.log(humanData)
 						data = humanData
