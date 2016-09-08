@@ -41,13 +41,18 @@ class Planner:
                     start = num.group(0)
                     end_num = re.search("(\[)(\d{1,8}\.\d{1,8})(\])",el)
                     end = end_num.group(2)
-                    words = re.search("([A-Z _]{1,20}\ )([A-Z _ ]{1,20}\ )([A-Z _ 0-9]{1,20})",el)
-                    action = words.group(1)
-                    agent  =  words.group(2)
-                    obj = words.group(3)
+                    #This is where the problem occurs
+                    words = re.findall("([A-Z_]{1,20}[0-9]?)",el)
+                    print words
+                    action = words[0]
+                    agent  =  words[1]
+                    obj = words[2]
+                    container = None
+                    if len(words) == 4:
+                        container = words[3]
 		    if(agent == "ROBOT "):
                             agent = "ROBOT"
-			    timed_arr_robot.append( {"start": start, "duration": end, "action": action, "agent":agent, "object":obj})
+                            timed_arr_robot.append( {"start": start, "duration": end, "action": action, "agent":agent, "object":obj, "container":container})
 		    else: 
 			    timed_arr_human.append( {"start": start, "duration": end, "action": action, "agent":agent, "object":obj})
             self.timed_arr_robot = timed_arr_robot
@@ -75,4 +80,5 @@ class Planner:
 #TEST SCRIPTS HERE
 if __name__ == '__main__':
         planner = Planner()
+        planner.parse(open("mysol.SOL", "r"))
 
