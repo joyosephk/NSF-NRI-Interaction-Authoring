@@ -14,7 +14,7 @@ angular_app.factory('ros',['$http','utils', function($http, utils){
 			console.log(obj);
 			return obj;
 		});		
-		dict['path'] = arr;
+		dict.path= arr;
 		console.log(dict)
 		return dict;
 	}

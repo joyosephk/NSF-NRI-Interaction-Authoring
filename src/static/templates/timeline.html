@@ -1,11 +1,12 @@
 <div>
 	<div ng-controller="timelineController" class="big-timeline">
 		
-		<div id =timeline></div>
+		<div id =timeline style="width:4000px;"></div>
 	
 	</div>
 	<h2><a href="#/">bring me home</a></h2>
 	<h2><a href="#" ng-click="regeneratePlan()">Make new Plans</a></h2>
 	<h2><div class="btn btn-submit" ng-click="startTime()">start task</div></h2>
 	<h2><div class="btn btn-submit" ng-click="endTime()">end task</div></h2>
+	<div class="clock">{{time_elapsed}}</div><div class="current-task">{{current_task}}</div>
 </div>
