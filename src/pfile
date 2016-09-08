@@ -19,20 +19,20 @@
         (available robot)
 
         ; AGENT CAPABILITIES - HUMAN
-        (= (retrieve_duration human) 1)
+        (= (retrieve_duration human) 4)
         (= (assemble_base_duration human) 20)
         (= (assemble_top_duration human) 20)
-        (= (stock_duration human) 1)
+        (= (stock_duration human) 2)
         (= (get_container_duration human) 2)
         (= (pad_container_duration human) 4)
         (= (kitting_duration human) 5)
 
         ; AGENT CAPABILITIES - ROBOT
-        (= (retrieve_duration robot) 1)
+        (= (retrieve_duration robot) 10)
         (= (assemble_base_duration robot) 9999999)
         (= (assemble_top_duration robot) 9999999)
-        (= (stock_duration robot) 5)
-        (= (get_container_duration robot) 5)
+        (= (stock_duration robot) 8)
+        (= (get_container_duration robot) 8)
         (= (pad_container_duration robot) 9999999)
         (= (kitting_duration robot) 10)
 
