@@ -6,8 +6,8 @@ class Planner:
         args = sys.argv
         #:w
         #self.run()
-        file = open("mysol.SOL",'r')
         if(test):
+            file = open("mysol.SOL",'r')
             self.parse(file)
 
     def run(self):
