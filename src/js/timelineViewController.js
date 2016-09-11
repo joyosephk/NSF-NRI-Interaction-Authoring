@@ -2,7 +2,7 @@
 angular_app.controller('timelineViewController', ['$scope','utils', 'ros',function($scope,utils,ros ){
 	$scope.startTime = function(){
 		$scope.start = Date.now()
-		//ros.startTime();
+		ros.startTime();
 	}
 	$scope.endTime   = ros.endTime;
 	$scope.regeneratePlan = ros.regeneratePlan;
