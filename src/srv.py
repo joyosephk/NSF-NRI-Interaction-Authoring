@@ -176,25 +176,12 @@ def putTaskPlan(taskname):
     print "putTaskPlan\n"
     return taskname
 
-# plan from current position to another position
-@app.route("/plans/individual/<ID>")
-@logged
-def putPlan(ID):
-    result = ""
-    try:
-        result = pGraph.makePath(int(ID), acHan)
-        transaction.commit()
-    except ValueError:
-        print "Non integer-convertible value given for ID"
-    print "putPlan\n"
-    return str(result)
-
 # move to a node from the current node of the arm
 @app.route("/plans/move/<ID>")
 @logged
 def putArmMove(ID):
     try:
-        pGraph.moveTo(int(ID), acHan)
+        pGraph.setCurrNode(int(ID), acHan)
     except ValueError:
         print "Non integer-convertible value given for ID"
 
@@ -308,7 +295,7 @@ def execute_plan(plan, stop_event):
         if(not stop_event.is_set()):
             therblig = (item["action"]+ item["object"]).strip()
             print "'"+therblig+"'"
-            handle = thread.start_new_thread(pGraph.taskPlanPlayback, (therblig, acHan,pGraph.getAuthoredPlans(),  ))
+            handle = thread.start_new_thread(pGraph.taskPlanPlayback, (therblig, acHan))
             time.sleep(float(item["duration"]))
 
 def find_position_from_therblig(therblig):
