@@ -49,7 +49,7 @@ angular_app.factory('ros',['$http','utils', function($http, utils){
 	//move from one pose to another and save that movement as a plan
   var moveAndSavePath = function(id ){
 		console.log("making individual");
-		return $http.get(url+'/plans/individual/'+id);	
+		return $http.get(url+'/plans/move/'+id);	
 	}
 
 	var executePlan = function(plan){
