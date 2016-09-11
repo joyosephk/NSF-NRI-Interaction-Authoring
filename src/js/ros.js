@@ -70,12 +70,7 @@ angular_app.factory('ros',['$http','utils', function($http, utils){
 		}
 		else return;
 	}
-	var addFunction = function(func){
-		if(utils.test){
-			return () => {console.warn("running in no-ros mode, most functionality is dead"); return new Promise((a,b)=>{}) }
-		}
-		return func
-	}
+	var addFunction = utils.addFunction; 
 	var regeneratePlan = function(){
 		return $http.get(url+'/plan/regenerate_plan');
 	}
