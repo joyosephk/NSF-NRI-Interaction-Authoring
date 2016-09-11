@@ -5,19 +5,21 @@ class Planner:
     def __init__(self, test= False):
         args = sys.argv
         #:w
+        self.filename = "mysol"
         #self.run()
         if(test):
-            file = open("mysol",'r')
+            self.filename = "mysol.SOL"
+            file = open(self.filename,'r')
             self.parse(file)
 
     def run(self):
         os.system("./lpg-td-1.0 -o domain.pddl -f pfile -quality -out mysol")
         if not self.detect():
             self.run()
-        self.parse(open("mysol"))
+        self.parse(open(self.filename))
 
     def detect(self):
-        handle = open("mysol","r")
+        handle = open(self.filename,"r")
         for line in handle:
             reg = re.search("^\d",line)
             if not (reg is None):
@@ -50,13 +52,14 @@ class Planner:
                     container = None
                     if len(words) == 4:
                         container = words[3]
-		    if(agent == "ROBOT "):
-                            agent = "ROBOT"
+		    if(agent == "ROBOT"):
                             timed_arr_robot.append( {"start": start, "duration": end, "action": action, "agent":agent, "object":obj, "container":container})
 		    else: 
-			    timed_arr_human.append( {"start": start, "duration": end, "action": action, "agent":agent, "object":obj})
+                        timed_arr_human.append( {"start": start, "duration": end, "action": action, "agent":agent, "object":obj, "container":container})
             self.timed_arr_robot = timed_arr_robot
             self.timed_arr_human = timed_arr_human
+            print timed_arr_robot
+            print timed_arr_human
             return (timed_arr_robot, timed_arr_human)
     def get_plans(self):
         return (self.timed_arr_robot, self.timed_arr_human)
@@ -79,5 +82,5 @@ class Planner:
 
 #TEST SCRIPTS HERE
 if __name__ == '__main__':
-        planner = Planner()
+        planner = Planner(True)
 
