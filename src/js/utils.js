@@ -4,7 +4,7 @@ angular_app.factory('utils', [function(){
 	exports.url = "";
 	exports.test = false;
 	var addFunction = function(func){
-		if(!url && exports.test){
+		if(!exports.url && exports.test){
 			return () => {console.warn("running in no-ros mode, most functionality is unavailable"); return new Promise((a,b)=>{})}
 		}
 		return func
