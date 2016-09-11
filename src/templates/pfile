@@ -8,7 +8,7 @@
 (define (problem sample_problem) 
     (:domain kitting)
     (:objects 
-        lampA lampB lampC lampD - object
+        lampA - object
         con1 con2 - container
         human robot - agent
     )
@@ -28,11 +28,11 @@
         (= (kitting_duration human) {{kitting_duration}})
 
         ; AGENT CAPABILITIES - ROBOT
-        (= (retrieve_duration robot) 1)
+        (= (retrieve_duration robot) 10)
         (= (assemble_base_duration robot) 9999999)
         (= (assemble_top_duration robot) 9999999)
-        (= (stock_duration robot) 5)
-        (= (get_container_duration robot) 5)
+        (= (stock_duration robot) 10)
+        (= (get_container_duration robot) 10)
         (= (pad_container_duration robot) 9999999)
         (= (kitting_duration robot) 10)
  

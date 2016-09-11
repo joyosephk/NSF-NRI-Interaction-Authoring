@@ -8,8 +8,8 @@
 (define (problem sample_problem) 
     (:domain kitting)
     (:objects 
-        lampA lampB lampC lampD - object
-        con1 con2 - container
+        lampA - object
+        con1 - container
         human robot - agent
     )
 
