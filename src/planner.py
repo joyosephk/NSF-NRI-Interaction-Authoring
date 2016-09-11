@@ -7,17 +7,17 @@ class Planner:
         #:w
         #self.run()
         if(test):
-            file = open("mysol.SOL",'r')
+            file = open("mysol",'r')
             self.parse(file)
 
     def run(self):
         os.system("./lpg-td-1.0 -o domain.pddl -f pfile -quality -out mysol")
         if not self.detect():
             self.run()
-        self.parse(open("mysol.SOL"))
+        self.parse(open("mysol"))
 
     def detect(self):
-        handle = open("mysol.SOL","r")
+        handle = open("mysol","r")
         for line in handle:
             reg = re.search("^\d",line)
             if not (reg is None):
@@ -80,5 +80,4 @@ class Planner:
 #TEST SCRIPTS HERE
 if __name__ == '__main__':
         planner = Planner()
-        planner.parse(open("mysol.SOL", "r"))
 
