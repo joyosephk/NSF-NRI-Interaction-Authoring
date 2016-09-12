@@ -27,7 +27,6 @@ tracking["currTask"] = ""
 tracking["currTherblig"] = ""
 tracking["currHAL"] = ""
 time_start = None
-thread_stopper = None
 listen_flag = False
 app = flask.Flask(__name__)
 CORS(app)
@@ -284,19 +283,17 @@ def get_plan():
 def start_build():
     time_start = time.time()
     listen_flag = True
-    thread_stopper = threading.Event()
     robot, human = planner.get_plans()
-    handle = threading.Thread(target = execute_plan,args = (robot,thread_stopper))
+    handle = threading.Thread(target = execute_plan,args = (robot))
     handle.start()
     return "success"
 
-def execute_plan(plan, stop_event):
+def execute_plan(plan ):
     for item in plan:
-        if(not stop_event.is_set()):
-            therblig = (item["action"]+ item["object"]).strip()
-            print "'"+therblig+"'"
-            handle = thread.start_new_thread(pGraph.taskPlanPlayback, (therblig, acHan))
-            time.sleep(float(item["duration"]))
+        therblig = (item["action"]+ item["object"]).strip()
+        print "'"+therblig+"'"
+        handle = thread.start_new_thread(pGraph.taskPlanPlayback, (therblig, acHan))
+        time.sleep(float(item["duration"]))
 
 def find_position_from_therblig(therblig):
     nodes = pGraph.listNodes()
@@ -304,7 +301,6 @@ def find_position_from_therblig(therblig):
 
 @app.route("/time/end")
 def end_build():
-    thread_stopper.set()
     listen_flag = False
     timing.end_task("HUMAN", timing.get_current_task("HUMAN"))
     return "success"
