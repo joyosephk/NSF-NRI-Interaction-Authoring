@@ -284,12 +284,15 @@ def start_build():
     time_start = time.time()
     listen_flag = True
     robot, human = planner.get_plans()
-    handle = threading.Thread(target = execute_plan,args = (robot))
+    print robot
+    handle = threading.Thread(target = execute_plan,args = (robot,))
     handle.start()
     return "success"
 
-def execute_plan(plan ):
+def execute_plan(plan):
+    print plan
     for item in plan:
+        print item
         therblig = (item["action"]+ item["object"]).strip()
         print "'"+therblig+"'"
         handle = thread.start_new_thread(pGraph.taskPlanPlayback, (therblig, acHan))
