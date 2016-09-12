@@ -35,6 +35,7 @@ class Timing:
             self.human_task = "none"
 
     def generate_report(self):
+        human_data = self.human_data
         for key in human_data:
             if key == 'none': 
                 continue
