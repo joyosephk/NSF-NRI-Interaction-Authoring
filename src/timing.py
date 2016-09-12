@@ -34,14 +34,12 @@ class Timing:
 
     def generate_report(self):
         for key in human_data:
+            if key == 'none': 
+                continue
             curr =  human_data[key]
             duration = 0
             for (idx, stamp) in enumerate(curr["start"]):
                 duration += curr["end"][idx] - stamp 
             curr["duration"] = duration/len(curr["end"])
-        for key in robot_data:
-            curr =  robot_data[key]
-            duration = curr["end"]-  curr["start"]
-            curr["duration"] = duration
-        return (human_data, robot_data)
+        return human_data 
 

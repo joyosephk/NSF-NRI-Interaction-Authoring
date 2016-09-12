@@ -256,7 +256,7 @@ def getTracking():
     return flask.json.dumps(tracking)
 @app.route("/plan/regenerate_plan")
 def regenerate_plan():
-    human_data, robot_data = timing.generate_report()
+    human_data = timing.generate_report()
     retrieve = human_data["Inventory retrieval"]["duration"]/1000
     assemble_base_duration = (human_data["Assembly"]["duration"]/1000) * .75
     assemble_top_duration = (human_data["Assembly"]["duration"]/1000)*.25
@@ -269,7 +269,7 @@ def regenerate_plan():
             kitting_duration = kitting_duration,
             stock_duration = stock_duration
             )
-    handle  =   open('/pfile','w')
+    handle  =   open('pfile','w')
     handle.write(string)
     handle.close()
 
