@@ -25,6 +25,8 @@ class Timing:
 
 
     def end_task(self,agent, task_name):
+        if task_name == 'none':
+            return
         if(agent == "ROBOT"):
             self.robot_data[task_name]["end"].append(time.time())
             self.robot_task = "none"
