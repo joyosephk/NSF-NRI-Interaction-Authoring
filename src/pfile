@@ -32,6 +32,7 @@
         (= (get_container_duration human) 2)
         (= (pad_container_duration human) 4)
         (= (kitting_duration human) 5)
+				(= (adding_parts_duration human) 4)
 
         ; AGENT CAPABILITIES - ROBOT
         (= (retrieve_duration robot) 10)
@@ -41,6 +42,7 @@
         (= (get_container_duration robot) 8)
         (= (pad_container_duration robot) 9999999)
         (= (kitting_duration robot) 10)
+				(= (adding_parts_duration robot) 10)
 
 
         ;ERGONOMICS ESTIMATES

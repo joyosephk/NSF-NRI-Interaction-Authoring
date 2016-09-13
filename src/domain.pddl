@@ -30,15 +30,15 @@
     (get_container_duration ?a - agent)
     (pad_container_duration ?a - agent)
     (kitting_duration ?a - agent)
-		(adding_parts ?a - agent)
+		(adding_parts_duration ?a - agent)
     (ergonomics ?a - agent)
   )
   
-	(:durative-action Adding_Parts
+	(:durative-action AddParts
 		:parameters (?a - agent ?p - parts ?c - container)
-		:duration (= ?duration (retrieve_duration ?a))
+		:duration (= ?duration (adding_parts_duration ?a))
 		:condition (and 
-								(at start (available ?a)
+								(at start (available ?a))
 								)
 		:effect			(and
 									(at start (not( available ?a)))
