@@ -43,6 +43,6 @@ class Timing:
             duration = 0
             for (idx, stamp) in enumerate(curr["start"]):
                 duration += curr["end"][idx] - stamp 
-            curr["duration"] = duration/len(curr["end"])
+            curr["duration"] = duration
         return human_data 
 
