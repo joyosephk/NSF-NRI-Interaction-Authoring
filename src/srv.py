@@ -288,11 +288,14 @@ def start_build():
     handle.start()
     return "success"
 
-def execute_plan(plan):
+de execute_plan(plan):
     print plan
     for (idx,item) in enumerate(plan):
         print item
+
         therblig = (item["action"]+ item["object"]).strip()
+				if not (item["container"] is None):
+					therblig = (item["action"]+item["object"]+item["container"]).strip()
         print "'"+therblig+"'"
         print getWait(item , plan[idx+1])
         handle = thread.start_new_thread(pGraph.taskPlanPlayback, (therblig, acHan))

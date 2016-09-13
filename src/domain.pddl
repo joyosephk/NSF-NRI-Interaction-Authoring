@@ -18,7 +18,7 @@
     (gotContainer ?c - container)
     (paddedContainer ?c - container)
     (kitted ?o - object ?c - container)
-		(added_parts ?p - parts ?c -container)
+		(added_parts ?p - parts ?c - container)
   )
 
 
@@ -39,6 +39,7 @@
 		:duration (= ?duration (adding_parts_duration ?a))
 		:condition (and 
 								(at start (available ?a))
+								(at start (gotContainer ?c))
 								)
 		:effect			(and
 									(at start (not( available ?a)))
@@ -85,7 +86,7 @@
                     (at start (available ?a))
                     (at start (assembled_base ?o))
                     (at start (retrieved ?o))
-					(at start (stocked ?0))
+										(at start (stocked ?o))
                     )
     :effect         (and  
                     (at start (not (available ?a)))
@@ -101,7 +102,6 @@
     :duration       (= ?duration (stock_duration ?a))
     :condition      (and
                     (at start (available ?a))
-                    (at start (assembled_top ?o))
                     )
     :effect         (and  
                     (at start (not (available ?a)))
@@ -148,7 +148,9 @@
     :condition      (and
                     (at start (available ?a))
                     (at start (paddedContainer ?c))
-                    (at start (stocked ?o))
+                    (at start (assembled_base ?o))
+										(at start (assembled_top ?o))
+
                     )
     :effect         (and  
                     (at start (not (available ?a)))
