@@ -85,6 +85,7 @@
                     (at start (available ?a))
                     (at start (assembled_base ?o))
                     (at start (retrieved ?o))
+					(at start (stocked ?0))
                     )
     :effect         (and  
                     (at start (not (available ?a)))
