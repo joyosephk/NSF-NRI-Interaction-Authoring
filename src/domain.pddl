@@ -7,7 +7,7 @@
 
 (define (domain kitting)
   (:requirements :typing :durative-actions :fluents)
-  (:types agent object container)
+  (:types agent object container parts) 
 
   (:predicates  
     (retrieved ?o - object)
@@ -18,6 +18,7 @@
     (gotContainer ?c - container)
     (paddedContainer ?c - container)
     (kitted ?o - object ?c - container)
+		(added_parts ?p - parts ?c -container)
   )
 
 
@@ -29,10 +30,22 @@
     (get_container_duration ?a - agent)
     (pad_container_duration ?a - agent)
     (kitting_duration ?a - agent)
+		(adding_parts ?a - agent)
     (ergonomics ?a - agent)
   )
   
-
+	(:durative-action Adding_Parts
+		:parameters (?a - agent ?p - parts ?c - container)
+		:duration (= ?duration (retrieve_duration ?a))
+		:condition (and 
+								(at start (available ?a)
+								)
+		:effect			(and
+									(at start (not( available ?a)))
+									(at end (added_parts ?p ?c))
+									(at end (available ?a))
+								)
+	)
 
   (:durative-action RetrieveParts
     :parameters     (?a - agent ?o - object)

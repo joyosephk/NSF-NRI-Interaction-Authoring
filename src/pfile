@@ -8,8 +8,14 @@
 (define (problem sample_problem) 
     (:domain kitting)
     (:objects 
+				
         lampA - object
+				lampB - object
+				lampC - object
+				lampD - object
+				partsA partsB partsC partsD - parts
         con1 - container
+				con2 - container
         human robot - agent
     )
 
@@ -51,7 +57,11 @@
         (kitted lampB con1)
         (kitted lampC con2)
         (kitted lampD con2)
-
+				(added_parts partsA con1)
+				(added_parts partsB con1)
+				(added_parts partsC con2)
+				(added_parts partsD con2)
+				
     ))
     
   (:metric minimize (+ (* 1 (total-time))  (* 2 (ergonomics human))))

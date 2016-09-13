@@ -9,6 +9,10 @@
     (:domain kitting)
     (:objects 
         lampA - object
+				partsA partsB partsC partsD - parts
+				lampB - object
+				lampC - object
+				lampD - object
         con1 con2 - container
         human robot - agent
     )
@@ -38,7 +42,7 @@
  
 
         ;ERGONOMICS ESTIMATES
-        (= (ergonomics human) 0)
+        (= (ergonomics human) {{hal_human}})
         (= (ergonomics robot) 0)
 
 
@@ -51,6 +55,10 @@
         (kitted lampB con1)
         (kitted lampC con2)
         (kitted lampD con2)
+				(added_parts partsA con1)
+				(added_parts partsB con1)
+				(added_parts partsC con2)
+				(added_parts partsD con2)
 
     ))
     
