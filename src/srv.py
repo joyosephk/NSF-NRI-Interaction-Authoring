@@ -251,6 +251,7 @@ def getTracking():
     print "\nMethod get tracking"
     # return json of tracking dictionary
     return flask.json.dumps(tracking)
+###plan regeneration function
 @app.route("/plan/regenerate_plan")
 def regenerate_plan():
     human_data = timing.generate_report()
@@ -264,7 +265,8 @@ def regenerate_plan():
             assemble_base_duration  = assemble_base_duration, 
             assemble_top_duration = assemble_top_duration,
             kitting_duration = kitting_duration,
-            stock_duration = stock_duration
+            stock_duration = stock_duration,
+            hal_human = 0 ##TODO pls make variable
             )
     handle  =   open('pfile','w')
     handle.write(string)
@@ -288,12 +290,17 @@ def start_build():
 
 def execute_plan(plan):
     print plan
-    for item in plan:
+    for (idx,item) in enumerate(plan):
         print item
         therblig = (item["action"]+ item["object"]).strip()
         print "'"+therblig+"'"
+        print getWait(item , plan[idx+1])
         handle = thread.start_new_thread(pGraph.taskPlanPlayback, (therblig, acHan))
         time.sleep(float(item["duration"]))
+
+def getWait(curr, nxt):
+    between = float(nxt["start"]) - float(curr["start"]+ curr["duration"])
+    return between
 
 def find_position_from_therblig(therblig):
     nodes = pGraph.listNodes()
