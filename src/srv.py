@@ -137,10 +137,7 @@ def putPosition(name):
 def putArmGo(ID):
     print "Got and ID to move to" + str(ID)
     try:
-        ###############J O S H   L O O K   H E R E ###################
-        # below line moves arm
-        thread.start_new_thread(pGraph.setCurrNode, [int(ID), acHan, ])
-        # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        pGraph.setCurrNode(int(ID), acHan)
         print "return value: " + str(ret)
     except ValueError:
         print "Non integer-convertible value given for ID"
@@ -291,11 +288,14 @@ def start_build():
     handle.start()
     return "success"
 
-def execute_plan(plan):
+de execute_plan(plan):
     print plan
     for (idx,item) in enumerate(plan):
         print item
+
         therblig = (item["action"]+ item["object"]).strip()
+				if not (item["container"] is None):
+					therblig = (item["action"]+item["object"]+item["container"]).strip()
         print "'"+therblig+"'"
         print getWait(item , plan[idx+1])
         handle = thread.start_new_thread(pGraph.taskPlanPlayback, (therblig, acHan))
@@ -330,6 +330,7 @@ if __name__== '__main__':
     acHan = ActionHandler(group_name, planner_name, ee_link_name)
 
     rospy.sleep(1)
+    acHan.setWorkspace(-10, -10, 0, 10, 10, 10)
     #################################################
     print "running"
     planner = Planner()

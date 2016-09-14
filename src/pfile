@@ -8,15 +8,10 @@
 (define (problem sample_problem) 
     (:domain kitting)
     (:objects 
-				
-        lampA - object
-				lampB - object
-				lampC - object
-				lampD - object
-				partsA partsB partsC partsD - parts
-        con1 - container
-				con2 - container
+        lampA lampB lampC lampD - object
+				con1 con2 - container
         human robot - agent
+				partsA partsB - parts
     )
 
     (:init 
@@ -41,7 +36,7 @@
         (= (stock_duration robot) 8)
         (= (get_container_duration robot) 8)
         (= (pad_container_duration robot) 9999999)
-        (= (kitting_duration robot) 10)
+        (= (kitting_duration robot) 20)
 				(= (adding_parts_duration robot) 10)
 
 
@@ -54,16 +49,12 @@
     
 
     (:goal (and
-  
+				(added_parts partsA con1)
+				(added_parts partsB con2)
         (kitted lampA con1)
         (kitted lampB con1)
         (kitted lampC con2)
         (kitted lampD con2)
-				(added_parts partsA con1)
-				(added_parts partsB con1)
-				(added_parts partsC con2)
-				(added_parts partsD con2)
-				
     ))
     
   (:metric minimize (+ (* 1 (total-time))  (* 2 (ergonomics human))))
