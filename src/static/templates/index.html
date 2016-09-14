@@ -47,7 +47,13 @@
 					<div class="form-container">
 						<h4>Move to pose</h4>
 						<label for="pose_name">Pose Name</label>
-						<select ng-model="posToMove" ng-options="obj as obj.name for obj in positions" ng-change="previewPosition()"></select>
+						<input type="text" ng-model="posTestText"/>
+						<table id="positionS">
+							<tr ng-repeat="obj in positions | filter:posTestText">
+								<td>{{obj.name}}</td><td ng-click="posToTest(obj)" class="btn btn-submit">select</td>
+							</tr>
+						</table>
+						<p>selected: {{posToMove.name}}</p>
 					</div>
 					<div class="btn btn-submit" ng-click="moveTo()">Move</div>
 					<div class="form-container">
@@ -57,7 +63,7 @@
 
 						<table id="positionS">
 							<tr ng-repeat="obj in positions | filter:posText">
-								<td>{{obj.name}}</td><td ng-click="addToPlan(obj)" class="btn btn-submit">select</td>
+								<td>{{obj.name}}</td><td ng-click="addPosToPlan(obj)" class="btn btn-submit">select</td>
 							</tr>
 						</table>
 						<p>selected: {{posToAdd.name}}</p>

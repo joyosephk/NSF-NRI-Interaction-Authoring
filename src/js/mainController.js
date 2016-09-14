@@ -23,7 +23,13 @@ angular_app.controller('mainController',["$scope","$route","$routeParams","$loca
 	}
 	//setup functions
 	ros.getPositions().then(function(value){
-			$scope.positions = value.data;
+			console.log(value.data);
+			var arr = [];
+			var keys = Object.keys(value.data);
+			for (var i in keys){
+				arr.push(value.data[keys[i]]);
+			}
+			$scope.positions = arr;
 	},httpFailure);
 	ros.getPlans().then(function(value){
 		value = value.data
@@ -77,6 +83,10 @@ angular_app.controller('mainController',["$scope","$route","$routeParams","$loca
 	$scope.savePos = function(){
 		ros.savePosition($scope.poseName);
 	}
+	$scope.posToTest = function(obj)
+	{
+		$scope.posToMove = obj;
+	}
 	$scope.updateEditor = function(){
 		simulation.moveObject($scope.selected, $scope.pos );
 		simulation.rotateObject($scope.selected, $scope.rot);
@@ -85,10 +95,12 @@ angular_app.controller('mainController',["$scope","$route","$routeParams","$loca
 	$scope.makePlan = function(){
 		ros.makePlan($scope.planName,$scope.plan)
 	}	
-	$scope.addToPlan = function(obj){
-		$scope.posToAdd = obj;
+	$scope.addToPlan = function(){
 		$scope.posToAdd.graspVal = $scope.graspVal;
-		$scope.plan.push($scope.obj);
+		$scope.plan.push($scope.posToAdd);
+	}
+	$scope.addPosToPlan= function(obj){
+		$scope.posToAdd = obj;
 	}
 	$scope.executePlan = function(){
 		ros.executePlan($scope.selectedPlan);
