@@ -288,6 +288,7 @@ def get_plan():
 
 @app.route("/time/start")
 def start_build():
+    global time_start
     time_start = time.time()
     global listen_flag
     listen_flag = True
@@ -303,13 +304,16 @@ def execute_plan(plan):
         print item
 
         therblig = (item["action"]+ item["object"]).strip()
-        if not (item["container"] is None):
-            therblig = (item["action"]+item["object"]+item["container"]).strip()
         print "'"+therblig+"'"
 #        print getWait(item , plan[idx+1])
         handle = thread.start_new_thread(pGraph.taskPlanPlayback, (therblig, acHan))
         time.sleep(float(item["duration"]))
 
+@app.route('/task/get')
+def getTask():
+    if not listen_flag:
+        return "no task started"
+    return planner.get_current_task("HUMAN",(time.time() - time_start  ) )
 def getWait(curr, nxt):
     between = float(nxt["start"]) - float(curr["start"]+ curr["duration"])
     return between
