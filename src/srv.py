@@ -214,6 +214,7 @@ def grasp(value):
 @logged
 def kinectTrack(task):
     print "\nTracking kinect"
+    print listen_flag
     if( not (task==timing.get_current_task("HUMAN") ) and listen_flag):
         timing.end_task("HUMAN", timing.get_current_task("HUMAN"))
         timing.start_task("HUMAN", task)
@@ -255,12 +256,17 @@ def getTracking():
 @app.route("/plan/regenerate_plan")
 def regenerate_plan():
     human_data = timing.generate_report()
-    retrieve = human_data["Inventory retrieval"]["duration"]/1000
-    assemble_base_duration = (human_data["Assembly"]["duration"]/1000) * .75
-    assemble_top_duration = (human_data["Assembly"]["duration"]/1000)*.25
-    stock_duration = human_data["Stocking"]["duration"]/1000
-    kitting_duration = human_data["Kitting"]["duration"]/1000
-    string = render_template('pfile',
+    print "printing human data"
+    print human_data
+    if "Inventory Retrieval" in human_data:
+        retrieve = human_data["Inventory Retrieval"]["duration"]/10
+    else:
+        retrieve = 10
+    assemble_base_duration = (human_data["Assembly"]["duration"]/10) * .75
+    assemble_top_duration = (human_data["Assembly"]["duration"]/10)*.25
+    stock_duration = human_data["Stocking"]["duration"]/10
+    kitting_duration = human_data["Kitting"]["duration"]/10
+    string = flask.render_template('pfile',
             retrieve = retrieve,
             assemble_base_duration  = assemble_base_duration, 
             assemble_top_duration = assemble_top_duration,
@@ -271,6 +277,8 @@ def regenerate_plan():
     handle  =   open('pfile','w')
     handle.write(string)
     handle.close()
+    planner.run()
+    return "success"
 
 @app.route("/plan/get")
 def get_plan():
@@ -281,6 +289,7 @@ def get_plan():
 @app.route("/time/start")
 def start_build():
     time_start = time.time()
+    global listen_flag
     listen_flag = True
     robot, human = planner.get_plans()
     print robot
@@ -288,16 +297,16 @@ def start_build():
     handle.start()
     return "success"
 
-de execute_plan(plan):
+def execute_plan(plan):
     print plan
     for (idx,item) in enumerate(plan):
         print item
 
         therblig = (item["action"]+ item["object"]).strip()
-				if not (item["container"] is None):
-					therblig = (item["action"]+item["object"]+item["container"]).strip()
+        if not (item["container"] is None):
+            therblig = (item["action"]+item["object"]+item["container"]).strip()
         print "'"+therblig+"'"
-        print getWait(item , plan[idx+1])
+#        print getWait(item , plan[idx+1])
         handle = thread.start_new_thread(pGraph.taskPlanPlayback, (therblig, acHan))
         time.sleep(float(item["duration"]))
 
@@ -354,5 +363,5 @@ if __name__== '__main__':
     pub = rospy.Publisher('mico_arm/Forcecontrol', std_msgs.msg.Bool, queue_size=10)
     rospy.sleep(1)
 
-    app.run(host='0.0.0.0',debug = True, use_reloader=False)
+    app.run(host='0.0.0.0', use_reloader=False, threaded= True)
 
