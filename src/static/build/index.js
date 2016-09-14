@@ -79112,6 +79112,7 @@ THREE.ColladaLoader.prototype = {
 
 
 
+//jshint asi: true
 angular_app.controller('mainController',["$scope","$route","$routeParams","$location","models","simulation", "ros", "utils","therbligs" ,
 		function($scope,$route, $routeParams, $location, models, simulation, ros, utils, therbligs){
 	$scope.$route = $route;
@@ -79142,7 +79143,7 @@ angular_app.controller('mainController',["$scope","$route","$routeParams","$loca
 		value = value.data
 		var arr = [];
 		var keys = Object.keys(value);
-		for(i in keys){
+		for(var i in keys){
 			value[keys[i]].name = keys[i];
 			arr.push(value[keys[i]]);
 		}
@@ -79198,9 +79199,10 @@ angular_app.controller('mainController',["$scope","$route","$routeParams","$loca
 	$scope.makePlan = function(){
 		ros.makePlan($scope.planName,$scope.plan)
 	}	
-	$scope.addToPlan = function(){
+	$scope.addToPlan = function(obj){
+		$scope.posToAdd = obj;
 		$scope.posToAdd.graspVal = $scope.graspVal;
-		$scope.plan.push($scope.posToAdd);
+		$scope.plan.push($scope.obj);
 	}
 	$scope.executePlan = function(){
 		ros.executePlan($scope.selectedPlan);
@@ -80276,7 +80278,9 @@ angular_app.factory('plannerService', ['utils', 'ros', function(utils,ros){
 
 }])
 
+/*jshint asi: true, esversion: 6*/
 angular_app.factory('ros',['$http','utils', function($http, utils){
+
 	var url = utils.url? utils.url : "";
 	var currentPlan = [];
 	var makePlanObject = function(arr){
@@ -80292,7 +80296,7 @@ angular_app.factory('ros',['$http','utils', function($http, utils){
 			console.log(obj);
 			return obj;
 		});		
-		dict['path'] = arr;
+		dict.path= arr;
 		console.log(dict)
 		return dict;
 	}
@@ -80325,7 +80329,7 @@ angular_app.factory('ros',['$http','utils', function($http, utils){
 	//move from one pose to another and save that movement as a plan
   var moveAndSavePath = function(id ){
 		console.log("making individual");
-		return $http.get(url+'/plans/individual/'+id);	
+		return $http.get(url+'/plans/move/'+id);	
 	}
 
 	var executePlan = function(plan){
@@ -80346,16 +80350,11 @@ angular_app.factory('ros',['$http','utils', function($http, utils){
 		}
 		else return;
 	}
-	var addFunction = function(func){
-		if(utils.test){
-			return () => {console.warn("running in no-ros mode, most functionality is dead"); return new Promise((a,b)=>{}) }
-		}
-		return func
-	}
+	var addFunction = utils.addFunction; 
 	var regeneratePlan = function(){
 		return $http.get(url+'/plan/regenerate_plan');
 	}
-	var getPlans = function(){
+	var getPlan= function(){
 		return $http.get(url+'/plan/get');
 	}
 	var startTime = function(){
@@ -80375,9 +80374,9 @@ angular_app.factory('ros',['$http','utils', function($http, utils){
 		getPlans:addFunction(getPlans),
 		moveAndSavePath: moveAndSavePath,
 		regeneratePlan: addFunction(regeneratePlan),
-		getPlans: (getPlans),
 		startTime: addFunction(startTime),
-		endTime: addFunction(endTime)
+		endTime: addFunction(endTime),
+		getPlan: addFunction(getPlan)
 	}
 }]);
 
@@ -80651,6 +80650,7 @@ angular_app.factory('therbligs', ["utils",function(utils){
  return exports;
 }]);
 
+//jshint asi: true
 angular_app.controller('timelineController',['$scope','utils','ros',function($scope ,utils, ros){
 	var chart;
 	$scope.init = function(){
@@ -80673,19 +80673,19 @@ angular_app.controller('timelineController',['$scope','utils','ros',function($sc
 						humanData = testDataFactory("  Human");
 						robotData = testDataFactory("Robot");
 				}else{
-					ros.getPlans().success(function(data){
+					ros.getPlan().success(function(data){
 						humanData = [];
-						for(i in data["human"]){
-							el = data["human"][i]
+						for(var i in data.human){
+							el = data.human[i]
 							console.log(el)
-							humanData.push(["human", el["action"],new Date(2016, 3,30, 2, parseFloat(el["start"])),new Date(2016, 3, 30, 2, parseFloat(el["start"])+parseFloat(el["duration"]))]);
-							humanData.push(["human-resource", el["object"],new Date(2016, 3,30, 2, parseFloat(el["start"])),new Date(2016, 3, 30, 2, parseFloat(el["start"])+parseFloat(el["duration"]))]);
+							humanData.push(["human", el.action,new Date(2016, 3,30, 2, parseFloat(el.start)),new Date(2016, 3, 30, 2, parseFloat(el.start)+parseFloat(el.duration))]);
+							humanData.push(["human-resource", el.object,new Date(2016, 3,30, 2, parseFloat(el.start)),new Date(2016, 3, 30, 2, parseFloat(el.start)+parseFloat(el.duration))]);
 
 						}
-						for(i in data["robot"]){
-							el = data["robot"][i]
-							humanData.push(["robot", el["action"], new Date(2016, 3,30, 2, parseFloat(el["start"])),new Date(2016, 3, 30, 2, parseFloat(el["start"])+parseFloat(el["duration"]))]);
-							humanData.push(["robot-resource", el["object"],new Date(2016, 3,30, 2, parseFloat(el["start"])),new Date(2016, 3, 30, 2, parseFloat(el["start"])+parseFloat(el["duration"]))]);
+						for(i in data.robot){
+							el = data.robot[i]
+							humanData.push(["robot", el.action, new Date(2016, 3,30, 2, parseFloat(el.start)),new Date(2016, 3, 30, 2, parseFloat(el.start)+parseFloat(el.duration))]);
+							humanData.push(["robot-resource", el.object,new Date(2016, 3,30, 2, parseFloat(el.start)),new Date(2016, 3, 30, 2, parseFloat(el.start)+parseFloat(el.duration))]);
 						}		
 						console.log(humanData)
 						data = humanData
@@ -80705,7 +80705,8 @@ angular_app.controller('timelineController',['$scope','utils','ros',function($sc
 			// Draw the timeline!
 			chart.draw(dataTable, {
 				avoidOverlappingGridLines: false,
-				height: window.height/2
+				height: window.height/2,
+				width: window.width *2
 
 			});
 		});
@@ -80720,19 +80721,35 @@ angular_app.controller('timelineController',['$scope','utils','ros',function($sc
 	$scope.init();
 }]);
 
+//jshint asi: true
 angular_app.controller('timelineViewController', ['$scope','utils', 'ros',function($scope,utils,ros ){
-	$scope.startTime = ros.startTime;
+	$scope.startTime = function(){
+		$scope.start = Date.now()
+		ros.startTime();
+	}
 	$scope.endTime   = ros.endTime;
 	$scope.regeneratePlan = ros.regeneratePlan;
-
+	$scope.time_elapsed = "0:00";
+	$scope.current_task = "None";
+	var formatTime = function(milliseconds){
+		  var minutes = Math.round((milliseconds / 1000)/  60)
+			return minutes.toString() + ":" + ((milliseconds - (minutes * 60 *1000))/1000).toString()
+	}
+	var update = function(){
+		$scope.time_elapsed = formatTime(Date.now() - $scope.start);
+		window.requestAnimationFrame(update);
+	}
+	update();
+ //TODO add interval-based update of current task 
 }]);
 
+//jshint asi: true, esversion: 6
 angular_app.factory('utils', [function(){
 	var exports = {}
 	exports.url = "";
 	exports.test = false;
 	var addFunction = function(func){
-		if(!url && exports.test){
+		if(!exports.url && exports.test){
 			return () => {console.warn("running in no-ros mode, most functionality is unavailable"); return new Promise((a,b)=>{})}
 		}
 		return func
@@ -80741,7 +80758,7 @@ angular_app.factory('utils', [function(){
 	var charts = false;
 	var chartsCallback = function(){
 		charts = true;
-		for(i in callbacks){
+		for(var i in callbacks){
 			callbacks[i]();
 		}
 	}

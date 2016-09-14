@@ -85,9 +85,10 @@ angular_app.controller('mainController',["$scope","$route","$routeParams","$loca
 	$scope.makePlan = function(){
 		ros.makePlan($scope.planName,$scope.plan)
 	}	
-	$scope.addToPlan = function(){
+	$scope.addToPlan = function(obj){
+		$scope.posToAdd = obj;
 		$scope.posToAdd.graspVal = $scope.graspVal;
-		$scope.plan.push($scope.posToAdd);
+		$scope.plan.push($scope.obj);
 	}
 	$scope.executePlan = function(){
 		ros.executePlan($scope.selectedPlan);
